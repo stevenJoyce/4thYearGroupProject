@@ -1,0 +1,5 @@
+Dissertation Document History
+
+Date        Files Effected  Description and Author
+---------------------------------------------------------------------
+28/11/2020      All         Used the template on Github and added it to                                Overleaf. This is where the document will be                               written. Completed the title page and most of                              chapter 1. Completed by Steven Joyce.
