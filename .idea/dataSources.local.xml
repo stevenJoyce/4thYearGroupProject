@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MongoDBServer" uuid="a492c64c-cce5-4af3-8437-c9bea5710a6d">
-      <database-info product="Mongo DB" version="4.2.11" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.8.3" dbms="MONGO" exact-version="4.2.11" exact-driver-version="1.8" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>admin</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="schema" qname="User" />
-        </introspection-scope>
-      </schema-mapping>
-    </data-source>
     <data-source name="@localhost" uuid="f3c9e7dd-b8c1-4efc-9ecc-25e11d9a00ee">
       <database-info product="Mongo DB" version="" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.8.3" dbms="UNKNOWN" exact-version="0" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
@@ -21,6 +10,17 @@
           <node kind="database" qname="">
             <node kind="schema" qname="test" />
           </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="MongoServer" uuid="6b3bc11f-33b1-470c-9952-b8fb650319e7">
+      <database-info product="Mongo DB" version="4.2.11" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.8.3" dbms="MONGO" exact-version="4.2.11" exact-driver-version="1.8" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>admin</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" negative="1" />
         </introspection-scope>
       </schema-mapping>
     </data-source>
