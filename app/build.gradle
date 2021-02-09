@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
 
@@ -19,7 +18,7 @@ android {
     }
 
     buildTypes {
-        def appId = "<sportsadvisor-gztkm>"  // Replace with proper Application ID
+        def appId = "sportsadvisor-gztkm"  // Replace with proper Application ID
         debug {
             buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
         }
@@ -27,9 +26,12 @@ android {
             buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
     }
+
+}
+realm {
+    syncEnabled = true
 }
 
 dependencies {
@@ -39,10 +41,17 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation "io.realm:android-adapters:4.0.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //OKHTTP
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
+   // implementation('org.mongodb:mongo-java-driver:2.13.3')
+
+
+
 
 }
