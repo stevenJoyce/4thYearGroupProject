@@ -70,13 +70,54 @@ This project is an Android Application built using the programming Language. The
 
 \chapter{Methodology}
 \section{Approach}
-Agile
+The Agile methodology is based on a iterative development approach that allows requirements and solutions to change throughout the development of the Application. It relys on constant communication between members of the team to successfully deliver a final product which has the capacity to evolve. Teams will undergo sprints which splits up a feature into smaller parts that is then given to a member of the team to work on in a short time period which makes the feature more manageable to deliver.
+\newline
+\newline
+To implement this approach our team organized weekly meetings where we discussed our work's success or issues and how far we have gotten with our given sprint . This allowed us to collaborate as a team when issues occurred allowing us to keep on schedule. Our schedule was developed using a gantt chart, this was the basis for all our sprints . Every step was assigned as a sprint which was assigned to each member to carry out. Each sprint had a test case which had to pass for us to proceed with development.
 \section{Testing}
-emulation , terminal, test cases
-\section{collaborative platforms}
-GitHub, Discord, Teams
+After each sprint a set of tests were required to pass. If a test case failed to pass in any capacity we could not proceed with the next sprint. To test our application we used  the Android SDK emulator alongside intellij IDEA.
+\newline
+The emulator we used was run on Android 9.0 (pie). The emulator simulated a Google Pixel 3A mobile phone. 
+(emulation , terminal, test cases)
+\section{Collaborative Platforms}
+\subsection{Version Control}
+The platform all team members were most familiar with was GitHub, it allows members to access project code versions and commit their contributions to one repository. Every team member has access to view and modify the contents of the repository. All changes are logged and any commit can be accessed at all times , this helps with problem solving as any issues that occur can be called back on to older commits that were functional if issues occur with the latest commit.
+
+\subsection{Communication Tools}
+\subsubsection{Microsoft Teams}
+Microsoft Teams was used primarily to communicate with our supervisor. We chose this as it is linked to our student accounts and our supervisor requested us to use it as a way to communicate with them. Teams is a good platform for video calls as it can be accessed in multiple platforms such as an Internet browser, Mobile/Desktop Application . It allows users to share files and can sync to your google drive account(file hosting service).and use a calendar feature allowing users to organize meetings.
+\newline
+However it is not strongly suited for messaging as its forum feature can become cluttered and tedious to navigate,
+This is one of the main reasons why we decided to use Discord as our primary form of communication as a team.
+\subsubsection{Discord} Discord is a communication Application which has increased in popularity in recent years, especially considering the current pandemic. It runs on Desktop, Mobile and browser platforms. This allowed us to always be in contact with each other if one team members device was running into issues.  
+\newline
+Discord allowed us to set up separate channels to sort our messages to relate to specific aspects of the Project. We could co ordinate and plan different parts of the project in the one place with no clutter, Each aspect of the project had a dedicated channel so that unrelated messages would not be spam our feed. For example we had an "ideas" channel where we would jot down random ideas or inspiration for new features of the application, these messages would be separate from our "session-planning" channel which would strictly contain messages related to our sprint meetings .Due to this feature it became our primary platform to communicate.
+\newline 
+\subsubsection{Whats App}
+We used Whats App on our mobile devices to organize our sprint meetings as a team. If for any reason a meeting needed to be held on short notice Whats App was the most efficient way of coordinating a set time.
+\subsection{Literature Software}
+For the Development of this Dissertation we used Overleaf, we found this Latex text editor the effective way to write up due our previous experience. The Documentation Overleaf provides is well structured which helped us with this aspect of the project. After each person wrote a part of the dissertation it was committed to GitHub, which helped with making sure every member of the team had the appropriate version of the Dissertation.
+(GitHub, Discord, Teams)
 \section{Technology choices}
-intellij IDEA Ultimate, Android Studio via Kotlin, Mongo Realm, JustInMind
+\subsection{Kotlin}
+As a team we wanted to learn a new programming language as a challenge for our project and to increase our skill set as Software Developers. One of our lecturer's during one of our online classes from this module mentioned the Kotlin language. This led us to research this language and understand what it could be used for. We saw that Kotlin was an up and coming language that was primarily used for mobile Applications in Android as of September 2020 with hopes of iOS support being implemented in the near future.
+\subsection{Intellij IDEA}
+At the start of the college year we were introduced to Intellij in our Distributed Systems module. We soon realised that JetBrains who are the founders of Intellij are also the designers of the Kotlin programming language. With this information we decided to use this as our chosen development environment.
+\newline
+We soon realised that we had the wrong version of Intellij installed on our devices. We needed to have the Intellij IDEA Ultimate to be able to access a Mongo Database. We got this free with the GitHub Student Developer pack. This was an issue that was unforeseen and time consuming but easily rectified.
+\newline 
+With JetBrains owning both Kotlin and Intellij writing the code was seamless and allowed testing to constantly occur. Intellij allowed the use of an Android mobile phone emulator to run these tests.
+\subsection{MongoDB}
+MongoDB is a NoSQL database service which allows a user to store data from an application for future use. The data stored can be queried in searches which outputs specific results. These result can be processed by the application and read out to the user. We chose to use MongoDB as our server because of our previous experience of developing applications with it as the back end storage. 
+\newline
+\newline
+To use a MongoDB cluster we had to create a Mongo Realm application. This is where the user data can be read into the Kotlin application. 
+This can also send data to the cluster through this Realm application for storage. Realm reads in a cluster which it has permission to access the stored data through a partition key and clusters data to the Kotlin application.
+\subsection{JustInMind}
+In order to conceptualize and visualise our applications front end layout we had to begin with prototyping our design. While researching design tools for mobile application development, we came across a prototyping tool called JustInMind.
+\newline
+It is a high level prototyping tool used to create high quality wire frames that allow developers to visualise their product in real time before finalizing the design of the mobile application. It assisted us in figuring out how we want the user to navigate the application.
+
 \section{Algorithm's}
 our own developed rating system.
 
