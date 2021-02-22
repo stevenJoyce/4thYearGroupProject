@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">SportsAdvisor</string>
     <string name="welcome_to_sports_advisor">Welcome to Sports Advisor!</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
+    <string name="continue_as_guest">continue_as_guest</string>
 </resources>
