@@ -41,7 +41,7 @@
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:text="Password"
             android:textSize="25sp"
             android:textStyle="bold"
             android:layout_margin="20dp"
@@ -55,58 +55,7 @@
             android:layout_height="wrap_content"
             android:text="Add Users"
             android:onClick="addUser"
-            android:layout_margin="20dp"
             android:layout_below="@+id/tvPassword"
-    />
-    <Button
-            android:id="@+id/viewUsers"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:onClick="viewUsers"
-            android:layout_margin="20dp"
-            android:layout_below="@+id/addUser"
-            android:layout_toRightOf="@+id/addUser"
-    />
+            android:layout_marginTop="163dp" android:layout_marginBottom="20dp"/>
 
-    <EditText
-            android:id="@+id/etPassword2"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_margin="20dp"
-            android:layout_below="@+id/addUser"
-    />
-
-    <Button
-            android:id="@+id/viewUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Users"
-            android:onClick="viewUser"
-            android:layout_margin="20dp"
-            android:layout_below="@+id/addUser"
-            android:layout_toRightOf="@+id/etPassword2"
-    />
-
-    <Button
-            android:id="@+id/updateUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update Users"
-            android:onClick="updateUser"
-            android:layout_margin="20dp"
-            android:layout_below="@+id/etPassword2"
-    />
-
-    <Button
-            android:id="@+id/deleteUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete Users"
-            android:onClick="deleteUser"
-            android:layout_margin="20dp"
-            android:layout_below="@+id/etPassword2"
-            android:layout_toRightOf="@+id/updateUser"
-    />
 </RelativeLayout>

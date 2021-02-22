@@ -6,14 +6,17 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sportsadvisor.model.Users
+
 import io.realm.Realm
-import io.realm.RealmResults
-import io.realm.exceptions.RealmException
+import io.realm.mongodb.Credentials
+import io.realm.mongodb.User
+import io.realm.mongodb.App
+import io.realm.mongodb.AppConfiguration
 
 
 class LoginActivity : AppCompatActivity() {
     //variables for user authentication
+    lateinit var app: App
     private lateinit var username:EditText
     private lateinit var password:EditText
     private lateinit var realm: Realm
@@ -21,58 +24,23 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_main)
+        Realm.init(this)
+        val appID = "sportsadvisor-gztkm"
+        app = App(AppConfiguration.Builder(appID).build())
         username = findViewById(R.id.etUsername)
         password = findViewById(R.id.etPassword)
-        realm = Realm.getDefaultInstance()
 
     }
 
-    fun addUser(v:View){
-        println("User name added "+ username.text.toString())
-        print("Password Added " + password.text.toString())
-        realm.beginTransaction()
-        try{
-            val nextId: Long = realm.where(Users::class.java).count() + 1
-            val u = realm.createObject(Users::class.java,nextId)
-            var uName:String = username.toString()
-            var uPwd:String = password.toString()
-            realm.commitTransaction()
-            showToast("User successfully added")
+    fun addUser(v:View) {
+        //println("Username added " + username.text.toString() + " Password Added " + password.text.toString())
 
-        }catch(e: RealmException)
-        {
-            Log.d("TAG",e.message.toString())
-        }
-    }
-
-    fun viewUser(v:View){
-        val realmUsers = realm.where(Users::class.java).contains("Username",username.text.toString()).findAll()
-        var k = ""
-        showToast(k)
-
-    }
-
-    fun viewUsers(v:View){
-        val realmUsers = realm.where(Users::class.java).findAll()
-        var k = ""
-        showToast(k)
-
-    }
-
-
-    fun updateUser(v:View){
-        realm.executeTransaction { realm ->
-            val u: Users = realm.where(Users::class.java).equalTo("username", "abc").findFirst()!!
-            showToast("User successfully updated")
-        }
-    }
-
-    fun deleteUser(v:View){
-
-        val savedUsers:RealmResults<Users> = realm.where(Users::class.java).equalTo("username","abc").findAll()
-        realm.executeTransaction {
-            savedUsers.deleteAllFromRealm()
-            showToast("User successfully deleted")
+        app.emailPassword.registerUserAsync(username.toString(), password.toString()) {
+            if (it.isSuccess) {
+                Log.i("EXAMPLE","Successfully registered user.")
+            } else {
+                Log.e("EXAMPLE","Failed to register user: ${it.error}")
+            }
         }
 
     }
