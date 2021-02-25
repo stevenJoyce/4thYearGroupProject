@@ -5,7 +5,6 @@ The app is a sport based application that allows the user to find all golf cours
 The application will allow the user to access a MongoDB database to store and fetch personalized data. The stored data is your score for each hole and what golf club you used for that hole on that golf course and will generate a weekly/monthly report for how you performed on each golf course that you used during that time period.\\
 \section{Authors}
 For this Project, the authors are Robert Donnelly, Evan Greaney and Steven Joyce. All three authors are 4th Software development students, attending GMIT.
-
 \chapter{Introduction}
 
 For our final year project we were tasked with designing , developing and deploying a project either individually or as a group . We decided to work together as a group in order to achieve our goals of creating an app that would assist as a companion to players for one sport with the hope of adding in more sports in the future. The sport we decided to focus on was the game of golf, in which the app would give players optimal playing days and times based on weather conditions as well as their preferred conditions for playing golf. The application would also allow players to save their score data for that day which can be accessed in a report or table.
@@ -59,6 +58,10 @@ Link to GitHub Repository={\url{https://github.com/stevenJoyce/4thYearGroupProje
     \newline This folder is where we ran and debugged our Application from in the IntelliJ IDE
     \item \textbf{Gradle Folders:}
     \newline Using this folder, this is how the Application is configured using IntelliJ
+    \item \textbf{Wireframe Prototype:}
+    \newline In this folder we have a Justinmind prototype outlining the design of the application.
+    \item \textbf{Manual}
+    \newline The guide to installing software needed to run the application.
 \end{enumerate}
 
 
@@ -66,8 +69,6 @@ The introduction should be about three to five pages long.
 Make sure you use references
 
 This project is an Android Application built using the programming Language. The app will allow the user to 
-
-
 \chapter{Methodology}
 \section{Approach}
 The Agile methodology is based on a iterative development approach that allows requirements and solutions to change throughout the development of the Application. It relys on constant communication between members of the team to successfully deliver a final product which has the capacity to evolve. Teams will undergo sprints which splits up a feature into smaller parts that is then given to a member of the team to work on in a short time period which makes the feature more manageable to deliver.
@@ -119,21 +120,22 @@ In order to conceptualize and visualise our applications front end layout we had
 It is a high level prototyping tool used to create high quality wire frames that allow developers to visualise their product in real time before finalizing the design of the mobile application. It assisted us in figuring out how we want the user to navigate the application.
 
 \section{Algorithm's}
-our own developed rating system.
-
-About one to two pages.
-Describe the way you went about your project:
-\begin{itemize}
-\item Agile / incremental and iterative approach to development. Planning, meetings.
-\item What about validation and testing? Junit or some other framework.
-\item If team based, did you use GitHub during the development process.
-\item Selection criteria for algorithms, languages, platforms and technolo-gies.
-\end{itemize}
-
+For our own rating system we are using JFuzzyLogic to output the best time and day for the user to play golf, determined by metrics based upon the user's input. \newline
+"JFuzzyLogic is an extension of Boolean logic by Lotfi Zadeh in 1965 based on the mathematical theory of fuzzy sets, which is a generalization of classical set theory." - Quote from Franck Dernoncourt.
 
 \chapter{Technology Review}
 \section{Kotlin}
+We found Kotlin to be less verbose, easier to read as a programming language compared such as Java, C. It is a high-level language that can be used to produce mobile applications. It's coding style is similar to python but with more features and ways to implement it.  \newline \newline
+This is due to Kotlin not needing any end of line syntax to allow the interpreter move on to a new line. - Subject to change
+\newline \newline
+The Kotlin language is a very good interpreter of other languages which helps when trying to write code without having a great grasp of the language. This is very important when you are 1st learning the language or when you cannot find a way to write a method in Kotlin but can in Java. 
+\newline
+Despite both Kotlin and Java being a native language for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java. The amount of lines of code that needs to be written can be up. 
+
 \section{Intellij IDEA's}
+The development environment provided by Intellij allows for the development of several different types of programs including Mobile Applications. The IDE contains a built in android development environment with Kotlin being the default language. This is due to the development lead designer being Roman Elizarov.
+\newline
+The Android SDK can be modified within the IDE, which allows a developer to seamlessly link the project to an android version to test on an emulator. That feature is a great way to debug a mobile application efficiently and in real-time.
 \section{API's used}
 potential for subsections
 \section{MongoDB}
@@ -150,15 +152,6 @@ About seven to ten pages.
 \item Use references (IEEE format, e.g. [1]), Books, Papers, URLs (timestamp) – sources should be authoritative. 
 \end{itemize}
 
-\section{XML}
-Here's some nicely formatted XML:
-\begin{minted}{xml}
-<this>
-  <looks lookswhat="good">
-    Good
-  </looks>
-</this>
-\end{minted}
 \chapter{System Design}
 As many pages as needed.
 \begin{itemize}
