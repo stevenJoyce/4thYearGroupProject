@@ -39,6 +39,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.bson.Document
 
 
+<<<<<<< HEAD
 class MainActivity : AppCompatActivity() {
 
     //navbar
@@ -51,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         NavigationItemModel(R.drawable.settings, "Settings")
     )
 
+=======
+class
+MainActivity : AppCompatActivity() {
+>>>>>>> e6fc3600e15ea9994fa1e55350fa7913526e781a
     lateinit var app: App
     lateinit var uiThreadRealm: Realm
 
@@ -154,6 +159,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+<<<<<<< HEAD
         }*/
 
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -228,24 +234,16 @@ class MainActivity : AppCompatActivity() {
 
     fun fetchJson() {
         println("Attempting to Fetch JSON")
+=======
+        }
 
-        //val url = "https://metwdb-openaccess.ichec.ie/metno-wdb2ts/locationforecast?lat=<53.2707>;long=<9.0568>";
-        val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
-        val request = Request.Builder().url(url).build()
-        val client = OkHttpClient()
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                println("Failed to Execute")
-            }
+>>>>>>> e6fc3600e15ea9994fa1e55350fa7913526e781a
 
-            override fun onResponse(call: Call, response: Response) {
-                val body = response.body?.string()
-                println(body)
-            }
-
-        })
 
     }
+
+
+
 
     fun login(view: View) {
         val intentLog = Intent(this, LoginActivity::class.java)
