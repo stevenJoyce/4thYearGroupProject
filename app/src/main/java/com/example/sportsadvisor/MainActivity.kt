@@ -20,7 +20,8 @@ import io.realm.mongodb.sync.SyncConfiguration
 import org.bson.Document
 
 
-class MainActivity : AppCompatActivity() {
+class
+MainActivity : AppCompatActivity() {
     lateinit var app: App
     lateinit var uiThreadRealm: Realm
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -124,28 +125,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-    }
 
-    fun fetchJson(){
-        println("Attempting to Fetch JSON")
 
-        //val url = "https://metwdb-openaccess.ichec.ie/metno-wdb2ts/locationforecast?lat=<53.2707>;long=<9.0568>";
-        val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
-        val request = Request.Builder().url(url).build()
-        val client = OkHttpClient()
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                println("Failed to Execute")
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                val body = response.body?.string()
-                println(body)
-            }
-
-        })
 
     }
+
+
+
 
     fun login(view: View) {
         val intent = Intent(this, LoginActivity::class.java)
