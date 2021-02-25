@@ -2,11 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
-<<<<<<< HEAD
-apply plugin:  'kotlin-android-extensions'
-=======
 apply plugin: 'kotlin-android-extensions'
->>>>>>> e6fc3600e15ea9994fa1e55350fa7913526e781a
+
 
 android {
     compileSdkVersion 30

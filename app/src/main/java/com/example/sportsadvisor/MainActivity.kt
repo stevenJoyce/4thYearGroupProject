@@ -39,7 +39,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.bson.Document
 
 
-<<<<<<< HEAD
 class MainActivity : AppCompatActivity() {
 
     //navbar
@@ -52,10 +51,6 @@ class MainActivity : AppCompatActivity() {
         NavigationItemModel(R.drawable.settings, "Settings")
     )
 
-=======
-class
-MainActivity : AppCompatActivity() {
->>>>>>> e6fc3600e15ea9994fa1e55350fa7913526e781a
     lateinit var app: App
     lateinit var uiThreadRealm: Realm
 
@@ -234,13 +229,9 @@ MainActivity : AppCompatActivity() {
 
     fun fetchJson() {
         println("Attempting to Fetch JSON")
-=======
         }
 
->>>>>>> e6fc3600e15ea9994fa1e55350fa7913526e781a
 
-
-    }
 
 
 
@@ -266,6 +257,7 @@ MainActivity : AppCompatActivity() {
     }
 
 }
+
 
 
 
