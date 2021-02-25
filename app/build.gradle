@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
+apply plugin:  'kotlin-android-extensions'
 
 android {
     compileSdkVersion 30
@@ -50,7 +51,6 @@ dependencies {
     //OKHTTP
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
    // implementation('org.mongodb:mongo-java-driver:2.13.3')
-
 
 
 

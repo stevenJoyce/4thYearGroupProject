@@ -1,5 +1,6 @@
 package com.example.sportsadvisor
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -48,5 +49,25 @@ class LoginActivity : AppCompatActivity() {
     private fun showToast(s: String) {
         Toast.makeText(applicationContext,s,Toast.LENGTH_LONG).show()
 
+    }
+
+    //user pressed login button
+    //handle all login button implications
+    fun loginClicked(view: View) {
+
+    }
+
+    //user pressed register button
+    //handle all register button implications
+    fun registerClicked(view: View) {
+      //  val intent = Intent(this,Register::class.java);
+      //  startActivity(intent)
+    }
+
+    //user pressed guest button
+    //handle all guest button implications
+    fun guestClicked(view: View) {
+        val intent = Intent(this,MainActivity::class.java);
+        startActivity(intent)
     }
 }

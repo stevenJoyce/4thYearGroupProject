@@ -6,4 +6,8 @@
     <string name="login">login</string>
     <string name="register">register</string>
     <string name="continue_as_guest">continue_as_guest</string>
+    <string name="text">hello</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
