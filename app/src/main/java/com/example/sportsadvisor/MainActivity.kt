@@ -150,17 +150,16 @@ class MainActivity : AppCompatActivity() {
         // Log.d("Result From API", result)
         //fetchJson()
 
-      /*  val button: Button = findViewById(R.id.button)
+        val button: Button = findViewById(R.id.loginNavbutton)
         button.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-<<<<<<< HEAD
-        }*/
+        }
 
         drawerLayout = findViewById(R.id.drawer_layout)
 
         // Set the toolbar
-        // setSupportActionBar(activity_main_toolbar)
+        setSupportActionBar(activity_main_toolbar)
 
         // Setup Recyclerview's Layout
         navigation_rv.layoutManager = LinearLayoutManager(this)

@@ -1,6 +1,7 @@
 package com.example.sportsadvisor
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -15,4 +16,5 @@ class UserPage : AppCompatActivity() {
 
 
     }
+
 }
