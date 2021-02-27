@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
                 Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
 
                 //getting a cluster
-                val queryFilter = Document("hour", "6")
+                val queryFilter = Document("_pkey", "datau1")
                 mongoCollection.findOne(queryFilter)
                     .getAsync { task ->
                         if (task.isSuccess) {

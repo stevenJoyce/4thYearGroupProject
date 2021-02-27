@@ -4,11 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$" />
     <type id="android" />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="false" project-jdk-name="15" project-jdk-type="JavaSDK">
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="11 (2)" project-jdk-type="JavaSDK">
->>>>>>> e6fc3600e15ea9994fa1e55350fa7913526e781a
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" project-jdk-name="15" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
