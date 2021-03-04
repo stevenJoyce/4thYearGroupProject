@@ -20,10 +20,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 import android.content.Context
+import android.os.Looper
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sportsadvisor.model.WeatherFragment
 
 
 import okhttp3.*
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var drawerLayout: DrawerLayout
     private lateinit var adapter: NavigationRVAdapter
     private var items = arrayListOf(
+        NavigationItemModel(R.drawable.home, "Home"),
         NavigationItemModel(R.drawable.weather, "Weather"),
         NavigationItemModel(R.drawable.scores, "Scores"),
         NavigationItemModel(R.drawable.profile, "Profile"),
@@ -165,24 +168,32 @@ class MainActivity : AppCompatActivity() {
         navigation_rv.layoutManager = LinearLayoutManager(this)
         navigation_rv.setHasFixedSize(true)
 
+
         // Add Item Touch Listener
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
                 when (position) {
                     0 -> {
                         // # Home Fragment
+                        val bundle = Bundle()
+                        bundle.putString("fragmentName", "Home Fragment")
                         val homeFragment = DemoFragment()
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.activity_main_content_id, homeFragment).commit()
                     }
                     1 -> {
-                        // # Music Fragment
-                        val weatherFragment = DemoFragment()
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.activity_main_content_id, weatherFragment).commit()
+                        // # Weather Fragment
+                        val bundle = Bundle()
+                        bundle.putString("fragmentName", "Weather Fragment")
+                        val weatherFragment = WeatherFragment()
+                        supportFragmentManager.beginTransaction().apply {
+                            replace(R.id.activity_main_content_id, weatherFragment).commit()
+                        }
                     }
                     2 -> {
-                        // # Movies Fragment
+                        val bundle = Bundle()
+                        bundle.putString("fragmentName", "Scores Fragment")
+                        // # Scores Fragment
                         val scoresFragment = DemoFragment()
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.activity_main_content_id, scoresFragment).commit()
@@ -194,6 +205,8 @@ class MainActivity : AppCompatActivity() {
                     }
                     4 -> {
                         // # Settings Fragment
+                        val bundle = Bundle()
+                        bundle.putString("fragmentName", "Settings Fragment")
                         val settingsFragment = DemoFragment()
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.activity_main_content_id, settingsFragment).commit()
@@ -201,7 +214,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                Handler().postDelayed({
+                Handler(Looper.getMainLooper()).postDelayed({
                     drawerLayout.closeDrawer(GravityCompat.START)
                 }, 200)
             }
@@ -217,6 +230,51 @@ class MainActivity : AppCompatActivity() {
         homeFragment.arguments = bundle
         supportFragmentManager.beginTransaction()
             .replace(R.id.activity_main_content_id, homeFragment).commit()
+
+
+        // Close the soft keyboard when you open or close the Drawer
+        val toggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            activity_main_toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        ) {
+            override fun onDrawerClosed(drawerView: View) {
+                // Triggered once the drawer closes
+                super.onDrawerClosed(drawerView)
+                try {
+                    val inputMethodManager =
+                        getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+                } catch (e: Exception) {
+                    e.stackTrace
+                }
+            }
+
+            override fun onDrawerOpened(drawerView: View) {
+                // Triggered once the drawer opens
+                super.onDrawerOpened(drawerView)
+                try {
+                    val inputMethodManager =
+                        getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    inputMethodManager.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+                } catch (e: Exception) {
+                    e.stackTrace
+                }
+            }
+        }
+
+        drawerLayout.addDrawerListener(toggle)
+
+        toggle.syncState()
+
+
+        // Set Header Image
+        navigation_header_img.setImageResource(R.drawable.logo)
+
+        // Set background of Drawer
+        navigation_layout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
     }
 
     private fun updateAdapter(highlightItemPos: Int) {
@@ -229,11 +287,6 @@ class MainActivity : AppCompatActivity() {
     fun fetchJson() {
         println("Attempting to Fetch JSON")
         }
-
-
-
-
-
 
     fun login(view: View) {
         val intentLog = Intent(this, LoginActivity::class.java)

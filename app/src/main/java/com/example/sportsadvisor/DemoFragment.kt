@@ -15,12 +15,12 @@ class DemoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_demo, container, false)
 
         val fragmentName = arguments?.getString("fragmentName")
 
-        rootView.fragment_name.text = fragmentName
+            val rootView = inflater.inflate(R.layout.fragment_demo, container, false)
+            rootView.fragment_name.text = fragmentName
+            return rootView
 
-        return rootView
+        }
     }
-}
