@@ -25,6 +25,8 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sportsadvisor.model.ScoreFragment
+import com.example.sportsadvisor.model.SettingsFragment
 import com.example.sportsadvisor.model.WeatherFragment
 
 
@@ -194,9 +196,11 @@ class MainActivity : AppCompatActivity() {
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Scores Fragment")
                         // # Scores Fragment
-                        val scoresFragment = DemoFragment()
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.activity_main_content_id, scoresFragment).commit()
+                        val scoresFragment = ScoreFragment()
+                        supportFragmentManager.beginTransaction().apply {
+                            replace(R.id.activity_main_content_id, scoresFragment).commit()
+                        }
+
                     }
                     3 -> {
                         // # Profile Activity
@@ -207,9 +211,10 @@ class MainActivity : AppCompatActivity() {
                         // # Settings Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Settings Fragment")
-                        val settingsFragment = DemoFragment()
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.activity_main_content_id, settingsFragment).commit()
+                        val settingsFragment = SettingsFragment()
+                        supportFragmentManager.beginTransaction().apply {
+                            replace(R.id.activity_main_content_id, settingsFragment).commit()
+                        }
                     }
 
                 }
