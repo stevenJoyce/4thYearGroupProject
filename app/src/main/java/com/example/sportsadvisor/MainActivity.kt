@@ -104,6 +104,11 @@ class MainActivity : AppCompatActivity() {
                 Log.e("AUTH", it.error.toString())
             }
         }*/
+        // Fetching JSON DATA
+        val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
+        fetchJson(url)
+
+
         //valid login
         val emailPasswordCredentials: Credentials = Credentials.emailPassword(
             "g00362012@gmit.ie",
@@ -289,29 +294,46 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun fetchJson() {
+    fun fetchJson(url: String): String {
         println("Attempting to Fetch JSON")
-        }
 
-    fun login(view: View) {
-        val intentLog = Intent(this, LoginActivity::class.java)
-        startActivity(intentLog)
+        val request = Request.Builder().url(url).build()
+        val client = OkHttpClient()
+        var body = ""
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+
+                println("Fetched JSON Data")
+                 body = response?.body?.string().toString()
+                println(body)
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                println("Failed to execute request")
+            }
+        })
+
+        fun login(view: View) {
+            val intentLog = Intent(this, LoginActivity::class.java)
+            startActivity(intentLog)
+        }
+        return body
     }
 
 
-    override fun onDestroy() {
-        super.onDestroy()
-        // the ui thread realm uses asynchronous transactions, so we can only safely close the realm
-        // when the activity ends and we can safely assume that those transactions have completed
-        uiThreadRealm.close()
-        app.currentUser()?.logOutAsync {
-            if (it.isSuccess) {
-                Log.v("QUICKSTART", "Successfully logged out.")
-            } else {
-                Log.e("QUICKSTART", "Failed to log out, error: ${it.error}")
+        override fun onDestroy() {
+            super.onDestroy()
+            // the ui thread realm uses asynchronous transactions, so we can only safely close the realm
+            // when the activity ends and we can safely assume that those transactions have completed
+            uiThreadRealm.close()
+            app.currentUser()?.logOutAsync {
+                if (it.isSuccess) {
+                    Log.v("QUICKSTART", "Successfully logged out.")
+                } else {
+                    Log.e("QUICKSTART", "Failed to log out, error: ${it.error}")
+                }
             }
         }
-    }
 
 }
 
