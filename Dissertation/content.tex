@@ -1,3 +1,4 @@
+
 \chapter{About this project}
 \section{Abstract}
 This project is a Mobile Application for the Android Operating System. The programming Language used in Kotlin. The development Environment that the application is written in is Intellij IDEA Ultimate. \\
@@ -149,11 +150,44 @@ In order to retrieve data with the Open Weather API, we needed the longitude and
 \subsubsection{Features}
 
 \section{MongoDB}
-To utilise the MongoDB database,we had to use two of its three main core features, these two features are Atlas and Realm,Atlas and Realm are integrated in a way that allows for seamless connections for the Android Application
+To utilise the MongoDB database,we had to use two of its three main core features. The two features we use were Atlas and Realm, Atlas and Realm can be integrated in a way that allows for a seamless connection to and from the Android Application. The MongoDB atlas uses a server that can be either free or paid for use by the a set charge per hour. We choose a free tier server based in N.Virginia (us-east-1) run by Amazon Web Service(AWS).
 \subsection{Atlas}
+Atlas is the area in which data is stored within the MongoDB system. it allows its users to create a database for a specific user that will only store their data in a collection. \newline This is great for protecting user data. The data can only be accessed by inputting a user id. This user id is unique and is also the user's username that will be always shown in the application. It is the 1st thing a new user will input in the application when creating an account. With the data for a user protected in a cluster, this allows the application to output data to the user that is only relevant to them. That feature was a major reason for using MongoDB in our application.
+\newline
+The user can store the name of the golf course they played at and the score they got that day. It will also save the par for the course that date and the overall total score for the round of golf. \newline
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{img/UserDatabase.png}
+    \caption{MongoDB database with a User}
+    \label{fig:altas config}
+\end{figure}
+The highlighted field in the above figure is the authentication key that will need to be inputted by the user to access the database associated with them. Without this key being correctly inputted, the user will not get any data from the MongoDB cluster. This is how MongoDB protects user data.
 \subsection{Realm}
+The Realm feature of MongoDB is how MongoDB now interprets an Mobile Application. It creates a application that can be used to access a cluster - The cluster is what Atlas creates to store the user data. 
+\newline
+The App will have a unique ID that is called in the Mobile Application back-end to link your application to MongoDB. It creates a user that is linked to a specific database in the cluster.This user can only be authenticated by entering the correct email and password. The app can and does have rules that limit what data a user can access to modify or view.
+\newline
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{img/syncSetup.PNG}
+    \caption{MongoDB Sync configuration}
+    \label{fig:altas config}
+\end{figure}
+The above figure is an image of the MongoDB sync configuration. This is where the developer connects to the Atlas cluster by implementing a partition key. This key is how a cluster is made available to the user. The permissions for what a user can do with the database it has connected to is set here as well. We have allowed the user ti both read and write to the collection but the data is protected by the userID key created in the collection itself.
+
+For this project, Realm functioned as the middle man between the application and the MongoDB Server. It allowed the data to be sorted in an manner which is easy to understand and utilize. Despite the Realm Sync still being in a developmental phrase, it is of a high enough standard to work with no issues on their end. We have been contacted by the MongoDB Realm to give feedback to help them see what issues have occurred and if it has worked well for us.
+
+Realm allows the creation of App users. This is the best way we found to make data private and protected. The user will have to login to the server with their username, email and password. These are created in the app and are stored on the Realm App external storage system.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{img/Users.PNG}
+    \caption{MongoDB database with a User}
+    \label{fig:altas config}
+\end{figure}
+The image shown above in figure 4.3 is a snippet of the User database on the Realm App. The realm app will create a temp user for a guest to get a quick api call that shows the weather outlook for next 24 hours. The multi day weather report is only available for users who have logged in.The user needs to login with an email and password.
+
 \section{GitHub}
-\section{Comunication Application's}
+\section{Communication Application's}
 \subsection{Discord}
 \subsection{Teams}
 
