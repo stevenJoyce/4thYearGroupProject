@@ -40,10 +40,15 @@ import io.realm.mongodb.Credentials
 import io.realm.mongodb.User
 import io.realm.mongodb.sync.SyncConfiguration
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.asRequestBody
 import org.bson.Document
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
+    //
+    var dataRetreive:String = ""
 
     //navbar
     lateinit var drawerLayout: DrawerLayout
@@ -105,7 +110,11 @@ class MainActivity : AppCompatActivity() {
             }
         }*/
         // Fetching JSON DATA
-        val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
+        //val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
+        //val url = "https://raw.github.com/square/okhttp/master/README.md"
+        //val url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
+        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
+        //val url = "https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=hourly,daily&appid={8dd12c7a3f8395577f85810b0ecd47f3}"
         fetchJson(url)
 
 
@@ -296,44 +305,67 @@ class MainActivity : AppCompatActivity() {
 
     fun fetchJson(url: String): String {
         println("Attempting to Fetch JSON")
-
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
         var body = ""
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
-
                 println("Fetched JSON Data")
-                 body = response?.body?.string().toString()
-                println(body)
+                body = response.body?.string().toString()
+                saveData(body)
             }
 
             override fun onFailure(call: Call, e: IOException) {
                 println("Failed to execute request")
             }
         })
-
-        fun login(view: View) {
-            val intentLog = Intent(this, LoginActivity::class.java)
-            startActivity(intentLog)
-        }
         return body
     }
 
+    fun saveData(body: String){
+        dataRetreive = body
+        println(dataRetreive)
+    }
 
-        override fun onDestroy() {
-            super.onDestroy()
-            // the ui thread realm uses asynchronous transactions, so we can only safely close the realm
-            // when the activity ends and we can safely assume that those transactions have completed
-            uiThreadRealm.close()
-            app.currentUser()?.logOutAsync {
-                if (it.isSuccess) {
-                    Log.v("QUICKSTART", "Successfully logged out.")
-                } else {
-                    Log.e("QUICKSTART", "Failed to log out, error: ${it.error}")
-                }
+    // Posting to Server - Not fully complete
+    fun postJson (dataFetch: String){
+        val file = File("data.txt")
+        val client = OkHttpClient()
+
+        val request = Request.Builder()
+            .url("https://api.github.com/markdown/raw")
+            .post(file.asRequestBody(MEDIA_TYPE_MARKDOWN))
+            .build()
+        client.newCall(request).execute().use { response ->
+            if (!response.isSuccessful) throw IOException("Unexpected code $response")
+
+            println(response.body!!.string())
+        }
+
+    }
+    companion object {
+        val MEDIA_TYPE_MARKDOWN = "text/x-markdown; charset=utf-8".toMediaType()
+    }
+
+    fun login(view: View) {
+        val intentLog = Intent(this, LoginActivity::class.java)
+        startActivity(intentLog)
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // the ui thread realm uses asynchronous transactions, so we can only safely close the realm
+        // when the activity ends and we can safely assume that those transactions have completed
+        uiThreadRealm.close()
+        app.currentUser()?.logOutAsync {
+            if (it.isSuccess) {
+                Log.v("QUICKSTART", "Successfully logged out.")
+            } else {
+                Log.e("QUICKSTART", "Failed to log out, error: ${it.error}")
             }
         }
+    }
 
 }
 

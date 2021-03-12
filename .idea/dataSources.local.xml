@@ -7,14 +7,14 @@
       <secret-storage>master_key</secret-storage>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" qname="">
-            <node kind="schema" qname="test" />
+          <node kind="database" negative="1">
+            <node kind="schema" negative="1" />
           </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>
     <data-source name="MongoServer" uuid="6b3bc11f-33b1-470c-9952-b8fb650319e7">
-      <database-info product="Mongo DB" version="4.2.11" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.8.3" dbms="MONGO" exact-version="4.2.11" exact-driver-version="1.8" />
+      <database-info product="Mongo DB" version="4.4.4" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.8.3" dbms="MONGO" exact-version="4.4.4" exact-driver-version="1.8" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <user-name>admin</user-name>
