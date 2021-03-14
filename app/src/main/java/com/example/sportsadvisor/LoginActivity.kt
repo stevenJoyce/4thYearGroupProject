@@ -13,6 +13,8 @@ import io.realm.mongodb.Credentials
 import io.realm.mongodb.User
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
+import org.bson.Document
+
 
 
 class LoginActivity : AppCompatActivity() {
@@ -31,10 +33,11 @@ class LoginActivity : AppCompatActivity() {
         username = findViewById(R.id.etUsername)
         password = findViewById(R.id.etPassword)
 
+
     }
 
     fun addUser(v:View) {
-        //println("Username added " + username.text.toString() + " Password Added " + password.text.toString())
+        println("Username added " + username.text.toString() + " Password Added " + password.text.toString())
 
         app.emailPassword.registerUserAsync(username.toString(), password.toString()) {
             if (it.isSuccess) {
@@ -43,7 +46,6 @@ class LoginActivity : AppCompatActivity() {
                 Log.e("EXAMPLE","Failed to register user: ${it.error}")
             }
         }
-
     }
 
     private fun showToast(s: String) {
@@ -54,14 +56,54 @@ class LoginActivity : AppCompatActivity() {
     //user pressed login button
     //handle all login button implications
     fun loginClicked(view: View) {
+        val emailPasswordCredentials: Credentials = Credentials.emailPassword(
+            "g00362012@gmit.ie",
+            "steven2021"
+        )
 
+        var user: User? = null
+        app.loginAsync(emailPasswordCredentials) {
+            if (it.isSuccess) {
+                Log.v("AUTH", "Successfully authenticated using an email and password.")
+                user = app.currentUser()
+
+                val mongoClient =
+                    user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
+                val mongoDatabase = mongoClient.getDatabase("Users")
+                val mongoCollection = mongoDatabase.getCollection("Data")
+                Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
+
+                //getting a cluster
+                val queryFilter = Document("_pkey", "datau1")
+                mongoCollection.findOne(queryFilter)
+                    .getAsync { task ->
+                        if (task.isSuccess) {
+                            val result = task.get()
+                            Log.v("EXAMPLE", "successfully found a document: $result")
+                        } else {
+                            Log.e("EXAMPLE", "failed to find document with: ${task.error}")
+                        }
+                    }
+                mongoCollection.count().getAsync { task ->
+                    if (task.isSuccess) {
+                        val count = task.get()
+                        Log.v("EXAMPLE", "successfully counted, number of documents in the collection: $count")
+                    } else {
+                        Log.e("EXAMPLE", "failed to count documents with: ${task.error}")
+                    }
+                }
+
+            } else {
+                Log.e("AUTH", it.error.toString())
+            }
+        }
     }
 
     //user pressed register button
     //handle all register button implications
     fun registerClicked(view: View) {
-      //  val intent = Intent(this,Register::class.java);
-      //  startActivity(intent)
+        //  val intent = Intent(this,Register::class.java);
+        //  startActivity(intent)
     }
 
     //user pressed guest button

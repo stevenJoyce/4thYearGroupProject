@@ -119,6 +119,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //valid login
+        /*
         val emailPasswordCredentials: Credentials = Credentials.emailPassword(
             "g00362012@gmit.ie",
             "steven2021"
@@ -158,7 +159,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Log.e("AUTH", it.error.toString())
             }
-        }
+        }*/
 
 
         //val config = RealmConfiguration.Builder().name("Users:Realm").build()
