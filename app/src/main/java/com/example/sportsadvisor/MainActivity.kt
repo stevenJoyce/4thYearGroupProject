@@ -118,50 +118,6 @@ class MainActivity : AppCompatActivity() {
         fetchJson(url)
 
 
-        //valid login
-        /*
-        val emailPasswordCredentials: Credentials = Credentials.emailPassword(
-            "g00362012@gmit.ie",
-            "steven2021"
-        )
-
-        var user: User? = null
-        app.loginAsync(emailPasswordCredentials) {
-            if (it.isSuccess) {
-                Log.v("AUTH", "Successfully authenticated using an email and password.")
-                user = app.currentUser()
-
-                val mongoClient =
-                    user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
-                val mongoDatabase = mongoClient.getDatabase("Users")
-                val mongoCollection = mongoDatabase.getCollection("Data")
-                Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
-
-                //getting a cluster
-                val queryFilter = Document("_pkey", "datau1")
-                mongoCollection.findOne(queryFilter)
-                    .getAsync { task ->
-                        if (task.isSuccess) {
-                            val result = task.get()
-                            Log.v("EXAMPLE", "successfully found a document: $result")
-                        } else {
-                            Log.e("EXAMPLE", "failed to find document with: ${task.error}")
-                        }
-                    }
-                mongoCollection.count().getAsync { task ->
-                    if (task.isSuccess) {
-                        val count = task.get()
-                        Log.v("EXAMPLE", "successfully counted, number of documents in the collection: $count")
-                    } else {
-                        Log.e("EXAMPLE", "failed to count documents with: ${task.error}")
-                    }
-                }
-            } else {
-                Log.e("AUTH", it.error.toString())
-            }
-        }*/
-
-
         //val config = RealmConfiguration.Builder().name("Users:Realm").build()
         //val longitude = 53.2707;
         // val latitude = 9.0568;

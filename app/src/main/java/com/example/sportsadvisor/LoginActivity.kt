@@ -2,6 +2,7 @@ package com.example.sportsadvisor
 
 import android.content.Intent
 import android.os.Bundle
+import android.telephony.mbms.StreamingServiceInfo
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -20,9 +21,11 @@ import org.bson.Document
 class LoginActivity : AppCompatActivity() {
     //variables for user authentication
     lateinit var app: App
-    private lateinit var username:EditText
+    private lateinit var email:EditText
     private lateinit var password:EditText
     private lateinit var realm: Realm
+    lateinit var emailTxt:String
+    lateinit var passTxt:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,16 +33,15 @@ class LoginActivity : AppCompatActivity() {
         Realm.init(this)
         val appID = "sportsadvisor-gztkm"
         app = App(AppConfiguration.Builder(appID).build())
-        username = findViewById(R.id.etUsername)
+        email = findViewById(R.id.etUsername)
         password = findViewById(R.id.etPassword)
-
 
     }
 
     fun addUser(v:View) {
-        println("Username added " + username.text.toString() + " Password Added " + password.text.toString())
+        println("Username added " + emailTxt + " Password Added " + passTxt)
 
-        app.emailPassword.registerUserAsync(username.toString(), password.toString()) {
+        app.emailPassword.registerUserAsync(email.toString(), password.toString()) {
             if (it.isSuccess) {
                 Log.i("EXAMPLE","Successfully registered user.")
             } else {
@@ -56,9 +58,12 @@ class LoginActivity : AppCompatActivity() {
     //user pressed login button
     //handle all login button implications
     fun loginClicked(view: View) {
+        emailTxt = email.getText().toString();
+        passTxt = password.getText().toString();
+        println("Username input: " + emailTxt + " Password Input: " + passTxt)
         val emailPasswordCredentials: Credentials = Credentials.emailPassword(
-            "g00362012@gmit.ie",
-            "steven2021"
+            emailTxt,
+            passTxt
         )
 
         var user: User? = null
