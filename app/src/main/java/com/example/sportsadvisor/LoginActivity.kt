@@ -17,15 +17,14 @@ import io.realm.mongodb.AppConfiguration
 import org.bson.Document
 
 
-
 class LoginActivity : AppCompatActivity() {
     //variables for user authentication
     lateinit var app: App
-    private lateinit var email:EditText
-    private lateinit var password:EditText
+    private lateinit var email: EditText
+    private lateinit var password: EditText
     private lateinit var realm: Realm
-    lateinit var emailTxt:String
-    lateinit var passTxt:String
+    lateinit var emailTxt: String
+    lateinit var passTxt: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,29 +37,17 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun addUser(v:View) {
-        println("Username added " + emailTxt + " Password Added " + passTxt)
-
-        app.emailPassword.registerUserAsync(email.toString(), password.toString()) {
-            if (it.isSuccess) {
-                Log.i("EXAMPLE","Successfully registered user.")
-            } else {
-                Log.e("EXAMPLE","Failed to register user: ${it.error}")
-            }
-        }
-    }
-
     private fun showToast(s: String) {
-        Toast.makeText(applicationContext,s,Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, s, Toast.LENGTH_LONG).show()
 
     }
 
     //user pressed login button
     //handle all login button implications
     fun loginClicked(view: View) {
-        emailTxt = email.getText().toString();
-        passTxt = password.getText().toString();
-        println("Username input: " + emailTxt + " Password Input: " + passTxt)
+        emailTxt = email.text.toString()
+        passTxt = password.text.toString()
+        println("Username input: $emailTxt Password Input: $passTxt")
         val emailPasswordCredentials: Credentials = Credentials.emailPassword(
             emailTxt,
             passTxt
@@ -109,12 +96,24 @@ class LoginActivity : AppCompatActivity() {
     fun registerClicked(view: View) {
         //  val intent = Intent(this,Register::class.java);
         //  startActivity(intent)
+        emailTxt = email.text.toString();
+        passTxt = password.text.toString();
+
+        println("Username added $emailTxt Password Added $passTxt")
+
+        app.emailPassword.registerUserAsync(emailTxt, passTxt) {
+            if (it.isSuccess) {
+                Log.i("EXAMPLE", "Successfully registered user.")
+            } else {
+                Log.e("EXAMPLE", "Failed to register user: ${it.error}")
+            }
+        }
     }
 
     //user pressed guest button
     //handle all guest button implications
     fun guestClicked(view: View) {
-        val intent = Intent(this,MainActivity::class.java);
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 }
