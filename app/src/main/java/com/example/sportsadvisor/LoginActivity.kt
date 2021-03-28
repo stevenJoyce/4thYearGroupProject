@@ -15,6 +15,7 @@ import io.realm.mongodb.User
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import org.bson.Document
+import org.bson.types.ObjectId
 
 
 class LoginActivity : AppCompatActivity() {
@@ -76,6 +77,20 @@ class LoginActivity : AppCompatActivity() {
                             Log.e("EXAMPLE", "failed to find document with: ${task.error}")
                         }
                     }
+
+                val findTask = mongoCollection.find(queryFilter).iterator()
+                findTask.getAsync { task ->
+                    if (task.isSuccess) {
+                        var results = task.get()
+                        Log.v("EXAMPLE", "successfully found all collections:")
+                        while (results.hasNext()) {
+                            Log.v("EXAMPLE", results.next().toString())
+                        }
+                    } else {
+                        Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
+                    }
+                }
+
                 mongoCollection.count().getAsync { task ->
                     if (task.isSuccess) {
                         val count = task.get()
@@ -84,6 +99,17 @@ class LoginActivity : AppCompatActivity() {
                         Log.e("EXAMPLE", "failed to count documents with: ${task.error}")
                     }
                 }
+
+                mongoCollection.insertOne(Document("janeDoe01", user!!.id).append("_id", ObjectId()).append("parScore",72)
+                    .append("_pkey","janeDoe01").append("roundScore",5).append("userScore",77).append("temperature",12)
+                    .append("wind",24).append("humidity",63.85).append("precip",27.76).append("hour",12))
+                    .getAsync { result ->
+                        if (result.isSuccess) {
+                            Log.v("EXAMPLE", "Inserted custom user data document. _id of inserted document: ${result.get().insertedId}")
+                        } else {
+                            Log.e("EXAMPLE", "Unable to insert custom user data. Error: ${result.error}")
+                        }
+                    }
 
             } else {
                 Log.e("AUTH", it.error.toString())
