@@ -247,7 +247,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // Set Header Image
-        navigation_header_img.setImageResource(R.drawable.logo)
+        //navigation_header_img.setImageResource(R.drawable.golfbag)
 
         // Set background of Drawer
         navigation_layout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
