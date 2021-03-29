@@ -1,4 +1,5 @@
 
+
 \chapter{About this project}
 \section{Abstract}
 This project is a Mobile Application for the Android Operating System. The programming Language used in Kotlin. The development Environment that the application is written in is Intellij IDEA Ultimate. \\
@@ -52,7 +53,7 @@ Link to GitHub Repository={\url{https://github.com/stevenJoyce/4thYearGroupProje
     \item \textbf{ReadMe:}
     \newline Gives a brief overview of what is contained within the GitHub Repository
     \item \textbf{Presentation of Initial Concept:}
-    \newline This is a PowerPoint presentation designed highlight the initial concepts and prototypes for the project
+    \newline This is a PowerPoint presentation designed to highlight the initial concepts and prototypes for the project
     \item \textbf{Project Gantt:}
     \newline This is an excel file that displays the implementation of Agile Methodologies to design sprints of development
     \item \textbf{.Ideas Folder:}
@@ -118,7 +119,38 @@ This can also send data to the cluster through this Realm application for storag
 \subsection{JustInMind}
 In order to conceptualize and visualise our applications front end layout we had to begin with prototyping our design. While researching design tools for mobile application development, we came across a prototyping tool called JustInMind.
 \newline
+\newline
 It is a high level prototyping tool used to create high quality wire frames that allow developers to visualise their product in real time before finalizing the design of the mobile application. It assisted us in figuring out how we want the user to navigate the application.
+\newline
+\newline
+The Image as seen in Figure 3.1 shows the designing of the prototype for the login/Sign Up page for the user, it gives a simple understanding of the basic functionality required on this page within the Application.
+\newline
+\newline
+In Figure 3.2 it displays the simplicity of designing features within the page on the App, this image shows how designing a prototype for a drop down menu can be easy to design and how the design feels in correlation to the design of the page.
+\newline
+\newline
+We tried to design the app with different orientations which can be seen in Figure 3.3 which shows the prototype for the recommended days page within the application.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{img/SignUpImage.PNG}
+    \caption{Sign up prototype within JustInMind}
+    \label{fig:altas config}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{img/dropDownMenu.PNG}
+    \caption{Drop Down Menu prototype within JustInMind}
+    \label{fig:altas config}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{img/BestDays.PNG}
+    \caption{Best Days to Play prototype within JustInMind}
+    \label{fig:altas config}
+\end{figure}
 
 \section{Algorithm's}
 For our own rating system we are using JFuzzyLogic to output the best time and day for the user to play golf, determined by metrics based upon the user's input. \newline
@@ -126,13 +158,37 @@ For our own rating system we are using JFuzzyLogic to output the best time and d
 
 \chapter{Technology Review}
 \section{Kotlin}
-We found Kotlin to be less verbose, easier to read as a programming language compared such as Java, C. It is a high-level language that can be used to produce mobile applications. It's coding style is similar to python but with more features and ways to implement it.  \newline \newline
+We found Kotlin to be less verbose, easier to read as a programming language compared to such languages as Java, C. It is a high-level language that can be used to produce mobile applications. It's coding style is similar to python but with more features and ways to implement it.  \newline \newline
 This is due to Kotlin not needing any end of line syntax to allow the interpreter move on to a new line. - Subject to change
 \newline \newline
 The Kotlin language is a very good interpreter of other languages which helps when trying to write code without having a great grasp of the language. This is very important when you are 1st learning the language or when you cannot find a way to write a method in Kotlin but can in Java. 
 \newline
 Despite both Kotlin and Java being a native language for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java. The amount of lines of code that needs to be written can be up. 
+\newline
+\newline
+Below can be seen two examples of code one written in Kotlin and the other in Java, both pieces of code perform the same function but are equally different. As we can see in the Kotlin Code excerpt , the code tends to be more human readable and easier to understand for people less acquainted with either of the languages.
 
+
+\subsubsection{Kotlin Code Excerpt}
+\begin{verbatim}
+    @Throws(IOException::class)
+    fun run(url: String?): String? {
+        val request: Request = Request.Builder()
+            .url(url.toString())
+            .build()
+        client.newCall(request).execute().use { 
+        response -> return response.body!!.string()} }
+\end{verbatim}
+\subsubsection{Java Code Excerpt}
+\begin{verbatim}
+    OkHttpClient client = new OkHttpClient();
+    String run(String url) throws IOException {
+        Request request = new Request.Builder()
+            .url(url)
+            .build();
+        try (Response response = client.newCall(request).execute()){
+         return response.body().string(); }}
+\end{verbatim}
 \section{Intellij IDEA's}
 The development environment provided by Intellij allows for the development of several different types of programs including Mobile Applications. The IDE contains a built in android development environment with Kotlin being the default language. This is due to the development lead designer being Roman Elizarov.
 \newline
