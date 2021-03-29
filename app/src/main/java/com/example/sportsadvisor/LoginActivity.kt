@@ -100,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
 
-                mongoCollection.insertOne(Document("janeDoe01", user!!.id).append("_id", ObjectId()).append("parScore",72)
+                /*mongoCollection.insertOne(Document("janeDoe01", user!!.id).append("_id", ObjectId()).append("parScore",72)
                     .append("_pkey","janeDoe01").append("roundScore",5).append("userScore",77).append("temperature",12)
                     .append("wind",24).append("humidity",63.85).append("precip",27.76).append("hour",12))
                     .getAsync { result ->
@@ -109,7 +109,7 @@ class LoginActivity : AppCompatActivity() {
                         } else {
                             Log.e("EXAMPLE", "Unable to insert custom user data. Error: ${result.error}")
                         }
-                    }
+                    }*/
 
             } else {
                 Log.e("AUTH", it.error.toString())

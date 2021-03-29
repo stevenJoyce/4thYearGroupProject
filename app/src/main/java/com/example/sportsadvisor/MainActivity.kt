@@ -72,59 +72,8 @@ class MainActivity : AppCompatActivity() {
         val appID = "sportsadvisor-gztkm"
         app = App(AppConfiguration.Builder(appID).build())
 
-
-        /*auto login
-        val anonymousCredentials: Credentials = Credentials.anonymous()
-        var user: User?
-        app.loginAsync(anonymousCredentials) {
-            if (it.isSuccess) {
-                Log.v("AUTH", "Successfully authenticated anonymously.")
-                user = app.currentUser()
-
-                val mongoClient = user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
-                val mongoDatabase = mongoClient.getDatabase("Users")
-                val mongoCollection = mongoDatabase.getCollection("Data")
-                Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
-
-                 //getting a cluster
-                val queryFilter = Document("hour", "6")
-                mongoCollection.findOne(queryFilter)
-                    .getAsync { task ->
-                        if (task.isSuccess) {
-                            val result = task.get()
-                            Log.v("EXAMPLE", "successfully found a document: $result")
-                        } else {
-                            Log.e("EXAMPLE", "failed to find document with: ${task.error}")
-                        }
-                    }
-                mongoCollection.count().getAsync { task ->
-                    if (task.isSuccess) {
-                        val count = task.get()
-                        Log.v("EXAMPLE", "successfully counted, number of documents in the collection: $count")
-                    } else {
-                        Log.e("EXAMPLE", "failed to count documents with: ${task.error}")
-                    }
-                }
-            } else {
-                Log.e("AUTH", it.error.toString())
-            }
-        }*/
-        // Fetching JSON DATA
-        //val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
-        //val url = "https://raw.github.com/square/okhttp/master/README.md"
-        //val url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
         val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
-        //val url = "https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=hourly,daily&appid={8dd12c7a3f8395577f85810b0ecd47f3}"
         fetchJson(url)
-
-
-        //val config = RealmConfiguration.Builder().name("Users:Realm").build()
-        //val longitude = 53.2707;
-        // val latitude = 9.0568;
-        // val result = URL("https://metwdb-openaccess.ichec.ie/metno-wdb2ts/locationforecast?lat=<53.2707>;long=<9.0568>").readText()
-        // println(result)
-        // Log.d("Result From API", result)
-        //fetchJson()
 
         val button: Button = findViewById(R.id.loginNavbutton)
         button.setOnClickListener {
@@ -245,7 +194,6 @@ class MainActivity : AppCompatActivity() {
 
         toggle.syncState()
 
-
         // Set Header Image
         //navigation_header_img.setImageResource(R.drawable.golfbag)
 
@@ -283,6 +231,7 @@ class MainActivity : AppCompatActivity() {
         dataRetreive = body
         println(dataRetreive)
     }
+
 
     // Posting to Server - Not fully complete
     fun postJson (dataFetch: String){
