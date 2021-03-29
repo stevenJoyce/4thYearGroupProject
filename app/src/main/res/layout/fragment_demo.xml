@@ -2,16 +2,15 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                tools:context="com.example.sportsadvisor.DemoFragment">
+                tools:context="com.example.sportsadvisor.model.HomeFragment">
 
     <TextView
             android:id="@+id/fragment_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fragment Name"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorLightAccent"
             android:textSize="25sp"
             android:textStyle="bold" />
 

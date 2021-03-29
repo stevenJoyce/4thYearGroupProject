@@ -13,7 +13,7 @@
             android:layout_height="@dimen/nav_header_height"
             android:padding="10dp"
             android:scaleType="fitCenter"
-            tools:ignore="ContentDescription" app:srcCompat="@drawable/ic_golfbag"
+            tools:ignore="ContentDescription" app:srcCompat="@drawable/ic_golf_stick"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp" app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
             app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="LOGIN"
-                android:textColor="@color/colorLightest"
+                android:textColor="@color/colorLightAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
     </RelativeLayout>

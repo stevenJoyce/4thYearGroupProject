@@ -1,33 +1,24 @@
 package com.example.sportsadvisor
 //android
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sportsadvisor.model.Data
-import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 import android.content.Context
 import android.os.Looper
 import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
-import com.example.sportsadvisor.model.ScoreFragment
-import com.example.sportsadvisor.model.SettingsFragment
-import com.example.sportsadvisor.model.WeatherFragment
+import com.example.sportsadvisor.model.*
 
 
 import okhttp3.*
@@ -36,13 +27,8 @@ import java.io.IOException
 import io.realm.Realm
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
-import io.realm.mongodb.Credentials
-import io.realm.mongodb.User
-import io.realm.mongodb.sync.SyncConfiguration
-import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.asRequestBody
-import org.bson.Document
 import java.io.File
 
 
@@ -99,15 +85,18 @@ class MainActivity : AppCompatActivity() {
                         // # Home Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Home Fragment")
-                        val homeFragment = DemoFragment()
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.activity_main_content_id, homeFragment).commit()
+                        val homeFragment = HomeFragment()
+                        homeFragment.arguments = bundle
+                        supportFragmentManager.beginTransaction().apply {
+                            replace(R.id.activity_main_content_id, homeFragment).commit()
+                        }
                     }
                     1 -> {
                         // # Weather Fragment
                         val bundle = Bundle()
-                        bundle.putString("fragmentName", "Weather Fragment")
+                        bundle.putString("fragmentName", "Weather")
                         val weatherFragment = WeatherFragment()
+                        weatherFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {
                             replace(R.id.activity_main_content_id, weatherFragment).commit()
                         }
@@ -151,11 +140,11 @@ class MainActivity : AppCompatActivity() {
         // Set 'Home' as the default fragment when the app starts
         val bundle = Bundle()
         bundle.putString("fragmentName", "Home Fragment")
-        val homeFragment = DemoFragment()
+        val homeFragment = HomeFragment()
         homeFragment.arguments = bundle
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.activity_main_content_id, homeFragment).commit()
-
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.activity_main_content_id, homeFragment).commit()
+        }
 
         // Close the soft keyboard when you open or close the Drawer
         val toggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
