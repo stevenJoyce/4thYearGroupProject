@@ -54,23 +54,18 @@ Link to GitHub Repository={\url{https://github.com/stevenJoyce/4thYearGroupProje
     \newline Gives a brief overview of what is contained within the GitHub Repository
     \item \textbf{Presentation of Initial Concept:}
     \newline This is a PowerPoint presentation designed to highlight the initial concepts and prototypes for the project
-    \item \textbf{Project Gantt:}
-    \newline This is an excel file that displays the implementation of Agile Methodologies to design sprints of development
+    \item \textbf{TestingGuides Folder:}
+    \newline The folder contains the Gantt Chart -  This is an excel file that displays the implementation of Agile Methodologies to design sprints of development and the test cases we used to test each sprint with default data to get back a generic result. The test cases were designed in Excel.
     \item \textbf{.Ideas Folder:}
     \newline This folder is where we ran and debugged our Application from in the IntelliJ IDE
     \item \textbf{Gradle Folders:}
     \newline Using this folder, this is how the Application is configured using IntelliJ
     \item \textbf{Wireframe Prototype:}
     \newline In this folder we have a Justinmind prototype outlining the design of the application.
-    \item \textbf{Manual}
+    \item \textbf{Manual:}
     \newline The guide to installing software needed to run the application.
 \end{enumerate}
 
-
-The introduction should be about three to five pages long.
-Make sure you use references
-
-This project is an Android Application built using the programming Language. The app will allow the user to 
 \chapter{Methodology}
 \section{Approach}
 The Agile methodology is based on a iterative development approach that allows requirements and solutions to change throughout the development of the Application. It relys on constant communication between members of the team to successfully deliver a final product which has the capacity to evolve. Teams will undergo sprints which splits up a feature into smaller parts that is then given to a member of the team to work on in a short time period which makes the feature more manageable to deliver.
@@ -158,16 +153,16 @@ For our own rating system we are using JFuzzyLogic to output the best time and d
 
 \chapter{Technology Review}
 \section{Kotlin}
-We found Kotlin to be less verbose, easier to read as a programming language compared to such languages as Java, C. It is a high-level language that can be used to produce mobile applications. It's coding style is similar to python but with more features and ways to implement it.  \newline \newline
-This is due to Kotlin not needing any end of line syntax to allow the interpreter move on to a new line. - Subject to change
+We found Kotlin to be less verbose, easier to read as a programming language compared to such languages as Java, C. It is a high-level language that can be used to produce mobile applications. It's coding style is similar to python but with more features and ways to implement it.  \newline 
+This is due to Kotlin not needing any end of line syntax to allow the interpreter move on to a new line and code being easier to understand and comprehend what the line of code is doing. - Subject to change
 \newline \newline
-The Kotlin language is a very good interpreter of other languages which helps when trying to write code without having a great grasp of the language. This is very important when you are 1st learning the language or when you cannot find a way to write a method in Kotlin but can in Java. 
-\newline
-Despite both Kotlin and Java being a native language for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java. The amount of lines of code that needs to be written can be up. 
+The Kotlin language is a very good interpreter of other languages which helps when trying to write code without having a great grasp of the language. This is very important when you are beginning to learn the language or when you cannot find a way to write a method in Kotlin that you have done previously in a different language such as Java. 
+\newline \newline
+Despite both Kotlin and Java being a native language for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java. It can reduce the amount of lines of code that needs to be written for the application - this comparison can be seen in the code Excerpts below. 
 \newline
 \newline
 Below can be seen two examples of code one written in Kotlin and the other in Java, both pieces of code perform the same function but are equally different. As we can see in the Kotlin Code excerpt , the code tends to be more human readable and easier to understand for people less acquainted with either of the languages.
-
+\newline
 
 \subsubsection{Kotlin Code Excerpt}
 \begin{verbatim}
@@ -192,9 +187,21 @@ Below can be seen two examples of code one written in Kotlin and the other in Ja
 \section{Intellij IDEA's}
 The development environment provided by Intellij allows for the development of several different types of programs including Mobile Applications. The IDE contains a built in android development environment with Kotlin being the default language. This is due to the development lead designer being Roman Elizarov.
 \newline
-The Android SDK can be modified within the IDE, which allows a developer to seamlessly link the project to an android version to test on an emulator. That feature is a great way to debug a mobile application efficiently and in real-time.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{img/androidADK.PNG}
+    \caption{Android Device Kit}
+    \label{fig:adk menu}
+\end{figure}
+The image above shows the emulated device customisation menu. In here you can add a virtual device to run the android application on. The ability to modify what Android SDK used within the IDE was very important for testing the project. That feature is a great way to debug a mobile application efficiently and in real-time..  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{img/androidSDK.PNG}
+    \caption{Android Software Development Kit}
+    \label{fig:sdk menu}
+\end{figure}
+The SDK manager on Intellij allowed us as developers to run the application on different versions of the Android system. When you choose an SDK, it gives you a percentage of how many people who use Android will be able to use your device. The more up to date version - meant less people could run the app, we when with the Android Oreo version for our virtual phone which is Android 10.0 but we set our minimum SDK version to 28. This allowed the phone to run on Android 9.0(Pie) as well as the version we set up on the virtual device.
 \section{API's used}
-potential for subsections
 
 \subsection{Open Weather API}
 Open Weather is an API that allows the user to retrieve weather data from any location using its NWP (Numerical Weather Prediction) Model. This API has been designed to be used universally on any Language to gather data. It gathers this data using a "proprietary convolutional neural network that collects and processes wide range of data sources to cover any location and consider the local nuances of climate." (Quote from "https://openweathermap.org/guide" - Openweather NWP model)
