@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         app = App(AppConfiguration.Builder(appID).build())
 
         val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
-        fetchJson(url)
+        //fetchJson(url)
 
         val button: Button = findViewById(R.id.loginNavbutton)
         button.setOnClickListener {
