@@ -14,6 +14,7 @@ import io.realm.mongodb.Credentials
 import io.realm.mongodb.User
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
+import io.realm.mongodb.mongo.iterable.MongoCursor
 import org.bson.Document
 import org.bson.types.ObjectId
 
@@ -27,6 +28,9 @@ class LoginActivity : AppCompatActivity() {
     lateinit var emailTxt: String
     lateinit var passTxt: String
 
+    lateinit var result: Document
+    lateinit var results: MongoCursor<Document>
+    lateinit var colResults:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_main)
@@ -71,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
                 mongoCollection.findOne(queryFilter)
                     .getAsync { task ->
                         if (task.isSuccess) {
-                            val result = task.get()
+                            result = task.get()
                             Log.v("EXAMPLE", "successfully found a document: $result")
                         } else {
                             Log.e("EXAMPLE", "failed to find document with: ${task.error}")
@@ -81,10 +85,11 @@ class LoginActivity : AppCompatActivity() {
                 val findTask = mongoCollection.find(queryFilter).iterator()
                 findTask.getAsync { task ->
                     if (task.isSuccess) {
-                        var results = task.get()
+                        results = task.get()
                         Log.v("EXAMPLE", "successfully found all collections:")
                         while (results.hasNext()) {
-                            Log.v("EXAMPLE", results.next().toString())
+                            colResults = results.next().toString()
+                            Log.v("EXAMPLE", colResults)
                         }
                     } else {
                         Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
@@ -141,5 +146,7 @@ class LoginActivity : AppCompatActivity() {
     fun guestClicked(view: View) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        println("result stored $result")
+        println("results stored $colResults")
     }
 }
