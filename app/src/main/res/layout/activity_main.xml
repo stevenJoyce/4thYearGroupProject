@@ -109,7 +109,18 @@
 
 
         </androidx.recyclerview.widget.RecyclerView>
-
+        <Button
+                android:id="@+id/registerNavbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textColor="@color/colorPrimaryAccent"
+                android:onClick="register"
+                android:background="@drawable/login_btn_box_up"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:layout_margin="2dp"
+        />
 
         <Button
                 android:id="@+id/loginNavbutton"

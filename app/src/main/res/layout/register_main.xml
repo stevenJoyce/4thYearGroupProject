@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@drawable/login_page_bg"
+                                                   tools:context=".RegisterActivity">
+    <ImageView
+            android:id="@+id/navigation_header_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nav_header_height"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" app:srcCompat="@drawable/ic_golf_stick"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <View
+            android:id="@+id/view"
+            android:layout_width="210dp"
+            android:layout_height="450dp"
+            android:background="@drawable/ic_register_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            android:id="@+id/relativeLayout">
+
+
+        <TextView
+                android:id="@+id/textView3"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:text="REGISTER"
+                android:textAlignment="center"
+                android:textColor="@color/colorLightAccent"
+                android:textSize="24sp"
+                android:textStyle="bold" android:layout_alignParentEnd="true" android:layout_marginEnd="parent"
+                android:layout_alignParentStart="true" android:layout_marginStart="parent"/>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="6dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_email"
+                        android:drawablePadding="6dp"
+                        android:hint="Email"
+                        android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="24dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_lock"
+                        android:drawablePadding="6dp"
+                        android:hint="Password"
+                        android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+            android:onClick="registerClicked"
+            android:id="@+id/button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_btn_round"
+            android:text="@string/register"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintVertical_bias="0.0"/>
+    <Button
+            android:onClick="returnClicked"
+            android:id="@+id/button2"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_btn_round"
+            android:text="Return"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/button" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintVertical_bias="0.774"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

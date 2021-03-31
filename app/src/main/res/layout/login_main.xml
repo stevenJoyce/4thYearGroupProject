@@ -38,28 +38,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/view" android:id="@+id/relativeLayout">
 
-        <Button
-                android:id="@+id/btnRegLogin"
-                android:onClick="registerClicked"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/btn_top"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:text="@string/register"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"/>
 
         <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:text="LOGIN"
                 android:textColor="@color/colorLightAccent"
                 android:textSize="24sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" android:layout_alignParentEnd="true" android:layout_marginEnd="158dp"/>
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
