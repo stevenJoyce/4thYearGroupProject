@@ -127,6 +127,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
+                updateAdapter(position)
 
                 Handler(Looper.getMainLooper()).postDelayed({
                     drawerLayout.closeDrawer(GravityCompat.START)

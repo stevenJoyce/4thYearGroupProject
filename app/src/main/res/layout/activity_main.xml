@@ -27,7 +27,7 @@
                     android:id="@+id/activity_main_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@drawable/login_btn_box"
+                    android:background="@drawable/login_btn_box_side"
                     android:weightSum="1"
                     app:contentInsetStart="0dp"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -81,7 +81,6 @@
             android:layout_width="@dimen/navigation_drawer_width"
             android:layout_height="match_parent"
             android:background="@drawable/login_page_bg"
-
             android:layout_gravity="start"
             android:orientation="vertical">
 
@@ -104,7 +103,7 @@
                 android:layout_width="@dimen/navigation_drawer_width"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@drawable/login_btn_box"
+                android:background="@drawable/login_btn_box_down"
                 android:scrollbarThumbHorizontal="@null"
                 android:scrollbarThumbVertical="@null">
 
@@ -117,11 +116,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/login"
-                android:textColor="#ffff"
+                android:textColor="@color/colorPrimaryAccent"
                 android:onClick="login"
-                android:background="@drawable/login_btn_box"
+                android:background="@drawable/login_btn_box_up"
                 android:textSize="18sp"
-                android:textStyle="bold"
+                android:textStyle="normal"
+                android:layout_margin="2dp"
         />
 
     </LinearLayout>
