@@ -61,11 +61,16 @@ class MainActivity : AppCompatActivity() {
         val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
         //fetchJson(url)
 
-        val button: Button = findViewById(R.id.loginNavbutton)
-        button.setOnClickListener {
+       /* val logButton: Button = findViewById(R.id.loginNavButton)
+        logButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+        val regButton: Button = findViewById(R.id.registerNavButton)
+        regButton.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }*/
 
         drawerLayout = findViewById(R.id.drawer_layout)
 
@@ -244,9 +249,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(view: View) {
-        val intentLog = Intent(this, LoginActivity::class.java)
-        startActivity(intentLog)
+        val login = Intent(this, LoginActivity::class.java)
+        startActivity(login)
     }
+
+    fun register(view: View){
+        val reg = Intent(this, RegisterActivity::class.java)
+        startActivity(reg)
+    }
+
 
 
     override fun onDestroy() {

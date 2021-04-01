@@ -47,6 +47,5 @@ class UserPage : AppCompatActivity() {
             println(dataRetreive)
         }
 
-
-    }
+}
 

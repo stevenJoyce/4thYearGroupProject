@@ -17,6 +17,7 @@ import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.mongo.iterable.MongoCursor
 import org.bson.Document
 import org.bson.types.ObjectId
+import java.util.*
 
 
 class LoginActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var realm: Realm
     lateinit var emailTxt: String
     lateinit var passTxt: String
+    var colData:Array<String> = arrayOf("")
 
     lateinit var result: Document
     lateinit var results: MongoCursor<Document>
@@ -89,6 +91,7 @@ class LoginActivity : AppCompatActivity() {
                         Log.v("EXAMPLE", "successfully found all collections:")
                         while (results.hasNext()) {
                             colResults = results.next().toString()
+                            colData.fill(colResults)
                             Log.v("EXAMPLE", colResults)
                         }
                     } else {
@@ -147,6 +150,6 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         println("result stored $result")
-        println("results stored $colResults")
+        println("results stored " + colData.contentToString())
     }
 }
