@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var emailTxt: String
     lateinit var passTxt: String
     var colData:Array<String> = arrayOf("")
+    val list: MutableList<String> = ArrayList()
 
     lateinit var result: Document
     lateinit var results: MongoCursor<Document>
@@ -91,7 +92,7 @@ class LoginActivity : AppCompatActivity() {
                         Log.v("EXAMPLE", "successfully found all collections:")
                         while (results.hasNext()) {
                             colResults = results.next().toString()
-                            colData.fill(colResults)
+                            list.add(colResults)
                             Log.v("EXAMPLE", colResults)
                         }
                     } else {
@@ -149,7 +150,7 @@ class LoginActivity : AppCompatActivity() {
     fun guestClicked(view: View) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        println("result stored $result")
-        println("results stored " + colData.contentToString())
+        //println("result stored $result")
+        println("results stored " + list.size)
     }
 }
