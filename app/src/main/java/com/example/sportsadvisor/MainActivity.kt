@@ -3,7 +3,6 @@ package com.example.sportsadvisor
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -18,6 +17,8 @@ import android.content.Context
 import android.os.Looper
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
+import androidx.preference.Preference
+import androidx.preference.PreferenceManager
 import com.example.sportsadvisor.model.*
 
 
@@ -58,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         val appID = "sportsadvisor-gztkm"
         app = App(AppConfiguration.Builder(appID).build())
 
+
         val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
         //fetchJson(url)
 
@@ -81,15 +83,22 @@ class MainActivity : AppCompatActivity() {
         navigation_rv.layoutManager = LinearLayoutManager(this)
         navigation_rv.setHasFixedSize(true)
 
+        val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+
+        val displayName = sp.getString("displayName", "")
 
         // Add Item Touch Listener
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
+
+                val displayName = sp.getString("displayName", "")
+
+                val course = sp.getString("course", "")
                 when (position) {
                     0 -> {
                         // # Home Fragment
                         val bundle = Bundle()
-                        bundle.putString("fragmentName", "Home Fragment")
+                        bundle.putString("fragmentName", "Welcome $displayName")
                         val homeFragment = HomeFragment()
                         homeFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {
@@ -99,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                     1 -> {
                         // # Weather Fragment
                         val bundle = Bundle()
-                        bundle.putString("fragmentName", "Weather")
+                        bundle.putString("fragmentName", "Weather for $course")
                         val weatherFragment = WeatherFragment()
                         weatherFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {
@@ -145,7 +154,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set 'Home' as the default fragment when the app starts
         val bundle = Bundle()
-        bundle.putString("fragmentName", "Home Fragment")
+        bundle.putString("fragmentName", "Welcome $displayName")
         val homeFragment = HomeFragment()
         homeFragment.arguments = bundle
         supportFragmentManager.beginTransaction().apply {

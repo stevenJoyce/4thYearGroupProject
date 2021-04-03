@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="course_entries">
+        <item>Oughterard GC</item>
+        <item>Galway GC</item>
+        <item>Galway Bay GC</item>
+        <item>Bearna GC</item>
+        <item>Glenlo Abbey GC</item>
+        <item>Connemara Championship Links</item>
+        <item>Athenry GC</item>
+        <item>Gort GC</item>
+        <item>Loughrea  GC</item>
+        <item>Tuam GC</item>
+        <item>Connemara Isles GC</item>
+        <item>Dunmore Demesne GC</item>
+        <item>Mountbellew GC</item>
+    </string-array>
+
+    <string-array name="course_values">
+        <item>Oughterard</item>
+        <item>Salthill</item>
+        <item>Oranmore</item>
+        <item>Bearna</item>
+        <item>Bushypark</item>
+        <item>Ballyconneely</item>
+        <item>Athenry</item>
+        <item>Gort</item>
+        <item>Loughrea</item>
+        <item>Tuam</item>
+        <item>Lettermore</item>
+        <item>Dunmore</item>
+        <item>Mountbellew</item>
+
+
+    </string-array>
+</resources>

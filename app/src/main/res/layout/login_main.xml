@@ -46,7 +46,9 @@
                 android:text="LOGIN"
                 android:textColor="@color/colorLightAccent"
                 android:textSize="24sp"
-                android:textStyle="bold" android:layout_alignParentEnd="true" android:layout_marginEnd="158dp"/>
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="158dp"/>
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
