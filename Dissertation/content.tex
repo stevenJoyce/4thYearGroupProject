@@ -147,10 +147,24 @@ We tried to design the app with different orientations which can be seen in Figu
     \label{fig:altas config}
 \end{figure}
 
-\section{Algorithm's}
-For our own rating system we are using JFuzzyLogic to output the best time and day for the user to play golf, determined by metrics based upon the user's input. \newline
-"JFuzzyLogic is an extension of Boolean logic by Lotfi Zadeh in 1965 based on the mathematical theory of fuzzy sets, which is a generalization of classical set theory." - Quote from Franck Dernoncourt.
+\section{Algorithm}
+The algorithm we have implemented for the app is used for giving the user feedback on the weather conditions for playing golf during a specific hour on the current date. We generate JSON data from an API call and it contains an abundance of different weather variables which we have saved into variables that can be accessed in the application. We have chosen 8 variables from the list that are key to what hour is best suited to playing a round of golf. They are: sunrise, sunset, hour, amount of rainfall in millimetres, temperature, wind speed and humidity. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{img/starRating.PNG}
+    \caption{Star rating function}
+    \label{fig:altas config}
+\end{figure}
+All these variables are given back to the user alongside a star rating. The star rating is out of 5, with 0 being the worst and 5 being the best. This is best understood by looking at the above image.
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{img/starEx.PNG}
+    \caption{Wind Rating function}
+    \label{fig:altas config}
+\end{figure}
+In the above image we illustrate how we generate a star rating for a variable, every variable is worth 1 star each but that star is broken down into a result between 0 and 1. The result is then used to generate a total score in the checkResults function.
 \chapter{Technology Review}
 \section{Kotlin}
 We found Kotlin to be less verbose, easier to read as a programming language compared to such languages as Java, C. It is a high-level language that can be used to produce mobile applications. It's coding style is similar to python but with more features and ways to implement it.  \newline 
