@@ -69,12 +69,17 @@ Link to GitHub Repository={\url{https://github.com/stevenJoyce/4thYearGroupProje
 The Agile methodology is based on a iterative development approach that allows requirements and solutions to change throughout the development of the Application. It relys on constant communication between members of the team to successfully deliver a final product which has the capacity to evolve. Teams will undergo sprints which splits up a feature into smaller parts that is then given to a member of the team to work on in a short time period which makes the feature more manageable to deliver.
 \newline
 \newline
-To implement this approach our team organized weekly meetings where we discussed our work's success or issues and how far we have gotten with our given sprint . This allowed us to collaborate as a team when issues occurred allowing us to keep on schedule. Our schedule was developed using a gantt chart, this was the basis for all our sprints . Every step was assigned as a sprint which was assigned to each member to carry out. Each sprint had a test case which had to pass for us to proceed with development.
+To implement this approach our team organized weekly meetings where we discussed our work's success or issues and how far we have gotten with our given sprint . This allowed us to collaborate as a team when issues occurred allowing us to keep on schedule. Our schedule was developed using a gantt chart, this was the basis for all our sprints. The gantt chart is spoken about in more detail in Chapter 6 - Testing. Every step was assigned as a sprint which was assigned to each member to carry out. Each sprint had a test case which had to pass for us to proceed with development.
 \section{Testing}
-After each sprint a set of tests were required to pass. If a test case failed to pass in any capacity we could not proceed with the next sprint. To test our application we used  the Android SDK emulator alongside intellij IDEA.
-\newline
-The emulator we used was run on Android 9.0 (pie). The emulator simulated a Google Pixel 3A mobile phone.
-(emulation , terminal, test cases)
+After each sprint a set of tests were required to pass. If a test case failed to pass in any capacity we could not proceed with the next sprint. To test our application we used the Android SDK emulator extension found in intellij IDEA.
+The emulator we used was run on Android 9.0 (pie). The device that the emulator is simulated is the Google Pixel 3A mobile phone.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{img/LoginTestCase.PNG}
+    \caption{Test Case for successful Login}
+    \label{fig:altas config}
+\end{figure}
+The image above illustrates the test case we designed and implemented for testing the Login function of our application. The test is designed for a successfully login test. 
 \section{Collaborative Platforms}
 \subsection{Version Control}
 The platform all team members were most familiar with was GitHub, it allows members to access project code versions and commit their contributions to one repository. Every team member has access to view and modify the contents of the repository. All changes are logged and any commit can be accessed at all times , this helps with problem solving as any issues that occur can be called back on to older commits that were functional if issues occur with the latest commit.
@@ -240,7 +245,16 @@ In order to retrieve data with the Open Weather API, we needed the longitude and
 \subsubsection{Features}
 
 \section{MongoDB}
-To utilise the MongoDB database,we had to use two of its three main core features. The two features we use were Atlas and Realm, Atlas and Realm can be integrated in a way that allows for a seamless connection to and from the Android Application. The MongoDB atlas uses a server that can be either free or paid for use by the a set charge per hour. We choose a free tier server based in N.Virginia (us-east-1) run by Amazon Web Service(AWS).
+To utilise the MongoDB database,we had to use two of its three main core features. The two features we use were Atlas and Realm, Atlas and Realm can be integrated in a way that allows for a seamless connection to and from the Android Application. The MongoDB atlas uses a server that can be either free or paid for use by the a set charge per hour. We choose a free tier server based in N.Virginia (us-east-1) run by Amazon Web Service(AWS). This server was chosen because the Irish server does not work with MongoDB Realm as the server for Ireland is only using MongoDB version is 4.2 but Realm runs on MongoDB version 4.4 and above.
+\subsection{Cluster}
+It is the word associated with having several MongoDB servers working together.
+MongoDB distributes data in 2 ways:replica set and sharded clusters. The main objectives of a MongoDB cluster is to be able to read and write several nodes. The data is separated into the different nodes of the fragment.
+\begin{enumerate}
+    \item \textbf{Replica Set:}
+    \newline This is when the data is sent across several servers without the data changing. This is a layer of protection from a server failure.
+    \item \textbf{Sharded Cluster:}
+    \newline This is where the data is fragmented into parts of the data to be carried by a different server. This is done to have larger datasets and have better performance.
+\end{enumerate}
 \subsection{Atlas}
 Atlas is the area in which data is stored within the MongoDB system. it allows its users to create a database for a specific user that will only store their data in a collection. \newline This is great for protecting user data. The data can only be accessed by inputting a user id. This user id is unique and is also the user's username that will be always shown in the application. It is the 1st thing a new user will input in the application when creating an account. With the data for a user protected in a cluster, this allows the application to output data to the user that is only relevant to them. That feature was a major reason for using MongoDB in our application.
 \newline
