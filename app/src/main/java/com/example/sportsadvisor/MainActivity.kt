@@ -31,6 +31,7 @@ import io.realm.mongodb.AppConfiguration
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
+import com.google.gson.Gson
 
 
 class MainActivity : AppCompatActivity() {
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var app: App
     lateinit var uiThreadRealm: Realm
+    val gson = Gson()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,10 +60,12 @@ class MainActivity : AppCompatActivity() {
         Realm.init(this)
         val appID = "sportsadvisor-gztkm"
         app = App(AppConfiguration.Builder(appID).build())
+        // gson for parsing data
 
 
         val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
-        //fetchJson(url)
+
+        fetchJson(url)
 
        /* val logButton: Button = findViewById(R.id.loginNavButton)
         logButton.setOnClickListener {
@@ -272,6 +276,8 @@ class MainActivity : AppCompatActivity() {
     fun saveData(body: String){
         dataRetreive = body
         println(dataRetreive)
+        //gson object
+        //val commentResponse = gson.fromJson(body,DataResponse.DataResponse::class.java)
     }
 
 
