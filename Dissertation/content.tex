@@ -237,12 +237,18 @@ The SDK manager on Intellij allowed us as developers to run the application on d
 
 \subsection{Open Weather API}
 Open Weather is an API that allows the user to retrieve weather data from any location using its NWP (Numerical Weather Prediction) Model. This API has been designed to be used universally on any Language to gather data. It gathers this data using a "proprietary convolutional neural network that collects and processes wide range of data sources to cover any location and consider the local nuances of climate." (Quote from "https://openweathermap.org/guide" - Openweather NWP model)
-\subsubsection{Features}
 
 \subsection{Geocoding API}
 In order to retrieve data with the Open Weather API, we needed the longitude and latitude of a chosen golf course selected by the user. With the help of the Geocoding API it gives the ability to to convert street name data into longitude and latitude values for the Open Weather API to search weather data based on that location.
 
-\subsubsection{Features}
+\subsection{AccuWeather API}
+After a lot of testing and attempting to retrieve data using the Open Weather API and Gecoding API, we found it was very difficult to retrieve,store and convert the data from XML that was provided by the Open Weather API, we then came across the Accuweather API that searches for locations based off of their own location codes which we then use to offer the user a list of golf course locations within Co. Galway that they could choose from instead of having to search for courses themselves.
+\newline
+\newline
+By offering this list we can accurately show the conditions for these particular golf course of choice instead of being able to search for weather conditions for cities and towns instead of the actual golf courses.
+\newline
+\newline
+The data provided from the API is then able to be processed by our Algorithm to provide a rating for the conditions based on two search features, a 12 hour search for that particular day or a search based on next 5 rolling days, the 12 hour search will provide the rating based on the next twelve hours and will provide a rating for those hours, and then the 5 day search will give a general rating for each of the days.  
 
 \section{MongoDB}
 To utilise the MongoDB database,we had to use two of its three main core features. The two features we use were Atlas and Realm, Atlas and Realm can be integrated in a way that allows for a seamless connection to and from the Android Application. The MongoDB atlas uses a server that can be either free or paid for use by the a set charge per hour. We choose a free tier server based in N.Virginia (us-east-1) run by Amazon Web Service(AWS). This server was chosen because the Irish server does not work with MongoDB Realm as the server for Ireland is only using MongoDB version is 4.2 but Realm runs on MongoDB version 4.4 and above.
