@@ -1,6 +1,8 @@
 package com.example.sportsadvisor
 
-open class UserResults  {
+import HourlyDataResponse.Speed
+
+object UserResults  {
 
     var rainfall:Double = 0.0
     var windSpeed:Double = 9.3
@@ -8,7 +10,7 @@ open class UserResults  {
     var feelsLikeTemp:Double = 8.9
     var humidity:Int = 86
 
-    open fun checkResults(rainfall:Double,windSpeed:Double,temperature:Double,feelsLikeTemp:Double,humidity:Int): Double {
+    open fun checkResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, humidity:Int): Double {
         val rainResult = checkRainfall(rainfall)
         val windResult = checkWindSpeed(windSpeed)
         val tempResult = checkTemp(temperature)

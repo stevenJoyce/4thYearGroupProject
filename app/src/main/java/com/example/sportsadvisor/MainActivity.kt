@@ -1,5 +1,6 @@
 package com.example.sportsadvisor
 //android
+import HourlyDataResponse.HourlyProcessedDataItem
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -17,7 +18,6 @@ import android.content.Context
 import android.os.Looper
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
-import androidx.preference.Preference
 import androidx.preference.PreferenceManager
 import com.example.sportsadvisor.model.*
 
@@ -32,7 +32,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import com.google.gson.Gson
-
+import io.realm.mongodb.User
 
 class MainActivity : AppCompatActivity() {
     //
@@ -63,8 +63,8 @@ class MainActivity : AppCompatActivity() {
         // gson for parsing data
 
 
-        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
 
+        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
         fetchJson(url)
 
        /* val logButton: Button = findViewById(R.id.loginNavButton)
@@ -277,7 +277,14 @@ class MainActivity : AppCompatActivity() {
         dataRetreive = body
         println(dataRetreive)
         //gson object
-        //val commentResponse = gson.fromJson(body,DataResponse.DataResponse::class.java)
+        val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
+
+        for (x in commentResponse.indices)
+        {
+            println(commentResponse[x].dateTime + ": " + UserResults.checkResults(commentResponse[x].rain.value,commentResponse[x].wind.speed.value,
+                commentResponse[x].temperature.value,commentResponse[x].realFeelTemperature.value,commentResponse[x].relativeHumidity))
+
+        }
     }
 
 
