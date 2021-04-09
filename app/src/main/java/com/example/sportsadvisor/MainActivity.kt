@@ -86,14 +86,16 @@ class MainActivity : AppCompatActivity() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         val displayName = sp.getString("displayName", "")
+        var courseCode:String = ""
+
 
         // Add Item Touch Listener
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
 
                 val displayName = sp.getString("displayName", "")
-
                 val course = sp.getString("course", "")
+
                 when (position) {
                     0 -> {
                         // # Home Fragment
@@ -106,9 +108,45 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     1 -> {
+                        if(course == "Oughterard GC") {
+                            courseCode = "1"
+                        }
+                        else if(course == "Galway GC") {
+                            courseCode = "2"
+                        }
+                        else if(course == "Galway Bay GC") {
+                            courseCode = "3"
+                        }
+                        else if(course == "Bearna GC") {
+                            courseCode = "4"
+                        }
+                        else if(course == "Glenlo Abbey GC") {
+                            courseCode = "5"
+                        }
+                        else if(course == "Connemara Championship Links") {
+                            courseCode = "6"
+                        }
+                        else if(course == "Athenry GC") {
+                            courseCode = "7"
+                        }
+                        else if(course == "Gort GC") {
+                            courseCode = "8"
+                        }
+                        else if(course == "Loughrea GC") {
+                            courseCode = "9"
+                        }
+                        else if(course == "Tuam GC") {
+                            courseCode = "10"
+                        }
+                        else if(course == "Dunmore Demesne GC") {
+                            courseCode = "11"
+                        }
+                        else if(course == "Mountbellew GC") {
+                            courseCode = "12"
+                        }
                         // # Weather Fragment
                         val bundle = Bundle()
-                        bundle.putString("fragmentName", "Weather for $course")
+                        bundle.putString("fragmentName", "Weather for $course and code is $courseCode")
                         val weatherFragment = WeatherFragment()
                         weatherFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {

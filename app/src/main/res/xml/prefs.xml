@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="Personal User Settings"
                         app:icon="@drawable/profile">
@@ -13,13 +13,11 @@
                 app:useSimpleSummaryProvider="true"/>
 
         <ListPreference
-
                 app:defaultValue="galway"
                 app:entries="@array/course_entries"
                 app:entryValues="@array/course_entries"
                 app:key="course"
                 app:title="Home Course"/>
-
     </PreferenceCategory>
 
 </PreferenceScreen>

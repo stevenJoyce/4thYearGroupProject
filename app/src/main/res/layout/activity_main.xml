@@ -68,7 +68,7 @@
                 android:id="@+id/activity_main_content_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/login_page_bg"
+                android:background="@color/colorPrimaryAccent"
                 android:clipToPadding="false"/>
 
     </LinearLayout>
