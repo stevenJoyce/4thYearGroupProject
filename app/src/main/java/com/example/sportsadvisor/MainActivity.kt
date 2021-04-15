@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Context
 import android.os.Looper
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import com.example.sportsadvisor.model.*

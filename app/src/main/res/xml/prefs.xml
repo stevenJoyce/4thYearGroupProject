@@ -18,6 +18,14 @@
                 app:entryValues="@array/course_entries"
                 app:key="course"
                 app:title="Home Course"/>
+
+        <ListPreference
+            app:defaultValue="0"
+            app:entries="@array/player_handicap"
+            app:entryValues="@array/course_entries"
+            app:key="handicap"
+            app:title="Player Handicap"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
