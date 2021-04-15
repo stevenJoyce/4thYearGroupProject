@@ -16,5 +16,7 @@ open class Data(
     var wind:Int=0,
     var precip:Double = 0.00,
     var humidity:Double = 0.00,
+
+
 ):RealmObject()
 

@@ -23,11 +23,11 @@ object UserResults  {
     }
 
     private fun checkHumidity(humidity: Int): Double {
-        var result = 0.0;
+        var result = 0.0
 
         if (humidity in 30..60)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -49,11 +49,11 @@ object UserResults  {
     }
 
     private fun checkTempFeel(feelsLikeTemp: Double): Double {
-        var result = 0.0;
+        var result = 0.0
 
         if (feelsLikeTemp in 10.0..20.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -83,11 +83,11 @@ object UserResults  {
     }
 
     private fun checkTemp(temperature: Double): Double {
-        var result = 0.0;
+        var result = 0.0
 
         if (temperature in 10.0..20.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -117,11 +117,11 @@ object UserResults  {
     }
 
     private fun checkRainfall(rainfall: Double): Double {
-        var result = 0.0;
+        var result = 0.0
 
         if (rainfall in 0.0..1.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -150,11 +150,11 @@ object UserResults  {
 
 
     private fun checkWindSpeed(windSpeed: Double): Double {
-        var result = 0.0;
+        var result = 0.0
 
         if (windSpeed in 0.0..8.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {

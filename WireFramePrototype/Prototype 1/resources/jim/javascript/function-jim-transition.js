@@ -258,7 +258,7 @@
 	  		}
 	  		if(none) {
 	  			doneIn();
-	  		};
+	  		}
 		},
         startIn = function(){
             if($to.hasClass("ui-page")) {
@@ -375,10 +375,10 @@
 		  }
 	  }
 	  }
-	  catch(e){};
+	  catch(e){}
 
 	  return false;
-  };
+  }
   
   function checkMasterInstanceLoadMark() {
 	  var result = true;
@@ -386,19 +386,19 @@
 		  result = result && ($(el).css('width') == '1px');
 	  });
 	  return result;
-  };
+  }
 
   /* If transition is defined, check if css 3D transforms are supported, and if not, if a fallback is specified */
   function maybeDegradeTransition(transition) {
     return (transition && !jQuery.support.cssTransform3d) ? "fade" : (transition ? transition.type : transition);
-  };
+  }
 
   function applyTransitionDuration($target,duration) {
     $target.css("animation-duration",duration);
     $target.css("-webkit-animation-duration",duration);
     $target.css("-moz-animation-duration",duration);
     $target.css("-ms-animation-duration",duration);
-  };
+  }
 
   function releaseLock() {
     isTransitioning = false;

@@ -23,7 +23,7 @@ class UserPage : AppCompatActivity() {
 
     }
 
-        public fun fetchJson(url: String): String {
+        fun fetchJson(url: String): String {
             println("Attempting to Fetch JSON")
             val request = Request.Builder().url(url).build()
             val client = OkHttpClient()

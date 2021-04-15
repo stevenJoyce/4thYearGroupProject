@@ -639,7 +639,7 @@
 		    	  PIE.attach(this);
 		    	}
 		      });
-		    };
+		    }
             break;
           case itemType.menunode:
             if(!(args.target.closest(".menu").is(".vertical")))

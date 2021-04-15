@@ -4,7 +4,7 @@
 		selectedClass = "developer-selected-class", 
 		active = false, $selectedItem, 
 		$currentHover,
-		itemStack = new Array();
+		itemStack = [];
 	
 	var developersLayer = "<div id='developersLayer'></div>";
 
@@ -41,7 +41,7 @@
 	}
 	
 	function getDistances(o, d, oSize, dSize) {
-		var guides = new Array();
+		var guides = [];
 		var distance, p1;
 		
 		if (d + dSize < o) {
@@ -640,14 +640,14 @@
 			   					.off("click", clickListener);
 				$selectedItem = undefined;
 				$currentHover = undefined;
-				itemStack = new Array();
+				itemStack = [];
 			}
 		},
 		"triggerNavigation" : function() {
 			if (active) {
 				$("#simulation > .ui-page > .canvas:last-child > #backgroundBox").prepend(developersLayer);
 				$("#simulation").addClass("developersMode");
-				itemStack = new Array();
+				itemStack = [];
 				$currentHover = undefined;
 				$selectedItem = undefined;
 			}

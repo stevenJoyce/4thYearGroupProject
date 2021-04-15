@@ -189,7 +189,7 @@
 		    },
 			"getParentGroups" : function (elem, groups){
 				if(groups===undefined)
-					groups = new Array();
+					groups = [];
 				if(elem.parent().hasClass("group")){
 					groups.push(elem.parent());
 					return jimPin.getParentGroups(elem.parent(),groups);
@@ -733,7 +733,7 @@
 									//fix for phantom scrollbars on chrome
 									jimUtil.forceReflow();
 							      	jimUtil.refreshPageMinSize();
-									return;
+
 					  		}
 				  		}else{
 					  		elem.css('position','fixed');
@@ -1051,7 +1051,7 @@
 				}
 			},
 			"translateAllFixedToAbsolute" : function($page){
-				var pinnedElements = new Array();
+				var pinnedElements = [];
 				if($page === undefined){
 					$(".pin").each(function(index){
 						jimPin.translateElementFixedToAbsolute($(this));

@@ -473,7 +473,7 @@
        },
 	   "getResponsiveChildren" : function($container){
 		   //get first level responsive children
-		   var responsiveChildren = new Array();
+		   var responsiveChildren = [];
 		   var $current;
 		   function getResponsiveChildrenRecurse(elem){
 			   elem.children().each(function(){

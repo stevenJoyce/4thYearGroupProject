@@ -11,7 +11,7 @@
       templates[template] = doT.template(document.getElementById(template + "-template").text, undefined, undefined);
     }
     return templates[template];
-  };
+  }
 
   $simulation
   .bind("loadcomponent", function() {

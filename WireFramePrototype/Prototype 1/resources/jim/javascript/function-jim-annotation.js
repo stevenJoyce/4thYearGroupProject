@@ -641,7 +641,7 @@
 		settings = {"effect":{"duration": 1000,"easing": "linear","queue": false}};
 		jimUtil.jimPointTo($balloon,settings);
 		jimUtil.jimFocusOn($balloon);
-		return;
+
       }
 	});
   }
@@ -689,7 +689,7 @@
 				scrollY += $(this).height();
 				limit++;
 				if(limit === 5)
-					return;
+
 			});
 		  }
 		  $simulation.animate({scrollTop: scrollY }, 500);
@@ -1382,11 +1382,11 @@
 		  })
 		  .done(function(json) {
 			callback(image,"data:application/octet-stream;base64," + json);
-			return;
+
 		  })
 		  .fail(function(xhr, status, error) {
 			callback(image,"");
-			return;
+
 		  });
     }
   }
