@@ -117,11 +117,17 @@ class LoginActivity : AppCompatActivity() {
                         Log.v("EXAMPLE", "successfully found all collections:")
                         while (results.hasNext()) {
                             colResults = results.next().toString()
-                            list = colResults.split(",")
+                            list = colResults.split("=",",")
                             Log.v("EXAMPLE", colResults)
                         }
                     } else {
                         Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
+                    }
+                    var i:Int = 0
+                    while(i < list.size)
+                    {
+                        println("Stored data: " + list[i])
+                        i++
                     }
                 }
 

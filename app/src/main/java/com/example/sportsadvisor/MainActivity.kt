@@ -1,8 +1,7 @@
 package com.example.sportsadvisor
 //android
 import HourlyDataResponse.HourlyProcessedDataItem
-import WeeklyDataResponse.DailyForecast
-import WeeklyDataResponse.WeeklyProcessedData
+import CurrentConditionsDataResponse.currentConditionsItem
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -19,7 +18,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Context
 import android.os.Looper
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import com.example.sportsadvisor.model.*
@@ -32,8 +30,6 @@ import io.realm.Realm
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.RequestBody.Companion.asRequestBody
-import java.io.File
 import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
@@ -65,20 +61,6 @@ class MainActivity : AppCompatActivity() {
         app = App(AppConfiguration.Builder(appID).build())
         // gson for parsing data
 
-
-
-
-
-       /* val logButton: Button = findViewById(R.id.loginNavButton)
-        logButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
-        val regButton: Button = findViewById(R.id.registerNavButton)
-        regButton.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }*/
 
         drawerLayout = findViewById(R.id.drawer_layout)
 
@@ -114,53 +96,52 @@ class MainActivity : AppCompatActivity() {
                     1 -> {
                         if(course == "Oughterard GC") {
                             courseCode = "208587"
-                            //callHourlyData()
-                            callWeeklyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
 
                         }
                         else if(course == "Galway GC") {
                             courseCode = "208539"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Galway Bay GC") {
                             courseCode = "3549260"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Bearna GC") {
                             courseCode = "208553"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Glenlo Abbey GC") {
                             courseCode = "208539"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Connemara Championship Links") {
                             courseCode = "1651911"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Athenry GC") {
                             courseCode = "208546"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Gort GC") {
                             courseCode = "208564"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Loughrea GC") {
                             courseCode = "208542"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Tuam GC") {
                             courseCode = "208543"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Dunmore Demesne GC") {
                             courseCode = "208562"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         else if(course == "Mountbellew GC") {
                             courseCode = "3545589"
-                            callHourlyData()
+                            WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         // # Weather Fragment
                         val bundle = Bundle()
@@ -265,106 +246,6 @@ class MainActivity : AppCompatActivity() {
         adapter = NavigationRVAdapter(items, highlightItemPos)
         navigation_rv.adapter = adapter
         adapter.notifyDataSetChanged()
-    }
-
-
-    fun fetchHourlyJson(url: String): String {
-        println("Attempting to Fetch JSON")
-        val request = Request.Builder().url(url).build()
-        val client = OkHttpClient()
-        var body = ""
-        client.newCall(request).enqueue(object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                println("Fetched JSON Data")
-                body = response.body?.string().toString()
-                saveHourlyData(body)
-            }
-
-            override fun onFailure(call: Call, e: IOException) {
-                println("Failed to execute request")
-            }
-        })
-        return body
-    }
-
-    fun fetchWeeklyJson(url: String): String {
-        println("Attempting to Fetch JSON")
-        val request = Request.Builder().url(url).build()
-        val client = OkHttpClient()
-        var body = ""
-        client.newCall(request).enqueue(object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                println("Fetched JSON Data")
-                body = response.body?.string().toString()
-                saveWeeklyData(body)
-            }
-
-            override fun onFailure(call: Call, e: IOException) {
-                println("Failed to execute request")
-            }
-        })
-        return body
-    }
-
-    fun saveHourlyData(body: String){
-        dataRetreive = body
-        println(dataRetreive)
-        //gson object
-        val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
-
-        for (x in commentResponse.indices)
-        {
-            println(commentResponse[x].dateTime + ": " + UserResults.checkHourlyResults(commentResponse[x].rain.value,commentResponse[x].wind.speed.value,
-                commentResponse[x].temperature.value,commentResponse[x].realFeelTemperature.value,commentResponse[x].relativeHumidity))
-
-        }
-    }
-
-    fun saveWeeklyData(body: String){
-        dataRetreive = body
-        println(dataRetreive)
-        //gson object
-        /*val commentResponse: List<DailyForecast> = gson.fromJson(body,Array<DailyForecast>::class.java).toList()
-
-        for (x in commentResponse.indices)
-        {
-            println(commentResponse[x].date + ": " + UserResults.checkWeeklyResults(
-                commentResponse[x].day.rain.value,
-                commentResponse[x].day.wind.speed.value,
-                commentResponse[x].temperature.maximum.value,
-                commentResponse[x].realFeelTemperature.maximum.value,
-                commentResponse[x].day.hoursOfPrecipitation))
-
-        }*/
-    }
-
-    fun callHourlyData(){
-        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
-        fetchHourlyJson(url)
-    }
-
-    fun callWeeklyData(){
-        val url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
-        fetchWeeklyJson(url)
-    }
-
-
-
-    // Posting to Server - Not fully complete
-    fun postJson (dataFetch: String){
-        val file = File("data.txt")
-        val client = OkHttpClient()
-
-        val request = Request.Builder()
-            .url("https://api.github.com/markdown/raw")
-            .post(file.asRequestBody(MEDIA_TYPE_MARKDOWN))
-            .build()
-        client.newCall(request).execute().use { response ->
-            if (!response.isSuccessful) throw IOException("Unexpected code $response")
-
-            println(response.body!!.string())
-        }
-
     }
     companion object {
         val MEDIA_TYPE_MARKDOWN = "text/x-markdown; charset=utf-8".toMediaType()
