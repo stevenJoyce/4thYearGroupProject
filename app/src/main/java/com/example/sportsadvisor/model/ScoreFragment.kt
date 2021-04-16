@@ -8,6 +8,4 @@ import android.view.ViewGroup
 import com.example.sportsadvisor.R
 
 
-class ScoreFragment : Fragment(R.layout.fragment_score) {
-
-}
+class ScoreFragment : Fragment(R.layout.fragment_score)

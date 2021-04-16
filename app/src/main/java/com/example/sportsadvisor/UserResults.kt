@@ -19,6 +19,7 @@ object UserResults  {
         return TotalResultScore
     }
 
+<<<<<<< HEAD
     open fun checkWeeklyResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, hoursOfPrec:Double): Double {
         val rainResult = checkRainfall(rainfall)
         val windResult = checkWindSpeed(windSpeed)
@@ -61,12 +62,16 @@ object UserResults  {
 
         return result
     }
+=======
+    private fun checkHumidity(humidity: Int): Double {
+        var result = 0.0
+>>>>>>> 6e8e0947161761be92919aad62e25086edfa9442
 
     private fun checkHumidity(humidity: Int): Double {
         result = 0.0;
         if (humidity in 30..60)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -88,10 +93,15 @@ object UserResults  {
     }
 
     private fun checkTempFeel(feelsLikeTemp: Double): Double {
+<<<<<<< HEAD
         result = 0.0;
+=======
+        var result = 0.0
+
+>>>>>>> 6e8e0947161761be92919aad62e25086edfa9442
         if (feelsLikeTemp in 10.0..20.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -121,11 +131,15 @@ object UserResults  {
     }
 
     private fun checkTemp(temperature: Double): Double {
+<<<<<<< HEAD
          result = 0.0;
+=======
+        var result = 0.0
+>>>>>>> 6e8e0947161761be92919aad62e25086edfa9442
 
         if (temperature in 10.0..20.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -155,11 +169,15 @@ object UserResults  {
     }
 
     private fun checkRainfall(rainfall: Double): Double {
+<<<<<<< HEAD
          result = 0.0;
+=======
+        var result = 0.0
+>>>>>>> 6e8e0947161761be92919aad62e25086edfa9442
 
         if (rainfall in 0.0..1.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {
@@ -188,11 +206,15 @@ object UserResults  {
 
 
     private fun checkWindSpeed(windSpeed: Double): Double {
+<<<<<<< HEAD
          result = 0.0;
+=======
+        var result = 0.0
+>>>>>>> 6e8e0947161761be92919aad62e25086edfa9442
 
         if (windSpeed in 0.0..8.0)
         {
-            result = 1.0;
+            result = 1.0
         }
         else
         {

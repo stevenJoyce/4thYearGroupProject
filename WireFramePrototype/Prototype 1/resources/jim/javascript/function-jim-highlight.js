@@ -77,7 +77,7 @@
 	
 	function endsWith(suffix) {
 	    return this.indexOf(suffix, this.length - suffix.length) !== -1;
-	};
+	}
 	
 	function isScenarioFiltered(el) {
 		if (jimScenarios.currentNode != -1) {

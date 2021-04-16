@@ -104,7 +104,7 @@
 
 	  function enableTouchTool() {
 		  jQuery("#jim-container").addClass("touch");
-	  };
+	  }
 
 	  function enablePinchTool() {
 		  $page = jQuery("#jim-container");
@@ -165,7 +165,7 @@
 				jQuery("#cursor2").remove();
 			}
 		  });
-	  };
+	  }
 
 	  function enableRotateTool() {
 		  $page = jQuery("#jim-container");
@@ -240,7 +240,7 @@
 				jQuery("#cursor2").remove();
 			}
 		  });
-	  };
+	  }
 
 	  /* zoom */
 	  if($.browser.msie && $.browser.version<9) {
@@ -277,7 +277,7 @@
 			  return i;
 		  }
 		  return -1;
-	  };
+	  }
 
 	  function userSelect(){
 		  return false;

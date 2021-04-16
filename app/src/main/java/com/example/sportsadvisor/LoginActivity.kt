@@ -2,22 +2,27 @@ package com.example.sportsadvisor
 
 import android.content.Intent
 import android.os.Bundle
-import android.telephony.mbms.StreamingServiceInfo
 import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
 import io.realm.Realm
-import io.realm.mongodb.Credentials
-import io.realm.mongodb.User
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
+import io.realm.mongodb.Credentials
+import io.realm.mongodb.User
 import io.realm.mongodb.mongo.iterable.MongoCursor
 import org.bson.Document
-import org.bson.types.ObjectId
+import java.sql.Time
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.util.*
+import java.util.Arrays.asList
+import kotlin.collections.ArrayList
 
 
 class LoginActivity : AppCompatActivity() {
@@ -28,8 +33,10 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var realm: Realm
     lateinit var emailTxt: String
     lateinit var passTxt: String
-    var colData:Array<String> = arrayOf("")
-    val list: MutableList<String> = ArrayList()
+    var list: List<String> = ArrayList()
+    var id: List<String> = ArrayList()
+    var collectData:String = ""
+
 
     lateinit var result: Document
     lateinit var results: MongoCursor<Document>
@@ -42,6 +49,14 @@ class LoginActivity : AppCompatActivity() {
         app = App(AppConfiguration.Builder(appID).build())
         email = findViewById(R.id.etUsername)
         password = findViewById(R.id.etPassword)
+
+        // Current date
+        val date = LocalDate.now()
+        println(date)
+
+        // Current time
+        val time = LocalTime.now()
+        println(time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)))
 
     }
 
@@ -70,16 +85,26 @@ class LoginActivity : AppCompatActivity() {
                 val mongoClient =
                     user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
                 val mongoDatabase = mongoClient.getDatabase("Users")
-                val mongoCollection = mongoDatabase.getCollection("Data")
+                //val mongoCollection = mongoDatabase.getCollection("Data")
+                val mongoCollection = mongoDatabase.getCollection("UserData")
+
                 Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
 
                 //getting a cluster
-                val queryFilter = Document("_pkey", "datau1")
+                //val queryFilter = Document("_pkey", "datau1")
+                val queryFilter = Document("_pkey", "steven2021")
                 mongoCollection.findOne(queryFilter)
                     .getAsync { task ->
                         if (task.isSuccess) {
                             result = task.get()
                             Log.v("EXAMPLE", "successfully found a document: $result")
+
+                           // val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
+                            collectData = result.toString()
+                          // id =listOf(collectData.split(",").toString())
+                            id  = collectData.split(",")
+                            println("id: $id")
+                            println(id[2])
                         } else {
                             Log.e("EXAMPLE", "failed to find document with: ${task.error}")
                         }
@@ -92,7 +117,7 @@ class LoginActivity : AppCompatActivity() {
                         Log.v("EXAMPLE", "successfully found all collections:")
                         while (results.hasNext()) {
                             colResults = results.next().toString()
-                            list.add(colResults)
+                            list = colResults.split(",")
                             Log.v("EXAMPLE", colResults)
                         }
                     } else {
@@ -119,7 +144,6 @@ class LoginActivity : AppCompatActivity() {
                             Log.e("EXAMPLE", "Unable to insert custom user data. Error: ${result.error}")
                         }
                     }*/
-
             } else {
                 Log.e("AUTH", it.error.toString())
             }
@@ -131,8 +155,8 @@ class LoginActivity : AppCompatActivity() {
     fun registerClicked(view: View) {
         //  val intent = Intent(this,Register::class.java);
         //  startActivity(intent)
-        emailTxt = email.text.toString();
-        passTxt = password.text.toString();
+        emailTxt = email.text.toString()
+        passTxt = password.text.toString()
 
         println("Username added $emailTxt Password Added $passTxt")
 
@@ -151,6 +175,6 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         //println("result stored $result")
-        println("results stored " + list.size)
+
     }
 }
