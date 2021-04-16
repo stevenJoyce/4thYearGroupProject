@@ -1,6 +1,8 @@
 package com.example.sportsadvisor
 //android
 import HourlyDataResponse.HourlyProcessedDataItem
+import WeeklyDataResponse.DailyForecast
+import WeeklyDataResponse.WeeklyProcessedData
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -32,11 +34,11 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import com.google.gson.Gson
-import io.realm.mongodb.User
 
 class MainActivity : AppCompatActivity() {
     //
     var dataRetreive:String = ""
+    var courseCode:String = "208539"
 
     //navbar
     lateinit var drawerLayout: DrawerLayout
@@ -64,8 +66,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
-        fetchJson(url)
+
 
        /* val logButton: Button = findViewById(R.id.loginNavButton)
         logButton.setOnClickListener {
@@ -90,8 +91,6 @@ class MainActivity : AppCompatActivity() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         val displayName = sp.getString("displayName", "")
-        var courseCode:String = ""
-
 
         // Add Item Touch Listener
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
@@ -113,40 +112,54 @@ class MainActivity : AppCompatActivity() {
                     }
                     1 -> {
                         if(course == "Oughterard GC") {
-                            courseCode = "1"
+                            courseCode = "208587"
+                            //callHourlyData()
+                            callWeeklyData()
+
                         }
                         else if(course == "Galway GC") {
-                            courseCode = "2"
+                            courseCode = "208539"
+                            callHourlyData()
                         }
                         else if(course == "Galway Bay GC") {
-                            courseCode = "3"
+                            courseCode = "3549260"
+                            callHourlyData()
                         }
                         else if(course == "Bearna GC") {
-                            courseCode = "4"
+                            courseCode = "208553"
+                            callHourlyData()
                         }
                         else if(course == "Glenlo Abbey GC") {
-                            courseCode = "5"
+                            courseCode = "208539"
+                            callHourlyData()
                         }
                         else if(course == "Connemara Championship Links") {
-                            courseCode = "6"
+                            courseCode = "1651911"
+                            callHourlyData()
                         }
                         else if(course == "Athenry GC") {
-                            courseCode = "7"
+                            courseCode = "208546"
+                            callHourlyData()
                         }
                         else if(course == "Gort GC") {
-                            courseCode = "8"
+                            courseCode = "208564"
+                            callHourlyData()
                         }
                         else if(course == "Loughrea GC") {
-                            courseCode = "9"
+                            courseCode = "208542"
+                            callHourlyData()
                         }
                         else if(course == "Tuam GC") {
-                            courseCode = "10"
+                            courseCode = "208543"
+                            callHourlyData()
                         }
                         else if(course == "Dunmore Demesne GC") {
-                            courseCode = "11"
+                            courseCode = "208562"
+                            callHourlyData()
                         }
                         else if(course == "Mountbellew GC") {
-                            courseCode = "12"
+                            courseCode = "3545589"
+                            callHourlyData()
                         }
                         // # Weather Fragment
                         val bundle = Bundle()
@@ -254,7 +267,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun fetchJson(url: String): String {
+    fun fetchHourlyJson(url: String): String {
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
@@ -263,7 +276,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 println("Fetched JSON Data")
                 body = response.body?.string().toString()
-                saveData(body)
+                saveHourlyData(body)
             }
 
             override fun onFailure(call: Call, e: IOException) {
@@ -273,7 +286,26 @@ class MainActivity : AppCompatActivity() {
         return body
     }
 
-    fun saveData(body: String){
+    fun fetchWeeklyJson(url: String): String {
+        println("Attempting to Fetch JSON")
+        val request = Request.Builder().url(url).build()
+        val client = OkHttpClient()
+        var body = ""
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                println("Fetched JSON Data")
+                body = response.body?.string().toString()
+                saveWeeklyData(body)
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                println("Failed to execute request")
+            }
+        })
+        return body
+    }
+
+    fun saveHourlyData(body: String){
         dataRetreive = body
         println(dataRetreive)
         //gson object
@@ -281,11 +313,40 @@ class MainActivity : AppCompatActivity() {
 
         for (x in commentResponse.indices)
         {
-            println(commentResponse[x].dateTime + ": " + UserResults.checkResults(commentResponse[x].rain.value,commentResponse[x].wind.speed.value,
+            println(commentResponse[x].dateTime + ": " + UserResults.checkHourlyResults(commentResponse[x].rain.value,commentResponse[x].wind.speed.value,
                 commentResponse[x].temperature.value,commentResponse[x].realFeelTemperature.value,commentResponse[x].relativeHumidity))
 
         }
     }
+
+    fun saveWeeklyData(body: String){
+        dataRetreive = body
+        println(dataRetreive)
+        //gson object
+        /*val commentResponse: List<DailyForecast> = gson.fromJson(body,Array<DailyForecast>::class.java).toList()
+
+        for (x in commentResponse.indices)
+        {
+            println(commentResponse[x].date + ": " + UserResults.checkWeeklyResults(
+                commentResponse[x].day.rain.value,
+                commentResponse[x].day.wind.speed.value,
+                commentResponse[x].temperature.maximum.value,
+                commentResponse[x].realFeelTemperature.maximum.value,
+                commentResponse[x].day.hoursOfPrecipitation))
+
+        }*/
+    }
+
+    fun callHourlyData(){
+        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
+        fetchHourlyJson(url)
+    }
+
+    fun callWeeklyData(){
+        val url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/3528176?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
+        fetchWeeklyJson(url)
+    }
+
 
 
     // Posting to Server - Not fully complete

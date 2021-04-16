@@ -1,16 +1,13 @@
 package com.example.sportsadvisor
 
-import HourlyDataResponse.Speed
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 object UserResults  {
 
-    var rainfall:Double = 0.0
-    var windSpeed:Double = 9.3
-    var temperature:Double = 10.0
-    var feelsLikeTemp:Double = 8.9
-    var humidity:Int = 86
+    var result = 0.0;
 
-    open fun checkResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, humidity:Int): Double {
+    open fun checkHourlyResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, humidity:Int): Double {
         val rainResult = checkRainfall(rainfall)
         val windResult = checkWindSpeed(windSpeed)
         val tempResult = checkTemp(temperature)
@@ -22,9 +19,51 @@ object UserResults  {
         return TotalResultScore
     }
 
-    private fun checkHumidity(humidity: Int): Double {
-        var result = 0.0;
+    open fun checkWeeklyResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, hoursOfPrec:Double): Double {
+        val rainResult = checkRainfall(rainfall)
+        val windResult = checkWindSpeed(windSpeed)
+        val tempResult = checkTemp(temperature)
+        val tempFeelResult = checkTempFeel(feelsLikeTemp)
+        val precipitationResult = checkHoursOfPrec(hoursOfPrec)
 
+        val TotalResultScore = precipitationResult + windResult+ tempResult + tempFeelResult + rainResult
+
+        return TotalResultScore
+    }
+
+    private fun checkHoursOfPrec(hoursOfPrec: Double): Double {
+        result = 0.0;
+        if (hoursOfPrec in 0.0..2.0)
+        {
+            result = 1.0;
+        }
+        else
+        {
+            when
+            {
+                ((hoursOfPrec >10.0)) ->{
+                    result = 0.0
+                }
+                ((hoursOfPrec > 2.0) and (hoursOfPrec <= 4.0))  ->{
+                    result = 0.8
+                }
+                ((hoursOfPrec > 4.0) and (hoursOfPrec <= 6.0)) -> {
+                    result = 0.6
+                }
+                ((hoursOfPrec > 6.0) and (hoursOfPrec <= 8.0)) -> {
+                    result = 0.4
+                }
+                ((hoursOfPrec > 8.0) and (hoursOfPrec <= 10.0)) -> {
+                    result = 0.2
+                }
+            }
+        }
+
+        return result
+    }
+
+    private fun checkHumidity(humidity: Int): Double {
+        result = 0.0;
         if (humidity in 30..60)
         {
             result = 1.0;
@@ -49,8 +88,7 @@ object UserResults  {
     }
 
     private fun checkTempFeel(feelsLikeTemp: Double): Double {
-        var result = 0.0;
-
+        result = 0.0;
         if (feelsLikeTemp in 10.0..20.0)
         {
             result = 1.0;
@@ -83,7 +121,7 @@ object UserResults  {
     }
 
     private fun checkTemp(temperature: Double): Double {
-        var result = 0.0;
+         result = 0.0;
 
         if (temperature in 10.0..20.0)
         {
@@ -117,7 +155,7 @@ object UserResults  {
     }
 
     private fun checkRainfall(rainfall: Double): Double {
-        var result = 0.0;
+         result = 0.0;
 
         if (rainfall in 0.0..1.0)
         {
@@ -150,7 +188,7 @@ object UserResults  {
 
 
     private fun checkWindSpeed(windSpeed: Double): Double {
-        var result = 0.0;
+         result = 0.0;
 
         if (windSpeed in 0.0..8.0)
         {

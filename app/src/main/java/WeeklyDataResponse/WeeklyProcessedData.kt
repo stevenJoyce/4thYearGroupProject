@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class WeeklyProcessedData(
     @SerializedName("DailyForecasts")
-    val dailyForecasts: List<DailyForecast>,
+    val dailyForecasts: DailyForecast,
     @SerializedName("Headline")
     val headline: Headline
 )
