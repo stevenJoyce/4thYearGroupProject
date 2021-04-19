@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import io.realm.Realm
 import io.realm.mongodb.App
@@ -36,6 +37,9 @@ class RegisterActivity: AppCompatActivity() {
 
     }
 
+    private fun showToast(s: String) {
+        Toast.makeText(applicationContext, s, Toast.LENGTH_LONG).show()
+    }
     fun registerClicked(view: View) {
         //  val intent = Intent(this,Register::class.java);
         //  startActivity(intent)
@@ -47,13 +51,16 @@ class RegisterActivity: AppCompatActivity() {
         app.emailPassword.registerUserAsync(emailTxt, passTxt) {
             if (it.isSuccess) {
                 Log.i("EXAMPLE", "Successfully registered user.")
+                showToast("User has now Registered")
             } else {
                 Log.e("EXAMPLE", "Failed to register user: ${it.error}")
+                showToast("ERROR: User has failed to Register")
             }
         }
+
     }
 
-    fun returnClicked(view: View){
+    fun returnClicked(view: View) {
         val login = Intent(this, LoginActivity::class.java)
         startActivity(login)
     }

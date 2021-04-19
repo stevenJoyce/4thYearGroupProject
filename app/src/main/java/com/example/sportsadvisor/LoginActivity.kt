@@ -62,7 +62,6 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showToast(s: String) {
         Toast.makeText(applicationContext, s, Toast.LENGTH_LONG).show()
-
     }
 
     //user pressed login button
@@ -81,11 +80,9 @@ class LoginActivity : AppCompatActivity() {
             if (it.isSuccess) {
                 Log.v("AUTH", "Successfully authenticated using an email and password.")
                 user = app.currentUser()
-
-                val mongoClient =
-                    user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
+                // service for MongoDB Atlas cluster containing custom user data
+                val mongoClient = user!!.getMongoClient("mongodb-atlas")
                 val mongoDatabase = mongoClient.getDatabase("Users")
-                //val mongoCollection = mongoDatabase.getCollection("Data")
                 val mongoCollection = mongoDatabase.getCollection("UserData")
 
                 Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
@@ -98,10 +95,7 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccess) {
                             result = task.get()
                             Log.v("EXAMPLE", "successfully found a document: $result")
-
-                           // val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
                             collectData = result.toString()
-                          // id =listOf(collectData.split(",").toString())
                             id  = collectData.split(",")
                             println("id: $id")
                             println(id[2])
@@ -154,6 +148,7 @@ class LoginActivity : AppCompatActivity() {
                 Log.e("AUTH", it.error.toString())
             }
         }
+        showToast("User has Logged in")
     }
 
     //user pressed register button
@@ -169,10 +164,13 @@ class LoginActivity : AppCompatActivity() {
         app.emailPassword.registerUserAsync(emailTxt, passTxt) {
             if (it.isSuccess) {
                 Log.i("EXAMPLE", "Successfully registered user.")
+                showToast("User has now Registered")
             } else {
                 Log.e("EXAMPLE", "Failed to register user: ${it.error}")
+                showToast("ERROR: User has failed to Register")
             }
         }
+
     }
 
     //user pressed guest button
