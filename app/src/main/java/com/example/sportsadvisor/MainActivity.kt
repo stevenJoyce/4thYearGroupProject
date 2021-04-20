@@ -97,6 +97,7 @@ class MainActivity : AppCompatActivity() {
                         if(course == "Oughterard GC") {
                             courseCode = "208587"
                             WeatherDataProcessor.callHourlyData(courseCode)
+                            //WeatherDataProcessor.callCurrentData(courseCode)
 
                         }
                         else if(course == "Galway GC") {

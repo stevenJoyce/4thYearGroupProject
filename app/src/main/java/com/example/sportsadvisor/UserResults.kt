@@ -7,14 +7,18 @@ object UserResults  {
 
     var result = 0.0;
 
-    open fun checkHourlyResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, humidity:Int): Double {
+    open fun checkHourlyResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, humidity:Int, IsDaylight:Boolean): Double {
         val rainResult = checkRainfall(rainfall)
         val windResult = checkWindSpeed(windSpeed)
         val tempResult = checkTemp(temperature)
         val tempFeelResult = checkTempFeel(feelsLikeTemp)
         val humidityResult = checkHumidity(humidity)
+        var TotalResultScore = humidityResult + windResult+ tempResult + tempFeelResult + rainResult
+        if (IsDaylight == false){
+            TotalResultScore = 0.0
+        }
 
-        val TotalResultScore = humidityResult + windResult+ tempResult + tempFeelResult + rainResult
+
 
         return TotalResultScore
     }

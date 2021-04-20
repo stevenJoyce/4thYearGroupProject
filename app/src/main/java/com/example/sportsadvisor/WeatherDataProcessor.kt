@@ -11,6 +11,7 @@ object WeatherDataProcessor : AppCompatActivity() {
 
     var dataRetreive:String = ""
     val gson = Gson()
+    var list: List<String> = ArrayList()
 
     fun fetchHourlyJson(url: String): String {
         println("Attempting to Fetch JSON")
@@ -58,14 +59,24 @@ object WeatherDataProcessor : AppCompatActivity() {
 
         for (x in commentResponse.indices)
         {
-            println(
-                commentResponse[x].dateTime + ": " + UserResults.checkHourlyResults(
-                    commentResponse[x].rain.value,
-                    commentResponse[x].wind.speed.value,
-                    commentResponse[x].temperature.value,
-                    commentResponse[x].realFeelTemperature.value,
-                    commentResponse[x].relativeHumidity))
-
+            list = commentResponse[x].dateTime.split("T","+01:00")
+                println(list[1])
+                println(
+                        "Rainfall: " + commentResponse[x].rain.value + " Wind Speed:  " + commentResponse[x].wind.speed.value +
+                                " Temperature: " + commentResponse[x].temperature.value +
+                                " Real Feel Temperature: " + commentResponse[x].realFeelTemperature.value +
+                                " Humidity: " + commentResponse[x].realFeelTemperature.value +
+                                " Daylight: " + commentResponse[x].isDaylight +
+                                " Rating: " + UserResults.checkHourlyResults(
+                                        commentResponse[x].rain.value,
+                                        commentResponse[x].wind.speed.value,
+                                        commentResponse[x].temperature.value,
+                                        commentResponse[x].realFeelTemperature.value,
+                                        commentResponse[x].relativeHumidity,
+                                        commentResponse[x].isDaylight
+                    )
+                )
+            
         }
     }
 
@@ -77,17 +88,16 @@ object WeatherDataProcessor : AppCompatActivity() {
 
         for (x in commentResponse.indices)
         {
-            for(y in commentResponse.indices) {
                 println(
                     UserResults.checkHourlyResults(
                         commentResponse[x].precip1hr.metric.value,
                         commentResponse[x].wind.speed.metric.value,
                         commentResponse[x].temperature.metric.value,
                         commentResponse[x].realFeelTemperature.metric.value,
-                        commentResponse[x].relativeHumidity
+                        commentResponse[x].relativeHumidity,
+                        commentResponse[x].isDayTime
                     )
                 )
-            }
         }
     }
 
