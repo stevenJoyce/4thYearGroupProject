@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import io.realm.Realm
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
@@ -36,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
     var list: List<String> = ArrayList()
     var id: List<String> = ArrayList()
     var collectData:String = ""
+    var name:String = ""
 
 
     lateinit var result: Document
@@ -49,6 +51,11 @@ class LoginActivity : AppCompatActivity() {
         app = App(AppConfiguration.Builder(appID).build())
         email = findViewById(R.id.etUsername)
         password = findViewById(R.id.etPassword)
+        val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        val displayName = sp.getString("displayName", "")
+        if (displayName != null) {
+            name = displayName
+        }
 
         // Current date
         val date = LocalDate.now()
@@ -89,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
 
                 //getting a cluster
                 //val queryFilter = Document("_pkey", "datau1")
-                val queryFilter = Document("_pkey", "steven2021")
+                val queryFilter = Document("_pkey", name)
                 mongoCollection.findOne(queryFilter)
                     .getAsync { task ->
                         if (task.isSuccess) {
