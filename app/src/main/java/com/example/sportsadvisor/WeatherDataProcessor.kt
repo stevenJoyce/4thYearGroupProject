@@ -12,6 +12,8 @@ object WeatherDataProcessor : AppCompatActivity() {
     var dataRetreive:String = ""
     val gson = Gson()
     var list: List<String> = ArrayList()
+    var fullList = mutableListOf<String>()
+    var data:String = ""
 
     fun fetchHourlyJson(url: String): String {
         println("Attempting to Fetch JSON")
@@ -60,8 +62,24 @@ object WeatherDataProcessor : AppCompatActivity() {
         for (x in commentResponse.indices)
         {
             list = commentResponse[x].dateTime.split("T","+01:00")
-                println(list[1])
-                println(
+            data = "Time: " + list[1] +
+                    " Rainfall: " + commentResponse[x].rain.value + " Wind Speed:  " + commentResponse[x].wind.speed.value +
+                    " Temperature: " + commentResponse[x].temperature.value +
+                    " Real Feel Temperature: " + commentResponse[x].realFeelTemperature.value +
+                    " Humidity: " + commentResponse[x].realFeelTemperature.value +
+                    " Daylight: " + commentResponse[x].isDaylight +
+                    " Rating: " + UserResults.checkHourlyResults(
+                commentResponse[x].rain.value,
+                commentResponse[x].wind.speed.value,
+                commentResponse[x].temperature.value,
+                commentResponse[x].realFeelTemperature.value,
+                commentResponse[x].relativeHumidity,
+                commentResponse[x].isDaylight)
+
+            fullList.add(data)
+
+            println(fullList)
+                /*println(
                         "Rainfall: " + commentResponse[x].rain.value + " Wind Speed:  " + commentResponse[x].wind.speed.value +
                                 " Temperature: " + commentResponse[x].temperature.value +
                                 " Real Feel Temperature: " + commentResponse[x].realFeelTemperature.value +
@@ -75,8 +93,9 @@ object WeatherDataProcessor : AppCompatActivity() {
                                         commentResponse[x].relativeHumidity,
                                         commentResponse[x].isDaylight
                     )
-                )
-            
+                )*/
+
+
         }
     }
 

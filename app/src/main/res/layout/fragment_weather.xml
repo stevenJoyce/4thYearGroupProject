@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-             tools:context=".model.WeatherFragment">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".model.WeatherFragment">
 
 
     <ImageView
@@ -39,15 +39,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="139dp" android:layout_marginTop="16dp"/>
 
-    <SearchView
-            android:layout_width="342dp"
-            android:layout_height="25dp"
-            android:id="@+id/searchView"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:soundEffectsEnabled="false"
-            android:layout_marginTop="12dp"/>
 
     <TableLayout
             android:id="@+id/table"
@@ -56,9 +47,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_marginVertical="30dp"
             android:layout_marginHorizontal="10dp"
             android:background="@android:color/transparent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:layout_editor_absoluteX="10dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="32dp" app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="0.0" android:layout_marginTop="32dp">
 
         <TableRow>
             <TextView
@@ -68,489 +59,78 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:text="Hour"
                     android:textStyle="bold"
                     android:layout_weight="1"
+                    android:textAlignment="center"
                     android:gravity="center"/>
 
             <TextView
                     android:textColor="@color/colorLightAccent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6am"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-
-            <TextView
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9am"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-
-            <TextView
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12pm"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-
-            <TextView
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3pm"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-
-            <TextView
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6pm"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-
-            <TextView
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9pm"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-
-        </TableRow>
-
-        <TableRow>
-            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Condtion"
+                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginHorizontal="1dp"/>
+                    android:textAlignment="center"
+                    android:gravity="center"/>
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PNG"
                     android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PNG"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PNG"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PNG"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PNG"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PNG"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temperature"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginHorizontal="1dp"/>
-
-            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Temp"
-                    android:textColor="@color/colorLightAccent"
+                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
+                    android:textAlignment="center"
+                    android:gravity="center"/>
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp"
                     android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Wind"
+                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginHorizontal="1dp"/>
+                    android:textAlignment="center"
+                    android:gravity="center"/>
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Speed"
                     android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Speed"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Speed"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Speed"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Speed"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Speed"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Precip"
+                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginHorizontal="1dp"/>
+                    android:textAlignment="center"
+                    android:gravity="center"/>
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rain %"
                     android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rain %"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rain %"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rain %"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rain %"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rain %"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Humidity"
+                    android:textStyle="bold"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginHorizontal="1dp"/>
+                    android:textAlignment="center"
+                    android:gravity="center"/>
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
                     android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rating"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginHorizontal="1dp"/>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stars"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
+                    android:gravity="center"/>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stars"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stars"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stars"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stars"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stars"
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginBottom="1dp"/>
         </TableRow>
+
+        <TextView
+                android:id="@+id/display_data"
+                android:textColor="@color/colorLightAccent"
+                android:textStyle="bold"
+                android:layout_height="wrap_content">
+        </TextView>
 
 
     </TableLayout>

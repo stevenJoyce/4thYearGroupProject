@@ -19,8 +19,9 @@ class WeatherFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_weather, container, false)
 
         val fragmentName = arguments?.getString("fragmentName")
-
         rootView.fragment_weather.text = fragmentName
+
+        rootView.display_data.text = ("hello")
 
         return rootView
     }
