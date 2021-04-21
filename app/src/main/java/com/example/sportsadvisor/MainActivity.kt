@@ -154,13 +154,8 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     2 -> {
-                        val bundle = Bundle()
-                        bundle.putString("fragmentName", "Scores Fragment")
-                        // # Scores Fragment
-                        val scoresFragment = ScoreFragment()
-                        supportFragmentManager.beginTransaction().apply {
-                            replace(R.id.activity_main_content_id, scoresFragment).commit()
-                        }
+                        val intent = Intent(this@MainActivity, ScoreFragment::class.java)
+                        startActivity(intent)
 
                     }
                     3 -> {

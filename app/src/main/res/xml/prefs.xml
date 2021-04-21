@@ -22,7 +22,7 @@
         <ListPreference
             app:defaultValue="0"
             app:entries="@array/player_handicap"
-            app:entryValues="@array/course_entries"
+            app:entryValues="@array/player_handicap"
             app:key="handicap"
             app:title="Player Handicap"/>
 

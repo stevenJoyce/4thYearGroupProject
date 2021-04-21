@@ -69,6 +69,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole1Par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -79,6 +80,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole1Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -103,6 +105,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole2par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -113,6 +116,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole2Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -138,6 +142,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole3par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -148,6 +153,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole3Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -173,6 +179,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole4par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -183,6 +190,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole4Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -208,6 +216,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole5par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -218,6 +227,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole5Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -243,6 +253,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole6par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -253,6 +264,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole6Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -278,6 +290,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole7par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -288,6 +301,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole7Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -313,6 +327,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole8par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -323,6 +338,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole8Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -348,6 +364,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole9par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -358,6 +375,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole9Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -383,6 +401,7 @@
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/front9par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -393,6 +412,7 @@
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/front9Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -417,6 +437,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole10par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -427,6 +448,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole10Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -451,6 +473,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole11par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -461,6 +484,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole11Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -486,6 +510,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole12par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -496,6 +521,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole12Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -521,6 +547,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole13par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -531,6 +558,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole13Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -556,6 +584,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole14par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -566,6 +595,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole14Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -591,6 +621,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole15par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -601,6 +632,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole15Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -626,6 +658,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole16par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -636,6 +669,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole16Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -661,6 +695,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole17par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -671,6 +706,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole17Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -696,6 +732,7 @@
             </TextView>
 
             <EditText
+                    android:id="@+id/hole18par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -706,6 +743,7 @@
             </EditText>
 
             <EditText
+                    android:id="@+id/hole18Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -730,6 +768,7 @@
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/back9Par"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -740,6 +779,7 @@
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/back9Score"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -762,6 +802,7 @@
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/totalPar"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -772,6 +813,7 @@
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/totalScore"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -794,16 +836,18 @@
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/netPar"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Par"
+                    android:text="Handicap"
                     android:textStyle="bold"
                     android:layout_weight="1"
                     android:gravity="center">
             </TextView>
             <TextView
+                    android:id="@+id/NettScore"
                     android:background="@color/colorLightAccent"
                     android:textColor="@color/colorPrimaryDarkAccent"
                     android:layout_width="wrap_content"
@@ -816,6 +860,7 @@
         </TableRow>
 
         <Button
+                android:id="@+id/button"
                 android:background="@drawable/login_btn_round"
                 android:text="Save Score"></Button>
 
