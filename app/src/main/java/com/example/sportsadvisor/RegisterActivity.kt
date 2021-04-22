@@ -51,10 +51,19 @@ class RegisterActivity: AppCompatActivity() {
         app.emailPassword.registerUserAsync(emailTxt, passTxt) {
             if (it.isSuccess) {
                 Log.i("EXAMPLE", "Successfully registered user.")
-                showToast("User has now Registered")
+                showToast("User has now Registered - now click GO TO LOGIN")
             } else {
-                Log.e("EXAMPLE", "Failed to register user: ${it.error}")
-                showToast("ERROR: User has failed to Register")
+                if(it.error.equals("name already in use"))
+                {
+                    Log.e("Email incorrect: ", "Failed to register user: ${it.error}")
+                    showToast("ERROR: Email is already in use")
+                }
+                else
+                {
+                    Log.e("Password incorrect: ", "Failed to register user: ${it.error}")
+                    showToast("ERROR: Password length is not between 6 - 12 characters")
+                }
+
             }
         }
 

@@ -125,10 +125,9 @@ class LoginActivity : AppCompatActivity() {
                         Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
                     }
                     var i:Int = 0
-                    while(i < list.size)
+                    for( x in list.indices)
                     {
-                        println("Stored data: " + list[i])
-                        i++
+                        println("Stored data: " + list[x])
                     }
                 }
 
@@ -153,6 +152,7 @@ class LoginActivity : AppCompatActivity() {
                     }*/
             } else {
                 Log.e("AUTH", it.error.toString())
+                showToast("Invalid username/password")
             }
         }
         showToast("User has Logged in")

@@ -1,8 +1,8 @@
 \chapter{About this project}
 \section{Abstract}
-This project is a Mobile Application for the Android Operating System. The programming Language used in Kotlin. The development Environment that the application is written in is Intellij IDEA Ultimate. \\
-The app is a sport based application that allows the user to find all golf courses in Ireland. The user will be given the weather forecast over a 3, 7 or 10 day period depending on their preference. The weather forecast will be specific to what golf course that the user wants to play at. It will give the user back the best hour and day to play on for that period chosen. \\
-The application will allow the user to access a MongoDB database to store and fetch personalized data. The stored data is your score for each hole and what golf club you used for that hole on that golf course and will generate a weekly/monthly report for how you performed on each golf course that you used during that time period.\\
+This project is a Mobile Application for the Android Operating System. The programming Language used in Kotlin. The development Environment that the application is written in is Intellij IDEA Ultimate. \newline
+The app is a sport based application that allows the user to find all golf courses in Ireland. The user will be given the weather forecast over a 3, 7 or 10 day period depending on their preference. The weather forecast will be specific to what golf course that the user wants to play at. It will give the user back the best hour and day to play on for that period chosen. \newline
+The application will allow the user to access a MongoDB database to store and fetch personalized data. The stored data is your score for each hole and what golf club you used for that hole on that golf course and will generate a weekly/monthly report for how you performed on each golf course that you used during that time period.\newline
 \section{Authors}
 For this Project, the authors are Robert Donnelly, Evan Greaney and Steven Joyce. All three authors are 4th Software development students, attending GMIT.
 \chapter{Introduction}
@@ -306,13 +306,6 @@ Discord is a free instant messaging and Voice over Internet Protocol service whi
 We found
 \subsection{Teams}
 Microsoft Teams is a collaborative work space that is fully integrated with Microsoft Office 365 Services, Team's allows for scheduled voice and screen sharing meetings to be arranged via a calendar layout so that users can organise multiple meetings throughout a day to as well as schedule meetings to automatically occur on a daily, weekly or monthly basis such as in our case we were able to set up our meeting with our supervisor to automatically schedule itself each Monday at 11:30. We also found Teams to be a lot more user friendly to users who are not as technologically skilled, rarely does Teams encounter voice chat or microphone connectivity issues. It has both an computer application and web application formats for users on computers which allows flexibility for a user who might be borrowing a machine or have low storage they can use the web app version through a browser. Similarly users can use an android or ios app for when the situation is more suitable for example replying to a direct message or meeting invitation whilst away from their desktop or laptop device. Its also worth noting that if a team is using a Office platform such as Excel, PowerPoint or Word, the members of the team can work on the same document at the same time which is a major advantage for people using Office platform tools. The only downside of teams which is a common criticism of Microsoft software would be its UX can be frustrating, while it has improved in recent updates the UX is nowhere near as smooth as Slack or Discords in terms of navigating teams or groups you are apart of and its message feeds. 
-\newline
-\newline
-About seven to ten pages.
-\begin{itemize}
-\item Describe each of the technologies you used at a conceptual level. Standards, Database Model (e.g. MongoDB, CouchDB), XMl, WSDL, JSON, JAXP.
-\item Use references (IEEE format, e.g. [1]), Books, Papers, URLs (timestamp) – sources should be authoritative.
-\end{itemize}
 
 \chapter{System Design}
 With our system we have three main layers that integrate with one another to build our functional application. The Front End part of the application deals with the visuals and functionality that will be delivered to the user. It communicates with the Back End of the application which stores and retrieves data for the user upon interacting with the front end's elements. The external tools are used in collaboration with the Front End to retrieve and present the current weather data for now and the next twelve hours as a set of ratings for the optimal playing conditions for each hour.
@@ -330,11 +323,43 @@ With our system we have three main layers that integrate with one another to bui
 \subsection{Integration}
 
 \section{Backend}
-With our application we set up a MongoDB server to allow a user the ability to create an account to store golf course results. 
+With our application we set up a MongoDB server to allow a user the ability to create an account to store their golf course results. To allow the user to access the mongoDb server we needed a register user page and a login page.
 \subsection{MongoDB}
-\subsubsection{Atlas}
 \subsubsection{Realm}
+To connect to MongoDB, the application uses MongoDB Realm. This is an application on the server side which allows the android application to access the MongoDB Atlas Cluster. The ability to access this only occurs for users who have registered. The email, password and userID act as a way to verify who is trying to connect to the data while also filter what data can been seen on the User History page.   
+\subsubsection{Atlas}
+The MongoDB atlas is where the MongoDB database is located. A MongoDB Atlas cluster consists of a collection and a database. To connect to this database  
 \subsection{Integration}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm, height = 14cm]{img/registerPage.PNG}
+    \caption{Page for registering a new user}
+    \label{fig:altas config}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height= 8cm]{img/registerCode.PNG}
+    \caption{Code associated with the register page}
+    \label{fig:altas config}
+\end{figure}
+The above images are a screenshot of both the application page and code that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN. The GO TO LOGIN button brings the user to the login page to sign into the MongoDB server to access the user data that is attached to that user.
+\newline 
+The user input fields are saved as emailTxt and passTxt string variables by utilizing the toString function in Kotlin. The string variables are passed into the function app.emailPassword.registerUserAsync() to be sent to the MongoDb Realm to create a new App user.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm, height = 14cm]{img/loginPage.PNG}
+    \caption{Page for logging in a user}
+    \label{fig:altas config}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height = 11cm]{img/mongoSignIn.PNG}
+    \caption{Code associated with the login Page}
+    \label{fig:altas config}
+\end{figure}
+To connect to the MongoDB server, the user needs to input their login details into the application when they are on the Login Page. The page can bee seen in Figure 5.3 to the MongoDb Realm Application. When the user is in the login page it will enter its userID, email and password again. The user will get an alert saying successfully logged in UserID. \newline
+By using the MongoDB loginAsync method for signing into the server we can get back an error if the sign in was not successful and this method also allows the user to read and write to and from the database.
 
 \section{External tools}
 \subsection{GSON}
