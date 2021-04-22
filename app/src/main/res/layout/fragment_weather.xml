@@ -66,17 +66,7 @@
                     android:textColor="@color/colorLightAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Condtion"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:gravity="center"/>
-
-            <TextView
-                    android:textColor="@color/colorLightAccent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp"
+                    android:text="Rain"
                     android:textStyle="bold"
                     android:layout_weight="1"
                     android:textAlignment="center"
@@ -96,7 +86,17 @@
                     android:textColor="@color/colorLightAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Precip"
+                    android:text="Temp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:gravity="center"/>
+
+            <TextView
+                    android:textColor="@color/colorLightAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feel"
                     android:textStyle="bold"
                     android:layout_weight="1"
                     android:textAlignment="center"
@@ -135,7 +135,17 @@
 
     </TableLayout>
 
+  <!---  <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/button"
+            android:background="@drawable/login_btn_round"
+            android:text="Reload"
+            app:layout_constraintTop_toBottomOf="@+id/table"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.521" app:layout_constraintVertical_bias="0.87"></Button>
 
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,6 +1,7 @@
 package com.example.sportsadvisor.model
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_score.*
 import kotlinx.android.synthetic.main.fragment_weather.view.*
 import kotlinx.android.synthetic.main.login_main.*
 import kotlinx.android.synthetic.main.login_main.button
+import java.io.Console
 
 
 class ScoreFragment : AppCompatActivity() {
@@ -37,7 +39,8 @@ class ScoreFragment : AppCompatActivity() {
 
 
             }catch (e:Exception){
-
+                println(e)
+                Toast.makeText(applicationContext, "error", Toast.LENGTH_LONG).show()
             }
         }
     }

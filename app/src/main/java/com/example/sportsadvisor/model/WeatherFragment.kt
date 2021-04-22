@@ -18,11 +18,13 @@ class WeatherFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_weather, container, false)
-
         val fragmentName = arguments?.getString("fragmentName")
-        rootView.fragment_weather.text = fragmentName
+        val dataWeather = arguments?.getString("fullList")
+        println("DATA WEATHER: "+ dataWeather.toString())
 
-        rootView.display_data.text = ("hello")
+        rootView.fragment_weather.text = fragmentName
+        rootView.display_data.text = dataWeather.toString()
+
 
         return rootView
     }

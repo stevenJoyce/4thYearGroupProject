@@ -15,6 +15,7 @@ object WeatherDataProcessor : AppCompatActivity() {
     var fullList = mutableListOf<String>()
     var data:String = ""
 
+
     fun fetchHourlyJson(url: String): String {
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
@@ -54,6 +55,7 @@ object WeatherDataProcessor : AppCompatActivity() {
     }
 
     fun saveHourlyData(body: String){
+        fullList.clear()
         dataRetreive = body
         println(dataRetreive)
         //gson object
@@ -61,14 +63,14 @@ object WeatherDataProcessor : AppCompatActivity() {
 
         for (x in commentResponse.indices)
         {
-            list = commentResponse[x].dateTime.split("T","+01:00")
-            data = "Time: " + list[1] +
-                    " Rainfall: " + commentResponse[x].rain.value + " Wind Speed:  " + commentResponse[x].wind.speed.value +
-                    " Temperature: " + commentResponse[x].temperature.value +
-                    " Real Feel Temperature: " + commentResponse[x].realFeelTemperature.value +
-                    " Humidity: " + commentResponse[x].realFeelTemperature.value +
-                    " Daylight: " + commentResponse[x].isDaylight +
-                    " Rating: " + UserResults.checkHourlyResults(
+            list = commentResponse[x].dateTime.split("T",":00+01:00")
+            data =   list[1] + "      " +
+                    commentResponse[x].rain.value + "        " +
+                    commentResponse[x].wind.speed.value + "      " +
+                    commentResponse[x].temperature.value + "      " +
+                    commentResponse[x].realFeelTemperature.value +"         " +
+                    commentResponse[x].relativeHumidity +"            " +
+                    UserResults.checkHourlyResults(
                 commentResponse[x].rain.value,
                 commentResponse[x].wind.speed.value,
                 commentResponse[x].temperature.value,

@@ -31,6 +31,7 @@ import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import okhttp3.MediaType.Companion.toMediaType
 import com.google.gson.Gson
+import okhttp3.internal.wait
 
 class MainActivity : AppCompatActivity() {
     //
@@ -74,13 +75,18 @@ class MainActivity : AppCompatActivity() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         val displayName = sp.getString("displayName", "")
+        val course = sp.getString("course", "")
+
+
+        fun getWeatherdata(){
+
+        }
 
         // Add Item Touch Listener
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
 
                 val displayName = sp.getString("displayName", "")
-                val course = sp.getString("course", "")
 
                 when (position) {
                     0 -> {
@@ -97,7 +103,6 @@ class MainActivity : AppCompatActivity() {
                         if(course == "Oughterard GC") {
                             courseCode = "208587"
                             WeatherDataProcessor.callHourlyData(courseCode)
-                            //WeatherDataProcessor.callCurrentData(courseCode)
 
                         }
                         else if(course == "Galway GC") {
@@ -144,9 +149,11 @@ class MainActivity : AppCompatActivity() {
                             courseCode = "3545589"
                             WeatherDataProcessor.callHourlyData(courseCode)
                         }
+
                         // # Weather Fragment
                         val bundle = Bundle()
-                        bundle.putString("fragmentName", "Weather for $course and code is $courseCode")
+                        bundle.putString("fragmentName", "Weather for $course")
+                        bundle.putString("fullList", WeatherDataProcessor.fullList.toString())
                         val weatherFragment = WeatherFragment()
                         weatherFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {
@@ -160,7 +167,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     3 -> {
                         // # Profile Activity
-                        val intent = Intent(this@MainActivity, DemoActivity::class.java)
+                        val intent = Intent(this@MainActivity, UserHistory::class.java)
                         startActivity(intent)
                     }
                     4 -> {
