@@ -17,9 +17,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 import android.content.Context
 import android.os.Looper
+import android.os.Parcelable
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
+import com.example.sportsadvisor.WeatherDataProcessor.fullList
 import com.example.sportsadvisor.model.*
 
 
@@ -153,7 +155,13 @@ class MainActivity : AppCompatActivity() {
                         // # Weather Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Weather for $course")
-                        bundle.putString("fullList", WeatherDataProcessor.fullList.toString())
+                        //bundle.putParcelableArray("fullList",ArrayList<Parcelable()>)
+                        bundle.putString("fullList", WeatherDataProcessor.ListString)
+                        //val fullList : List<WeatherDataProcessor> = java.util.ArrayList<WeatherDataProcessor>()
+                        //bundle.putParcelableArray("fullList", list as ArrayList<fullList>)
+                        //val list : List<WeatherDataProcessor > = ArrayList<WeatherDataProcessor>()
+                        //bundle.putParcelableArrayList("fullList", fullList as ArrayList<WeatherDataProcessor>)
+
                         val weatherFragment = WeatherFragment()
                         weatherFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {

@@ -23,7 +23,9 @@ class WeatherFragment : Fragment() {
         println("DATA WEATHER: "+ dataWeather.toString())
 
         rootView.fragment_weather.text = fragmentName
-        rootView.display_data.text = dataWeather.toString()
+        if (dataWeather != null) {
+            rootView.display_data.text = dataWeather.toString()
+        }
 
 
         return rootView

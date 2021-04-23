@@ -14,6 +14,7 @@ object WeatherDataProcessor : AppCompatActivity() {
     var list: List<String> = ArrayList()
     var fullList = mutableListOf<String>()
     var data:String = ""
+    var ListString:String=""
 
 
     fun fetchHourlyJson(url: String): String {
@@ -65,12 +66,12 @@ object WeatherDataProcessor : AppCompatActivity() {
         {
 
             list = commentResponse[x].dateTime.split("T",":00+01:00")
-            data =   list[1] + "      " +
-                    pad(commentResponse[x].rain.value) + "        " +
-                    pad(commentResponse[x].wind.speed.value) + "      " +
-                    pad(commentResponse[x].temperature.value) + "      " +
-                    pad(commentResponse[x].realFeelTemperature.value) +"         " +
-                    commentResponse[x].relativeHumidity +"            " +
+            data =   list[1] + " " +
+                    pad(commentResponse[x].rain.value) + "   " +
+                    pad(commentResponse[x].wind.speed.value) + "  " +
+                    pad(commentResponse[x].temperature.value) + "   " +
+                    pad(commentResponse[x].realFeelTemperature.value) +"      " +
+                    commentResponse[x].relativeHumidity +"        " +
                     UserResults.checkHourlyResults(commentResponse[x].rain.value,
                         commentResponse[x].wind.speed.value,
                         commentResponse[x].temperature.value,
@@ -78,38 +79,13 @@ object WeatherDataProcessor : AppCompatActivity() {
                         commentResponse[x].relativeHumidity,
                         commentResponse[x].isDaylight)
 
-           /* list = commentResponse[x].dateTime.split("T","+01:00")
-            data = "Time: " + list[1] +
-                    " Rainfall: " + pad(commentResponse[x].rain.value) + " Wind Speed:  " + pad(commentResponse[x].wind.speed.value) +
-                    " Temperature: " + pad(commentResponse[x].temperature.value) +
-                    " Real Feel Temperature: " + pad(commentResponse[x].realFeelTemperature.value) +
-                    " Humidity: " + commentResponse[x].relativeHumidity +
-                    " Rating: " + UserResults.checkHourlyResults(
-                commentResponse[x].rain.value,
-                commentResponse[x].wind.speed.value,
-                commentResponse[x].temperature.value,
-                commentResponse[x].realFeelTemperature.value,
-                commentResponse[x].relativeHumidity,
-                commentResponse[x].isDaylight) */
-
             fullList.add(data)
-            println(fullList[x])
-                /*println(
-                        "Rainfall: " + commentResponse[x].rain.value + " Wind Speed:  " + commentResponse[x].wind.speed.value +
-                                " Temperature: " + commentResponse[x].temperature.value +
-                                " Real Feel Temperature: " + commentResponse[x].realFeelTemperature.value +
-                                " Humidity: " + commentResponse[x].realFeelTemperature.value +
-                                " Daylight: " + commentResponse[x].isDaylight +
-                                " Rating: " + UserResults.checkHourlyResults(
-                                        commentResponse[x].rain.value,
-                                        commentResponse[x].wind.speed.value,
-                                        commentResponse[x].temperature.value,
-                                        commentResponse[x].realFeelTemperature.value,
-                                        commentResponse[x].relativeHumidity,
-                                        commentResponse[x].isDaylight
-                    )
-                )*/
+            //println(fullList[x])
+
+            ListString += fullList[x] + "\n"
+
         }
+        println(ListString)
     }
 
     fun saveCurrentData(body: String){
