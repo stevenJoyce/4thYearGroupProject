@@ -2,6 +2,9 @@ package com.example.sportsadvisor
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
@@ -12,20 +15,21 @@ import org.bson.Document
 class UserHistory : AppCompatActivity() {
     lateinit var app: App
     var list: List<String> = ArrayList()
-    var id: List<String> = ArrayList()
-    var collectData:String = ""
     lateinit var result: Document
     lateinit var results: MongoCursor<Document>
     lateinit var colResults:String
+    private lateinit var text: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.userhistory_main)
         val appID = "sportsadvisor-gztkm"
         app = App(AppConfiguration.Builder(appID).build())
+        text = findViewById(R.id.userHistory)
 
     }
-    fun UserData(){
+
+    fun userData(view: View) {
         var user: User? = null
         user = app.currentUser()
 
@@ -40,23 +44,6 @@ class UserHistory : AppCompatActivity() {
         //getting a cluster
         //val queryFilter = Document("_pkey", "datau1")
         val queryFilter = Document("_pkey", "steven2021")
-        mongoCollection.findOne(queryFilter)
-            .getAsync { task ->
-                if (task.isSuccess) {
-                    result = task.get()
-                    Log.v("EXAMPLE", "successfully found a document: $result")
-
-                    // val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
-                    collectData = result.toString()
-                    // id =listOf(collectData.split(",").toString())
-                    id  = collectData.split(",")
-                    println("id: $id")
-                    println(id[2])
-                } else {
-                    Log.e("EXAMPLE", "failed to find document with: ${task.error}")
-                }
-            }
-
         val findTask = mongoCollection.find(queryFilter).iterator()
         findTask.getAsync { task ->
             if (task.isSuccess) {
@@ -70,7 +57,7 @@ class UserHistory : AppCompatActivity() {
             } else {
                 Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
             }
-            var i:Int = 0
+            var i = 0
             while(i < list.size)
             {
                 println("Stored data: " + list[i])
@@ -78,15 +65,9 @@ class UserHistory : AppCompatActivity() {
             }
         }
 
-        mongoCollection.count().getAsync { task ->
-            if (task.isSuccess) {
-                val count = task.get()
-                Log.v("EXAMPLE", "successfully counted, number of documents in the collection: $count")
-            } else {
-                Log.e("EXAMPLE", "failed to count documents with: ${task.error}")
-            }
-        }
+        text.text = list.toString()
 
     }
+
 
 }
