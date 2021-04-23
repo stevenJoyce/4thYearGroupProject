@@ -63,24 +63,37 @@ object WeatherDataProcessor : AppCompatActivity() {
 
         for (x in commentResponse.indices)
         {
+
             list = commentResponse[x].dateTime.split("T",":00+01:00")
             data =   list[1] + "      " +
-                    commentResponse[x].rain.value + "        " +
-                    commentResponse[x].wind.speed.value + "      " +
-                    commentResponse[x].temperature.value + "      " +
-                    commentResponse[x].realFeelTemperature.value +"         " +
+                    pad(commentResponse[x].rain.value) + "        " +
+                    pad(commentResponse[x].wind.speed.value) + "      " +
+                    pad(commentResponse[x].temperature.value) + "      " +
+                    pad(commentResponse[x].realFeelTemperature.value) +"         " +
                     commentResponse[x].relativeHumidity +"            " +
-                    UserResults.checkHourlyResults(
+                    UserResults.checkHourlyResults(commentResponse[x].rain.value,
+                        commentResponse[x].wind.speed.value,
+                        commentResponse[x].temperature.value,
+                        commentResponse[x].realFeelTemperature.value,
+                        commentResponse[x].relativeHumidity,
+                        commentResponse[x].isDaylight)
+
+           /* list = commentResponse[x].dateTime.split("T","+01:00")
+            data = "Time: " + list[1] +
+                    " Rainfall: " + pad(commentResponse[x].rain.value) + " Wind Speed:  " + pad(commentResponse[x].wind.speed.value) +
+                    " Temperature: " + pad(commentResponse[x].temperature.value) +
+                    " Real Feel Temperature: " + pad(commentResponse[x].realFeelTemperature.value) +
+                    " Humidity: " + commentResponse[x].relativeHumidity +
+                    " Rating: " + UserResults.checkHourlyResults(
                 commentResponse[x].rain.value,
                 commentResponse[x].wind.speed.value,
                 commentResponse[x].temperature.value,
                 commentResponse[x].realFeelTemperature.value,
                 commentResponse[x].relativeHumidity,
-                commentResponse[x].isDaylight)
+                commentResponse[x].isDaylight) */
 
             fullList.add(data)
-
-            println(fullList)
+            println(fullList[x])
                 /*println(
                         "Rainfall: " + commentResponse[x].rain.value + " Wind Speed:  " + commentResponse[x].wind.speed.value +
                                 " Temperature: " + commentResponse[x].temperature.value +
@@ -96,8 +109,6 @@ object WeatherDataProcessor : AppCompatActivity() {
                                         commentResponse[x].isDaylight
                     )
                 )*/
-
-
         }
     }
 
@@ -130,6 +141,16 @@ object WeatherDataProcessor : AppCompatActivity() {
     open fun callCurrentData(courseCode:String){
         val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true"
         fetchCurrentJson(url)
+    }
+
+    fun pad(num:Double):String{
+        var catnum = "";
+        if (num < 10.0){
+            catnum = "0$num"
+        }else{
+            catnum = num.toString()
+        }
+        return catnum
     }
 
 }
