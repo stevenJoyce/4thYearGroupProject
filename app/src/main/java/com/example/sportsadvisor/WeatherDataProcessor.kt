@@ -9,15 +9,18 @@ import java.io.IOException
 
 object WeatherDataProcessor : AppCompatActivity() {
 
-    var dataRetreive:String = ""
+    private var dataRetreive:String = ""
     val gson = Gson()
     var list: List<String> = ArrayList()
-    var fullList = mutableListOf<String>()
-    var data:String = ""
-    var ListString:String=""
+    private var fullHourlyList = mutableListOf<String>()
+    var currentHourlyList = mutableListOf<String>()
+    var hourlyData:String = ""
+    var currentData:String = ""
+    var hourlyListString:String=""
+    var currentListString:String=""
 
 
-    fun fetchHourlyJson(url: String): String {
+    private fun fetchHourlyJson(url: String): String {
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
@@ -36,7 +39,7 @@ object WeatherDataProcessor : AppCompatActivity() {
         return body
     }
 
-    fun fetchCurrentJson(url: String): String {
+    private fun fetchCurrentJson(url: String): String {
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
@@ -56,9 +59,11 @@ object WeatherDataProcessor : AppCompatActivity() {
     }
 
     fun saveHourlyData(body: String){
-        fullList.clear()
+        fullHourlyList.clear()
+        hourlyListString = "";
+
         dataRetreive = body
-        println(dataRetreive)
+        //println(dataRetreive)
         //gson object
         val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
 
@@ -66,7 +71,7 @@ object WeatherDataProcessor : AppCompatActivity() {
         {
 
             list = commentResponse[x].dateTime.split("T",":00+01:00")
-            data =   list[1] + " " +
+            hourlyData =   list[1] + " " +
                     pad(commentResponse[x].rain.value) + "   " +
                     pad(commentResponse[x].wind.speed.value) + "  " +
                     pad(commentResponse[x].temperature.value) + "   " +
@@ -79,43 +84,58 @@ object WeatherDataProcessor : AppCompatActivity() {
                         commentResponse[x].relativeHumidity,
                         commentResponse[x].isDaylight)
 
-            fullList.add(data)
+            fullHourlyList.add(hourlyData)
             //println(fullList[x])
 
-            ListString += fullList[x] + "\n"
+            hourlyListString += fullHourlyList[x] + "\n"
 
         }
-        println(ListString)
+        println(hourlyListString)
     }
 
     fun saveCurrentData(body: String){
-        dataRetreive = body
-        println(dataRetreive)
+        //fullHourlyList.clear()
+        //hourlyListString = "";
+        //dataRetreive = body
+        //println(dataRetreive)
         //gson object
         val commentResponse: List<currentConditionsItem> = gson.fromJson(body,Array<currentConditionsItem>::class.java).toList()
-
         for (x in commentResponse.indices)
         {
-                println(
-                    UserResults.checkHourlyResults(
-                        commentResponse[x].precip1hr.metric.value,
+
+            currentData =
+                    pad(commentResponse[x].precip1hr.metric.value) + "   " +
+                    pad(commentResponse[x].wind.speed.metric.value) + "  " +
+                    pad(commentResponse[x].temperature.metric.value) + "   " +
+                    pad(commentResponse[x].realFeelTemperature.metric.value) +"      " +
+                    commentResponse[x].relativeHumidity +"        " +
+                    UserResults.checkHourlyResults(commentResponse[x].precip1hr.metric.value,
                         commentResponse[x].wind.speed.metric.value,
                         commentResponse[x].temperature.metric.value,
                         commentResponse[x].realFeelTemperature.metric.value,
                         commentResponse[x].relativeHumidity,
-                        commentResponse[x].isDayTime
-                    )
-                )
+                        commentResponse[x].isDayTime)
+
+
+            currentHourlyList.add(currentData)
+            //println(fullList[x])
+
+            hourlyListString += currentHourlyList[x] + "\n"
+
         }
-    }
+    println(hourlyListString)
+        }
+
 
    open fun callHourlyData(courseCode:String){
-        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
+        //val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
+        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true&metric=true"
         fetchHourlyJson(url)
     }
 
     open fun callCurrentData(courseCode:String){
-        val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true"
+        //val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true"
+        val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true"
         fetchCurrentJson(url)
     }
 

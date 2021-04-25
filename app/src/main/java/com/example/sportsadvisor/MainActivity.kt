@@ -1,39 +1,33 @@
 package com.example.sportsadvisor
 //android
-import HourlyDataResponse.HourlyProcessedDataItem
-import CurrentConditionsDataResponse.currentConditionsItem
+
+
+//realm
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Looper
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
-
-
-import android.content.Context
-import android.os.Looper
-import android.os.Parcelable
-import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
-import com.example.sportsadvisor.WeatherDataProcessor.fullList
-import com.example.sportsadvisor.model.*
-
-
-import okhttp3.*
-import java.io.IOException
-//realm
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sportsadvisor.model.HomeFragment
+import com.example.sportsadvisor.model.ScoreFragment
+import com.example.sportsadvisor.model.SettingsFragment
+import com.example.sportsadvisor.model.WeatherFragment
+import com.google.gson.Gson
 import io.realm.Realm
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
+import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.MediaType.Companion.toMediaType
-import com.google.gson.Gson
-import okhttp3.internal.wait
 
 class MainActivity : AppCompatActivity() {
     //
@@ -47,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         NavigationItemModel(R.drawable.home, "Home"),
         NavigationItemModel(R.drawable.weather, "Weather"),
         NavigationItemModel(R.drawable.scores, "Scores"),
-        NavigationItemModel(R.drawable.profile, "Profile"),
+        NavigationItemModel(R.drawable.profile, "User History"),
         NavigationItemModel(R.drawable.settings, "Settings")
     )
 
@@ -75,25 +69,18 @@ class MainActivity : AppCompatActivity() {
         navigation_rv.setHasFixedSize(true)
 
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-
         val displayName = sp.getString("displayName", "")
-        val course = sp.getString("course", "")
-
-
-        fun getWeatherdata(){
-
-        }
 
         // Add Item Touch Listener
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
-
+                val bundle = Bundle()
+                val course = sp.getString("course", "")
                 val displayName = sp.getString("displayName", "")
-
                 when (position) {
                     0 -> {
                         // # Home Fragment
-                        val bundle = Bundle()
+
                         bundle.putString("fragmentName", "Welcome $displayName")
                         val homeFragment = HomeFragment()
                         homeFragment.arguments = bundle
@@ -151,16 +138,9 @@ class MainActivity : AppCompatActivity() {
                             courseCode = "3545589"
                             WeatherDataProcessor.callHourlyData(courseCode)
                         }
-
                         // # Weather Fragment
-                        val bundle = Bundle()
                         bundle.putString("fragmentName", "Weather for $course")
-                        //bundle.putParcelableArray("fullList",ArrayList<Parcelable()>)
-                        bundle.putString("fullList", WeatherDataProcessor.ListString)
-                        //val fullList : List<WeatherDataProcessor> = java.util.ArrayList<WeatherDataProcessor>()
-                        //bundle.putParcelableArray("fullList", list as ArrayList<fullList>)
-                        //val list : List<WeatherDataProcessor > = ArrayList<WeatherDataProcessor>()
-                        //bundle.putParcelableArrayList("fullList", fullList as ArrayList<WeatherDataProcessor>)
+                        bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
 
                         val weatherFragment = WeatherFragment()
                         weatherFragment.arguments = bundle
@@ -194,6 +174,8 @@ class MainActivity : AppCompatActivity() {
                 Handler(Looper.getMainLooper()).postDelayed({
                     drawerLayout.closeDrawer(GravityCompat.START)
                 }, 200)
+
+                //Thread.sleep(100)
             }
         }))
 
@@ -271,6 +253,8 @@ class MainActivity : AppCompatActivity() {
         val reg = Intent(this, RegisterActivity::class.java)
         startActivity(reg)
     }
+
+
 
 
 
