@@ -75,18 +75,20 @@ After each sprint a set of tests were required to pass. If a test case failed to
 The emulator we used was run on Android 9.0 (pie). The device that the emulator is simulated is the Google Pixel 3A mobile phone.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm]{img/LoginTestCase.PNG}
+    \includegraphics[width=15cm, height = 7.5cm]{img/EmulatorLaunch.PNG}
     \caption{Test Case for successful Login}
     \label{fig:altas config}
 \end{figure}
-The image above illustrates the test case we designed and implemented for testing the Login function of our application. The test is designed for a successfully login test. 
+
+The image above illustrates the test case we designed and implemented for testing the Login function of our application. The test is designed for a successfully login test.
 \section{Collaborative Platforms}
 \subsection{Version Control}
 The platform all team members were most familiar with was GitHub, it allows members to access project code versions and commit their contributions to one repository. Every team member has access to view and modify the contents of the repository. All changes are logged and any commit can be accessed at all times , this helps with problem solving as any issues that occur can be called back on to older commits that were functional if issues occur with the latest commit.
 
 \subsection{Communication Tools}
 \subsubsection{Microsoft Teams}
-Microsoft Teams was used primarily to communicate with our supervisor. We chose this as it is linked to our student accounts and our supervisor requested us to use it as a way to communicate with them. Teams is a good platform for video calls as it can be accessed in multiple platforms such as an Internet browser, Mobile/Desktop Application . It allows users to share files and can sync to your google drive account(file hosting service).and use a calendar feature allowing users to organize meetings.
+Microsoft Teams was used primarily to communicate with our supervisor. We chose this as it is linked to our student accounts and our supervisor requested us to use it as a way to communicate with them.
+\newline Teams is a good platform for video calls as it can be accessed in multiple platforms such as an Internet browser, Mobile/Desktop Application . It allows users to share files and can sync to your google drive account(file hosting service).and use a calendar feature allowing users to organize meetings.
 \newline
 However it is not strongly suited for messaging as its forum feature can become cluttered and tedious to navigate,
 This is one of the main reasons why we decided to use Discord as our primary form of communication as a team.
@@ -105,9 +107,7 @@ When choosing the technology to use in our Application, we decided to use a rang
 As a team we wanted to learn a new programming language as a challenge for our project and to increase our skill set as Software Developers. One of our lecturer's during one of our online classes from this module mentioned the Kotlin language. This led us to research this language and understand what it could be used for. We saw that Kotlin was an up and coming language that was primarily used for mobile Applications in Android as of September 2020 with hopes of iOS support being implemented in the near future.
 \subsection{Intellij IDEA}
 At the start of the college year we were introduced to Intellij in our Distributed Systems module. We soon realised that JetBrains who are the founders of Intellij are also the designers of the Kotlin programming language. With this information we decided to use this as our chosen development environment.
-\newline
 We soon realised that we had the wrong version of Intellij installed on our devices. We needed to have the Intellij IDEA Ultimate to be able to access a Mongo Database. We got this free with the GitHub Student Developer pack. This was an issue that was unforeseen and time consuming but easily rectified.
-\newline
 With JetBrains owning both Kotlin and Intellij writing the code was seamless and allowed testing to constantly occur. Intellij allowed the use of an Android mobile phone emulator to run these tests.
 \subsection{MongoDB}
 MongoDB is a NoSQL database service which allows a user to store data from an application for future use. The data stored can be queried in searches which outputs specific results. These result can be processed by the application and read out to the user. We chose to use MongoDB as our server because of our previous experience of developing applications with it as the back end storage.
@@ -155,7 +155,7 @@ We tried to design the app with different orientations which can be seen in Figu
 The algorithm we have implemented for the app is used for giving the user feedback on the weather conditions for playing golf during a specific hour on the current date. We generate JSON data from an API call and it contains an abundance of different weather variables which we have saved into variables that can be accessed in the application. We have chosen 8 variables from the list that are key to what hour is best suited to playing a round of golf. They are: sunrise, sunset, hour, amount of rainfall in millimetres, temperature, wind speed and humidity.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm]{img/starRating.PNG}
+    \includegraphics[width=13cm,height =6.5cm]{img/starRating.PNG}
     \caption{Star rating function}
     \label{fig:altas config}
 \end{figure}
@@ -164,7 +164,7 @@ All these variables are given back to the user alongside a star rating. The star
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{img/starEx.PNG}
+    \includegraphics[width=12cm]{img/starEx.PNG}
     \caption{Wind Rating function}
     \label{fig:altas config}
 \end{figure}
@@ -207,7 +207,7 @@ Below can be seen two examples of code one written in Kotlin and the other in Ja
 Kotlin comes with many amazing features that assist the Developer in writing efficient and easy to understand projects and Applications but with all of these innovative and useful tools that come with the Kotlin Language, it is always changing. As the Kotlin programming language is relatively new in comparison to other programming languages such as Java and C++, the language itself and its components vary in stages within a Software release life cycle, an example of which would be the Kotlin/JVM is in stable development since version 1.0 but the component for Multiplatform projects is in Alpha version 1.3 as of the 11th February 2021 which can be seen in Figure 4.1.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{img/KotlinStability.PNG}
+    \includegraphics[width=11cm,height = 11cm]{img/KotlinStability.PNG}
     \caption{Stability of Kotlin and its components}
     \label{fig:altas config}
 \end{figure}
@@ -217,18 +217,18 @@ Due to the Multiplatform component not being in a stable release version, we dec
 We initially created our base Application with the intention of utilising the multiplatform component for our application. We soon found that it was very difficult to run and in some instances would not compile and would sometimes render the Application completely inoperable. This came as a cause for concern for us in the early stages of development and initially delayed our development by two weeks. It made us reflect on the feasibility of the component and if it would cause major issues later on in the development life cycle of the Application and as a result was ultimately removed from the Application due to being too unstable, with a new project entirely designed for the Android platform being created instead.
 
 \section{Intellij IDEA's}
-The development environment provided by Intellij allows for the development of several different types of programs including Mobile Applications. The IDE contains a built in android development environment with Kotlin being the default language. This is due to the development lead designer being Roman Elizarov.
+The development environment provided by Intellij allows for the development of several different types of programs including Mobile Applications. The IDE contains a built in android development environment with Kotlin being the default language.
 \newline
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{img/androidADK.PNG}
+    \includegraphics[width=15cm]{img/androidADK.PNG}
     \caption{Android Device Kit}
     \label{fig:adk menu}
 \end{figure}
 The image above shows the emulated device customisation menu. In here you can add a virtual device to run the android application on. The ability to modify what Android SDK used within the IDE was very important for testing the project. That feature is a great way to debug a mobile application efficiently and in real-time..
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{img/androidSDK.PNG}
+    \includegraphics[width=12cm]{img/androidSDK.PNG}
     \caption{Android Software Development Kit}
     \label{fig:sdk menu}
 \end{figure}
@@ -248,7 +248,7 @@ After a lot of testing and attempting to retrieve data using the Open Weather AP
 By offering this list we can accurately show the conditions for these particular golf course of choice instead of being able to search for weather conditions for cities and towns instead of the actual golf courses.
 \newline
 \newline
-The data provided from the API is then able to be processed by our Algorithm to provide a rating for the conditions based on two search features, a 12 hour search for that particular day or a search based on next 5 rolling days, the 12 hour search will provide the rating based on the next twelve hours and will provide a rating for those hours, and then the 5 day search will give a general rating for each of the days.  
+The data provided from the API is then able to be processed by our Algorithm to provide a rating for the conditions based on two search features, a 12 hour search for that particular day or a search based on next 5 rolling days, the 12 hour search will provide the rating based on the next twelve hours and will provide a rating for those hours, and then the current conditions search will give a general rating for the current hour when accessed by the guest functionality.
 
 \section{MongoDB}
 To utilise the MongoDB database,we had to use two of its three main core features. The two features we use were Atlas and Realm, Atlas and Realm can be integrated in a way that allows for a seamless connection to and from the Android Application. The MongoDB atlas uses a server that can be either free or paid for use by the a set charge per hour. We choose a free tier server based in N.Virginia (us-east-1) run by Amazon Web Service(AWS). This server was chosen because the Irish server does not work with MongoDB Realm as the server for Ireland is only using MongoDB version is 4.2 but Realm runs on MongoDB version 4.4 and above.
@@ -279,7 +279,7 @@ The App will have a unique ID that is called in the Mobile Application back-end 
 \newline
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm]{img/syncSetup.PNG}
+    \includegraphics[width=15cm]{img/syncSetup.PNG}
     \caption{MongoDB Sync configuration}
     \label{fig:altas config}
 \end{figure}
@@ -290,7 +290,7 @@ For this project, Realm functioned as the middle man between the application and
 Realm allows the creation of App users. This is the best way we found to make data private and protected. The user will have to login to the server with their username, email and password. These are created in the app and are stored on the Realm App external storage system.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=13cm]{img/Users.PNG}
+    \includegraphics[width=15cm,height = 8cm]{img/Users.PNG}
     \caption{MongoDB database with a User}
     \label{fig:altas config}
 \end{figure}
@@ -305,10 +305,16 @@ Discord is a free instant messaging and Voice over Internet Protocol service whi
 \newline
 We found
 \subsection{Teams}
-Microsoft Teams is a collaborative work space that is fully integrated with Microsoft Office 365 Services, Team's allows for scheduled voice and screen sharing meetings to be arranged via a calendar layout so that users can organise multiple meetings throughout a day to as well as schedule meetings to automatically occur on a daily, weekly or monthly basis such as in our case we were able to set up our meeting with our supervisor to automatically schedule itself each Monday at 11:30. We also found Teams to be a lot more user friendly to users who are not as technologically skilled, rarely does Teams encounter voice chat or microphone connectivity issues. It has both an computer application and web application formats for users on computers which allows flexibility for a user who might be borrowing a machine or have low storage they can use the web app version through a browser. Similarly users can use an android or ios app for when the situation is more suitable for example replying to a direct message or meeting invitation whilst away from their desktop or laptop device. Its also worth noting that if a team is using a Office platform such as Excel, PowerPoint or Word, the members of the team can work on the same document at the same time which is a major advantage for people using Office platform tools. The only downside of teams which is a common criticism of Microsoft software would be its UX can be frustrating, while it has improved in recent updates the UX is nowhere near as smooth as Slack or Discords in terms of navigating teams or groups you are apart of and its message feeds. 
+Microsoft Teams is a collaborative work space that is fully integrated with Microsoft Office 365 Services, Team's allows for scheduled voice and screen sharing meetings to be arranged via a calendar layout so that users can organise multiple meetings throughout a day to as well as schedule meetings to automatically occur on a daily, weekly or monthly basis such as in our case we were able to set up our meeting with our supervisor to automatically schedule itself each Monday at 11:30.
+\newline
+\newline
+We also found Teams to be a lot more user friendly to users who are not as technologically skilled, rarely does Teams encounter voice chat or microphone connectivity issues. It has both an computer application and web application formats for users on computers which allows flexibility for a user who might be borrowing a machine or have low storage they can use the web app version through a browser.
+\newline
+\newline
+Similarly users can use an android or ios app for when the situation is more suitable for example replying to a direct message or meeting invitation whilst away from their desktop or laptop device. Its also worth noting that if a team is using a Office platform such as Excel, PowerPoint or Word, the members of the team can work on the same document at the same time which is a major advantage for people using Office platform tools. The only downside of teams which is a common criticism of Microsoft software would be its UX can be frustrating, while it has improved in recent updates the UX is nowhere near as smooth as Slack or Discords in terms of navigating teams or groups you are apart of and its message feeds.
 
 \chapter{System Design}
-With our system we have three main layers that integrate with one another to build our functional application. The Front End part of the application deals with the visuals and functionality that will be delivered to the user. It communicates with the Back End of the application which stores and retrieves data for the user upon interacting with the front end's elements. The external tools are used in collaboration with the Front End to retrieve and present the current weather data for now and the next twelve hours as a set of ratings for the optimal playing conditions for each hour.
+With our system we have three main layers that integrate with one another to build our functional application. The Front End part of the application deals with the visuals and functionality that will be delivered to the user. It communicates with the Back End of the application which stores and retrieves data for the user upon interacting with the front end's elements. The Data Retrieval tools are used in collaboration with the Front End to retrieve and present the current weather data for now and the next twelve hours as a set of ratings for the optimal playing conditions for each hour.
 
 \section{Front End}
 \subsection{Android}
@@ -326,9 +332,9 @@ With our system we have three main layers that integrate with one another to bui
 With our application we set up a MongoDB server to allow a user the ability to create an account to store their golf course results. To allow the user to access the mongoDb server we needed a register user page and a login page.
 \subsection{MongoDB}
 \subsubsection{Realm}
-To connect to MongoDB, the application uses MongoDB Realm. This is an application on the server side which allows the android application to access the MongoDB Atlas Cluster. The ability to access this only occurs for users who have registered. The email, password and userID act as a way to verify who is trying to connect to the data while also filter what data can been seen on the User History page.   
+To connect to MongoDB, the application uses MongoDB Realm. This is an application on the server side which allows the android application to access the MongoDB Atlas Cluster. The ability to access this only occurs for users who have registered. The email, password and userID act as a way to verify who is trying to connect to the data while also filter what data can been seen on the User History page.
 \subsubsection{Atlas}
-The MongoDB atlas is where the MongoDB database is located. A MongoDB Atlas cluster consists of a collection and a database. To connect to this database  
+The MongoDB atlas is where the MongoDB database is located. A MongoDB Atlas cluster consists of a collection and a database. To connect to this database
 \subsection{Integration}
 \begin{figure}[H]
     \centering
@@ -343,7 +349,7 @@ The MongoDB atlas is where the MongoDB database is located. A MongoDB Atlas clus
     \label{fig:altas config}
 \end{figure}
 The above images are a screenshot of both the application page and code that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN. The GO TO LOGIN button brings the user to the login page to sign into the MongoDB server to access the user data that is attached to that user.
-\newline 
+\newline
 The user input fields are saved as emailTxt and passTxt string variables by utilizing the toString function in Kotlin. The string variables are passed into the function app.emailPassword.registerUserAsync() to be sent to the MongoDb Realm to create a new App user.
 \begin{figure}[H]
     \centering
@@ -354,17 +360,20 @@ The user input fields are saved as emailTxt and passTxt string variables by util
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height = 11cm]{img/mongoSignIn.PNG}
+    \includegraphics[width=11cm, height = 9cm]{img/mongoSignIn.PNG}
     \caption{Code associated with the login Page}
     \label{fig:altas config}
 \end{figure}
 To connect to the MongoDB server, the user needs to input their login details into the application when they are on the Login Page. The page can bee seen in Figure 5.3 to the MongoDb Realm Application. When the user is in the login page it will enter its userID, email and password again. The user will get an alert saying successfully logged in UserID. \newline
 By using the MongoDB loginAsync method for signing into the server we can get back an error if the sign in was not successful and this method also allows the user to read and write to and from the database.
 
-\section{External tools}
+\section{Data Gathering and Processing}
+For our application, one of the major parts of the project was to retrieve weather data that would then be processed for a rating out of 5, depending on the search type , it would either return multiple ratings for the next twelve hours or a single rating for the current hour.
+
+\subsection{AccuWeather and OKHttp}
 \subsection{GSON}
-\subsection{AccuWeather}
-\subsection{OKHttp}
+\subsection {Processing the Data}
+
 \subsection{Integration}
 
 
@@ -386,8 +395,31 @@ By using the MongoDB loginAsync method for signing into the server we can get ba
   \label{table:mytable}
 \end{table}
 \chapter{System Evaluation}
-As many pages as needed.
+In this chapter we focused on the Testing, Evaluation and Limitations of our Project.Our focus was to test how robust or project is by following by following the Agile methodology of Software Testing. We designed a Gantt Chart to outline sprints that breakdown the project into smaller parts which in turn, would be vigorously tested. The full Gantt chart can be viewed on the link below in our Github Repository.
+\newline
+
+\url{https://github.com/stevenJoyce/4thYearGroupProject/tree/main/TestingGuides}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm, height = 18cm]{img/Gantt.PNG}
+    \caption{Test Case for successful Login}
+    \label{fig:altas config}
+\end{figure}
 \section{Unit Testing}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm, height = 7.5cm]{img/TestCasePass.PNG}
+    \caption{Test Case for successful Login}
+    \label{fig:altas config}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm, height = 7.5cm]{img/TestCaseFail.PNG}
+    \caption{Test Case for unsuccessful Login}
+    \label{fig:altas config}
+\end{figure}
 \section{Application Deployment}
 \section{Application Features}
 \section{Objectives Overview}
