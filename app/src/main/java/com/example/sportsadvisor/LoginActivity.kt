@@ -77,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
         emailTxt = email.text.toString()
         passTxt = password.text.toString()
         println("Username input: $emailTxt Password Input: $passTxt")
-        val emailPasswordCredentials: Credentials = Credentials.emailPassword(
+       val emailPasswordCredentials: Credentials = Credentials.emailPassword(
             emailTxt,
             passTxt
         )

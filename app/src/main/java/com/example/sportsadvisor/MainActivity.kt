@@ -80,7 +80,6 @@ class MainActivity : AppCompatActivity() {
                 when (position) {
                     0 -> {
                         // # Home Fragment
-
                         bundle.putString("fragmentName", "Welcome $displayName")
                         val homeFragment = HomeFragment()
                         homeFragment.arguments = bundle
@@ -253,10 +252,6 @@ class MainActivity : AppCompatActivity() {
         val reg = Intent(this, RegisterActivity::class.java)
         startActivity(reg)
     }
-
-
-
-
 
     override fun onDestroy() {
         super.onDestroy()
