@@ -368,13 +368,43 @@ To connect to the MongoDB server, the user needs to input their login details in
 By using the MongoDB loginAsync method for signing into the server we can get back an error if the sign in was not successful and this method also allows the user to read and write to and from the database.
 
 \section{Data Gathering and Processing}
-For our application, one of the major parts of the project was to retrieve weather data that would then be processed for a rating out of 5, depending on the search type , it would either return multiple ratings for the next twelve hours or a single rating for the current hour.
+For our application, one of the major parts of the project was to retrieve weather data from a weather API using the OKHTTP: HTTP and HTTP2 client. This data is then gathered and and then parsed from Strings and Objects to their JSON representations using GSON. This data is then processed and after reading in all the data, a rating between 1 and 5 is then applied to an hour associated with the weather values passed in.
+
 
 \subsection{AccuWeather and OKHttp}
-\subsection{GSON}
-\subsection {Processing the Data}
+\subsubsection{AccuWeather}
+One of the main aspects is retrieving data from the AccuWeather API, this was fundamental part of the app as without it, hourly ratings based on conditions for playing golf couldnt be shown to the user for their chosen golf course. We decided upon implementing Accuweather as part of our Application as it was able to search for locations based on their own specific location codes, which then allowed us to create specific locations of golf courses in Co. Galway on a list for the user to pick from.
 
+\subsubsection{OKHTTP}
+For our data retrieval we used Okhttp to gather the weather data from the Accuweather API,we decided upon this as the technology to retreiving data because of one its main features, its perseverance in poor network conditions or when the network is being troublesome: "it will silently recover from common connection problems. If your service has multiple IP addresses, OkHttp will attempt alternate addresses if the first connect fails."\cite{ref1}
+\newline
+\newline
+This is vitally important to the design of our Application as we know that not every golf course will have good WiFi at their clubs and then when the player is on the golf course they may have to use their mobile data and in certain locations, the mobile data may be poor or non-existent so by using this technology , it will still try to make these requests even under the poorest of conditions.
+
+\subsection{GSON}
+After OKHTTP retrieves the data back from the Accuweather API service it returns back a string values and objects that needs to be parsed into JSON Representations of that data so that it can be processed into ratings, this is where GSON comes into play, it takes the data and converts to JSON readable data, this is then stored into multiple Kotlin data class Files which can then be called upon to calculate the ratings for the hour.
+\subsection {Processing the Data}
+When the data has converted from a String to its JSON Representation, it is then time to take that data and compare it to predetermined values which will check to see if data that is being passed through fits inside inside any of of the ranges of values it will be given a value between 0 and 1.
+\newline
+\newline
+There are six different types of data that is passed through to the data processor, these include the Rainfall, windSpeed, temperature, real Feel temperature, the Humidity and if the hour is in day light. The first five values determine the rating out of 5 and each one of these values are rated between 0 and 1 to give a more accurate rating. The final value, the isDayLight value , then checks to see if the hour is in daylight or not, if it is in daylight, the rating remains the same otherwise the rating for that hour is set to 0.0 as it not recommended to play golf in the dark.
 \subsection{Integration}
+All of these sections integrate and work together to produce a rating for the hour for the user to then determine which time would be best to start their round of golf, below will show how
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm,height = 8cm]{img/CourseCodes.PNG}
+    \caption{Course Codes used for API Request}
+    \label{fig:altas config}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm,height = 14cm]{img/InPhoneList.PNG}
+    \caption{List of Courses used for Location}
+    \label{fig:altas config}
+\end{figure}
+
+The above images show how based on the location the user has set as their chosen golf course, it will set the course code to that golf course and will then begin the first part in trying to retrieve the weather data for that particular golf course regardless of where the user is located.
 
 
 
@@ -438,4 +468,9 @@ About three pages.
 \item Highlight your findings from the evaluation section / chapter and any opportunities identified.
 \end{itemize}
 \chapter{References}
+
+\begin{thebibliography}{9}
+\bibitem{ref1} {title={OkHttp},url={https://square.github.io/okhttp/}, journal={OkHttp}, author={Square, Inc.}}
+
+\end{thebibliography}
 \chapter{Appendices}
