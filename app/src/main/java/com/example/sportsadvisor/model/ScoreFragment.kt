@@ -2,30 +2,36 @@ package com.example.sportsadvisor.model
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.example.sportsadvisor.R
+import io.realm.mongodb.App
+import io.realm.mongodb.AppConfiguration
+import io.realm.mongodb.User
 import kotlinx.android.synthetic.main.fragment_score.*
-import kotlinx.android.synthetic.main.fragment_weather.view.*
-import kotlinx.android.synthetic.main.login_main.*
 import kotlinx.android.synthetic.main.login_main.button
-import java.io.Console
+import org.bson.Document
+import org.bson.types.ObjectId
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class ScoreFragment : AppCompatActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        var pkey = ""
+        val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        val course = sp.getString("course", "")
+
+        val displayName = sp.getString("displayName", "")
+        pkey = displayName.toString()
+        var courseName = course.toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_score)
-        val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val handicap = sp.getString("handicap","")
-
         button.setOnClickListener{
             try {
                 front9par.text = "" + (hole1Par.text.toString().toInt() + hole2par.text.toString().toInt() + hole3par.text.toString().toInt() + hole4par.text.toString().toInt() + hole5par.text.toString().toInt() + hole6par.text.toString().toInt() + hole7par.text.toString().toInt() + hole8par.text.toString().toInt() + hole9par.text.toString().toInt()).toString()
@@ -37,11 +43,51 @@ class ScoreFragment : AppCompatActivity() {
                 netPar.text= handicap.toString()
                 NettScore.text ="" + (totalScore.text.toString().toInt() - handicap.toString().toInt())
 
+                var tpar = Integer.parseInt(totalPar.text as String)
+                var npar = Integer.parseInt(netPar.text as String)
+                var nscore = Integer.parseInt(NettScore.text as String)
+                sendData(tpar,npar,nscore,courseName,pkey)
+
 
             }catch (e:Exception){
                 println(e)
                 Toast.makeText(applicationContext, "error", Toast.LENGTH_LONG).show()
             }
         }
+
     }
+}
+
+fun sendData(parScore: Int, handicap: Int, nettScore: Int, courseName: String, pkey: String)
+{
+    var par = parScore
+    var hand = handicap
+    var nett = nettScore
+    var coursename = courseName
+    var key = pkey
+    lateinit var app: App
+    var user: User? = null
+    val appID = "sportsadvisor-gztkm"
+    app = App(AppConfiguration.Builder(appID).build())
+    user = app.currentUser()
+    // service for MongoDB Atlas cluster containing custom user data
+    val mongoClient = user!!.getMongoClient("mongodb-atlas")
+    val mongoDatabase = mongoClient.getDatabase("Users")
+    val mongoCollection = mongoDatabase.getCollection("UserData")
+    val currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+    val currentTime = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
+
+    mongoCollection.insertOne(Document("UserData",user.id).append("_id", ObjectId()).append("date",currentDate)
+        .append("time",currentTime).append("course",coursename).append("parScore",par).append("handicap",hand)
+        .append("totalScore",nett).append("_pkey", key))
+        .getAsync { result ->
+            if (result.isSuccess) {
+                Log.v(
+                    "EXAMPLE",
+                    "Inserted custom user data document. _id of inserted document: ${result.get().insertedId}"
+                )
+            } else {
+                Log.e("EXAMPLE", "Unable to insert custom user data. Error: ${result.error}")
+            }
+        }
 }

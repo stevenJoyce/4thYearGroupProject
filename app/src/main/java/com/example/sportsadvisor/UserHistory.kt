@@ -17,7 +17,8 @@ import org.bson.Document
 
 class UserHistory : AppCompatActivity() {
     lateinit var app: App
-    var list: List<String> = ArrayList()
+    var list =  mutableListOf<String>()
+    var filteredList = ArrayList<String>()
     lateinit var result: Document
     lateinit var results: MongoCursor<Document>
     lateinit var colResults:String
@@ -46,10 +47,6 @@ class UserHistory : AppCompatActivity() {
 */
 
     }
-
-    private fun showToast(s: String) {
-        Toast.makeText(applicationContext, s, Toast.LENGTH_LONG).show()
-    }
     fun userData(view: View) {
         val mongoClient =
             user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
@@ -67,18 +64,15 @@ class UserHistory : AppCompatActivity() {
                 Log.v("EXAMPLE", "successfully found all collections:")
                 while (results.hasNext()) {
                     colResults = results.next().toString()
-                    list = colResults.split("=",",")
-                    Log.v("EXAMPLE", colResults)
+                    list.add(colResults.split("=",",").toString())
+                    //Log.v("EXAMPLE", colResults)
                 }
+
             } else {
                 Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
             }
-            var i = 0
-            while(i < list.size)
-            {
-                println("Stored data: " + list[i])
-                i++
-            }
+            println("List $list")
+
         }
 
         text.text = list.toString()

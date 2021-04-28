@@ -124,11 +124,7 @@ class LoginActivity : AppCompatActivity() {
                     } else {
                         Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
                     }
-                    var i:Int = 0
-                    for( x in list.indices)
-                    {
-                        println("Stored data: " + list[x])
-                    }
+
                 }
 
                 mongoCollection.count().getAsync { task ->
