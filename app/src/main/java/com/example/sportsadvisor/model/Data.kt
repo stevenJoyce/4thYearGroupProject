@@ -11,11 +11,7 @@ open class Data(
     @Required
     var _pkey:String = "",
 
-    var hour: Int = 0,
-    var temperature:Int=0,
-    var wind:Int=0,
-    var precip:Double = 0.00,
-    var humidity:Double = 0.00,
+
 
 
 ):RealmObject()

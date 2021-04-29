@@ -1,12 +1,9 @@
 package com.example.sportsadvisor
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import io.realm.mongodb.App
@@ -26,6 +23,7 @@ class UserHistory : AppCompatActivity() {
     var listString:String=""
     var pkey:String = ""
     var user: User? = null
+    var query = Document("date", true)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +56,7 @@ class UserHistory : AppCompatActivity() {
 
         //getting a cluster
         val queryFilter = Document("_pkey", pkey)
-        val findTask = mongoCollection.find(queryFilter).iterator()
+        val findTask = mongoCollection.find(queryFilter).projection(query).iterator()
         findTask.getAsync { task ->
             if (task.isSuccess) {
                 list.clear()
@@ -71,7 +69,7 @@ class UserHistory : AppCompatActivity() {
                     list.add(colResults.split("=",",").toString())
                     listString += list[x] +"\n"
                     x++
-                    //Log.v("EXAMPLE", colResults)
+                    Log.v("EXAMPLE", colResults)
                 }
 
             } else {
@@ -83,7 +81,10 @@ class UserHistory : AppCompatActivity() {
 
         text.text = listString
 
+
+
     }
+
 
 
 }
