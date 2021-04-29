@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val displayName = sp.getString("displayName", "")
-
+        val course = sp.getString("course", "")
         // Add Item Touch Listener
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
@@ -78,9 +78,59 @@ class MainActivity : AppCompatActivity() {
                 val course = sp.getString("course", "")
                 val displayName = sp.getString("displayName", "")
                 when (position) {
-                    0 -> {
+                    0 -> {   if(course == "Oughterard GC") {
+                        courseCode = "208587"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+
+                    }
+                    else if(course == "Galway GC") {
+                        courseCode = "208539"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Galway Bay GC") {
+                        courseCode = "3549260"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Bearna GC") {
+                        courseCode = "208553"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Glenlo Abbey GC") {
+                        courseCode = "208539"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Connemara Championship Links") {
+                        courseCode = "1651911"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Athenry GC") {
+                        courseCode = "208546"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Gort GC") {
+                        courseCode = "208564"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Loughrea GC") {
+                        courseCode = "208542"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Tuam GC") {
+                        courseCode = "208543"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Dunmore Demesne GC") {
+                        courseCode = "208562"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+                    else if(course == "Mountbellew GC") {
+                        courseCode = "3545589"
+                        WeatherDataProcessor.callCurrentData(courseCode)
+                    }
+
+                        bundle.putString("fragmentName", "Weather for $course")
+                        bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
                         // # Home Fragment
-                        bundle.putString("fragmentName", "Welcome $displayName")
                         val homeFragment = HomeFragment()
                         homeFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {
@@ -183,7 +233,9 @@ class MainActivity : AppCompatActivity() {
 
         // Set 'Home' as the default fragment when the app starts
         val bundle = Bundle()
-        bundle.putString("fragmentName", "Welcome $displayName")
+        WeatherDataProcessor.callCurrentData(courseCode)
+        bundle.putString("fragmentName", "Weather for Galway GC")
+        bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
         val homeFragment = HomeFragment()
         homeFragment.arguments = bundle
         supportFragmentManager.beginTransaction().apply {

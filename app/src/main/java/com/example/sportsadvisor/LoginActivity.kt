@@ -77,6 +77,21 @@ class LoginActivity : AppCompatActivity() {
         emailTxt = email.text.toString()
         passTxt = password.text.toString()
         println("Username input: $emailTxt Password Input: $passTxt")
+
+        if (emailTxt.isEmpty() && passTxt.isEmpty()){
+            emailTxt = "Email@123.ie"
+            passTxt = "pass"
+            println("Email and pass empty")
+        }
+
+        if (emailTxt == email.text.toString() && passTxt.isEmpty()){
+            passTxt = "pass"
+            println("pass empty")
+        }
+        if (emailTxt.isEmpty() && passTxt == password.text.toString()){
+            emailTxt = "Email@123.ie"
+            println("Email empty")
+        }
        val emailPasswordCredentials: Credentials = Credentials.emailPassword(
             emailTxt,
             passTxt
@@ -93,65 +108,16 @@ class LoginActivity : AppCompatActivity() {
                 val mongoCollection = mongoDatabase.getCollection("UserData")
 
                 Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
+                showToast("User has Logged in")
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
 
-                //getting a cluster
-                //val queryFilter = Document("_pkey", "datau1")
-                val queryFilter = Document("_pkey", name)
-                mongoCollection.findOne(queryFilter)
-                    .getAsync { task ->
-                        if (task.isSuccess) {
-                            result = task.get()
-                            Log.v("EXAMPLE", "successfully found a document: $result")
-                            collectData = result.toString()
-                            id  = collectData.split(",")
-                            println("id: $id")
-                            println(id[2])
-                        } else {
-                            Log.e("EXAMPLE", "failed to find document with: ${task.error}")
-                        }
-                    }
-
-                val findTask = mongoCollection.find(queryFilter).iterator()
-                findTask.getAsync { task ->
-                    if (task.isSuccess) {
-                        results = task.get()
-                        Log.v("EXAMPLE", "successfully found all collections:")
-                        while (results.hasNext()) {
-                            colResults = results.next().toString()
-                            list = colResults.split("=",",")
-                            Log.v("EXAMPLE", colResults)
-                        }
-                    } else {
-                        Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
-                    }
-
-                }
-
-                mongoCollection.count().getAsync { task ->
-                    if (task.isSuccess) {
-                        val count = task.get()
-                        Log.v("EXAMPLE", "successfully counted, number of documents in the collection: $count")
-                    } else {
-                        Log.e("EXAMPLE", "failed to count documents with: ${task.error}")
-                    }
-                }
-
-                /*mongoCollection.insertOne(Document("janeDoe01", user!!.id).append("_id", ObjectId()).append("parScore",72)
-                    .append("_pkey","janeDoe01").append("roundScore",5).append("userScore",77).append("temperature",12)
-                    .append("wind",24).append("humidity",63.85).append("precip",27.76).append("hour",12))
-                    .getAsync { result ->
-                        if (result.isSuccess) {
-                            Log.v("EXAMPLE", "Inserted custom user data document. _id of inserted document: ${result.get().insertedId}")
-                        } else {
-                            Log.e("EXAMPLE", "Unable to insert custom user data. Error: ${result.error}")
-                        }
-                    }*/
             } else {
                 Log.e("AUTH", it.error.toString())
                 showToast("Invalid username/password")
             }
         }
-        showToast("User has Logged in")
+
     }
 
     //user pressed register button

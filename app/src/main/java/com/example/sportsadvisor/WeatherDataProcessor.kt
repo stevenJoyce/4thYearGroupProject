@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 object WeatherDataProcessor : AppCompatActivity() {
 
@@ -71,12 +74,12 @@ object WeatherDataProcessor : AppCompatActivity() {
         {
 
             list = commentResponse[x].dateTime.split("T",":00+01:00")
-            hourlyData =   list[1] + " " +
-                    pad(commentResponse[x].rain.value) + "   " +
-                    pad(commentResponse[x].wind.speed.value) + "  " +
+            hourlyData =   list[1] + "  " +
+                    pad(commentResponse[x].rain.value) + "  " +
+                    pad(commentResponse[x].wind.speed.value) + "   " +
                     pad(commentResponse[x].temperature.value) + "   " +
                     pad(commentResponse[x].realFeelTemperature.value) +"      " +
-                    commentResponse[x].relativeHumidity +"        " +
+                    commentResponse[x].relativeHumidity +"          " +
                     UserResults.checkHourlyResults(commentResponse[x].rain.value,
                         commentResponse[x].wind.speed.value,
                         commentResponse[x].temperature.value,
@@ -94,21 +97,21 @@ object WeatherDataProcessor : AppCompatActivity() {
     }
 
     fun saveCurrentData(body: String){
-        //fullHourlyList.clear()
-        //hourlyListString = "";
-        //dataRetreive = body
-        //println(dataRetreive)
+        currentHourlyList.clear()
+        hourlyListString = "";
+
         //gson object
         val commentResponse: List<currentConditionsItem> = gson.fromJson(body,Array<currentConditionsItem>::class.java).toList()
+        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
         for (x in commentResponse.indices)
         {
 
-            currentData =
-                    pad(commentResponse[x].precip1hr.metric.value) + "   " +
-                    pad(commentResponse[x].wind.speed.metric.value) + "  " +
+            currentData = currentTime +"  "+
+                    pad(commentResponse[x].precip1hr.metric.value) + "  " +
+                    pad(commentResponse[x].wind.speed.metric.value) + "   " +
                     pad(commentResponse[x].temperature.metric.value) + "   " +
                     pad(commentResponse[x].realFeelTemperature.metric.value) +"      " +
-                    commentResponse[x].relativeHumidity +"        " +
+                    commentResponse[x].relativeHumidity +"          " +
                     UserResults.checkHourlyResults(commentResponse[x].precip1hr.metric.value,
                         commentResponse[x].wind.speed.metric.value,
                         commentResponse[x].temperature.metric.value,

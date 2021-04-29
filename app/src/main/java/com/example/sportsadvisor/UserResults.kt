@@ -14,13 +14,14 @@ object UserResults  {
         val tempFeelResult = checkTempFeel(feelsLikeTemp)
         val humidityResult = checkHumidity(humidity)
         var TotalResultScore = humidityResult + windResult+ tempResult + tempFeelResult + rainResult
+        var solution = Math.round(TotalResultScore * 10.0) / 10.0
         if (IsDaylight == false){
-            TotalResultScore = 0.0
+            solution = 0.0
         }
 
 
 
-        return TotalResultScore
+        return solution
     }
 
 
