@@ -16,22 +16,19 @@ import org.bson.types.ObjectId
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class ScoreFragment : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         var pkey = ""
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val course = sp.getString("course", "")
-
         val displayName = sp.getString("displayName", "")
         pkey = displayName.toString()
         var courseName = course.toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_score)
         val handicap = sp.getString("handicap","")
+
         button.setOnClickListener{
             try {
                 front9par.text = "" + (hole1Par.text.toString().toInt() + hole2par.text.toString().toInt() + hole3par.text.toString().toInt() + hole4par.text.toString().toInt() + hole5par.text.toString().toInt() + hole6par.text.toString().toInt() + hole7par.text.toString().toInt() + hole8par.text.toString().toInt() + hole9par.text.toString().toInt()).toString()
@@ -46,25 +43,28 @@ class ScoreFragment : AppCompatActivity() {
                 var tpar = Integer.parseInt(totalPar.text as String)
                 var npar = Integer.parseInt(netPar.text as String)
                 var nscore = Integer.parseInt(NettScore.text as String)
-                sendData(tpar,npar,nscore,courseName,pkey)
 
+                /* Calling the function and sending the data generated from user input
+                * alongside the course name and the unique username the user generates in the settings page*/
+                sendData(tpar,npar,nscore,courseName,pkey)
 
             }catch (e:Exception){
                 println(e)
                 Toast.makeText(applicationContext, "error", Toast.LENGTH_LONG).show()
             }
         }
-
     }
 }
 
 fun sendData(parScore: Int, handicap: Int, nettScore: Int, courseName: String, pkey: String)
 {
+    // Saving the data received in the function call into local variables to be sent to the server
     var par = parScore
     var hand = handicap
     var nett = nettScore
     var coursename = courseName
     var key = pkey
+    //variables used to access the MongoDB Server
     lateinit var app: App
     var user: User? = null
     val appID = "sportsadvisor-gztkm"
@@ -74,6 +74,7 @@ fun sendData(parScore: Int, handicap: Int, nettScore: Int, courseName: String, p
     val mongoClient = user!!.getMongoClient("mongodb-atlas")
     val mongoDatabase = mongoClient.getDatabase("Users")
     val mongoCollection = mongoDatabase.getCollection("UserData")
+    //Getting the current time and date
     val currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
     val currentTime = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 
