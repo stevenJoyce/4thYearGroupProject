@@ -23,6 +23,7 @@ class UserHistory : AppCompatActivity() {
     lateinit var results: MongoCursor<Document>
     lateinit var colResults:String
     private lateinit var text: TextView
+    var listString:String=""
     var pkey:String = ""
     var user: User? = null
 
@@ -60,22 +61,27 @@ class UserHistory : AppCompatActivity() {
         val findTask = mongoCollection.find(queryFilter).iterator()
         findTask.getAsync { task ->
             if (task.isSuccess) {
+                list.clear()
+                listString ="";
                 results = task.get()
                 Log.v("EXAMPLE", "successfully found all collections:")
+                var x = 0
                 while (results.hasNext()) {
                     colResults = results.next().toString()
                     list.add(colResults.split("=",",").toString())
+                    listString += list[x] +"\n"
+                    x++
                     //Log.v("EXAMPLE", colResults)
                 }
 
             } else {
                 Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
             }
-            println("List $list")
+            println("List ${listString}")
 
         }
 
-        text.text = list.toString()
+        text.text = listString
 
     }
 
