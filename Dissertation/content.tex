@@ -12,7 +12,6 @@ For our final year project we were tasked with designing , developing and deploy
 \section{Objectives}
 \begin{itemize}
     \item Find a new programming language to learn independently
-    \item Agree on an idea of an Application to develop
     \item Find a Methodology to best implement for our idea
     \item Implement the methodology to create a project plan
     \item Find an architecture structure suitable to use
@@ -464,23 +463,46 @@ In this chapter we focused on the Testing, Evaluation and Limitations of our Pro
     \caption{Test Case for successful Login}
     \label{fig:altas config}
 \end{figure}
+
 \section{Unit Testing}
+For our project we have uses the Agile methodology to layout our plan. With this testing is a major aspect of this methodology and as such we created Test cases for each sprint and assigned a role for each team member. The roles assigned were as followed, Steven Joyce would create the unit tests which would be reviewed by Robert Donnelly before being implemented by Evan Greaney. These roles remained unchanged throughout the testing process.
+\newline
+\newline
+The illustration below is an example of a test case used for running a successful login attempt.As seen below each case has a ID which is linked to the Gantt chart.The case uses the test data provided and requires prerequisites to be met for the test to be attempted. The test must follow the steps in a linear order for the case to be successful.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm, height = 7.5cm]{img/TestCasePass.PNG}
     \caption{Test Case for successful Login}
     \label{fig:altas config}
 \end{figure}
-
+Some test cases are designed to confirm an unsuccessful outcome from a users perspective. This can be seen in the image below, this test case although it passed most steps it failed to alert the user as to why they unsuccessfully logged in as the alert did not appear and ultimately the case failed. This case allowed us to implement alerts to summon at the correct time and place.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm, height = 7.5cm]{img/TestCaseFail.PNG}
     \caption{Test Case for unsuccessful Login}
     \label{fig:altas config}
 \end{figure}
-\section{Application Deployment}
-\section{Application Features}
+
 \section{Objectives Overview}
+\subsubsection{Find a new programming language to learn independently}
+The groups goal of learning a new programming language was achieved as the team gained skills and knowledge of Kotlin JVM, which the team members has no prior experience with this development tool before the past college year. 
+\subsubsection {Find a Methodology to best implement for our idea}
+Upon starting the year the team had chosen two main methodologies to consider, being Agile and Waterfall. Due to Agile being a better fit for an application , the team decided to pick this methodology as our preferred approach. This approach favours constant testing throughout the development cycle and as such allowed the team to fix unforeseen bugs and errors in our design and implementation as they happen.  
+\subsubsection {Implement the methodology to create a project plan}
+With our methodology choice, the way we approached our project plan was to split up the work into manageable parts, these were our sprints. The sprints were then handed out to each member of the team to complete within a given deadline of a set amount of weeks. The team had successfully created a plan. At the end of the planning process a Gannt chart was created to be used to assign sprints to each member and manage progress of the applications development.
+\subsubsection {Find an architecture structure suitable to use}
+With Kotlin being our language of choice, upon researching, the team discovered that it was mainly utilised for Android Development and that JetBrains the company who are developing Kotlin also develop the Intellij IDE which supports the Android Studio SDK for android development. With this in mind the team quickly and successfully came to agreement that the application should be made in the JetBrains toolkit environment of Intellij and Android Studio.
+\subsubsection {Utilize an environment for stable version control}
+With our history of using GitHub it was a simple choice for the team to pick it as most developers struggle with learning a new version control environment so the team decided to stick with what they already had prior experience with. With the project on GitHub we were able to set up an interactive Issue board. This allowed issues to be assigned to individual team members and for the issues progress to be tracked. It allowed each group member to access the latest version of the application from any machine which allowed for remote working, this was a vital aid for our team in a covid effected work environment.
+\subsubsection {Establish a well structured base for the project}
+\subsubsection {Create a high quality front-end}
+\subsubsection {Find and deploy an API which our app can utilize}
+\subsubsection {Create a server service for the Application.}
+\subsubsection {Allow for user data to be protected and appropriately stored}
+\subsubsection {Use of a Location service to find user's desired location}
+\subsubsection {Implement a login service which allows user to access their protected data}
+\subsubsection {Design the Apps software to successfully implement the apps intended functionality}
+\subsubsection {Deploy our methodologies style of testing to ensure quality standards are met}
 \section{Issues, limitations}
 \section{Future of Application}
 \begin{itemize}
