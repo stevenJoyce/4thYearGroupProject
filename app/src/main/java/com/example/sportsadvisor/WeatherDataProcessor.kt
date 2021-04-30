@@ -131,14 +131,14 @@ object WeatherDataProcessor : AppCompatActivity() {
 
 
    open fun callHourlyData(courseCode:String){
-        //val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
-        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true&metric=true"
+        val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
+        //val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true&metric=true"
         fetchHourlyJson(url)
     }
 
     open fun callCurrentData(courseCode:String){
-        //val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true"
-        val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true"
+        val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true"
+        //val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true"
         fetchCurrentJson(url)
     }
 

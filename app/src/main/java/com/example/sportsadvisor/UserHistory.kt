@@ -23,8 +23,14 @@ class UserHistory : AppCompatActivity() {
     var listString:String=""
     var pkey:String = ""
     var user: User? = null
-    var query = Document("date", true)
-
+    var query = Document("_id",false)
+    var field1 = Document("date",true)
+    var field2 = Document("time",true)
+    var field3 = Document("Course",true)
+    var field4 = Document("parScore",true)
+    var field5 = Document("handicap",true)
+    var field6= Document("totalScore",true)
+    var field7 = Document("_key",false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,19 +73,22 @@ class UserHistory : AppCompatActivity() {
                 while (results.hasNext()) {
                     colResults = results.next().toString()
                     list.add(colResults.split("=",",").toString())
-                    listString += list[x] +"\n"
+                    listString += list[x]
                     x++
-                    Log.v("EXAMPLE", colResults)
+                    //Log.v("EXAMPLE", listString)
                 }
+
+                print("full list$listString")
 
             } else {
                 Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
             }
-            println("List ${listString}")
+           // println("List ${listString}")
+
 
         }
 
-        text.text = listString
+        text.text = list.toString()
 
 
 
