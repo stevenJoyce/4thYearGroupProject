@@ -16,11 +16,14 @@ class UserHistory : AppCompatActivity() {
     lateinit var app: App
     var list =  mutableListOf<String>()
     var filteredList = ArrayList<String>()
-    lateinit var result: Document
     lateinit var results: MongoCursor<Document>
     lateinit var colResults:String
     private lateinit var text: TextView
     var listString:String=""
+    var fl:String = ""
+    var fl2:String = ""
+    var fl3:String = ""
+    var fl4:String = ""
     var pkey:String = ""
     var user: User? = null
     var query = Document("_id",false)
@@ -72,13 +75,18 @@ class UserHistory : AppCompatActivity() {
                 var x = 0
                 while (results.hasNext()) {
                     colResults = results.next().toString()
-                    list.add(colResults.split("=",",").toString())
-                    listString += list[x]
+                    //Log.v("First colResults: ", colResults)
+                    filteredList.add(colResults.split("[","{{",",","}}","Document{{","]").toString())
+                    fl += " Collection \n " + filteredList[x]
+                    fl2 = fl.replace("[","")
+                    fl3 = fl2.replace(",","")
+                    fl4 = fl3.replace("]","")
+                    listString = fl4
                     x++
                     //Log.v("EXAMPLE", listString)
                 }
 
-                print("full list$listString")
+                Log.v("List", listString)
 
             } else {
                 Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
@@ -88,7 +96,7 @@ class UserHistory : AppCompatActivity() {
 
         }
 
-        text.text = list.toString()
+        text.text = listString
 
 
 
