@@ -341,13 +341,14 @@ The MongoDB atlas is where the MongoDB database is located. A MongoDB Atlas clus
     \caption{Page for registering a new user}
     \label{fig:altas config}
 \end{figure}
+The above image is a screenshot of both the login page that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN.
 \begin{figure}[H]
     \centering
     \includegraphics[width=11cm, height= 8cm]{img/registerCode.PNG}
     \caption{Code associated with the register page}
     \label{fig:altas config}
 \end{figure}
-The above images are a screenshot of both the application page and code that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN. The GO TO LOGIN button brings the user to the login page to sign into the MongoDB server to access the user data that is attached to that user.
+Above is an image that depicts the code that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN. The GO TO LOGIN button brings the user to the login page to sign into the MongoDB server to access the user data that is attached to that user.
 \newline
 The user input fields are saved as emailTxt and passTxt string variables by utilizing the toString function in Kotlin. The string variables are passed into the function app.emailPassword.registerUserAsync() to be sent to the MongoDb Realm to create a new App user.
 \begin{figure}[H]
@@ -433,24 +434,6 @@ All of these sections integrate and work together to produce a rating for the ho
 
 The above images show how based on the location the user has set as their chosen golf course, it will set the course code to that golf course and will then begin the first part in trying to retrieve the weather data for that particular golf course regardless of where the user is located.
 
-
-
-
-\begin{itemize}
-\item Architecture, UML etc. An overview of the different components of the system. Diagrams etcâ€¦ Screen shots etc.
-\end{itemize}
-\begin{table}[h]
-  \centering
-  \begin{tabular}{x{2cm}p{3cm}}
-    \toprule \\
-    Column 1 & Column 2 \\
-    \midrule \\
-    Rows 2.1 & Row 2.2 \\
-    \bottomrule
-  \end{tabular}
-  \caption{A table.}
-  \label{table:mytable}
-\end{table}
 \chapter{System Evaluation}
 In this chapter we focused on the Testing, Evaluation and Limitations of our Project.Our focus was to test how robust or project is by following by following the Agile methodology of Software Testing. We designed a Gantt Chart to outline sprints that breakdown the project into smaller parts which in turn, would be vigorously tested. The full Gantt chart can be viewed on the link below in our Github Repository.
 \newline
@@ -478,16 +461,24 @@ The illustration below is an example of a test case used for running a successfu
 Some test cases are designed to confirm an unsuccessful outcome from a users perspective. This can be seen in the image below, this test case although it passed most steps it failed to alert the user as to why they unsuccessfully logged in as the alert did not appear and ultimately the case failed. This case allowed us to implement alerts to summon at the correct time and place.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=15cm, height = 7.5cm]{img/TestCaseFail.PNG}
+    \includegraphics[width=15cm, height = 6.5cm]{img/TestCaseFail.PNG}
     \caption{Test Case for unsuccessful Login}
     \label{fig:altas config}
 \end{figure}
+With an understanding of what went wrong in the above test case, we implemented changes to our code that would give the user an informative alert that helps understand what error occurred. The screenshot below is a test case for the modified code with a successful outcome.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm, height = 6.5 cm]{img/testCaseSignInError.PNG}
+    \caption{Test Case for unsuccessful Login with Alerts}
+    \label{fig:altas config}
+\end{figure}
 
+We did this type of testing for every feature of our application. This allowed us to debug our application regularly and efficiently. To see all of our test cases go to: \url{https://github.com/stevenJoyce/4thYearGroupProject/tree/main/TestingGuides}
 \section{Objectives Overview}
 \subsubsection{Find a new programming language to learn independently}
 The groups goal of learning a new programming language was achieved as the team gained skills and knowledge of Kotlin JVM, which the team members has no prior experience with this development tool before the past college year. 
 \subsubsection {Find a Methodology to best implement for our idea}
-Upon starting the year the team had chosen two main methodologies to consider, being Agile and Waterfall. Due to Agile being a better fit for an application , the team decided to pick this methodology as our preferred approach. This approach favours constant testing throughout the development cycle and as such allowed the team to fix unforeseen bugs and errors in our design and implementation as they happen.  
+Upon starting the year the team had chosen two main methodologies to consider, being Agile and Waterfall. Due to Agile being a better fit for an application , the team decided to pick this methodology as our preferred approach.
 \subsubsection {Implement the methodology to create a project plan}
 With our methodology choice, the way we approached our project plan was to split up the work into manageable parts, these were our sprints. The sprints were then handed out to each member of the team to complete within a given deadline of a set amount of weeks. The team had successfully created a plan. At the end of the planning process a Gannt chart was created to be used to assign sprints to each member and manage progress of the applications development.
 \subsubsection {Find an architecture structure suitable to use}
@@ -495,16 +486,63 @@ With Kotlin being our language of choice, upon researching, the team discovered 
 \subsubsection {Utilize an environment for stable version control}
 With our history of using GitHub it was a simple choice for the team to pick it as most developers struggle with learning a new version control environment so the team decided to stick with what they already had prior experience with. With the project on GitHub we were able to set up an interactive Issue board. This allowed issues to be assigned to individual team members and for the issues progress to be tracked. It allowed each group member to access the latest version of the application from any machine which allowed for remote working, this was a vital aid for our team in a covid effected work environment.
 \subsubsection {Establish a well structured base for the project}
+To design and implement our Android application we needed a great IDE. Through our GitHub Student Developer Pack we our given a free license for Intellij Ultimate. With our IDE we could create an emulator to test our application and call our MongoDB database to view any requests the application makes in real time.
 \subsubsection {Create a high quality front-end}
+With Android Studio ADK being built into Intellij, we could design the page and write the code at the same time which helped us understand what we were trying to achieve for the end user. We used a consistent colour scheme throughout the application XML layouts and drawable assets which resulted in a professional and appealing look and feel. We altered XML icons which would have not suited the applications look but through applying the colour scheme we made them match our applications theme. Every aspect from the drawer layout to buttons in one way or another conforms to the colour scheme of the application which in turn resulted in a high quality front end design. 
 \subsubsection {Find and deploy an API which our app can utilize}
+After multiple attempts at using different API's for our application, we decided on using the Accuweather API service. This allowed us to generate current weather conditions and the next 12 hours for the chosen area in Galway.
 \subsubsection {Create a server service for the Application.}
+We our prior knowledge and experience with MongoDB, it was simple choice to make. We decided on using 2 aspects of MongoDB which our Atlas and Realm. 
 \subsubsection {Allow for user data to be protected and appropriately stored}
+MongoDB Realm created a buffer between the server and application to filter unauthorized access to the user's data. This a hidden layer of protection that filtered out any issues or unwarranted data.
 \subsubsection {Use of a Location service to find user's desired location}
-\subsubsection {Implement a login service which allows user to access their protected data}
+This objective was modified due to the API service, where the location can only be found using their custom location codes that a normal user would not have prior knowledge to. We changed into a list of all golf courses in Galway and allowed the user to choose a preferred golf course. 
+\subsubsection {Implement a login service which allows user to access their \newline protected data}
+To view any user data, they have to sign to the application on the login page before setting their userID in the settings page. When the user goes to the load it's history they only view their own data.
 \subsubsection {Design the Apps software to successfully implement the apps intended functionality}
+The features that we originally set out to have on our application have all been achieved but the end result did not generate the original design plan we had intended due to limitations and better understanding of what we wanted to achieve.
 \subsubsection {Deploy our methodologies style of testing to ensure quality standards are met}
+With our methodology testing approach, it favoured constant testing throughout the development cycle and as such allowed the team to fix unforeseen bugs and errors in our design and implementation as they happen. As developers we tested our work after every change to the application with the built in emulator. This ensured that we never committed non functioning code to our repository.  
 \section{Issues, limitations}
+\subsection{Intellij}
+\subsubsection{Issues}
+\subsubsection{Limitations}
+\subsection{Kotlin}
+\subsubsection{Issues}
+\subsubsection{Limitations}
+\subsection{Android}
+\subsubsection{Issues}
+\subsubsection{Limitations}
+\subsection{API Calling}
+\subsubsection{Issues}
+\subsubsection{Limitations}
+\subsection{MongoDB}
+\subsubsection{Issues}
+\subsubsection{Limitations}
+
 \section{Future of Application}
+\subsection{Multi-platform Application}
+\subsubsection{iOS}
+We
+\subsubsection{Harmony OS}
+We
+\subsection{MongoDB Realm}
+\subsubsection{Integration}
+The
+\subsection{API Call Licensing}
+I
+\subsubsection{Paid License}
+Our
+\subsection{Nationwide/Global}
+\subsubsection{Ireland}
+Irish
+\subsubsection{Major Golf Courses}
+US
+\subsection{New Features}
+\subsubsection{Wind Direction}
+Arrow
+\subsubsection{AI}
+Hints
 \begin{itemize}
 \item Prove that your software is robust. How? Testing etc.
 \item Use performance benchmarks (space and time) if algorithmic.
