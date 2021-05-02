@@ -73,18 +73,20 @@ class UserHistory : AppCompatActivity() {
                 results = task.get()
                 Log.v("EXAMPLE", "successfully found all collections:")
                 var x = 0
-                while (results.hasNext()) {
-                    colResults = results.next().toString()
-                    //Log.v("First colResults: ", colResults)
-                    filteredList.add(colResults.split("[","{{",",","}}","Document{{","]").toString())
-                    fl += " Collection \n " + filteredList[x]
-                    fl2 = fl.replace("[","")
-                    fl3 = fl2.replace(",","")
-                    fl4 = fl3.replace("]","")
-                    listString = fl4
-                    x++
-                    //Log.v("EXAMPLE", listString)
-                }
+                    var colCount = 1
+                    while (results.hasNext()) {
+                        colResults = results.next().toString()
+                        //Log.v("First colResults: ", colResults)
+                        filteredList.add(colResults.split("[","{{",",","}}","Document{{","]").toString())
+                        fl += " Collection " + colCount + "\n" + filteredList[x]  + "\n\n"
+                        fl2 = fl.replace("[","")
+                        fl3 = fl2.replace(",","\n")
+                        fl4 = fl3.replace("]","")
+                        listString = fl4
+                        x++
+                        colCount++
+                        //Log.v("EXAMPLE", listString)
+                    }
 
                 Log.v("List", listString)
 
