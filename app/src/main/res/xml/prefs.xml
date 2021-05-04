@@ -9,7 +9,7 @@
         <EditTextPreference
                 app:defaultValue="User"
                 app:key="displayName"
-                app:title="Your Display name"
+                app:title="Enter your UserID"
                 app:useSimpleSummaryProvider="true"/>
 
         <ListPreference
