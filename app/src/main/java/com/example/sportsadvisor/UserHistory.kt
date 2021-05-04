@@ -17,7 +17,6 @@ import org.bson.Document
 
 class UserHistory : AppCompatActivity() {
     lateinit var app: App
-    var list =  mutableListOf<String>()
     var filteredList = ArrayList<String>()
     lateinit var results: MongoCursor<Document>
     lateinit var colResults:String
@@ -38,30 +37,26 @@ class UserHistory : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.userhistory_main)
-
         //The MongoDB Realm App ID
         val appID = "sportsadvisor-gztkm"
         app = App(AppConfiguration.Builder(appID).build())
         text = findViewById(R.id.userHistory)
+        //Find the UserID stored in the application settings page
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val displayName = sp.getString("displayName", "")
         userID = displayName.toString()
         user = app.currentUser()
-
-        val mongoClient =
-            user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
+        // variables used to call the MongoDB Atlas cluster containing user data
+        val mongoClient = user!!.getMongoClient("mongodb-atlas")
         val mongoDatabase = mongoClient.getDatabase("Users")
         val mongoCollection = mongoDatabase.getCollection("UserData")
-
         Log.v("EXAMPLE", "Successfully instantiated the MongoDB collection handle")
-
         //getting a cluster
+        //use the userId to get back data associated with that user only
         val queryFilter = Document("userID", userID)
         val findTask = mongoCollection.find(queryFilter).projection(query).iterator()
         findTask.getAsync { task ->
             if (task.isSuccess) {
-
-                list.clear()
                 listString = " "
                 results = task.get()
                 Log.v("EXAMPLE", "successfully found all collections:")

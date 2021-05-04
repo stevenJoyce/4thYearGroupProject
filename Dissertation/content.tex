@@ -325,7 +325,12 @@ With our system we have three main layers that integrate with one another to bui
 \subsubsection{classes}
 \subsubsection{Algorithm}
 \subsection{Gradle}
-\subsection{Integration}
+The gradle is a build system used for building an application. For Android it is used to build, test and deploy the application to and Android device.
+\newline \newline
+With Android, a gradle folder is essential, due to it being used to generate an apk from the kt and xml files that have been written in the project. The gradle folder looks through all the files in the project and convert them into dex files before putting all the data into a single file that is in an apk format. 
+\newline \newline
+The gradle folder is located in the root directory. This folder contains all the dex and apk files that run the application. The project contains 2 build.gradle, one located in the root directory and the other is located inside the app folder. The root file applies what version of Kotlin the application is written in and all the dependancies of the application such as MongoDB Realm. \newline \newline
+The file set in the app folder applies the android version associated with this application and all the dependancies that are needed to utilize that version of Android in this app. The ability to sync the application with MongoDB Realm is set to true here, this allows the app to read, write, update and delete collections stored in the MongoDb database. 
 
 \section{Backend}
 With our application we set up a MongoDB server to allow a user the ability to create an account to store their golf course results. To allow the user to access the mongoDb server we needed a register user page and a login page.
@@ -409,10 +414,23 @@ With realm there are several different methods built into the system that can be
 \newline
 The collection has a name that needs to be called to start the process, our collection is called UserData. The use of append allows the creation of new values to be stored in fields already associated with the collection. The fields we have set up are: \_id, date, time, course, parScore, handicap, totalScore and \_pkey. The data we send up to the server are the values received in the function call. Those values along with the current date and time. The date format is DD-MM-YYYY while the time format is Hours-Minutes-Seconds. Those 2 values are generated when the function is called for the exact date and time. They utilize the java SimpleDateFormat Class to generate the time and date in the format that we wanted and while giving back the correct results.
 \subsubsection{How the data received is outputted to the User}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm, height = 9cm]{img/getMongoDBdata.PNG}
+    \caption{Code snippet of how the data is sent to the server}
+    \label{fig:altas config}
+\end{figure}
 
-Image Here
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6.5cm, height = 13cm]{img/userHistoryPage.PNG}
+    \caption{How the data is sent to the server}
+    \label{fig:altas config}
+\end{figure}
 
-The data is received and shown on the User History Page. The User History page has a button called Generate User Data. The button calls a function called userData that uses the userID set in the settings page to filter out the database collections to send data to the application that only match that userID. This is how we protect the user's data and stop unauthorized access to data stored on the database. All userId values are unique. The data is outputted in order of oldest stored data to the latest stored data. The outputted data is the date, time, Course, parScore, handicap, totalScore and userID with a line separated between each output for better readability.
+The data is received and shown on the User History Page. When the page is opened the MongoDB collection is called and the collection data is saved in a string. This string is then outputted to the app when the Generate User Data Button is pressed. \newline
+The page has an onCreate function that contains the code in Figure 5.9. The code allows the MongoDB database to be filtered by the userID to output only the data that is associated with that id key. The userID is set in the settings page. This is how we protect the user's data and stop unauthorized access to data stored on the database. All userId values are unique. The data is outputted in order of oldest stored data to the latest stored data. The outputted data is the date, time, Course, parScore, handicap, totalScore and userID with a line separated between each output for better readability.
+
 
 \section{Data Gathering and Processing}
 For our application, one of the major parts of the project was to retrieve weather data from a weather API using the OKHTTP: HTTP and HTTP2 client. This data is then gathered and and then parsed from Strings and Objects to their JSON representations using GSON. This data is then processed and after reading in all the data, a rating between 1 and 5 is then applied to an hour associated with the weather values passed in.

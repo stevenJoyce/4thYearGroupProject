@@ -20,7 +20,7 @@
     <TextView
             android:id="@+id/fragment_weather"
             android:layout_width="391dp"
-            android:layout_height="79dp"
+            android:layout_height="50dp"
             android:text="Sports Advisor"
             android:textColor="@color/colorLightAccent"
             android:textAlignment="center" android:textIsSelectable="false" android:textSize="24sp"
