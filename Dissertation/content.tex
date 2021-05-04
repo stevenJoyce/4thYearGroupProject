@@ -621,8 +621,36 @@ With our methodology testing approach, it favoured constant testing throughout t
 \subsubsection{Issues}
 \subsubsection{Limitations}
 \subsection{API Calling}
+API calling was a major feature of our Application throughout our project as it allowed us to generate ratings for each hour shown and give a recommendation on which day to best play on but throughout our implementation of this feature we came across many limitations and issues with in different parts of the project from the data retrieved to the API calls themselves and even limitations with pricing. Below will focus on the many issues and limitations that we came across when trying to implement this feature.
+
 \subsubsection{Issues}
+
+One of the first Issues we had before using the Accuweather API was when we were experimenting with multiple weather APIs, the first of which was the Met Eireann API. This was a fantastic API that wouldve given us all the data we needed and because it was designed for the island of Ireland, it wouldve been extrmely accurate for the given locations but the issue with this API was its data it returned. 
+\newline
+\newline
+The data it returned was in XML format not JSON format and the technology that we were using to fetch and store the data required JSON data. We initially attempted to try to convert this data from XML to JSON but since we weren't storing this data to a file locally it wasn't possible to convert it to JSON. As a result we had to search for another API to use.
+\newline
+\newline
+The next major issue when trying to find an API to use for our project was when we tried to use an API called Openweather API, it had ticked nearly all the boxes for us, it was capable of finding the correct locations, retrieved back data in JSON format but unfortunately when attempting to store the data it wasn't able to be correctly stored in our data files as it came back as a set of JSON objects, not JSON data which would allow the data to be temporarily stored so that the data could be processed and return an output to a user. After testing these APIs we eventually came across the AccuWeather API which allowed us to retrieve, store and process as we saw fit.
+
 \subsubsection{Limitations}
+As we were working with these APIs we came across many limitations of them that wouldn't be called issues but limited our design and focus of the application to try and incorporate them into our application.
+\newline
+\newline
+When attempting to work with the Open Weather API, one of the limitations that we had was that we had to use a third party to try and retrieve the location that the user was searching for based off of either longitude and latitude or searching by name, we originally planned it to be searched for by name but found that when searching by name, due to Ireland having unusual city, town and our case golf course names, it was rather difficult to search via name for some golf courses and because of this we had to remove the idea of allowing the user to search by name.
+\newline
+\newline
+We then attempted to search by longitude and latitude where we attempted to get the longitude and latitude for the user using the Geolocation API by google but found that when we used it, it only returned back the users current location which hindered us from finding the locations of the golf courses we needed.Instead we gave them a list of golf courses in galway that when any one of them is clicked, it passes through the location code used by Accuweather to search for the course.
+\newline
+\newline
+After trying many different APIs we eventually settled on the Accuweather API as it did just about everything we needed to complete the development with our project but came with just one limitation that was very similar to the issue found in the OpenWeather API was when we tried to fetch the five day forecast, we could retrieve it witrh no issue but when trying to store it, our data could not handle JSON objects and instead threw errors, with this we had to redesign our what the user was able to see when generating the ratings and with that we decided to check for the current conditions so that the user could accurately check the current conditions for their designated course as they got closer to the golf course.
+\newline
+\newline
+The biggest limitation we had throughout all the APIs we used including the Accuweather API we settled upon was the limitation around pricing. As we are students we could afford to purchase API packages to get more API requests per month and to have more API fetch types like searching for the weather for the next 72 hours instead of 12 hours and becuase of this we had to design the app to be checked the day you plan to play golf to check for the best hours to play instead of being able to plan a couple of days ahead.
+\newline
+\newline
+This also hindered or development as we could only make 50 API fetch requests a day and found when trying to test this functionality after only an hour and a half into development we were unable to continue testing until the following day.  
+
 \subsection{MongoDB}
 \subsubsection{Issues}
 \subsubsection{Limitations}
