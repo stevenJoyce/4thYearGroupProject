@@ -48,8 +48,6 @@ class UserHistory : AppCompatActivity() {
         userID = displayName.toString()
         user = app.currentUser()
 
-    }
-    fun userData(view:View) {
         val mongoClient =
             user!!.getMongoClient("mongodb-atlas") // service for MongoDB Atlas cluster containing custom user data
         val mongoDatabase = mongoClient.getDatabase("Users")
@@ -62,8 +60,9 @@ class UserHistory : AppCompatActivity() {
         val findTask = mongoCollection.find(queryFilter).projection(query).iterator()
         findTask.getAsync { task ->
             if (task.isSuccess) {
+
                 list.clear()
-                listString ="";
+                listString = " "
                 results = task.get()
                 Log.v("EXAMPLE", "successfully found all collections:")
                 var x = 0
@@ -71,7 +70,7 @@ class UserHistory : AppCompatActivity() {
                 while (results.hasNext()) {
                     colResults = results.next().toString()
                     filteredList.add(colResults.split("[","{{",",","}}","Document{{","]").toString())
-                    fl += " Collection " + colCount + "\n" + filteredList[x]  + "\n\n"
+                    fl += " Collection " + colCount + "\n" +"\t"+ filteredList[x]  + "\n\n"
                     fl2 = fl.replace("[","")
                     fl3 = fl2.replace(",","\n")
                     fl4 = fl3.replace("]","")
@@ -82,11 +81,14 @@ class UserHistory : AppCompatActivity() {
                 }
             } else {
                 Log.e("EXAMPLE", "failed to find documents with: ${task.error}")
-                listString = " No User data found"
+                //listString = " No User data found"
             }
-           // println("List ${listString}")
+            // println("List ${listString}")
 
         }
+
+    }
+    fun userData(view: View) {
         //send stored data to page
         text.setText(listString)
 
