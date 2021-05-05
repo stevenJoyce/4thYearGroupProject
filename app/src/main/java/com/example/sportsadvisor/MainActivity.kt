@@ -11,11 +11,13 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportsadvisor.model.HomeFragment
@@ -71,14 +73,20 @@ class MainActivity : AppCompatActivity() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val displayName = sp.getString("displayName", "")
         val course = sp.getString("course", "")
+        //WeatherDataProcessor.callCurrentData(courseCode)
+        //WeatherDataProcessor.callHourlyData(courseCode)
         // Add Item Touch Listener
+
+        //refreshHourlyApp()
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
                 val bundle = Bundle()
                 val course = sp.getString("course", "")
                 val displayName = sp.getString("displayName", "")
                 when (position) {
-                    0 -> {   if(course == "Oughterard GC") {
+                    0 -> {
+                        refreshCurrentApp()
+                        if(course == "Oughterard GC") {
                         courseCode = "208587"
                         WeatherDataProcessor.callCurrentData(courseCode)
 
@@ -138,6 +146,8 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     1 -> {
+
+                        refreshHourlyApp()
                         if(course == "Oughterard GC") {
                             courseCode = "208587"
                             WeatherDataProcessor.callHourlyData(courseCode)
@@ -232,6 +242,7 @@ class MainActivity : AppCompatActivity() {
         updateAdapter(0)
 
         // Set 'Home' as the default fragment when the app starts
+        refreshCurrentApp()
         val bundle = Bundle()
         WeatherDataProcessor.callCurrentData(courseCode)
         bundle.putString("fragmentName", "Weather for Galway GC")
@@ -284,6 +295,50 @@ class MainActivity : AppCompatActivity() {
 
         // Set background of Drawer
         navigation_layout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
+
+
+    }
+
+    private fun refreshHourlyApp() {
+        val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        val bundle = Bundle()
+        val course = sp.getString("course", "")
+        swipeToRefresh.setOnRefreshListener {
+
+            Toast.makeText(this, "Page Refreshed!", Toast.LENGTH_SHORT).show()
+            swipeToRefresh.isRefreshing = false
+            WeatherDataProcessor.callHourlyData(courseCode)
+
+            bundle.putString("fragmentName", "Weather for $course")
+            bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
+
+            val weatherFragment = WeatherFragment()
+            weatherFragment.arguments = bundle
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.activity_main_content_id, weatherFragment).commit()
+            }
+        }
+    }
+
+    private fun refreshCurrentApp() {
+        val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        val bundle = Bundle()
+        val course = sp.getString("course", "")
+        swipeToRefresh.setOnRefreshListener {
+
+            Toast.makeText(this,"Page Refreshed!", Toast.LENGTH_SHORT).show()
+            swipeToRefresh.isRefreshing = false
+            WeatherDataProcessor.callCurrentData(courseCode)
+
+            bundle.putString("fragmentName", "Weather for $course")
+            bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
+            // # Home Fragment
+            val homeFragment = HomeFragment()
+            homeFragment.arguments = bundle
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.activity_main_content_id, homeFragment).commit()
+            }
+        }
     }
 
     private fun updateAdapter(highlightItemPos: Int) {

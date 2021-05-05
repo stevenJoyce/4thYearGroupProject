@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.fragment_weather.view.*
 
 
 class WeatherFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
