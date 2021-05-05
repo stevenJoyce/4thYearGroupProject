@@ -19,11 +19,11 @@ import java.util.*
 class ScoreFragment : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        var pkey = ""
+        var userID = ""
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val course = sp.getString("course", "")
         val displayName = sp.getString("displayName", "")
-        pkey = displayName.toString()
+        userID = displayName.toString()
         var courseName = course.toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_score)
@@ -46,7 +46,7 @@ class ScoreFragment : AppCompatActivity() {
 
                 /* Calling the function and sending the data generated from user input
                 * alongside the course name and the unique username the user generates in the settings page*/
-                sendData(tpar,npar,nscore,courseName,pkey)
+                sendData(tpar,npar,nscore,courseName,userID)
 
             }catch (e:Exception){
                 println(e)
@@ -56,14 +56,14 @@ class ScoreFragment : AppCompatActivity() {
     }
 }
 
-fun sendData(parScore: Int, handicap: Int, nettScore: Int, courseName: String, pkey: String)
+fun sendData(parScore: Int, handicap: Int, nettScore: Int, courseName: String, userID: String)
 {
     // Saving the data received in the function call into local variables to be sent to the server
     var par = parScore
     var hand = handicap
     var nett = nettScore
     var coursename = courseName
-    var key = pkey
+    var key = userID
     //variables used to access the MongoDB Server
     lateinit var app: App
     var user: User? = null
@@ -78,10 +78,15 @@ fun sendData(parScore: Int, handicap: Int, nettScore: Int, courseName: String, p
     val currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
     val currentTime = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 
+    /*this block of code inserts the data we want to populate the database with into a new collection
+    on that database. Each append is a different field in the collection and the data is stored in 1 collection
+    containing everything that has been sent. The userID allows this colection to only be accessed by a user
+    who inputs that id into the settings page */
     mongoCollection.insertOne(Document("UserData",user.id).append("_id", ObjectId()).append("date",currentDate)
         .append("time",currentTime).append("course",coursename).append("parScore",par).append("handicap",hand)
-        .append("totalScore",nett).append("_pkey", key))
+        .append("totalScore",nett).append("userID", key))
         .getAsync { result ->
+            //An if else method used for debugging purposes
             if (result.isSuccess) {
                 Log.v(
                     "EXAMPLE",
