@@ -298,7 +298,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
+    // inspired by https://www.youtube.com/watch?v=oOIoRR0AiGo
     private fun refreshHourlyApp() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val bundle = Bundle()
@@ -319,7 +319,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+    // inspired by https://www.youtube.com/watch?v=oOIoRR0AiGo
     private fun refreshCurrentApp() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val bundle = Bundle()

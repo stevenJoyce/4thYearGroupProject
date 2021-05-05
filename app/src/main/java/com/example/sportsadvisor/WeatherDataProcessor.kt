@@ -22,7 +22,7 @@ object WeatherDataProcessor : AppCompatActivity() {
     var hourlyListString:String=""
     var currentListString:String=""
 
-
+    //inspired by https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
     private fun fetchHourlyJson(url: String): String {
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
@@ -41,7 +41,7 @@ object WeatherDataProcessor : AppCompatActivity() {
         })
         return body
     }
-
+    //inspired by https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
     private fun fetchCurrentJson(url: String): String {
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
@@ -67,6 +67,8 @@ object WeatherDataProcessor : AppCompatActivity() {
 
         dataRetreive = body
         //println(dataRetreive)
+
+        //Inspired by https://www.youtube.com/watch?v=c_91kB4Tvg8
         //gson object
         val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
 
@@ -100,6 +102,7 @@ object WeatherDataProcessor : AppCompatActivity() {
         currentHourlyList.clear()
         hourlyListString = "";
 
+        //Inspired by https://www.youtube.com/watch?v=c_91kB4Tvg8
         //gson object
         val commentResponse: List<currentConditionsItem> = gson.fromJson(body,Array<currentConditionsItem>::class.java).toList()
         val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
