@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         app = App(AppConfiguration.Builder(appID).build())
         // gson for parsing data
 
-
+        //set drawer layout
         drawerLayout = findViewById(R.id.drawer_layout)
 
         // Set the toolbar
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                         WeatherDataProcessor.callCurrentData(courseCode)
                     }
 
-                        bundle.putString("fragmentName", "Weather for $course")
+                        bundle.putString("fragmentName", "The Average Weather today for $course")
                         bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
                         // # Home Fragment
                         val homeFragment = HomeFragment()
@@ -198,7 +198,7 @@ class MainActivity : AppCompatActivity() {
                             WeatherDataProcessor.callHourlyData(courseCode)
                         }
                         // # Weather Fragment
-                        bundle.putString("fragmentName", "Weather for $course")
+                        bundle.putString("courseName", "Next 12 Hours of Weather for $course")
                         bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
 
                         val weatherFragment = WeatherFragment()
@@ -208,6 +208,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     2 -> {
+                        // #Score Activity
                         val intent = Intent(this@MainActivity, ScoreFragment::class.java)
                         startActivity(intent)
 
@@ -228,6 +229,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
+                //updates adapter with curretn position selected
                 updateAdapter(position)
 
                 Handler(Looper.getMainLooper()).postDelayed({

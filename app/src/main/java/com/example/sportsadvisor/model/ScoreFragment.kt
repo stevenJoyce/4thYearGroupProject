@@ -21,10 +21,9 @@ class ScoreFragment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         var userID = ""
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-        val course = sp.getString("course", "")
         val displayName = sp.getString("displayName", "")
         userID = displayName.toString()
-        var courseName = course.toString()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_score)
         val handicap = sp.getString("handicap","")
@@ -43,7 +42,7 @@ class ScoreFragment : AppCompatActivity() {
                 var tpar = Integer.parseInt(totalPar.text as String)
                 var npar = Integer.parseInt(netPar.text as String)
                 var nscore = Integer.parseInt(NettScore.text as String)
-
+                var courseName = playedCourse.text.toString()
                 /* Calling the function and sending the data generated from user input
                 * alongside the course name and the unique username the user generates in the settings page*/
                 sendData(tpar,npar,nscore,courseName,userID)
