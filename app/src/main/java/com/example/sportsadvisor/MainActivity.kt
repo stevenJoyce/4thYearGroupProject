@@ -17,11 +17,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportsadvisor.model.HomeFragment
-import com.example.sportsadvisor.model.ScoreFragment
+import com.example.sportsadvisor.model.ScoreActivity
 import com.example.sportsadvisor.model.SettingsFragment
 import com.example.sportsadvisor.model.WeatherFragment
 import com.google.gson.Gson
@@ -209,7 +208,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     2 -> {
                         // #Score Activity
-                        val intent = Intent(this@MainActivity, ScoreFragment::class.java)
+                        val intent = Intent(this@MainActivity, ScoreActivity::class.java)
                         startActivity(intent)
 
                     }

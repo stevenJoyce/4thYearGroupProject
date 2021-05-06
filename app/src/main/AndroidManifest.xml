@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".model.ScoreFragment">
+        <activity android:name=".model.ScoreActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
