@@ -311,7 +311,7 @@ class MainActivity : AppCompatActivity() {
             swipeToRefresh.isRefreshing = false
             WeatherDataProcessor.callHourlyData(courseCode)
 
-            bundle.putString("fragmentName", "Weather for $course")
+            bundle.putString("courseName", "Next 12 Hours of Weather for $course")
             bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
 
             val weatherFragment = WeatherFragment()
@@ -332,7 +332,7 @@ class MainActivity : AppCompatActivity() {
             swipeToRefresh.isRefreshing = false
             WeatherDataProcessor.callCurrentData(courseCode)
 
-            bundle.putString("fragmentName", "Weather for $course")
+            bundle.putString("fragmentName", "The Average Weather today for $course")
             bundle.putString("fullList", WeatherDataProcessor.hourlyListString)
             // # Home Fragment
             val homeFragment = HomeFragment()
