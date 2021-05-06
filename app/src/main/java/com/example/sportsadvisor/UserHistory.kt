@@ -1,6 +1,7 @@
 package com.example.sportsadvisor
 
 // Imports used on this page
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -91,6 +92,12 @@ class UserHistory : AppCompatActivity() {
         //send stored data to page
         text.setText(listString)
 
+    }
+
+    // Function used to return the user to the home page
+    fun homeClicked(view: View) {
+        val home = Intent(this, MainActivity::class.java)
+        startActivity(home)
     }
 
 

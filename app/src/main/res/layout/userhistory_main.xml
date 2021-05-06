@@ -53,19 +53,35 @@
         />
 
     </ScrollView>
+
     <Button
             android:onClick="userData"
             android:id="@+id/button"
-            android:layout_width="240dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:background="@drawable/login_btn_round"
-            android:text="Generate User Data"
+            android:text="Get Results"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/homeButton"
+            app:layout_constraintTop_toBottomOf="@+id/scroll"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+    />
+    <Button
+            android:onClick="homeClicked"
+            android:id="@+id/homeButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_btn_round"
+            android:text="Home"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/scroll"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintEnd_toStartOf="@id/button" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0"/>
     />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
