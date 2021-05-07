@@ -1,10 +1,10 @@
 \chapter{About this project}
 \section{Abstract}
-This project is a Mobile Application for the Android Operating System. The programming Language used in Kotlin. The development Environment that the application is written in is IntelliJ IDEA Ultimate.\newline
-The app is a sport-based application that allows the user to find all golf courses in Ireland. The user will be given the weather forecast over a 12 hour period, or current time conditions depending on what page they are on. The weather forecast will be specific to what golf course that the user wants to play at. It will give the user back the scored ratings for each hour to play on for that period of time.\newline
+This project is a Mobile Application for the Android Operating System. The programming Language used is Kotlin. The development Environment that the application is written in is IntelliJ IDEA Ultimate.\newline
+The app is a sport-based application that allows the user to find all golf courses in Galway. The user will be given the weather forecast over a 12 hour period, or current time conditions depending on what page they are on. The weather forecast will be specific to what golf course that the user wants to play at. It will give the user back the scored ratings for each hour to play on for that period of time.\newline
 The application will allow the user to access a MongoDB database to store and fetch personalized data. The stored data is your score for each hole and what par that hole was given by the user. The score is calculated by finding the par of the course and subtracting \newline
 \section{Authors}
-For this Project, the authors are Robert Donnelly, Evan Greaney and Steven Joyce. All three authors are 4th Software development students, attending GMIT.
+For this Project, the authors are Robert Donnelly, Evan Greaney and Steven Joyce. All three authors are 4th Year Software development students, attending GMIT.
 \chapter{Introduction}
 For our final year project, we were tasked with designing, developing, and deploying a project either individually or as a group. We decided to work together as a group in order to achieve our goals of creating an app that would assist as a companion to players for one sport with the hope of adding in more sports in the future. The sport we decided to focus on was the game of golf, in which the app would give players optimal playing days and times based on weather conditions as well as their preferred conditions for playing golf. The application would also allow players to save their score data for that day which can be accessed in a report or table.
 
@@ -58,8 +58,6 @@ Link to GitHub Repository={\url{https://github.com/stevenJoyce/4thYearGroupProje
     \newline Using this folder, this is how the Application is configured using IntelliJ
     \item \textbf{Wireframe Prototype:}
     \newline In this folder we have a Justinmind prototype outlining the design of the application.
-    \item \textbf{Manual:}
-    \newline The guide to installing software needed to run the application.
 \end{enumerate}
 
 \chapter{Methodology}
@@ -67,42 +65,49 @@ Link to GitHub Repository={\url{https://github.com/stevenJoyce/4thYearGroupProje
 The Agile methodology is based on an iterative development approach that allows requirements and solutions to change throughout the development of the Application. It relies on constant communication between members of the team to successfully deliver a final product that has the capacity to evolve. Teams will undergo sprints that splits up a feature into smaller parts that are then given to a member of the team to work on in a short period of which makes the feature more manageable to deliver.
 \newline
 \newline
-To implement this approach our team organized weekly meetings where we discussed our work’s success or issues and how far we have gotten with our given sprint. This allowed us to collaborate as a team when issues occurred allowing us to keep on schedule. Our schedule was developed using a Gantt chart, this was the basis for all our sprints. The Gantt chart is spoken about in more detail in Chapter 6 - Testing. Every step was assigned as a sprint which was assigned to each member to carry out. Each sprint had a test case that had to pass for us to proceed with development.
+To implement this approach our team organized weekly meetings where we discussed our work’s success or issues and how far we have gotten with our given sprint. This allowed us to collaborate as a team when issues occurred allowing us to keep on schedule. Our schedule was developed using a Gantt chart, this was the basis for all our sprints. The Gantt chart is spoken about in more detail in Chapter 6 - System Evaluation. Every step was assigned as a sprint which was assigned to each member to carry out. Each sprint had a test case that had to pass for us to proceed with development.
 \section{Testing}
-After each sprint, a set of tests were required to pass. If a test case failed to pass in any capacity we could not proceed with the next sprint. To test our application we used the Android SDK emulator extension found in IntelliJ IDEA. The emulator we used was run on Android 9.0 (pie). The device that the emulator is simulated is the Google Pixel 3A mobile phone.
+After each sprint, a set of tests were required to pass. If a test case failed to pass in any capacity we could not proceed with the next sprint. To test our application we used the Android SDK emulator extension included in the IntelliJ IDEA. The emulator we used was run on Android 9.0 (pie). The device that the emulator is simulated is the Google Pixel 3A mobile phone.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm, height = 7.5cm]{img/EmulatorLaunch.PNG}
     \caption{Test Case for successful Login}
     \label{fig:altas config}
 \end{figure}
-The image above illustrates the test case we designed and implemented for testing the Login function of our application. The test is designed for a successful login test.
+The image above illustrates a template test case we designed and implemented for testing the functionality of our application. The tests are designed to check each component of the App for correct implementation.
 \section{Collaborative Platforms}
 \subsection{Version Control}
 The platform all team members were most familiar with was GitHub, it allows members to access project code versions and commit their contributions to one repository. Every team member has access to view and modifies the contents of the repository. All changes are logged and any commit can be accessed at all times, this helps with problem-solving as any issues that occur can be called back on to older commits that were functional if issues occur with the latest commit.
 
 \subsection{Communication Tools}
 \subsubsection{Microsoft Teams}
-Microsoft Teams was used primarily to communicate with our supervisor. We chose this as it is linked to our student accounts and our supervisor requested us to use it as a way to communicate with them.
+Microsoft Teams was used primarily to communicate with our supervisor. We chose this as it is linked to our student accounts and our supervisor requested us to use it as a way to communicate with him.
 \newline 
-Microsoft Teams is a good platform for video calls as it can be accessed on multiple platforms such as an Internet browser, Mobile/Desktop Application. It al- lows users to share files and can sync to your google drive account(file hosting service).and use a calendar feature allowing users to organize meetings.
+\newline 
+Microsoft Teams is a good platform for video calls as it can be accessed on multiple platforms such as an Internet browser, Mobile/Desktop Application. It allows users to share files and can sync to your google drive account(file hosting service) and use a calendar feature allowing users to organize meetings.
 \newline
+\newline 
 However it is not strongly suited for messaging as its forum feature can become cluttered and tedious to navigate, This is one of the main reasons why we decided to use Discord as our primary form of communication as a team.
 
 \subsubsection{Discord} 
 Discord is a communication Application that has increased in popularity in recent years, especially considering the current pandemic. It runs on Desktop, Mobile, and browser platforms. This allowed us to always be in contact with each other if one team member's device was running into issues.
 \newline
-Discord allowed us to set up separate channels to sort our messages to relate to specific aspects of the Project. We could coordinate and plan different parts of the project in one place with no clutter, Each aspect of the project had a dedicated channel so that unrelated messages would not be spam our feed. For example, we had an ideas channel where we would jot down random ideas or inspiration for new features of the application, these messages would be separate from our session-planning channel which would strictly contain messages related to our sprint meetings. Due to this feature, it became our primary platform to communicate.
+\newline 
+Discord allowed us to set up separate channels to sort our messages to relate to specific aspects of the Project. We could coordinate and plan different parts of the project in one place with no clutter, Each aspect of the project had a dedicated channel so that unrelated messages would bombard our message feed with irrelevant information.
 \newline
+\newline 
+For example, we had an ideas channel where we would jot down random ideas or inspiration for new features of the application, these messages would be separate from our session-planning channel which would strictly contain messages related to our sprint meetings. Due to this feature, it became our primary platform to communicate.
+\newline
+\newline 
 \subsubsection{Whats App}
 We used Whats App on our mobile devices to organize our sprint meetings as a team. If for any reason a meeting needed to be held on short notice What's App was the most efficient way of coordinating a set time.
 \subsection{Literature Software}
-For the Development of this Dissertation we used Overleaf, we found this Latex text editor the effective way to write up due to our previous experience. The Documentation Overleaf provides is well structured which helped us with this aspect of the project. After each person wrote a part of the dissertation it was committed to GitHub, which helped with making sure every member of the team had the appropriate version of the Dissertation.
+For the Development of this Dissertation we used Overleaf, we found this Latex text editor the effective way to write up due to our previous experience. The Documentation Overleaf provides is well structured which helped us with this aspect of the project. After each person wrote different parts of the dissertation, it was then committed to GitHub, which helped with making sure every member of the team had the appropriate version of the Dissertation.
 
 \section{Technology choices}
-When choosing the technology to use in our Application, we decided to use a range of new and innovative technologies ranging from IDEs to server clients that are in different stages of development ranging from Pre-Alpha such as MongoDB Realm Kotlin Integration to Stable development with the Kotlin Language.
+When choosing the technology to use in our Application, we decided to use a range of new and innovative technologies ranging from IDEs to server clients that are in different stages of development ranging from Pre-Alpha such as MongoDB Realm Integration to a stable working environment with the Kotlin Language and Android.
 \subsection{Kotlin}
-As a team, we wanted to learn a new programming language as a challenge for our project and to increase our skill set as Software Developers. One of our lecturers during one of our online classes from this module mentioned the Kotlin language. This led us to research this language and understand what it could be used for. We saw that Kotlin was an up-and-coming language that was primarily used for mobile Applications in Android as of September 2020 with hopes of iOS support being implemented in the near future.
+As a team, we wanted to learn a new programming language as a challenge for our project and to increase our skill set as Software Developers. One of our lecturers during one of our online seminars from our module Applied Project Minor Dissertation mentioned the Kotlin language. This led us to research this language and understand what it could be used for. We saw that Kotlin was an up-and-coming language that was primarily used for mobile Applications in Android as of September 2020 with hopes of iOS support being implemented in the near future.
 \subsection{IntelliJ IDEA}
 At the start of the college year, we were introduced to IntelliJ in our Distributed Systems module. We soon realised that JetBrains who are the founders of IntelliJ are also the designers of the Kotlin programming language. With this information, we decided to use this as our chosen development environment.We soon realised that we had the wrong version of IntelliJ installed on our devices. We needed to have the IntelliJ IDEA Ultimate to be able to access a Mongo Database. We got this free with the GitHub Student Developer Pack. This was an issue that was unforeseen and time-consuming but easily rectified. With JetBrains owning both Kotlin and IntelliJ writing the code was seamless and allowed testing to constantly occur. IntelliJ allowed the use of an Android mobile phone emulator to run these tests.
 \subsection{MongoDB}
@@ -833,28 +838,30 @@ With our app idea being based on golf courses and weather we had to source suita
 
 \end{itemize}
 \section{Insights}
-This project gave our team a glimpse into working on a full stack applications development and the many challenges faced on a regular basis. The team learnt to  cooperatively solve problems together and made compromises on their goals due to the unforeseen bugs and limitations encountered which are part of the nature of app development.
+This project gave our team a glimpse into working on a full stack applications development and the many challenges faced on a regular basis. The team learnt to  cooperatively solve problems together and made compromises on their goals due to the unforeseen bugs and limitations encountered which are part of the nature of app development. As a result of creating our Application, we have gained a new found appreciation into the workload it takes to design an application of this nature. We will be able to take this new found knowledge into our future careers and be able to apply this to any future projects.
 \newline
 \newline
 The design of the functionality for the application at the beginning of the project  is noticeably different to what the team had originally envisioned, but the core features and use of the application remained the same. The group learnt to adapt and change their approach to match the development tools required throughout the development life-cycle and as such gained skills in solving critical and creative solution based problems.
-\newline
-\newline
+\newpage
 With the Covid-19 pandemic the team learned to adapt to a remote working environment. While they were used to interpersonal interaction on a daily basis and having access to college facilities such as laboratories and the library available on campus. With the team's working environment completely altered by the pandemic, it allowed them gain skills in a remote work environment using tools such as Discord, Microsoft Teams and Intellij's "code with me" feature, which allowed multiple users to interact with a single IDE work-space at the same time. The development of these skills will be of great value to the team members as they could find themselves working under similar conditions even after the pandemic is over.
 \newline
 \newline
 The group can also take away the knowledge that they are capable of learning a programming language and how to use an SDK independently and be able to use those skills to develop a fully functioning application.
 \section{Closing}
 The last nine months has been a difficult year for everyone as the team have had to complete their final year studies under extra ordinary circumstances. With this in mind the group rose to the occasion and stuck with a consistent work regiment of meetings and sprints. The team accomplished their goals and delivered an application with all its intended functionality.
-
- finish on upbeat note
-
+\newline
+\newline
+We felt we worked really well as a team, everyone supported each other and helped each other out when difficulties arose to make sure the application was to the highest standard that we could produce while staying on schedule.
+\newline
+\newline
+When developing the App, there was great excitement among the team as we were developing an app everyone had a genuine interest.This led to everyone having ideas of where they wanted the app to go, resulting in no shortage of concepts for the app, generating an enjoyable atmosphere while creating an app everyone was excited for.
+\newline
+\newline
+We would like to thank our Supervisor Kevin O'Brien for helping us every week with any issues that may have arose and for his insight into how to structure our Dissertation and Project. His help with our Dissertation was second to none and allowed used to create a Dissertation we can be proud of.
 \chapter{References}
-\begin{thebibliography}{9}
-\bibitem{ref1} {title={OkHttp},url={https://square.github.io/okhttp/}, journal={OkHttp}, author={Square, Inc.}}
-\bibitem{ref2} {title={Stability of components},
-url={https://kotlinlang.org/docs/components-stability.html}, journal={Kotlin}, author={IntelliJ}}
-\bibitem{ref3} {title={Google I/O 2019},
-url={https://android-developers.googleblog.com/2019/05/google-io-2019-empowering-developers-to-build-experiences-on-Android-Play.html}, journal={Android}, author={Chet Haase}}
-
+\begin{thebibliography}{MT1}
+\bibitem{ref1} Square, I., 2021. OkHttp. [online] Square.github.io. Available at: <https://square.github.io/okhttp/>.
+\bibitem{ref2} "Stability of Kotlin components | Kotlin", Kotlin Help, 2021. [Online]. Available: https://kotlinlang.org/docs/components-stability.html.
+\bibitem{ref3} "Google I/O 2019: Empowering developers to build the best experiences on Android + Play", Android Developers Blog, 2021. [Online]. Available: https://android-developers.googleblog.com/2019/05/google-io-2019-empowering-developers-to-build-experiences-on-Android-Play.html.
 \end{thebibliography}
 \chapter{Appendices}
