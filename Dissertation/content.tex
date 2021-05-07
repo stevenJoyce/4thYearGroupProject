@@ -1,8 +1,8 @@
 \chapter{About this project}
 \section{Abstract}
 This project is a Mobile Application for the Android Operating System. The programming Language used in Kotlin. The development Environment that the application is written in is IntelliJ IDEA Ultimate.\newline
-The app is a sport-based application that allows the user to find all golf courses in Ireland. The user will be given the weather forecast over a 3, 7, or 10 day period depending on their preference. The weather forecast will be specific to what golf course that the user wants to play at. It will give the user back the best hour and day to play on for that period chosen.\newline
-The application will allow the user to access a MongoDB database to store and fetch personalized data. The stored data is your score for each hole and what golf club you used for that hole on that golf course and will generate a weekly/monthly report for how you performed on each golf course that you used during that time.\newline
+The app is a sport-based application that allows the user to find all golf courses in Ireland. The user will be given the weather forecast over a 12 hour period, or current time conditions depending on what page they are on. The weather forecast will be specific to what golf course that the user wants to play at. It will give the user back the scored ratings for each hour to play on for that period of time.\newline
+The application will allow the user to access a MongoDB database to store and fetch personalized data. The stored data is your score for each hole and what par that hole was given by the user. The score is calculated by finding the par of the course and subtracting \newline
 \section{Authors}
 For this Project, the authors are Robert Donnelly, Evan Greaney and Steven Joyce. All three authors are 4th Software development students, attending GMIT.
 \chapter{Introduction}
@@ -11,7 +11,7 @@ For our final year project, we were tasked with designing, developing, and deplo
 \section{Objectives}
 \begin{itemize}
     \item Find a new programming language to learn independently
-    \item Find a Methodology to best implement for our idea
+    \item Find a Methodology to help the development of our project
     \item Implement the methodology to create a project plan
     \item Find an architecture structure suitable to use
     \item Utilize an environment for stable version control
@@ -300,8 +300,7 @@ Since it is directly connected to git, we were able to push and pull code direct
 \subsection{Discord}
 Discord is a free instant messaging and Voice over Internet Protocol service which is generally targeted for gaming or other online communities to communicate together on servers. Our group was already well acquainted with its features and was comfortable with setting up our own server for the group's project. Discord is very similar if not identical to the untrained eye to the business communication platform Slack which is used by businesses in a workplace environment the main difference being that Discord is completely free whereas Companies pay a fee to use Slack. Discord then served as an appropriate alternative to Slack as it offered the same features including persistent chat rooms organized by topic, private groups, direct messaging, screen sharing, and online voice meeting capabilities.
 \newline
-\newline
-We found
+
 \subsection{Teams}
 Microsoft Teams is a collaborative workspace that is fully integrated with Microsoft Office 365 Services, Teams allows for scheduled voice and screen sharing meetings to be arranged via a calendar layout so that users can organise multiple meetings throughout a day to as well as schedule meetings to automatically occur on a daily, weekly or monthly basis such as in our case we were able to set up our meeting with our supervisor to automatically schedule itself each Monday at 11:30.
 \newline
@@ -313,7 +312,7 @@ Similarly, users can use an android or ios app for when the situation is more su
 
 \section{Dissertation Proof-Reading Tools}
 When we began writing up this document, we wanted to use a tool to check the grammar used, give a guide to what changes need to be made and overall make this document more easier to read. We realised this when we started to give our supervisor the document to get constructive feedback on what we can improve on.  To combat this we decided to use Grammarly. \newline \newline
-Grammar is one of the most popular tools used for proof reading documents.  It allows the user to upload a file of any size and get it read within a minute of uploading the documents. The only issue we had with this tool is that it would give hints to change the way words are written into the American variations of English words such as \"colour\" or \"realised\". It wanted us to change those 2 words into \"color\" and \"realized\". The hints it gave helped us convert sentences into words that better convey what we wanted to say.
+Grammarly is one of the most popular tools used for proof reading documents.  It allows the user to upload a file of any size and get it read within a minute of uploading the documents. The only issue we had with this tool is that it would give hints to change the way words are written into the American variations of English words such as \"colour\" or \"realised\". It wanted us to change those 2 words into \"color\" and \"realized\". The hints it gave helped us convert sentences into words that better convey what we wanted to say.
 \newline \newline
 With the use of Grammarly we were able to fix any grammatical errors of the document within half an hour and without having to read the document repeatedly. It allowed us to work efficiently and manage our time better. Grammarly is able to be added to a browser with an extension or as a desktop app on windows. The ability to use it in many locations on a computer device made the use of it more convenient. \newline
 Here is a link to the Grammarly website: {\url{https://app.grammarly.com}}
@@ -803,24 +802,59 @@ As the application evolves, we hope to incorporate new features to assist the us
 One of the features we wish to add is similar to a compass where on their phone the arrow will change in the direction of which the wind is blowing and give its speed as well so that the player will be able to rely on it to judge the direction they wish to hit the ball at in order to get the best possible shot.
 \subsection{Club Recommendation}
 Another feature we wish to add is that of a recommendation of which club to use on a specific hole, this would done based on previous users records to judge which club to use on that particular hole based on how successful overall that club was and how popular the club being used as well. If a club performs well and used by the vast majority of users, that club would then be recommended to the user.
-\begin{itemize}
-\item Prove that your software is robust. How? Testing etc.
-\item Use performance benchmarks (space and time) if algorithmic.
-\item Measure the outcomes / outputs of your system / software against the objectives from the Introduction.
-\item Highlight any limitations or opportunities in your approach or technologies used.
-\end{itemize}
-\chapter{Conclusion}
-About three pages.
-\begin{itemize}
-\item Briefly summarise your context and objectives (a few lines).
-\item Highlight your findings from the evaluation section / chapter and any opportunities identified.
-\end{itemize}
-\chapter{References}
 
+\chapter{Conclusion}
+\section{Summary}
+At the beginning of the college year our team had set their goals at obtaining new knowledge and skills in relevant and interesting areas of application development. Upon agreeing on an idea for an app, The team researched different technologies which were both relevant in industry and new to them. Kotlin ended up being the preferred choice of the team as it has been the preferred android development language since 2019 \cite{ref3}. 
+\newline
+\newline
+Upon researching Kotlin more it led to using Intellij IDE which was the most popular IDE for Kotlin development. Due to Kotlin's multi platform feature not being stable enough for development, The project became solely Android based.\cite{ref2}
+\newline
+\newline
+The team had prior experience with MongoDB which we obtained during our time in G.M.I.T.. We knew that we could use this tool or similar platforms for our applications back-end storage. When we researched MongoDB we found its new feature Realm which creates an application on the MongoDB server that acts as the gateway between an Atlas cluster and an outside application.
+\newline
+\newline
+With our app idea being based on golf courses and weather we had to source suitable API's to retrieve store and process appropriate data. We found that we could use the OKHttp request/response API to retrieve weather data from the accuweeather API. We could not source a golf course API within our budget and as such a hard coded work around had to be implemented.
+\newline
+
+\section{Outcomes}
+\begin{itemize}
+    \item To Learn a new programming language
+    \item Utilize a new IDE
+    \item Use an unfamiliar SDK(Software Development Kit)
+    \item To obtain Independent learning skills
+    \item To be able to work as a remote team
+    \item Apply Methodology practice in a remote work environment
+    \item Utilise multiple communication tools
+    \item Optimized version control skills
+    \item Achieved successful outcomes using software which haven't been fully released for production environments
+    \item Successfully design and create a full stack application
+
+
+\end{itemize}
+\section{Insights}
+This project gave our team a glimpse into working on a full stack applications development and the many challenges faced on a regular basis. The team learnt to  cooperatively solve problems together and made compromises on their goals due to the unforeseen bugs and limitations encountered which are part of the nature of app development.
+\newline
+\newline
+The design of the functionality for the application at the beginning of the project  is noticeably different to what the team had originally envisioned, but the core features and use of the application remained the same. The group learnt to adapt and change their approach to match the development tools required throughout the development life-cycle and as such gained skills in solving critical and creative solution based problems.
+\newline
+\newline
+With the Covid-19 pandemic the team learned to adapt to a remote working environment. While they were used to interpersonal interaction on a daily basis and having access to college facilities such as laboratories and the library available on campus. With the team's working environment completely altered by the pandemic, it allowed them gain skills in a remote work environment using tools such as Discord, Microsoft Teams and Intellij's "code with me" feature, which allowed multiple users to interact with a single IDE work-space at the same time. The development of these skills will be of great value to the team members as they could find themselves working under similar conditions even after the pandemic is over.
+\newline
+\newline
+The group can also take away the knowledge that they are capable of learning a programming language and how to use an SDK independently and be able to use those skills to develop a fully functioning application.
+\section{Closing}
+The last nine months has been a difficult year for everyone as the team have had to complete their final year studies under extra ordinary circumstances. With this in mind the group rose to the occasion and stuck with a consistent work regiment of meetings and sprints. The team accomplished their goals and delivered an application with all its intended functionality.
+
+ finish on upbeat note
+
+\chapter{References}
 \begin{thebibliography}{9}
 \bibitem{ref1} {title={OkHttp},url={https://square.github.io/okhttp/}, journal={OkHttp}, author={Square, Inc.}}
 \bibitem{ref2} {title={Stability of components},
 url={https://kotlinlang.org/docs/components-stability.html}, journal={Kotlin}, author={IntelliJ}}
+\bibitem{ref3} {title={Google I/O 2019},
+url={https://android-developers.googleblog.com/2019/05/google-io-2019-empowering-developers-to-build-experiences-on-Android-Play.html}, journal={Android}, author={Chet Haase}}
 
 \end{thebibliography}
 \chapter{Appendices}
