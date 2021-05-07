@@ -1,8 +1,5 @@
 package com.example.sportsadvisor
-//android
 
-
-//realm
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -31,8 +28,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.MediaType.Companion.toMediaType
 
 class MainActivity : AppCompatActivity() {
-    //
-    var dataRetreive:String = ""
     var courseCode:String = "208539"
 
     //navbar
