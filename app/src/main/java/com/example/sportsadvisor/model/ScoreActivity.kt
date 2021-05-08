@@ -62,6 +62,7 @@ class ScoreActivity : AppCompatActivity() {
             }
         }
     }
+    /*Function to send data from the Android Application to the MongoDB Database to be saved as a collection*/
     fun sendData(parScore: Int, handicap: Int, nettScore: Int, courseName: String, userID: String)
     {
         // Saving the data received in the function call into local variables to be sent to the server
