@@ -322,6 +322,12 @@ Grammarly is one of the most popular tools used for proof reading documents.  It
 With the use of Grammarly we were able to fix any grammatical errors of the document within half an hour and without having to read the document repeatedly. It allowed us to work efficiently and manage our time better. Grammarly is able to be added to a browser with an extension or as a desktop app on windows. The ability to use it in many locations on a computer device made the use of it more convenient. \newline
 Here is a link to the Grammarly website: {\url{https://app.grammarly.com}}
 \chapter{System Design}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm, height=12cm]{img/dfd.png}
+    \caption{Data Flow Diagram of the Application}
+    \label{fig:altas config}
+\end{figure}
 With our system, we have three main layers that integrate with one another to build our functional application. The Front End part of the application deals with the visuals and functionality that will be delivered to the user. It communicates with the Back End of the application which stores and retrieves data for the user upon interacting with the front end elements. The Data Retrieval tools are used in collaboration with the Front End to retrieve and present the current weather data for now and the next twelve hours as a set of ratings for the optimal playing conditions for each hour.
 \section{Front End}
 For the front end of our application we set out to make a user interface that would be both easy to navigate and appealing for the user to look at. We wanted the user to be get to any page from the current page they were in in as little commands as possible as well. Thus it was decided that a drawer with each page was appropriate for our design. With a drawer the user can access an array of options in this case page titles by swiping left or tapping the three bars in the top left of the screen. From here they can select the page they want and have that page displayed in front of them
