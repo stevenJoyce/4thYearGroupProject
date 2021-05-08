@@ -288,11 +288,8 @@ class MainActivity : AppCompatActivity() {
 
         // Set Header Image
         //navigation_header_img.setImageResource(R.drawable.golfbag)
-
         // Set background of Drawer
         navigation_layout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
-
-
     }
     // inspired by https://www.youtube.com/watch?v=oOIoRR0AiGo
     private fun refreshHourlyApp() {
@@ -369,9 +366,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 }
-
-
-
-

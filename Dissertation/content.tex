@@ -72,7 +72,7 @@ After each sprint, a set of tests were required to pass. If a test case failed t
     \centering
     \includegraphics[width=15cm, height = 7.5cm]{img/EmulatorLaunch.PNG}
     \caption{Test Case for successful Login}
-    \label{fig:altas config}
+    \label{fig:emulator launch}
 \end{figure}
 The image above illustrates a template test case we designed and implemented for testing the functionality of our application. The tests are designed to check each component of the App for correct implementation.
 \section{Collaborative Platforms}
@@ -114,7 +114,7 @@ At the start of the college year, we were introduced to IntelliJ in our Distribu
 MongoDB is a NoSQL database service that allows a user to store data from an application for future use. The data stored can be queried in searches that outputs specific results. These results can be processed by the application and read out to the user. We chose to use MongoDB as our server because of our previous experience of developing applications with it as the back-end storage.
 \newline
 \newline
-To use a MongoDB cluster we had to create a MongoDB Realm application. This is where the user data can be read into the Kotlin application. This can also send data to the cluster through this Realm application for storage. Realm reads in a cluster that has permission to access the stored data through a partition key and clusters data to the Kotlin application.
+To utilize a MongoDB database. We had to create a MongoDB Atlas \newline cluster to be used with a MongoDB Realm application. This is where the user data can be read into the Kotlin application. This can also be used to send data to the cluster through the created Realm application for storage. Realm reads in a cluster that it has permission to access through a partition key and sends data to the Kotlin application.
 \subsection{JustInMind}
 In order to conceptualize and visualise our application's front-end layout, we had to begin with prototyping our design. While researching design tools for mobile application development, we came across a prototyping tool called JustInMind.
 \newline
@@ -134,52 +134,53 @@ The Image as seen in Figure 3.1 shows the design of the prototype for the login/
     \centering
     \includegraphics[width=9cm]{img/SignUpImage.PNG}
     \caption{Sign up prototype within JustInMind}
-    \label{fig:altas config}
+    \label{fig:Sign up prototype within JustInMind}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=9cm]{img/dropDownMenu.PNG}
     \caption{Drop Down Menu prototype within JustInMind}
-    \label{fig:altas config}
+    \label{fig:Drop Down Menu prototype within JustInMind}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=9cm]{img/BestDays.PNG}
     \caption{Best Days to Play prototype within JustInMind}
-    \label{fig:altas config}
+    \label{fig:Best Days to Play prototype within JustInMind}
 \end{figure}
 
 \section{Algorithm}
-The algorithm we have implemented for the app is used for giving the user feedback on the weather conditions for playing golf during a specific hour on the current date. We generate JSON data from an API call and it contains an abundance of different weather variables which we have saved into variables that can be accessed in the application. We have chosen 8 variables from the list that are key to what hour is best suited to playing a round of golf. They are sunrise, sunset, hour, amount of rainfall in millimetres, temperature, wind speed, and humidity.
+The algorithm we have implemented for the app is used for giving the user feedback on the weather conditions for playing golf during a specific hour on the current date. We generate JSON data from an API call and it contains an abundance of different weather variables which we have saved into variables that can be accessed in the application. We have chosen 8 variables from the list that are key to what hour is best suited to playing a round of golf. They are sunrise, sunset, hour, amount of rainfall in millimetres, temperature, wind speed, and humidity. All these variables are given back to the user alongside a star rating. The star rating is out of 5, with 0 being the worst and 5 being the best. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=13cm,height =6.5cm]{img/starRating.PNG}
     \caption{Star rating function}
-    \label{fig:altas config}
+    \label{fig:Star rating function}
 \end{figure}
-All these variables are given back to the user alongside a star rating. The star rating is out of 5, with 0 being the worst and 5 being the best. This is best understood by looking at the above image.
 
+We based the ratings generated inside the userResults.kt class from \newline research we gathered and personal experience on what the optimal conditions for enjoying golf would bed. \cite{ref11} In the below image we illustrate how we generate a star rating for a variable, every variable is worth 1 star each but that star is broken down into a result between 0 and 1. The result is then used to generate a total score in the check Results function.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{img/starEx.PNG}
     \caption{Wind Rating function}
-    \label{fig:altas config}
+    \label{fig:Wind Rating function}
 \end{figure}
-In the above image we illustrate how we generate a star rating for a variable, every variable is worth 1 star each but that star is broken down into a result between 0 and 1. The result is then used to generate a total score in the check Results function.
+
+Image to show output from rating
+
 \chapter{Technology Review}
 \section{Kotlin}
-We found Kotlin to be less verbose, easier to read as a programming language compared to such languages as Java, C. It is a high-level language that can be used to produce mobile applications. Its coding style is similar to python but with more features and ways to implement it. \newline
-This is due to Kotlin not needing any end of line syntax to allow the interpreter to move on to a new line and code being easier to understand and comprehend what the line of code is doing. - Subject to change
+We found Kotlin to be less verbose, easier to read as a programming language compared to such languages as Java or C. It is a high-level language that can be used to produce mobile applications. Its coding style is similar to python but with more features and ways to implement it.
 \newline \newline
-The Kotlin language is a very good interpreter of other languages which helps when trying to write code without having a great grasp of the language. This is very important when you are beginning to learn the language or when you cannot find a way to write a method in Kotlin that you have done previously in a different language such as Java.
+The Kotlin language is a very good interpreter of other languages which helps when trying to write code without having a great grasp of the \newline language. This is very important when you are beginning to learn the language or when you cannot find a way to write a method in Kotlin that you have done previously in a different language such as Java.
 \newline \newline
-Despite both Kotlin and Java is a native language for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java. It can reduce the number of lines of code that need to be written for the application - this comparison can be seen in the code Excerpts below.
+Despite both Kotlin and Java being native languages for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java. It can reduce the number of lines of code that need to be written for the application - this comparison can be seen in the code Excerpts below.
 \newline
 \newline
-Below can be seen two examples of code one written in Kotlin and the other in Java, both pieces of code perform the same function but are equally different. As we can see in the Kotlin Code excerpt, the code tends to be more human-readable and easier to understand for people less acquainted with either of the languages.
+Below can be seen two examples of code one written in Kotlin and the other in Java, both pieces of code perform the same function but are equally \newline different. As we can see in the Kotlin Code excerpt, the code tends to be more human-readable and easier to understand for people less acquainted with either of the languages.
 \newline
 
 \subsubsection{Kotlin Code Excerpt}
@@ -204,26 +205,26 @@ Below can be seen two examples of code one written in Kotlin and the other in Ja
 \end{verbatim}
 
 \subsubsection{Limitations of the Kotlin Language}
-Kotlin comes with many amazing features that assist the Developer in writing efficient and easy-to-understand projects and Applications but with all of these innovative and useful tools that come with the Kotlin language, it is always changing. As the Kotlin programming language is relatively new in comparison to other programming languages such as Java and C++, the language itself and its components vary in stages within a Software release life cycle, an example of which would be the Kotlin/JVM is in stable development since version 1.0 but the component for Multiplatform projects is in Alpha version 1.3 as of the 11th February 2021 which can be seen in Figure 4.1.
+Kotlin comes with many amazing features that assist the Developer in writing efficient and easy-to-understand projects and Applications but with all of these innovative and useful tools that come with the Kotlin language, it is always changing. As the Kotlin programming language is relatively new in comparison to other programming languages such as Java and C++, the language itself and its components vary in stages within a Software release life cycle, an example of which would be the Kotlin/JVM is in stable development since version 1.0 but the component for Multiplatform projects is still in Alpha version 1.3 as of the May 2021 which can be seen in Figure 4.1.\cite{ref2}
 \begin{figure}[H]
     \centering
     \includegraphics[width=11cm,height = 11cm]{img/KotlinStability.PNG}
     \caption{Stability of Kotlin and its components}
-    \label{fig:altas config}
+    \label{fig:Stability of Kotlin and its components}
 \end{figure}
-Due to the Multiplatform component not being in a stable release version, we decided to solely focus on development for Android devices as this is included with the stable release of Kotlin/JVM and along with our experience in creating applications for Android devices during our time at GMIT.
+Due to the Multiplatform component not being in a stable release version, we decided to solely focus on development for Android devices as this is included with the stable release of Kotlin/JVM and along with our \newline experience in creating applications for Android devices during our time at GMIT.
 \newline
 \newline
-We initially created our base Application with the intention of utilising the multiplatform component for our application. We soon found that it was very difficult to run and in some instances would not compile and would some- times render the Application completely inoperable. This came as a cause for concern for us in the early stages of development and initially delayed our development by two weeks. It made us reflect on the feasibility of the component and if it would cause major issues later on in the development life cycle of the Application and as a result was ultimately removed from the Application due to being too unstable, with a new project entirely designed for the Android platform being created instead.
+We initially created our base Application with the intention of utilising the multiplatform component for our application. We soon found that it was very difficult to run and in some instances would not compile and would sometimes render the Application completely inoperable. This came as a cause for concern for us in the early stages of development and initially delayed our development by two weeks. It made us reflect on the feasibility of the component and if it would cause major issues later on in the development life cycle of the Application and as a result was ultimately removed from the Application due to being too unstable, with a new project entirely designed for the Android platform being created instead.
 
 \section{IntelliJ IDEA's}
-The development environment provided by IntelliJ allows for the development of several different types of programs including Mobile Applications. The IDE contains a built-in android development environment with Kotlin being the default language.
+The development environment provided by IntelliJ allows for the \newline development of several different types of programs including Mobile \newline Applications. The IDE contains a built-in android development environment with Kotlin being the default language.
 \newline
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm]{img/androidADK.PNG}
     \caption{Android Device Kit}
-    \label{fig:adk menu}
+    \label{fig:Android Device Kit}
 \end{figure}
 The image above shows the emulated device customisation menu. In here you can add a virtual device to run the android application on. The ability to modify what Android SDK used within the IDE was very important for testing the project. That feature is a great way to debug a mobile application efficiently and in real-time.
 \begin{figure}[H]
@@ -233,7 +234,7 @@ The image above shows the emulated device customisation menu. In here you can ad
     \label{fig:sdk menu}
 \end{figure}
 The SDK manager on IntelliJ allowed us as developers to run the application on different versions of the Android system. When you choose an SDK, it gives you a percentage of how many people who use Android will be able to use your device. The more up-to-date version - meant fewer people could run the app, we when with the Android Oreo version for our virtual phone which is Android 10.0 but we set our minimum SDK version to 28. This allowed the phone to run on Android 9.0(Pie) as well as the version we set up on the virtual device.
-\section{API's used}
+\section{API's Tested}
 
 \subsection{Open Weather API}
 Open Weather is an API that allows the user to retrieve weather data from any location using its NWP (Numerical Weather Prediction) Model. This API has been designed to be used universally in any Language to gather data. It gathers this data using a proprietary convolutional neural network that collects and processes a wide range of data sources to cover any location and
@@ -244,18 +245,20 @@ consider the local nuances of climate.
 In order to retrieve data with the Open Weather API, we needed the longitude and latitude of a chosen golf course selected by the user. With the help of the Geocoding API, it gives the ability to convert street name data into longitude and latitude values for the Open Weather API to search weather data based on that location.
 
 \subsection{AccuWeather API}
-After a lot of testing and attempting to retrieve data using the Open Weather API and Geocoding API, we found it was very difficult to retrieve, store and convert the data from XML that was provided by the Open Weather API, we then came across the Accuweather API that searches for locations based off of their own location codes which we then use to offer the user a list of golf course locations within Co. Galway that they could choose from instead of having to search for courses themselves.
+After a lot of testing and attempting to retrieve data using the Open Weather API and Geocoding API, we found it was very difficult to retrieve, store and convert the data from XML that was provided by the Open Weather API. We then came across the Accuweather API that searches for locations based off of their own location codes which we then use to offer the user a list of golf course locations within Co. Galway that they could choose from instead of having to search for courses themselves.
+\newline
 \newline
 \newline
 By offering this list we can accurately show the conditions for these particular golf courses of choice instead of being able to search for weather conditions for cities and towns instead of the actual golf courses.
 \newline
 \newline
-The data provided from the API is then able to be processed by our Algorithm to provide a rating for the conditions based on two search features, a 12-hour search for that particular day or a search based on the next 5 rolling days, the 12-hour search will provide the rating based on the next twelve hours and will provide a rating for those hours, and then the current conditions search will give a general rating for the current hour when accessed by the guest functionality.
+The data provided from the API is then able to be processed by our Algorithm to provide a rating for the conditions based on two search features, a 12-hour search for that particular day or a search based on the next 5 rolling days, the 12-hour search will provide the rating based on the next twelve hours and will provide a rating for those hours, and then the current conditions search will give a general rating for the current hour when accessed by the guest functionality. Due to all these features we decided to use this API to help us retrieve the weather data to be used to generate ratings.
 
 \section{MongoDB}
-To utilise the MongoDB database, we had to use two of its three main core features. The two features we use were Atlas and Realm, Atlas and Realm can be integrated in a way that allows for a seamless connection to and from the Android Application. The MongoDB Atlas uses a server that can be either free or paid for use by a set charge per hour. We choose a free tier server based in N.Virginia (us-east-1) run by Amazon Web Service(AWS). This server was chosen because the Irish server does not work with MongoDB Realm as the server for Ireland is only using MongoDB version is 4.2 but Realm runs on MongoDB version 4.4 and above.
+To utilise the MongoDB database, we had to use two of its three main core features. The two features we use are Atlas and Realm. Atlas and Realm can be integrated in a way that allows for a seamless connection to and from the Android Application. The MongoDB Atlas uses a server that can be either free or paid for use by a set charge per hour. We choose a free tier server based in N.Virginia (us-east-1) run by Amazon Web Service(AWS). This server was chosen because the Irish server does not work with MongoDB Realm as the server for Ireland is only using MongoDB version is 4.2 but Realm runs on MongoDB version 4.4 and above.
 \subsection{Cluster}
-It is the word associated with having several MongoDB servers working together. MongoDB distributes data in 2 ways: replica set and sharded clusters. The main objectives of a MongoDB cluster are to be able to read and write several nodes. The data is separated into the different nodes of the fragment. \cite{ref4}
+It is the word associated with having several MongoDB servers working as a connected system. MongoDB distributes data in 2 ways: replica set and sharded clusters. The main objectives of a MongoDB cluster are to be able to read and write several nodes. The data is separated into the different nodes of the fragment. For our database we are using the replica set due to its ability to be used multiple times throughout an application.\cite{ref4}
+ \newpage
 \begin{enumerate}
     \item \textbf{Replica Set:}
     \newline This is when the data is sent across several servers without the data changing. This is a layer of protection from a server failure.
@@ -264,7 +267,7 @@ It is the word associated with having several MongoDB servers working together. 
 \end{enumerate}
 \subsection{Atlas}
 Atlas is the area in which data is stored within the MongoDB system. it allows its users to create a database for a specific user that will only store their data in a collection. \newline
-This is great for protecting user data. The data can only be accessed by inputting a user id. This user id is unique and is also the user’s username that will be always shown in the application. It is the 1st thing a new user will input in the application when creating an account. With the data for a user protected in a cluster, this allows the application to output data to the user that is only relevant to them. That feature was a major reason for using MongoDB in our application.
+This is great for protecting user data. The data can only be accessed by inputting a user id. This user id is unique and also acts as the user's username that will be always shown in the application. With the data for a user protected within the MongoDB database, this allows the application to output data to the user that is only relevant to them. That feature was a major reason that to chose to use MongoDB in our application.
 \newline
 The user can store the name of the golf course they played at and the score they got that day. It will also save the par for the course that date and the overall total score for the round of golf.
 
@@ -272,7 +275,7 @@ The user can store the name of the golf course they played at and the score they
     \centering
     \includegraphics[width=9cm]{img/UserDatabase.png}
     \caption{MongoDB database with a User}
-    \label{fig:altas config}
+    \label{fig:MongoDB database with a User}
 \end{figure}
 The highlighted field in the above figure is the authentication key that will need to be inputted by the user to access the database associated with them. Without this key being correctly inputted, the user will not get any data from the MongoDB cluster. This is how MongoDB protects user data.
 \subsection{Realm}
@@ -283,41 +286,49 @@ The App will have a unique ID that is called in the Mobile Application back-end 
     \centering
     \includegraphics[width=15cm]{img/syncSetup.PNG}
     \caption{MongoDB Sync configuration}
-    \label{fig:altas config}
+    \label{fig:MongoDB Sync configuration}
 \end{figure}
 The above figure is an image of the MongoDB sync configuration. This is where the developer connects to the Atlas cluster by implementing a partition key. This key is how a cluster is made available to the user. The permissions for what a user can do with the database it has connected to are set here as well. We have allowed the user to both read and write to the collection but the data is protected by the userID key created in the collection itself.\newline
-For this project, Realm functioned as the middle man between the application and the MongoDB Server. It allowed the data to be sorted in a manner in which is easy to understand and utilize. Despite the Realm Sync still being in a developmental phase, it is of a high enough standard to work with no issues on their end. \newline
+For this project, Realm functioned as the middle man between the application and the MongoDB Server. It allowed the data to be sorted in a manner in which is easy to understand and utilize. Despite the Realm Sync still being in a developmental phase, it is of a high enough standard to work with no connectivity issues on their end. \newline
 We have been contacted by the MongoDB Realm to give feedback to help them see what issues have occurred and if it has worked well for us.
-Realm allows the creation of App users. This is the best way we found to make data private and protected. The user will have to log into the server with their username, email, and password. These are created in the app and are stored on the Realm App external storage system.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=15cm,height = 8cm]{img/Users.PNG}
-    \caption{MongoDB database with a User}
-    \label{fig:altas config}
+    \includegraphics[width=15cm, height = 6cm]{img/feedback_email.PNG}
+    \caption{MongoDB Realm email for feedback with names omitted}
+    \label{fig:MongoDB Realm contact}
 \end{figure}
-The image shown above in figure 4.3 is a snippet of the User database on the Realm App. The realm app will create a temp user for a guest to get a quick API call that shows the weather outlook for the next 24 hours. The multi-day weather report is only available for users who have logged in. The user needs to log in with an email and password.
+Realm allows the creation of App users. This was the best way we found to make data private and protected. The user will have to log into the server with their email, and password. These are created in the app and are stored on the Realm App external storage system.
+The user needs to log in with an email and password to store any round of golf score that they input into the ScoreActivity.kt class. This can be seen afterwards inside YserHistory.kt class.
 
 \section{GitHub}
-GitHub is the code hosting platform we used for our project which allows us to track and manage our source code with version control in a collaborative fashion. We used a private repository which allowed us to control who could access our code as well as who could contribute to our code. It allowed us to use branches to merge our code so we can work on separate features and not worry about breaking each other's code. \newpage
-Since it is directly connected to git, we were able to push and pull code directly from the terminal which we had experience in, and as a result, was our preference over using IntelliJ's inbuilt GitHub features. The GitHub website has a solid user interface, the service is stable and reliable so we had no worries about hosting our code on their site. GitHub also offers a student pack which gives students free access to developer tools that we incorporated into our project including Mongo Realm and IntelliJ Ultimate.
+GitHub is the version control platform we used for our project which allows us to track and manage our source code with version control in a collaborative fashion. We used a private repository which allowed us to control who could access our code as well as who could contribute to our code. It allowed us to use branches to merge our code so we can work on separate features and not worry about breaking each other's code. 
+\newline \newline
+Since it is directly connected to git, we were able to push and pull code directly from the terminal or the GitHub Desktop application which we had experience in, and as a result, was our preference over using IntelliJ's inbuilt GitHub features. The GitHub website has a solid user interface, the service is stable and reliable so we had no worries about hosting our code on their site. GitHub also offers a student pack which gave the team free access to developer tools, that we incorporated into our project including MongoDB Realm and IntelliJ Ultimate.
 \section{Communication Application's}
 \subsection{Discord}
-Discord is a free instant messaging and Voice over Internet Protocol service which is generally targeted for gaming or other online communities to communicate together on servers. Our group was already well acquainted with its features and was comfortable with setting up our own server for the group's project. Discord is very similar if not identical to the untrained eye to the business communication platform Slack which is used by businesses in a workplace environment the main difference being that Discord is completely free whereas Companies pay a fee to use Slack. Discord then served as an appropriate alternative to Slack as it offered the same features including persistent chat rooms organized by topic, private groups, direct messaging, screen sharing, and online voice meeting capabilities.
-\newline
+Discord is a free instant messaging and Voice over Internet Protocol service which is generally targeted for gaming or other online communities to communicate together on servers. Our group was already well acquainted with its features and was comfortable with setting up our own server for the group's project. Discord is very similar if not identical to the untrained eye to the business communication platform Slack which is used by businesses in a workplace environment the main difference being that Discord is completely free whereas Companies pay a fee to use Slack.  \newline \newline 
+Discord then served as an appropriate alternative to Slack as it offered the same features including persistent chat rooms organized by topic, private groups, direct messaging, screen sharing, and online voice meeting \newline capabilities.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm, height = 9cm]{img/discord_channels.png}
+    \includegraphics[width=5cm, height = 9cm]{img/slack_channels.png}
+    \caption{Similarities between Discord and Slack}
+    \label{fig:Similarities between Discord and Slack}
+\end{figure}
 
 \subsection{Teams}
-Microsoft Teams is a collaborative workspace that is fully integrated with Microsoft Office 365 Services, Teams allows for scheduled voice and screen sharing meetings to be arranged via a calendar layout so that users can organise multiple meetings throughout a day to as well as schedule meetings to automatically occur on a daily, weekly or monthly basis such as in our case we were able to set up our meeting with our supervisor to automatically schedule itself each Monday at 11:30.
+Microsoft Teams is a collaborative workspace that is fully integrated with Microsoft Office 365 Services. Teams allows for scheduled voice and screen sharing meetings to be arranged via a calendar layout so that users can organise multiple meetings throughout a day, as well as schedule meetings to automatically occur on a daily, weekly or monthly basis such as in our case we were able to set up our meeting with our supervisor to automatically schedule itself every Monday at 11:30. 
+\newline \newline 
+We also found Teams to be a lot more user-friendly to users who are not as technologically skilled, rarely does Teams encounter voice chat or microphone connectivity issues. 
+\newpage
+It has both a desktop application and a browser application formats for users on computers which allows flexibility for a user who might be borrowing a machine or have low storage they can use the web app version through a browser.
 \newline
-\newline
-We also found Teams to be a lot more user-friendly to users who are not as technologically skilled, rarely does Teams encounter voice chat or microphone connectivity issues. It has both a desktop application and a browser application formats for users on computers which allows flexibility for a user who might be borrowing a machine or have low storage they can use the web app version through a browser.
-\newline
-\newline
-Similarly, users can use an android or ios app for when the situation is more suitable for example replying to a direct message or meeting invitation whilst away from their desktop or laptop device. Its also worth noting that if a team is using an Office platform such as Excel, PowerPoint, or Word, the members of the team can work on the same document at the same time which is a major advantage for people using Office platform tools. The only downside of teams which is a common criticism of Microsoft software would be its UX can be frustrating, while it has improved in recent updates the UX is nowhere near as smooth as Slack or Discords in terms of navigating teams or groups you are a part of and its message feeds.
+
+Similarly, users can use an Android or iOS app for when the situation is more suitable for example replying to a direct message or meeting invitation whilst away from their desktop or laptop device. Its also worth noting that if a team is using an Office platform such as Excel, PowerPoint, or Word, the members of the team can work on the same document at the same time which is a major advantage for people using Office platform tools. The only downside of teams which is a common criticism of Microsoft software would be its UX can be frustrating, while it has improved in recent updates the UX is nowhere near as smooth as Slack or Discords in terms of navigating teams or groups you are a part of and its message feeds.
 
 \section{Dissertation Proof-Reading Tools}
 When we began writing up this document, we wanted to use a tool to check the grammar used, give a guide to what changes need to be made and overall make this document more easier to read. We realised this when we started to give our supervisor the document to get constructive feedback on what we can improve on.  To combat this we decided to use Grammarly. \newline \newline
-Grammarly is one of the most popular tools used for proof reading documents.  It allows the user to upload a file of any size and get it read within a minute of uploading the documents. The only issue we had with this tool is that it would give hints to change the way words are written into the American variations of English words such as \"colour\" or \"realised\". It wanted us to change those 2 words into \"color\" and \"realized\". The hints it gave helped us convert sentences into words that better convey what we wanted to say.
+Grammarly is one of the most popular tools used for proof reading files.  It allows the user to upload a file of any size and it is proof-read within a minute of uploading the documents. The only issue we had with this tool is that it would give hints to change the way words are written into the \newline American variations of English words such as colour or realised. It wanted us to change those 2 words into color and realized. The hints it gave helped us convert sentences into words that better convey what we wanted to say.
 \newline \newline
 With the use of Grammarly we were able to fix any grammatical errors of the document within half an hour and without having to read the document repeatedly. It allowed us to work efficiently and manage our time better. Grammarly is able to be added to a browser with an extension or as a desktop app on windows. The ability to use it in many locations on a computer device made the use of it more convenient. \newline
 Here is a link to the Grammarly website: {\url{https://app.grammarly.com}}
@@ -328,38 +339,38 @@ Here is a link to the Grammarly website: {\url{https://app.grammarly.com}}
     \caption{Data Flow Diagram of the Application}
     \label{fig:altas config}
 \end{figure}
-With our system, we have three main layers that integrate with one another to build our functional application. The Front End part of the application deals with the visuals and functionality that will be delivered to the user. It communicates with the Back End of the application which stores and retrieves data for the user upon interacting with the front end elements. The Data Retrieval tools are used in collaboration with the Front End to retrieve and present the current weather data for now and the next twelve hours as a set of ratings for the optimal playing conditions for each hour.
+With our system, we have three main layers that integrate with one another to build our functional application. The front-end part of the application deals with the visuals and functionality that will be delivered to the user. It communicates with the back-end of the application which stores and retrieves data for the user upon interacting with the front-end elements. The Data Retrieval tools are used in collaboration with the front-end to retrieve and present the current weather data for now and the next twelve hours as a set of ratings for the optimal playing conditions for each hour.
 \section{Front End}
-For the front end of our application we set out to make a user interface that would be both easy to navigate and appealing for the user to look at. We wanted the user to be get to any page from the current page they were in in as little commands as possible as well. Thus it was decided that a drawer with each page was appropriate for our design. With a drawer the user can access an array of options in this case page titles by swiping left or tapping the three bars in the top left of the screen. From here they can select the page they want and have that page displayed in front of them
+For the front-end of our application we set out to make a user interface that would be both easy to navigate and appealing for the user to look at. We wanted the user to able to get to any page from the current page they were in with as few commands as possible as well. Thus it was decided that a drawer with each page was appropriate for our design. With a drawer the user can access an array of options in this case page titles by swiping left or tapping the three bars in the top left of the screen. From here they can select the page they want and have that page displayed in front of them.
 \subsection{Android}
 \subsubsection{Navigation}
-When the app first launches on the Main Activity, in the on create method the apps drawer layout, toolbar and RecyclerView are setup. The RecyclerTouchListener.kt class will detect which row of the RecyclerView is selected. Below the RecylcerView is the two buttons that will take you to the login and register pages
+When the app first launches on the Main Activity, in the onCreate method the apps drawer layout, toolbar and RecyclerView are setup. The RecyclerTouchListener.kt class will detect which row of the RecyclerView is selected. Below the RecylcerView is the two buttons that will take you to the login and register pages.
 \begin{figure}[H]
     \centering
     \includegraphics[width=7cm, height = 13cm]{img/drawer_layout.PNG}
     \caption{Drawer Layout displaying menu items in a RecyclerView}
     \label{fig:altas config}
 \end{figure}
-NavigationRVAdapter.kt takes an array list of menu items and the current position selected, when the user selects a menu option, the listener will execute the code for each position, this could load in a fragment or a new activity and then the updateAdapter will be called to update all the menu items appearance to reflect this interaction.  
+NavigationRVAdapter.kt takes an array list of menu items and the current position selected, when the user selects a menu option, the listener will execute the code for each position, this will load in a fragment or a new activity and then the updateAdapter will be called to update all the menu items appearance to reflect this interaction.  
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=14cm, height = 7.5cm]{img/poistion_code.PNG}
     \caption{onBindViewHolder adjusts menu items appearance}
-    \label{fig:altas config}
+    \label{fig:onBindViewHolder adjusts menu items appearance}
 \end{figure}
 
 \subsubsection{XML}
-The XML section of the project contains the three xml folders which were most used being drawable, layout and values. Drawable contains the xml data for all the icons and themes for the app's background and buttons. We used a colour scheme which we got from coolors.co. This site was a great tool as we could enter in a colour for our app in this case green and the site will generate a colour scheme to compliment that colour. We could get the hexidecimal value for each of the colours in the scheme and add them to a color.xml file that we could give a descriptive name for each colour and apply these throughout the front end and what resulted was a clean an consistent look for the end user on every page.
+The XML section of the project contains the three XML folders which were the most used being drawable, layout and values. Drawable contains the xml data for all the icons and themes for the app's background and buttons. We used a colour scheme which we got from coolors.co. \cite{ref12} This site was a great tool, as we could enter in a colour for our app in this case green and the site will generate a colour scheme to compliment that colour. We could get the hexadecimal value for each of the colours in the scheme and add them to a color.xml file that we could give a descriptive name for each colour and apply these throughout the front-end and what resulted was a clean and consistent look for the end user on every page.
 \begin{figure}[H]
     \centering
     \includegraphics[width=5cm, height = 4cm]{img/colour_pallete.PNG}
      \includegraphics[width=6cm, height = 4cm]{img/colors_xml_values.PNG}
     \caption{colour scheme generated by coolors.co(Left), shown in XML(Right)}
-    \label{fig:altas config}
+    \label{fig:colour scheme generated by coolors.co(Left), shown in XML(Right)}
 \end{figure}
 
-The XML colours were used to convert button design and icons we sourced from the web to fit the colour scheme of the app. We could download SVG icons and convert them into an XML vector assest in Android Studio, then apply our colour scheme.
+The XML colours were used to convert button design and icons we sourced from the web to fit the colour scheme of the app. We could download SVG icons and convert them into an XML vector assest in Android Studio, then apply our colour scheme. \cite{ref13}
 
 \begin{figure}[H]
     \centering
@@ -367,18 +378,18 @@ The XML colours were used to convert button design and icons we sourced from the
          \includegraphics[width=9cm, height = 7cm]{img/star_vector_code.PNG}
      \includegraphics[width=2cm, height = 2cm]{img/Star2.PNG}
     \caption{Original Star icon(Left),Converted to fit app theme via xml color values, Result(Right)}
-    \label{fig:altas config}
+    \label{fig:Original Star icon(Left),Converted to fit app theme via xml color values, Result(Right}
 \end{figure}
 
-The layout folder contained the XML for each pages layout's which defines the structure for a user interface in the app. Inside the defined layout we could dictate where on the page to display views and intractable such as textView, buttons and imageView. The majority of the layouts in the app use the constraint layout which allowed us to attach view components either vertically or horizontally which suited our design as we had most components constrained to the top or bottom of one another
+The layout folder contained the XML for each pages layout which defines the structure for a user interface in the app. Inside the defined layout we could dictate where on the page to display views and interactables such as textView, buttons and imageView. The majority of the layouts in the app use the constraint layout which allowed us to attach view components either vertically or horizontally, which suited our design as we had most components constrained to the top or bottom of one another.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm, height = 4.5cm]{img/constraint_layout.PNG}
-    \caption{ImageView contstrained to the top, sides and the TextView below}
-    \label{fig:altas config}
+    \includegraphics[width=12cm, height = 4.2cm]{img/constraint_layout.PNG}
+    \caption{ImageView constrained to the top, sides and to the TextView below}
+    \label{fig:ImageView constrained to the top, sides and to the TextView below}
 \end{figure}
 
-Each View contains an id which allows the xml to be altered by the fragment or activity it's layout is contained within. For Example in the weather fragment XML page the TextView for course name is assigned whatever the arguments are passed to the Weather Fragment's courseName variable
+Each View contains an id which allows the XML to be altered by the fragment or activity it's layout is contained within. For Example in the weather\_fragment.xml page the TextView for course name is assigned whatever the arguments are passed to the WeatherFragment.kt page's courseName variable. 
 
 \begin{figure}[H]
     \centering
@@ -387,11 +398,11 @@ Each View contains an id which allows the xml to be altered by the fragment or a
     \includegraphics[width=12cm, height = 4cm]{img/fragment_arguments.PNG}
     \includegraphics[width=10cm, height = 1cm]{img/textview_id.PNG}
     \caption{arguments inside Fragment change the .text variables value for TextView with corresponding id}
-    \label{fig:altas config}
+    \label{fig:arguments inside Fragment change the .text variables value for TextView with corresponding id}
 \end{figure}
 
 \subsubsection{Activities}
-The Application contains five Activities including one MainActivity which hosts the Fragments of the application.The Main Activity changes its display by hosting Fragments within its layout. It hosts the two Weather and Settings fragments. Any data that the Fragments use is passed in a Bundle from the MainActivity where it calls upon the different elements of the back end. 
+The Application contains five Activities including one MainActivity which hosts the Fragments of the application.The Main Activity changes its display by hosting Fragments within its layout. It hosts the Home, Weather and Settings fragments. Any data that the Fragments use is passed in a Bundle from the MainActivity where it calls upon the different elements of the back-end. 
 \newline
 \newline
 The Login and Register Activities contain XML drawables for their page icons as well as backgrounds which blend between two different colour scheme values. They implement a cardview which places the input Boxes(2)  above the background box(1) and the Login/Register Buttons(3) appear on top of the input Boxes giving the page a 3D impression. 
@@ -400,69 +411,66 @@ The Login and Register Activities contain XML drawables for their page icons as 
     \centering
     \includegraphics[width=10cm, height = 6cm]{img/login_layers.PNG}
     \caption{Layered display for 3D effect}
-    \label{fig:altas config}
+    \label{fig:Layered display for 3D effect}
 \end{figure}
 
-The ScoreActivity page is held within a simple constraint layout which contains all of its inputs in a table layout when the player has entered in all the input fields then they can press the save score button.When the button is pressed the Activity will calculate the players scores and update the Score fields at the bottom of the Scorecard. The Scorecard uses contrasting colours from the scheme to differentiate between the different columns with each colour representing a different field either Hole,Par or Score.
-
+The ScoreActivity page is held within a simple constraint layout which contains all of its inputs in a table layout. when the player has entered in all the input fields then they can press the save score button.When the button is pressed the Activity will calculate the players scores and update the Score fields at the bottom of the Scorecard. The Scorecard uses contrasting colours from the scheme to differentiate between the different columns with each colour representing a different field either Hole,Par or Score.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm, height = 3cm]{img/score_colours.PNG}
+    \includegraphics[width=9cm, height = 2.5cm]{img/score_colours.PNG}
     \caption{Contrasting Columns for Scorecard}
-    \label{fig:altas config}
+    \label{fig:Contrasting Columns for Scorecard}
 \end{figure}
 \subsubsection{Fragments}
-The Fragments Settings, Home and Weather are all portions of UI which live within the MainActivity. The Home and Weather Fragments display the result of the back end getting weather data and processing it to get the results for the user. For these Fragments to get data from the MainActivity they are passed a "Bundle" into its arguments which store's data types with a key. The Fragments layout will replace the current layout within the MainActivity rootView, They then can then access the data they want via the key for the bundle and can use it to change XML data inside its XML layout which allows us to update to relevant weather data.
+The Fragments Settings, Home and Weather are all portions of UI which live within the MainActivity. The Home and Weather Fragments display the \newline result of the back-end getting weather data and processing it to get the \newline results for the user. For these Fragments to get data from MainActivity, they are passed a "Bundle" object into its arguments which store's data types with a key. The Fragments layout will replace the current layout within the MainActivity rootView. They then can then access the data they want via the key for the bundle and can use it to change XML data inside its XML layout which allows us to update to relevant weather data.
 \newline
 \newline
-The Settings fragment displays a PreferenceScreen which allows the user to change the course they wish to see weather data for, their handicap for calculating score and their user name. By setting these variables as preferences, The app will locally save the values set so the user will always have the same user name, handicap and the last course they had set will be their default. We can easily call them in any activity or fragment for use in the front or back end of the application with a key which made for rapid and simple implementation.
+The Settings fragment displays a PreferenceScreen which allows the user to change the course they wish to see weather data for, their handicap for calculating score and their user name. By setting these variables as preferences, The app will locally save the values set so the user will always have the same user name, handicap and the last course they had set will be their default. We can easily call them in any activity or fragment for use in the front or back-end of the application with a key which made for rapid and simple implementation.
 \begin{figure}[H]
     \centering
     \includegraphics[width=6cm, height = 6cm]{img/Settings_frag.PNG}
     \caption{User can set their preferences in settings fragment}
-    \label{fig:altas config}
+    \label{fig:User can set their preferences in settings fragment}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm, height = 6.5cm]{img/prefs.PNG}
     \caption{preference values being called and used in ScoreActivity}
-    \label{fig:altas config}
+    \label{fig:preference values being called and used in ScoreActivity}
 \end{figure}
-\subsection{Kotlin}
-\subsubsection{classes}
-\subsubsection{Algorithm}
 \subsection{Gradle}
 The Gradle is a build system used for building an application. For Android, it is used to build, test and deploy the application to an Android device.
 \newline \newline
-With Android, a Gradle folder is essential, due to it being used to generate an apk from the kt and XML files that have been written in the project. The Gradle folder looks through all the files in the project and converts them into dex files before putting all the data into a single file that is in an apk format.
+With Android, a Gradle folder is essential, due to it being used to \newline generate an apk from the kt and XML files that have been written in the project. An apk is what renders an application to function on an Android device. The Gradle folder reads through all the files in the project and \newline converts them into dex files before putting all the data into a single apk file.
 \newline \newline
-The Gradle folder is located in the root directory. This folder contains all the dex and apk files that run the application. The project contains 2 build.gradle, one located in the root directory, and the other is located inside the app folder. The root file applies what version of Kotlin the application is written in and all the dependencies of the application such as MongoDB Realm. \newline \newline
-The file set in the app folder applies the android version associated with this application and all the dependencies that are needed to utilize that version of Android in this app. The ability to sync the application with MongoDB Realm is set to true here, this allows the app to read, write, update and delete collections stored in the MongoDB database.
+The Gradle folder is located in the root directory. This folder contains all the dex and apk files that run the application. The project contains 2 build.gradle files, one located in the root directory, and the other is located inside the app folder. The root file applies what version of Kotlin the application is written in and all the dependencies of the application such as MongoDB Realm. \newline \newline
+The file set in the app folder applies the android version associated with this application and all the dependencies that are needed to run that version of Android in this app. The ability to sync the application with MongoDB Realm is set to true here, this allows the app to read, write, update and delete collections stored in the MongoDB database.
 
 \section{Backend}
 With our application, we set up a MongoDB server to allow a user the ability to create an account to store their golf course results. To allow the user to access the MongoDB server we needed a register user page and a login page.
 \subsection{MongoDB}
 \subsubsection{Realm}
-To connect to MongoDB, the application uses MongoDB Realm. This is an application on the server-side which allows the android application to access the MongoDB Atlas Cluster. The ability to access this only occurs for users who have registered. The email, password, and userID act as a way to verify who is trying to connect to the data while also filter what data can be seen on the User History page.
+To connect to MongoDB, the application uses MongoDB Realm. This is an application on the server-side which allows the android application to access the MongoDB Atlas Cluster. The ability to access this only occurs for users who have registered. The email and password act as a way to verify an user to allow them to store their results inside the database, while the userID will act as a way to verify who is trying to connect to the data while also filter what data can be seen on the User History page.
 \subsubsection{Atlas}
-The MongoDB Atlas is where the MongoDB database is located. A MongoDB Atlas cluster consists of a collection and a database. To connect to this database.
+The MongoDB Atlas service is where the MongoDB database is located. A MongoDB Atlas cluster consists of a collection and a database. To connect to this database.
 \subsection{Integration}
 \subsubsection{How the user can register for MongoDB Cluster Access}
 \begin{figure}[H]
     \centering
     \includegraphics[width=7cm, height = 13cm]{img/registerPage.PNG}
     \caption{Page for registering a new user}
-    \label{fig:altas config}
+    \label{fig:Page for registering a new user}
 \end{figure}
-The above image is a screenshot of both the login page that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN.
+\newpage
+The above image is a screenshot of the register page that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN.
 \begin{figure}[H]
     \centering
     \includegraphics[width=11cm, height= 8cm]{img/registerCode.PNG}
     \caption{Code associated with the register page}
-    \label{fig:altas config}
+    \label{fig:Code associated with the register page}
 \end{figure}
-Above is an image that depicts the code that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and a password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN. The GO TO LOGIN button brings the user to the login page to sign into the MongoDB server to access the user data that is attached to that user. 
+Above is an image that depicts the code that is used to register a new user for MongoDB server access. To create a user the person who has opened the application needs to input an email and password. If the user input has not been accepted the user gets an alert. That alert info will be different depending on what input error has occurred. If the user input is accepted an alert comes up saying: User has now registered - now click GO TO LOGIN. The GO TO LOGIN button brings the user to the login page to sign into the MongoDB server to access the user data that is attached to that user. 
 \newline
 The user input fields are saved as emailTxt and passTxt string variables by utilizing the toString function in Kotlin. The string variables are passed into the function app.emailPassword.registerUserAsync() to be sent to the MongoDb Realm to create a new App user.
 \subsubsection{How the user can login to the MongoDB Cluster}
@@ -470,7 +478,7 @@ The user input fields are saved as emailTxt and passTxt string variables by util
     \centering
     \includegraphics[width=7cm, height = 14cm]{img/loginPage.PNG}
     \caption{Page for logging in a user}
-    \label{fig:altas config}
+    \label{fig:Page for logging in a user}
 \end{figure}
 To connect to the MongoDB server, the user needs to input their login details into the application when they are on the Login Page. The page can be seen in Figure 5.3 to the MongoDb Realm Application. When the user is on the login page it will enter its userID, email, and password again. The user will get an alert saying successfully logged in UserID.
 
@@ -478,46 +486,50 @@ To connect to the MongoDB server, the user needs to input their login details in
     \centering
     \includegraphics[width=11cm, height = 11cm]{img/mongoSignIn.PNG}
     \caption{Code associated with the login Page}
-    \label{fig:altas config}
+    \label{fig:Code associated with the login Page}
 \end{figure}
 By using the MongoDB loginAsync method for signing into the server we can get back an error if the sign-in was not successful and this method also allows the user to read and write to and from the database.
 \newline
 The application also gets back the data the user has stored up in the server. It finds the data by searching the database for a unique identifier. That unique identifier is the userID. The userID is the partition key for the MongoDB Atlas database, This allows the MongoDB database to be filtered for use in the user history page. The output is only the data that the current user of the application has sent to the MongoDB server. \newline
-If the user has not saved any data an alert will appear on the device with \" a No User history Found \" outputted. The use of alerts may be minor but it has a big effect on the user experience. The ability to know what error you have when trying to run a specific function is key to solving that issue, this is where the use of alerts in the application is very effective.
+If the user has not saved any data an alert will appear on the device with No User history Found outputted. The use of alerts may be minor but it has a big effect on the user experience. The ability to know what error you have when trying to run a specific function is key to solving that issue, this is where the use of alerts in the application is very effective.
 \newpage
-With our application, we also send data to the server. That data is generated on the score page. The score page lets the user store results from a full round of golf including the course par score and user round score. The nett score for the round of golf is generated by taking the handicap away from the user’s total round score.
+With our application, we also send data to the server. That data is generated on the score page. The score page lets the user store results from a full round of golf including the course par score and user round score. The Nett score for the round of golf is generated by taking the handicap away from the user's total round score.
 \begin{figure}[H]
     \centering
     \includegraphics[width=7cm, height = 13cm]{img/scorePage.PNG}
     \caption{A snippet of the score page}
-    \label{fig:altas config}
+    \label{fig:A snippet of the score page}
 \end{figure}
 When the user presses the save data button, the round is saved in the application before that saved data is sent to the MongoDB database to be stored in a collection.
 \newpage
-The image below illustrated how we are sending the data collected on this page to the server. It is done by calling the send data function.
+The image below illustrates how we are sending the data collected on this page to the server. It is done by calling the send data function.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm]{img/sendDataFCall.PNG}
+    \includegraphics[width=11cm, height = 8cm]{img/sendDataFCall.PNG}
     \caption{Calling the function for sending the data to the server}
-    \label{fig:altas config}
+    \label{fig:Calling the function for sending the data to the server}
 \end{figure}
-The values sent to the function are all processed on the score page. tpar is the course par score, npar is the course handicap the user has assigned for that round, nscore is the users total score for the round when taking into consideration the handicap. The courseName is the name of the course the user is playing at and the userUD is the unique username that the user has created for itself.
+The values sent to the function are all processed in the ScoreActivity page. tpar is the course par score, npar is the course handicap that the user has assigned in the SettingsFragment page for that round, nscore is the users total score for the round when taking into consideration the handicap. The courseName is the name of the course the user has specified in the top textView in the fragment\_score.xml and the userID is the unique username that the user has created for itself inside the SettingsFragment page.
 \begin{figure}[H]
     \centering
     \includegraphics[width=11cm, height = 2.5cm]{img/sendDataFunction.PNG}
     \caption{The function used sending the data to the server}
-    \label{fig:altas config}
+    \label{fig:The function used sending the data to the server}
 \end{figure}
 The image above shows how the function stores the data it receives from the function call to be used in the code shown below. We receive the data collected on the score page and save it in local variables that are used to send that data to the MongoDB server in the method illustrated below.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm, height = 6.75cm]{img/sendServer.PNG}
     \caption{How the data is sent to the server}
-    \label{fig:altas config}
+    \label{fig:How the data is sent to the server}
 \end{figure}
 With MongoDB Realm, there are several different methods built into the system that can be used to perform CRUD operations. Crud operations stand for Create Read Update and Delete. These are the staples of any MySql or NoSql service. Without them, they would be useless. The function insertOne allows a user who has credentials to send the data to the server.
 \newline
-The collection has a name that needs to be called to start the process, our collection is called UserData. The use of append allows the creation of new values to be stored in fields already associated with the collection. The fields we have set up are id, date, time, course, parScore, handicap, totalScore, and userID. The data we send up to the server are the values received in the function call. Those values along with the current date and time. The date format is DD-MM-YYYY while the time format is Hours-Minutes-Seconds. Those 2 values are generated when the function is called for the exact date and time. They utilize the java SimpleDateFormat Class to generate the time and date in the format that we wanted and while giving back the correct results.
+\newline
+The collection has a name that needs to be called to start the process, our collection is called UserData. The use of append allows the creation of new values to be stored in fields already associated with the collection. The fields we have set up are id, date, time, course, parScore, handicap, totalScore, and userID. The data we send up to the server are the values received in the function call. Those values along with the current date and time.
+\newline 
+\newline
+The date format is DD-MM-YYYY while the time format is Hours-Minutes-Seconds. Those 2 values are generated when the function is called for the exact date and time. They utilize the java SimpleDateFormat Class to generate the time and date in the format that we wanted and while giving back the correct results.
 \subsubsection{How the data received is outputted to the User}
 \begin{figure}[H]
     \centering
@@ -596,12 +608,12 @@ This data is stored in a Kotlin data class files in order for the specific data 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm,height = 18cm]{img/DataExample.PNG}
+    \includegraphics[width=10cm,height = 17cm]{img/DataExample.PNG}
     \caption{Example of the Data set used to store weather values}
     \label{fig:altas config}
 \end{figure}
 
-While saving the data locally this is where the function for calculating the is called and converted to a list along with all the data values being displayed to the user(Rainfall, WindSpeed, Temperature, Feels Like Temperature, Humidity, Hourly Rating).
+While saving the data locally this is where the function for calculating the ratings is called and converted to a list along with all the data values being displayed to the user(Rainfall, WindSpeed, Temperature, Feels Like Temperature, Humidity, Hourly Rating).
 
 \begin{figure}[H]
     \centering
@@ -610,7 +622,7 @@ While saving the data locally this is where the function for calculating the is 
     \label{fig:altas config}
 \end{figure}
 
-The function takes in the above values except for Hourly Rating and a value for if it is daytime and then compares them to a set of predetermined values for each of the five values and then each one is given a rating between 0 and 1 which then will give a rating between 0.0 and 5.0 or if it the hour is in night hours a rating of 0.0.
+The function takes in all the above values except for Hourly Rating and a value for if it is daytime and then compares them to a set of predetermined values for each of the five values, each one is given a rating between 0 and 1 which then will give a rating between 0.0 and 5.0 unless the hour is passed sunset or before sunrise.
 
 \begin{figure}[H]
     \centering
@@ -738,8 +750,9 @@ This type of limitation will be rendered a non-issue in the future, as the langu
 \subsection{Android}
 \subsubsection{Issues}
 \subsubsection{Limitations}
+\newpage
 \subsection{API Calling}
-API calling was a major feature of our Application throughout our project as it allowed us to generate ratings for each hour shown and give a recommendation on which day to best play on but throughout our implementation of this feature we came across many limitations and issues within different parts of the project from the data retrieved to the API calls themselves and even limitations with pricing. Below will focus on the many issues and limitations that we came across when trying to implement this feature.
+API calling was a major feature of our Application throughout our project as it allowed us to generate ratings for each hour shown and give a \newpage recommendation on which day to best play on but throughout our implementation of this feature we came across many limitations and issues within different parts of the project from the data retrieved to the API calls themselves and even limitations with pricing. Below will focus on the many issues and limitations that we came across when trying to implement this feature.
 
 \subsubsection{Issues}
 One of the first Issues we had before using the Accuweather API was when we were experimenting with multiple weather APIs, the first of which was the Met Eireann API. This was a fantastic API that would've given us all the data we needed and because it was designed for the island of Ireland, it would've been extremely accurate for the given locations but the issue with this API was its data it returned.
@@ -892,6 +905,9 @@ We would like to thank our Supervisor Kevin O'Brien for helping us every week wi
 \bibitem{ref8}"Announcing MongoDB 4.4: Available Now in Beta | MongoDB Blog", MongoDB, 2021. [Online]. Available: https://www.mongodb.com/blog/post/announcing-4-dot-4-available-now-beta.
 \bibitem{ref9}"Kotlin docs | Kotlin", Kotlin Help, 2021. [Online]. Available: https://kotlinlang.org/docs/home.html.
 \bibitem{ref10}"MongoDB Realm � MongoDB Realm", Docs.mongodb.com, 2021. [Online]. Available: https://docs.mongodb.com/realm/cloud/. [Accessed: 07- May- 2021].
+\bibitem{ref11}D. Scott and B. Jones, "The Impact of Climate Change on Golf Participation in the Greater Toronto Area (GTA): A Case Study", Journal of Leisure Research, vol. 38, no. 3, pp. 363-380, 2006. Available: https://www.nrpa.org/globalassets/journals/jlr/2006/volume-38/jlr-volume-38-number-3-pp-363-380.pdf.
+\bibitem{ref12}"Coolors - The super fast color schemes generator!", Coolors.co, 2021. [Online]. Available: https://coolors.co/. [Accessed: 08- May- 2021].
+\bibitem{ref13}"Flaticon", Flaticon, 2021. [Online]. Available: https://www.flaticon.com/search?word=golf. [Accessed: 08- May- 2021].
 
 \end{thebibliography}
 \chapter{Appendices}
