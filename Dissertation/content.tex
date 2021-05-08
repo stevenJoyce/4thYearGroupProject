@@ -407,6 +407,22 @@ The ScoreActivity page is held within a simple constraint layout which contains 
     \label{fig:altas config}
 \end{figure}
 \subsubsection{Fragments}
+The Fragments Settings, Home and Weather are all portions of UI which live within the MainActivity. The Home and Weather Fragments display the result of the back end getting weather data and processing it to get the results for the user. For these Fragments to get data from the MainActivity they are passed a "Bundle" into its arguments which store's data types with a key. The Fragments layout will replace the current layout within the MainActivity rootView, They then can then access the data they want via the key for the bundle and can use it to change XML data inside its XML layout which allows us to update to relevant weather data.
+\newline
+\newline
+The Settings fragment displays a PreferenceScreen which allows the user to change the course they wish to see weather data for, their handicap for calculating score and their user name. By setting these variables as preferences, The app will locally save the values set so the user will always have the same user name, handicap and the last course they had set will be their default. We can easily call them in any activity or fragment for use in the front or back end of the application with a key which made for rapid and simple implementation.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm, height = 6cm]{img/Settings_frag.PNG}
+    \caption{User can set their preferences in settings fragment}
+    \label{fig:altas config}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm, height = 6.5cm]{img/prefs.PNG}
+    \caption{preference values being called and used in ScoreActivity}
+    \label{fig:altas config}
+\end{figure}
 \subsection{Kotlin}
 \subsubsection{classes}
 \subsubsection{Algorithm}

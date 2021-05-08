@@ -29,11 +29,12 @@ class ScoreActivity : AppCompatActivity() {
         var userID = ""
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val displayName = sp.getString("displayName", "")
+        val handicap = sp.getString("handicap","")
+
         userID = displayName.toString()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_score)
-        val handicap = sp.getString("handicap","")
 
         button.setOnClickListener{
             try {
