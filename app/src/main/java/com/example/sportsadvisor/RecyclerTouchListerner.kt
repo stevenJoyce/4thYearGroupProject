@@ -5,6 +5,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+// adapted from:https://johncodeos.com/how-to-create-a-custom-navigation-drawer-in-android-using-kotlin/
 
 class RecyclerTouchListener internal constructor(
     context: Context,

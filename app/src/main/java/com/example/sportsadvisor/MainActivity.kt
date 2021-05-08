@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     var courseCode:String = "208539"
 
     //navbar
+    //custom nav drawer adapted from:https://johncodeos.com/how-to-create-a-custom-navigation-drawer-in-android-using-kotlin/
     lateinit var drawerLayout: DrawerLayout
     private lateinit var adapter: NavigationRVAdapter
     private var items = arrayListOf(
@@ -67,11 +68,7 @@ class MainActivity : AppCompatActivity() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val displayName = sp.getString("displayName", "")
         val course = sp.getString("course", "")
-        //WeatherDataProcessor.callCurrentData(courseCode)
-        //WeatherDataProcessor.callHourlyData(courseCode)
-        // Add Item Touch Listener
 
-        //refreshHourlyApp()
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
                 val bundle = Bundle()
@@ -136,6 +133,7 @@ class MainActivity : AppCompatActivity() {
                         val homeFragment = HomeFragment()
                         homeFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {
+                            //fragment lives within activity and becomes the new view
                             replace(R.id.activity_main_content_id, homeFragment).commit()
                         }
                     }
@@ -198,6 +196,7 @@ class MainActivity : AppCompatActivity() {
                         val weatherFragment = WeatherFragment()
                         weatherFragment.arguments = bundle
                         supportFragmentManager.beginTransaction().apply {
+                            //fragment lives within activity and becomes the new view
                             replace(R.id.activity_main_content_id, weatherFragment).commit()
                         }
                     }
@@ -229,8 +228,6 @@ class MainActivity : AppCompatActivity() {
                 Handler(Looper.getMainLooper()).postDelayed({
                     drawerLayout.closeDrawer(GravityCompat.START)
                 }, 200)
-
-                //Thread.sleep(100)
             }
         }))
 
@@ -238,6 +235,7 @@ class MainActivity : AppCompatActivity() {
         updateAdapter(0)
 
         // Set 'Home' as the default fragment when the app starts
+        // This code is only run oce when application starts
         refreshCurrentApp()
         val bundle = Bundle()
         WeatherDataProcessor.callCurrentData(courseCode)
@@ -286,9 +284,6 @@ class MainActivity : AppCompatActivity() {
 
         toggle.syncState()
 
-        // Set Header Image
-        //navigation_header_img.setImageResource(R.drawable.golfbag)
-        // Set background of Drawer
         navigation_layout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
     }
     // inspired by https://www.youtube.com/watch?v=oOIoRR0AiGo
@@ -334,6 +329,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // will update ui to reflect user changing tab on drawer
     private fun updateAdapter(highlightItemPos: Int) {
         adapter = NavigationRVAdapter(items, highlightItemPos)
         navigation_rv.adapter = adapter

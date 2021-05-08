@@ -27,6 +27,7 @@ class ScoreActivity : AppCompatActivity() {
     //playedCourse
     override fun onCreate(savedInstanceState: Bundle?) {
         var userID = ""
+        //user prefs allow us to access userID & player handicap saved in locally
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val displayName = sp.getString("displayName", "")
         val handicap = sp.getString("handicap","")
@@ -36,14 +37,19 @@ class ScoreActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_score)
 
+        //calculation will only haooen if all input fields are filled
         button.setOnClickListener{
             try {
+                //front 9 holes
                 front9par.text = "" + (hole1Par.text.toString().toInt() + hole2par.text.toString().toInt() + hole3par.text.toString().toInt() + hole4par.text.toString().toInt() + hole5par.text.toString().toInt() + hole6par.text.toString().toInt() + hole7par.text.toString().toInt() + hole8par.text.toString().toInt() + hole9par.text.toString().toInt()).toString()
                 front9Score.text = "" + (hole1Score.text.toString().toInt() + hole2Score.text.toString().toInt() + hole3Score.text.toString().toInt() + hole4Score.text.toString().toInt() + hole5Score.text.toString().toInt() + hole6Score.text.toString().toInt() + hole7Score.text.toString().toInt() + hole8Score.text.toString().toInt() + hole9Score.text.toString().toInt()).toString()
+                //back 9 holes
                 back9Par.text = "" + (hole10par.text.toString().toInt() + hole11par.text.toString().toInt() + hole12par.text.toString().toInt() + hole13par.text.toString().toInt() + hole14par.text.toString().toInt() + hole15par.text.toString().toInt() + hole16par.text.toString().toInt() + hole17par.text.toString().toInt() + hole18par.text.toString().toInt()).toString()
                 back9Score.text = "" + (hole10Score.text.toString().toInt() + hole11Score.text.toString().toInt() + hole12Score.text.toString().toInt() + hole13Score.text.toString().toInt() + hole14Score.text.toString().toInt() + hole15Score.text.toString().toInt() + hole16Score.text.toString().toInt() + hole17Score.text.toString().toInt() + hole18Score.text.toString().toInt()).toString()
+                //18 holes score
                 totalPar.text ="" + (front9par.text.toString().toInt() + back9Par.text.toString().toInt())
                 totalScore.text ="" + (front9Score.text.toString().toInt() + back9Score.text.toString().toInt())
+                //18 holes score with handicap taken into account
                 netPar.text= handicap.toString()
                 NettScore.text ="" + (totalScore.text.toString().toInt() - handicap.toString().toInt())
 

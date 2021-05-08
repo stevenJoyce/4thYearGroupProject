@@ -24,6 +24,7 @@ class HomeFragment : Fragment() {
         val dataWeather = arguments?.getString("fullList")
         println("DATA WEATHER: "+ dataWeather.toString())
 
+        //data passed through bundle obj from MainActivity is displayed in XML page
         rootView.fragment_weather.text = fragmentName
         if (dataWeather != null) {
             rootView.display_data.text = dataWeather.toString()

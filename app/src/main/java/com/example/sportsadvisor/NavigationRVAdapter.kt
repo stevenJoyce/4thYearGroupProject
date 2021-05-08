@@ -11,6 +11,7 @@ import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.row_nav_drawer.view.*
+//adapted from:https://johncodeos.com/how-to-create-a-custom-navigation-drawer-in-android-using-kotlin/
 
 class NavigationRVAdapter(private var items: ArrayList<NavigationItemModel>, private var currentPos: Int) : RecyclerView.Adapter<NavigationRVAdapter.NavigationItemViewHolder>() {
 

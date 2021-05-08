@@ -50,7 +50,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:layout_editor_absoluteX="10dp" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.0" android:layout_marginTop="32dp">
-
+        <!--Icons adapted from:https://www.flaticon.com/search?word=golf -->
         <TableRow>
             <ImageView
                     app:srcCompat="@drawable/ic_24_hours"

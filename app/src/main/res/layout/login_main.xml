@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   android:background="@drawable/login_page_bg"
-                                                   tools:context=".LoginActivity">
-
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_page_bg"
+        tools:context=".LoginActivity">
+    <!--Login Page design adapted from:  https://www.youtube.com/watch?v=zl0_ZbA4vEA&t=690s&ab_channel=CodingforFun -->
     <ImageView
             android:id="@+id/navigation_header_img"
             android:layout_width="match_parent"
