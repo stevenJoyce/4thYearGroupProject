@@ -203,7 +203,7 @@ Below can be seen two examples of code one written in Kotlin and the other in Ja
         try (Response response = client.newCall(request).execute()){
          return response.body().string(); }}
 \end{verbatim}
-
+The Above code is taken from \cite{ref1} and is adapted for Kotlin using \cite{ref20}
 \subsubsection{Limitations of the Kotlin Language}
 Kotlin comes with many amazing features that assist the Developer in writing efficient and easy-to-understand projects and Applications but with all of these innovative and useful tools that come with the Kotlin language, it is always changing. As the Kotlin programming language is relatively new in comparison to other programming languages such as Java and C++, the language itself and its components vary in stages within a Software release life cycle, an example of which would be the Kotlin/JVM is in stable development since version 1.0 but the component for Multiplatform projects is still in Alpha version 1.3 as of the May 2021 which can be seen in Figure 4.1.\cite{ref2}
 \begin{figure}[H]
@@ -505,14 +505,14 @@ When the user presses the save data button, the round is saved in the applicatio
 The image below illustrates how we are sending the data collected on this page to the server. It is done by calling the send data function.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height = 8cm]{img/sendDataFCall.PNG}
+    \includegraphics[width=11cm, height = 2.5cm]{img/sendDataFCall.PNG}
     \caption{Calling the function for sending the data to the server}
     \label{fig:Calling the function for sending the data to the server}
 \end{figure}
 The values sent to the function are all processed in the ScoreActivity page. tpar is the course par score, npar is the course handicap that the user has assigned in the SettingsFragment page for that round, nscore is the users total score for the round when taking into consideration the handicap. The courseName is the name of the course the user has specified in the top textView in the fragment\_score.xml and the userID is the unique username that the user has created for itself inside the SettingsFragment page.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height = 2.5cm]{img/sendDataFunction.PNG}
+    \includegraphics[width=11cm, height = 4.5cm]{img/sendDataFunction.PNG}
     \caption{The function used sending the data to the server}
     \label{fig:The function used sending the data to the server}
 \end{figure}
@@ -656,7 +656,7 @@ After all the data is processed it is then outputted to the user so that they ca
 
 
 \chapter{System Evaluation}
-In this chapter, we focused on the Testing, Evaluation, and Limitations of our Project. Our focus was to test how robust or project is by following by following the Agile methodology of Software Testing. We designed a Gantt Chart to outline sprints that break down the project into smaller parts which in turn, would be vigorously tested. The full Gantt chart can be viewed on the link below in our Github Repository.
+In this chapter, we focused on the Testing, Evaluation, and Limitations of our Project. Our focus was to test how robust or project is by following the Agile methodology of Software Testing. We designed a Gantt Chart to outline sprints that break down the project into smaller parts which in turn, would be vigorously tested. The full Gantt chart can be viewed on the link below in our Github Repository.
 \newline
 
 \url{https://github.com/stevenJoyce/4thYearGroupProject/tree/main/TestingGuides}
@@ -669,7 +669,7 @@ In this chapter, we focused on the Testing, Evaluation, and Limitations of our P
 \end{figure}
 
 \section{Unit Testing}
-For our project we have uses the Agile methodology to layout our plan. With this, testing is a major aspect of this methodology and as such, we created Test cases for each sprint and assigned a role for each team member. The roles assigned were as followed, Steven Joyce would create the unit tests which would be reviewed by Robert Donnelly before being implemented by Evan Greaney. These roles remained unchanged throughout the testing process.
+For our project we have used the Agile methodology to layout our plan. With this, testing is a major aspect of this methodology and as such, we created Test cases for each sprint and assigned a role for each team member. The roles assigned were as followed, Steven Joyce would create the unit tests which would be reviewed by Robert Donnelly before being implemented by Evan Greaney. These roles would remain unchanged throughout the testing process.
 \newline
 \newline
 The illustration below is an example of a test case used for running a successful login attempt. As seen below each case has an ID that is linked to the Gantt chart. The case uses the test data provided and requires prerequisites to be met for the test to be attempted. The test must follow the steps in a linear order for the case to be successful.
@@ -698,37 +698,41 @@ We did this type of testing for every feature of our application. This allowed u
 \subsubsection{Find a new programming language to learn independently}
 The group's goal of learning a new programming language was achieved as the team gained skills and knowledge of Kotlin JVM, which the team members have no prior experience with this development tool before the past college year.
 \subsubsection {Find a Methodology to best implement our idea}
-Upon starting the year the team had chosen two main methodologies to consider, being Agile and Waterfall. Due to Agile being a better fit for an application, the team decided to pick this methodology as our preferred approach.
+Upon starting the year the team had chosen two main methodologies to consider, being Agile and Waterfall. Due to Agile being a better fit for our application, the team decided to pick this methodology as our preferred approach.
 \subsubsection {Implement the methodology to create a project plan}
 With our methodology choice, the way we approached our project plan was to split up the work into manageable parts, these were our sprints. The sprints were then handed out to each member of the team to complete within a given deadline of a set amount of weeks. The team had successfully created a plan. At the end of the planning process, a Gantt chart was created to be used to assign sprints to each member and manage the progress of the application's development.
 \subsubsection {Find an architecture structure suitable to use}
-With Kotlin being our language of choice, upon researching, the team discovered that it was mainly utilised for Android Development and that JetBrains, the company that is developing Kotlin also develops the IntelliJ IDE which supports the Android Studio SDK for android development. With this in mind, the team quickly and successfully came to an agreement that the application should be made in the JetBrains toolkit environment of IntelliJ and Android Studio.
+With Kotlin being our language of choice, upon researching, the team had discovered that it was mainly utilised for Android Development and that JetBrains, the company that is developing Kotlin also develops the IntelliJ IDE which supports the Android Studio SDK for android development. With this in mind, the team quickly and successfully came to an agreement that the application should be made in the JetBrains toolkit environment of IntelliJ and Android Studio.
 \subsubsection {Utilize an environment for stable version control}
-With our history of using GitHub it was a simple choice for the team to pick it as most developers struggle with learning a new version control environment so the team decided to stick with what they already had prior experience with. With the project on GitHub we were able to set up an interactive Issue board. This allowed issues to be assigned to individual team members and for the issue's progress to be tracked. It allowed each group member to access the latest version of the application from any machine which allowed for remote working, this was a vital aid for our team in a covid affected work environment.
+With our history of using GitHub it was a simple choice for the team to pick it as most developers struggle with learning a new version control environment so the team decided to stick with what they already had prior experience with. \newline
+With the project on GitHub we were able to set up an interactive Issue board. This allowed issues to be assigned to individual team members and for the issue's progress to be tracked. It allowed each group member to access the latest version of the application from any machine which allowed for remote working, this was a vital aid for our team in a covid affected work environment.
 \subsubsection {Establish a well structured base for the project}
-To design and implement our Android application we needed a great IDE. Through our GitHub Student Developer Pack, we were given a free license for IntelliJ Ultimate. With our IDE we could create an emulator to test our application and call our MongoDB database to view any requests the application makes in real-time.
+To design and implement our Android application we needed a great IDE. Through our GitHub Student Developer Pack, we were given a free license for IntelliJ Ultimate. By using this IDE we could create an emulator to test our application and call our MongoDB database to view any requests the application makes in real-time.
 \subsubsection {Create a high quality front-end}
-With Android Studio ADK being built into IntelliJ, we could design the page and write the code at the same time which helped us understand what we were trying to achieve for the end-user. We used a consistent colour scheme throughout the application XML layouts and drawable assets which resulted in a professional and appealing look and feel. We altered XML icons which would have not suited the application's look but through applying the colour scheme we made them match our application's theme. Every aspect from the drawer layout to buttons in one way or another conforms to the colour scheme of the application which in turn resulted in a high-quality front-end design.
+With Android Studio ADK being built into IntelliJ, we could design the page and write the code at the same time which helped us understand what we were trying to achieve for the end-user. We used a consistent colour scheme throughout the application XML layouts and drawable assets which resulted in a professional and appealing look and feel.
+\newline
+\newline
+We altered XML icons which would have not suited the application's look but through applying the colour scheme we made them match our application's theme. Every aspect from the drawer layout to buttons in one way or another conforms to the colour scheme of the application which in turn resulted in a high-quality front-end design.
 \subsubsection {Find and deploy an API which our app can utilize}
-After multiple attempts at using different APIs for our application, we decided on using the Accuweather API service. This allowed us to generate current weather conditions and the next 12 hours for the chosen area in Galway.
+After multiple attempts at using different APIs for our application, we then decided on using the Accuweather API service. This allowed us to generate current weather conditions and the next 12 hours for the chosen area in Galway.
 \subsubsection {Create a server service for the Application.}
 With our prior knowledge and experience with MongoDB, it was a simple choice to make. We decided on using 2 aspects of MongoDB which are Atlas and Realm.
 \subsubsection {Allow for user data to be protected and appropriately stored}
 MongoDB Realm created a buffer between the server and application to filter unauthorized access to the user data. This a hidden layer of protection that filtered out any issues or unwarranted data.
 \subsubsection {Use of a Location service to find user's desired location}
-This objective was modified due to the API service, where the location can only be found using their custom location codes that a normal user would not have prior knowledge of. We changed into a list of all golf courses in Galway and allowed the user to choose a preferred golf course.
+This objective was modified due to the API service, where the location can only be found using their custom location codes that a normal user would not have prior knowledge of. We changed into a list of all golf courses in Galway and allowed the user to save a preferred golf course.
 \subsubsection {Implement a login service which allows user to access their \newline protected data}
 To view any user data, they have to sign to the application on the login page before setting their userID in the settings page. When the user goes to load its history they only view their own data.
-\subsubsection {Design the Apps software to successfully implement the apps intended functionality}
+\subsubsection {Design the Apps software to successfully implement the apps \newline intended functionality}
 The features that we originally set out to have on our application have all been achieved but the end result did not generate the original design plan we had intended due to limitations and a better understanding of what we wanted to achieve.
-\subsubsection {Deploy our methodologies style of testing to ensure quality standards are met}
+\subsubsection {Deploy our methodologies style of testing to ensure quality \newline standards are met}
 With the methodology testing approach we used, it favoured constant testing throughout the development cycle and as such allowed the team to fix unforeseen bugs and errors in our design and implementation as they happen. As developers, we tested our work after every change to the application with the built-in emulator. This ensured that we never committed non-functioning code to our repository.
 \newpage
 \section{Issues, limitations}
 This section mainly pertains to the Issues and Limitations experienced by the team throughout the whole development lifecycle of the Application. Due to the nature of our project development tools and language being relatively new to ourselves and the wider coding community, there have been many challenges we have faced to develop this application that has needed to be resolved.
 \subsection{IntelliJ}
 \subsubsection{Limitations}
-Our IDE only caused one limitation in the last stages of our development lifecycle when the IDE updated the Kotlin Language version, it forced updated our own project without consent and caused issues throughout all our .kt classes which led them to not be able to be rendered by the Gradle.
+Our IDE only caused one limitation in the last stages of our development lifecycle when the IDE updated the Kotlin Language version, it forced \newline updates upon our own project without consent and caused issues throughout all our .kt classes which led them to not be able to be rendered by the Gradle.
 \newline
 \newline
 This resulted in us losing about 3 hours of development time due to us not realising what the root cause of the issue was. To fix this we had to look at our commit history through GitHub desktop to see what was changed file by file until we found the issue.
@@ -745,128 +749,154 @@ To resolve this we had to revert to a previous Kotlin language version of our pr
 
 \subsection{Kotlin}
 \subsubsection{Limitations}
-The Kotlin language is not a difficult language to write code in but the lack of references to solutions outside of the main documentation was a hindrance to our project development. The code itself has been written in a way that is user friendly, with Java code being able to be converted in Kotlin instantly but if you want to look for code that is unconventional and outside of the norm for a class in either Java or Kotlin, you will most likely struggle to find any source to put you on the right path. The best you can hope for in a Java variation of the same code and convert it before modifying it to suit what you need,
+The Kotlin language is not a difficult language to write code in but the lack of references to solutions outside of the main documentation was a hindrance to our project development. 
+\newline
+\newline 
+The code itself has been written in a way that is user friendly, with Java code being able to be converted in Kotlin instantly but if you want to look for code that is unconventional and outside of the norm for a class in either Java or Kotlin, you will most likely struggle to find any source to put you on the right path. 
+\newline
+\newline 
+The best you can hope for in a Java variation of the same code and \newline convert it before modifying it to suit what you need,
 This type of limitation will be rendered a non-issue in the future, as the language becomes more popular. 
-\subsection{Android}
-\subsubsection{Issues}
-\subsubsection{Limitations}
 \newpage
 \subsection{API Calling}
-API calling was a major feature of our Application throughout our project as it allowed us to generate ratings for each hour shown and give a \newpage recommendation on which day to best play on but throughout our implementation of this feature we came across many limitations and issues within different parts of the project from the data retrieved to the API calls themselves and even limitations with pricing. Below will focus on the many issues and limitations that we came across when trying to implement this feature.
+API calling was a major feature of our Application throughout our project as it allowed us to generate ratings for each hour shown and returns back a recommendation on which day to best play on.
+\newline
+\newline
+Throughout our implementation of this feature we came across several \newline limitations and issues within different aspects of the project from the data retrieved to the API calls themselves and even limitations with pricing. 
+\newline
+\newline
+Below will focus on the many issues and limitations that we came across when trying to implement this feature.
 
 \subsubsection{Issues}
-One of the first Issues we had before using the Accuweather API was when we were experimenting with multiple weather APIs, the first of which was the Met Eireann API. This was a fantastic API that would've given us all the data we needed and because it was designed for the island of Ireland, it would've been extremely accurate for the given locations but the issue with this API was its data it returned.
+One of the first Issues we had before using the Accuweather API was when we were experimenting with multiple weather APIs, the first of which was the Met Eireann API\cite{ref15}. This was a fantastic API that would've given us all the data we needed and because it was designed for the island of Ireland, it would've been extremely accurate for the given locations but the issue with this API was its data it returned.
 \newline
 \newline
-The data it returned was in XML format not JSON format and the technology that we were using to fetch and store the data required JSON data. We initially attempted to try to convert this data from XML to JSON but since we weren't storing this data to a file locally it wasn't possible to convert it to JSON. As a result, we had to search for another API to use.
+The data returned was in XML format not JSON format and the technology that we were using to fetch and store the data required JSON data. We initially attempted to try to convert this data from XML to JSON but since we weren't storing this data to a file locally it wasn't possible to convert it to JSON. As a result, we had to search for another API to use.
 \newline
 \newline
-The next major issue when trying to find an API to use for our project was when we tried to use an API called Openweather API, it had ticked nearly all the boxes for us, it was capable of finding the correct locations, retrieved back data in JSON format but unfortunately, when attempting to store the data it wasnâ€™t able to be correctly stored in our data files as it came back as a set of JSON objects, not JSON data which would allow the data to be temporarily stored so that the data could be processed and return an output to a user. After testing these APIs we eventually came across the AccuWeather API which allowed us to retrieve, store and process as we saw fit.
+The next major issue when trying to find an API to use for our project was when we tried to use an API called Openweather API\cite{ref16}, it had ticked nearly all the boxes for us, it was capable of finding the correct locations, retrieved back data in JSON format but unfortunately, when attempting to store the data it wasn't able to be correctly stored in our data files as it came back as a set of JSON objects, not JSON data which would allow the data to be temporarily stored so that the data could be processed and return an output to a user. After testing these APIs we eventually came across the AccuWeather API which allowed us to retrieve, store and process as we saw fit.
 
 \subsubsection{Limitations}
-As we were working with these APIs we came across many limitations of them that wouldn't be called issues but limited our design and focus of the application to try and incorporate them into our application.
+As we were working with these APIs we came across many limitations that wouldn't be called issues but limited our design and focus of the application to try and incorporate them into our application.
 \newline
 \newline
-When attempting to work with the Open Weather API, one of the limitations that we had was that we had to use a third party to try and retrieve the location that the user was searching for based on either longitude and latitude or searching by name, we originally planned it to be searched for by name but found that when searching by name, due to Ireland having unusual city, town and our case golf course names, it was rather difficult to search via name for some golf courses and because of this, we had to remove the idea of allowing the user to search by name.
+When attempting to work with the Open Weather API, one of the very few limitations that we had was that we had to use a third party to try and retrieve the location that the user was searching for based on either longitude and latitude or searching by name, we originally planned it to be searched for by name but found that when searching by name, due to Ireland having unusual city, town and in our case golf course names, it was rather difficult to search via name for some golf courses and because of this, we had to remove the idea of allowing the user to search by name.
 \newline
 \newline
-We then attempted to search by longitude and latitude where we attempted to get the longitude and latitude for the user using the Geolocation API by google but found that when we used it, it only returned back the users current location which hindered us from finding the locations of the golf courses we needed. Instead, we gave them a list of golf courses in Galway that when any one of them is clicked, it passes through the location code used by Accuweather to search for the course.
+We then attempted to search by longitude and latitude for the user using the Geolocation API by google but found that when had we used it, it only returned back the users current location which hindered us from finding the locations of the golf courses we needed. Instead, we gave them a list of golf courses in Galway that when any one of them is clicked, it passes through the location code used by Accuweather to search for the golf course area.
 \newline
 \newline
-After trying many different APIs we eventually settled on the Accuweather API as it did just about everything we needed to complete the development with our project but came with just one limitation that was very similar to the issue found in the OpenWeather API was when we tried to fetch the five-day forecast, we could retrieve it with no issue but when trying to store it, our data could not handle JSON objects and instead threw errors, with this we had to redesign our what the user was able to see when generating the ratings and with that, we decided to check for the current conditions so that the user could accurately check the current conditions for their designated course as they got closer to the golf course.
+After trying many different APIs we eventually settled on the Accuweather API as it did just about everything we needed to complete the development with our project but came with just one limitation that was very similar to the issue found in the OpenWeather API was when we tried to fetch the five-day forecast, we could retrieve it with no issue but when trying to store it, our data could not handle JSON objects and instead threw errors, with this we had to redesign our what the user was able to see when generating the ratings and with that, we decided to check for the current conditions so that the user could accurately check the current conditions for their designated course as they got closer to the golf course.\cite{ref14}
 \newline
 \newline
-The biggest limitation we had throughout all the APIs we used including the Accuweather API we settled upon was the limitation around pricing. As we are students we could not afford to purchase API packages to get more API requests per month and to have more API fetch types like searching for the weather for the next 72 hours instead of 12 hours and because of this, we had to design the app to be checked the day you plan to play golf to check for the best hours to play instead of being able to plan a couple of days ahead.
+The biggest limitation we had with the Accuweather and Openweather APIs was the limitation around pricing. As we are students we could not afford to purchase API packages to get more API requests per month and to have more API fetch types like searching for the weather for the next 72 hours instead of 12 hours and because of this, we had to design the app to be checked the day you plan to play golf to check for the best hours to play instead of being able to plan a couple of days ahead.\cite{ref14}\cite{ref16}
 \newline
 \newline
-This also hindered our development as we could only make 50 API fetch re- quests a day and found when trying to test this functionality after only an hour and a half into development we were unable to continue testing until the following day.
+This also hindered our development as we could only make 50 API fetch requests a day and found when trying to test this functionality after only an hour and a half into development we were unable to continue testing until the following day.
 \subsection{MongoDB}
-With the way, we used MongoDB with our application we needed to have a MongoDB Realm Application. Realm was only brought by MongoDB realm in April 2019 for \$39 million and had slowly been integrated with the MonogDB services during th epast 2 years. \cite{ref6} The integrated system was only released for General Use on February 4th, 2021. \cite{ref7} We had been using this system since October 2020. We were allowed access to this due to already having a MongoDB account and can be seen as an experienced MongoDB NoSQL Database User.
+With the way, we used MongoDB with our application we needed to have a MongoDB Realm service app. Realm was only bought by MongoDB in April 2019 for \$39 million and had slowly been integrated with the MonogDB services during the past 2 years. \cite{ref6} The integrated system was only released for General Use on February 4th, 2021. \cite{ref7} We had been using this system since October 2020. We were allowed access to this due to already having a MongoDB account and can be seen as an experienced MongoDB NoSQL Database User.
 \subsubsection{Issues}
-One of the lingering issues we had with connecting to MongoDB from a Kotlin Android Application was that MongoDB 4.4 has been in beta since June 2020. \cite{ref8} This is the only version of MongoDB that can use with MongoDB Realm Sync. This issue has led to some aspects of MongoDB not being documented fully and integration of Kotlin language with query searches being limited. We wanted to only output 5 of the 7 fields we had stored in our MongoDB Database but due to the integration of Kotlin code now being finished, we could only remove 1 of the fields. We hope that in the future this issue can be resolved and our application can be modified to allow the user to choose what fields it wants to generate their data from.
+One of the lingering issues we had with connecting to MongoDB from a Kotlin Android Application was that MongoDB 4.4 has been in beta since June 2020. \cite{ref8} This is the only version of MongoDB that can use with MongoDB Realm Sync. This issue has led to some aspects of MongoDB not being documented fully and integrated to the Kotlin language with query searches being limited. We wanted to only output 5 of the 7 fields we had stored in our MongoDB Database but due to the integration of Kotlin code not being finished, we could only remove 1 of the fields. We hope that in the future this issue can be resolved and our application can be modified to allow the user to choose what fields it wants to generate their data from.
 \subsubsection{Limitations}
-With our application, we have a way for the user to create an account to store data within the MongoDB database. At this moment we do not have a way to link a userID to a specific email/password for better user data protection. This would also render the settings userID as redundant because we could set that value when we log in to the application. This would make all collections that have that value to only open when the email and password that is linked to it is inputted into the application and sent to the MongoDB realm app to valid login credentials.
+With our application, we have a way for the user to create an account to store data within the MongoDB database. At this moment we do not have a way to link a userID to a specific email/password for better user data protection.
 \newline
-When a user registers an email, due to us not owning a domain that can be used to send an email address verification link, the email address at this time does not get verified. The only real safeguard is when to try to register the same email again, you will be given an alert that states \"email already has an account\". This can be very annoying for a user because if you register with an email address that is spelt incorrectly, you will not be told with an alert. The email will automatically be verified by the MongoDB database. The sign-in function with MongoDB Sync was riddled with bugs and is unusable. This led us to remove it from the application entirely until it is fixed. \newline We hope that when the Realm Sync is fully functioning that this aspect of the system is working fully and we can use either the function call or purchase a domain for email verification.
+\newline
+This would also render the settings userID as redundant because we could set that value when we log in to the application. This would make all collections that contain the specified value to only open when the email and password that is linked to it is inputted into the application and sent to the MongoDB Realm app to validate their login credentials.
+\newline
+\newline
+When a user registers an email, due to us not owning a domain that can be used to send an email address verification link, the email address at this time does not get verified. The only real safeguard is when to try to register the same email again, you will be given an alert that states email already has an account.
+\newline
+\newline
+This can be a hindrance for a user because if you register with an email address that is spelt incorrectly, you will not be told with an alert. The email will automatically be verified by the MongoDB database. The sign-in function with MongoDB Sync was riddled with bugs and is unusable. This led us to remove it from the application entirely until it is fixed. 
+\newline
+\newline
+We hope that when the Realm Sync is fully functioning, that this aspect of the system is working fully and we can use either the function call or purchase a domain for email verification.
 \subsection{Overleaf}
-For writing our dissertation, we decided to use Overleaf due to our knowledge of overleaf from a previous module. The biggest issue we found with overleaf was that you could not have more than 2 people with access to the same project. This led to issues with making sure the dissertation that every member of the group had accessed to was the latest version. The only solution to this, would be to subscribe to Overleaf with a monthly fee that every member of the group would have to pay.  
+For writing our dissertation, we decided to use Overleaf because of our previous knowledge with overleaf from a previous module(Research Methods). The biggest issue we found with overleaf was that you could not have more than 2 people with access to the same project. This led to issues with making sure that every member of the group had access to the latest version of our dissertation. The only solution to this, would be to subscribe to Overleaf with a monthly fee that every member of the group would have to pay.  
 \newline
 \newline
 \section {Issues Overcame}
 \subsection{IntelliJ}
-With the base version of IntelliJ we could not access a MongoDB database to view the collection data or any changes we had made in the project without leaving IntelliJ and signing in to our MongoDB Project and go to Atlas to view the database collections. This was a big issue with our IDE, as we needed to view all changes instantly so we could find any bugs straight away and patch the problem. \newline
-The way we overcame this, was to upgrade our IDE to IntelliJ Ultimate. This allowed the database tool inside Net Brains to be used in conjunction with IntelliJ. The database tool allows us to sign into our MongoDB database inside of IntelliJ and view all the collections in our database. We could also see any changes made to the database with a refresh of the tool. This helped us see what was happening quickly and be able to understand what the issue was and how to fix it.
-\newpage
+With the base version of IntelliJ we could not access a MongoDB database to view the collection data or any changes we had made in the project without leaving IntelliJ and signing in to our MongoDB Project and go to Atlas to view the database collections. This was a big issue with our IDE, as we needed to view all changes instantly so we could find any bugs straight away and patch the problem. \newline \newline \newline
+The way we overcame this, was to upgrade our IDE to IntelliJ Ultimate. This allowed the database tool inside Jet Brains to be used in conjunction with IntelliJ. The database tool allows us to sign into our MongoDB database inside of IntelliJ and view all the collections in our database. We could also see any changes made to the database with a refresh tool. This helped us see what was happening quickly and be able to understand what the issue was and how to fix it.
 \subsection{MongoDB}
 \subsubsection{MongoDB Atlas Cluster Integration}
-The original MongoDB Atlas Cluster region we have designated for our application was not able to run MongoDB 4.4. The use of MongoDB 4.4 was essential to our app because it allowed MongoDB Realm integration. We first had our cluster region set as AWS / Ireland (eu-west-1). This cluster still uses MongoDB 4.2 and could not be used for our application. We had to rebuild our MongoDB Atlas Cluster set up and change the region to AWS N. Virginia (us-east-1). This was the closest region to Ireland that was still a part of the the free tier and was integrated with MongoDB 4.4.\ref{ref8}
+The original MongoDB Atlas Cluster region we have designated with our application was not able to run MongoDB 4.4. The use of MongoDB 4.4 was essential to our app because it allowed MongoDB Realm integration. We first had our cluster region set as AWS / Ireland (eu-west-1). This cluster still uses MongoDB 4.2 and could not be used for our application. We had to rebuild our MongoDB Atlas Cluster set up and change the region to AWS N. Virginia (us-east-1). This was the closest region to Ireland that was still a part of the the free tier and was integrated with MongoDB 4.4.\cite{ref8}
 
 \subsubsection{Connecting the Android App to MongoDB}
-One of the major issues we had with the project was getting access to the Database while the application was running, this led us to find MongoDB Realm. this is a new software to the MongoDB Services. It has been slowly integrated into the MongoDB database since the start of 2020, the general public has only been able to use this since February. The software created an app on the server side to be used as a gateway between an application and a MongoDB database, The use of the this software rapidly changed how we could utilize a database with our application, With only a few lines of code, we could connect to the app to the database and we easy to understand. The documentation to use it with Kotlin is not finished yet but we could resolve any issues ourselves. \ref{cite10}
+One of the major issues we had with the project was getting access to the Database while the application was running, this led us to find MongoDB Realm. this is a new software to the MongoDB Services. It has been slowly integrated into the MongoDB database since the start of 2020, the general public has only been able to use this since February 2021.
+\newline
+\newline 
+The software created an app on the server side to be used as a gateway between an application and a MongoDB database, The use of this software rapidly changed how we could utilize a database with our application, With only a few lines of code, we could connect to the app to the database and it allowed us run the app offline and when the app connected to the internet again any data stored would be sent to Realm when the user logs in again. The documentation to use it with Kotlin is not finished yet but we could resolve any issues ourselves. \cite{ref10}
+\newpage
 \subsubsection{MongoDB returning collections}
-With MongoDB not enabling a userID to be linked to a specific email and password, we had to find a way to protect user data while printing out data the user has stored in the application. To solve this issue, we created a userID field in the settings. The user will create a unique identifier in this location that can be used throughout the app. When the user saves a score in the score fragment, the userID is sent along with all the other values. When we enter the User History page of the Android Application, the onCreate function will run a search of the database and bring back every collection associated with the userID that the user has defined on the settings page.
+With MongoDB not enabling a userID to be linked to a specific email and password, we had to find a way to protect user data while printing out data the user has stored in the application. To solve this issue, we created a userID field in the settings(SettingsFragment.kt) page. The user will create a unique identifier in this location that can be used throughout the app. When the user saves a score in the score fragment, the userID is sent along with all the other values. When we enter the User History page of the Android Application, the onCreate function will run a search of the database and bring back every collection associated with the userID that the user has defined on that page.
 
 \subsubsection{MongoDB adding Collections}
-The MongoDB Documentation does not give you the Kotlin code equivalent to adding a collection that is populated with both user input and generated input. To overcome this we had to send all the user inputs to a function before that function saves the variables into a local variable to be used inside the function itself. The data is then sent to the collection with the insertOne method found in the ScoreFragment.kt file. It used .append for every field to add a new value in the specified field.
+The MongoDB Documentation does not give you the Kotlin code equivalent to adding a collection that is populated with both user input and generated input. To overcome this we had to send all the user inputs to a function that saves the variables into a local variable to be used inside the function itself. The data is then sent to the collection with the insertOne method found in the ScoreFragment.kt file. It used .append for every field to add a new value in the specified field inside a MongoDB Database Collection.
 \section{Future of Application}
 \subsection{Multi-platform Application}
-In our future development plans for our application is to introduce our app to more platforms, we originally planned for our app to be deployed to both android and iOS from the beginning but to focus on android to allow for a more robust application to be designed.
+In our future development plans for our application, we plan to introduce our app to more platforms, we originally planned for our app to be deployed to both android and iOS from the beginning but to focus on android to allow for a more robust application to be designed.
 \subsubsection{iOS}
-We hoped to include iOS as part of our plan for development of our application from the beginning but due to iOS being in alpha stability for Kotlin App development\cite{ref2} we had to remove it from our plan due to its unreliability and hold off until the component becomes more reliable so that we can implement it when its status improves.
+We hoped to include iOS as part of our plan for development of our app from the beginning but due to iOS being in alpha stability for Kotlin App development\cite{ref2} we had to remove it from our project. This is due to its \newline unreliability and we had to hold off until the component becomes more \newline reliable so that we can implement it when its status improves.
 \subsubsection{Harmony OS}
-When Harmony OS becomes more prevalent on the wider market, we plan to redisgn our app to build a version of our app to be deployed to Harmony OS. At the moment Harmony OS only supports Java, C and JavaScript with plans for kotlin to be supported to later in its development life cycle. When this is implemented and supported, we will then work to add our App to this platform.
+When Harmony OS becomes more prevalent on the wider market, we plan to build a version of our app to be deployed to Harmony OS. At the moment Harmony OS only supports Java, C and JavaScript\cite{ref17} with plans for Kotlin to be supported to later in its development life cycle. When this is implemented and supported, we will then work to add our App to this platform.
 \newline
 \subsection{MongoDB Realm}
 \subsubsection{Integration}
-With MongoDB Realm still not fully finished yet, we will see major features added for use with Kotlin. This includes running multiple queries and being able to get back the data in a string, not a document. These 2 features alone will change the way we get back collections from the database. We would be able to only bring back data that the user wants to see rather than everything except from the ObjectID. 
+With MongoDB Realm still not fully finished yet, we will see major features added for use with Kotlin. This includes running multiple queries and being able to get back the data in a string, not a document. These two features alone will change the way we get back collections from the database. We would be able to only bring back data that the user wants to see rather than everything except for the ObjectID. 
 \newline
-When the login function is fully functional we will be able to verify email addresses and be able to link a UserID to a specific User. This will improve the security of user data immensely. The email verification would help users who may make a mistake in the email input and may not know what they did wrong.
 \newline
-In the future we would like to be able to link accounts to either your Facebook or WhatsApp to allow the user to share their golf scores with their friends.
+When the login function is fully functional, we will be able to verify email addresses and be able to link a UserID to a specific User. This will improve the security of user data immensely. The email verification would help users who may make a mistake in the email input and may not know what they did wrong.
 \newline
-MongoDB allows users to sign up with a Facebook, Google or Apple account. This feature is another that we would like to add to the application to allow the user to sign up in a way that is less time consuming and will not require email verification.
+\newline
+In the future we would like to be able to link accounts to either your Facebook or WhatsApp to allow the user to share their golf scores with their friends.MongoDB allows users to sign up with your Facebook, Google or Apple accounts. This feature is another that we would like to add to the application to allow the user to sign up in a way that is less time consuming and will not require email verification.
 \subsection{API Call Licensing}
-For our application to be further improved, we would have to increase the amount of requests the application can make per day as due to being limited to 50 per day, the app is not ready for public use just yet, with the purchase of a higher tier API package from Accuweather we can make at a minimum of 225000 api calls per month. 
+For our application to be further improved, we would have to increase the amount of requests the application can make per day as due to being limited to 50 per day, the app is not ready for public use just yet, with the purchase of a higher tier API package from Accuweather we can make at a minimum, 225,000 API calls per month. 
 \newline
 \newline
-Depending on demand for the application, we can upgrade the package further to meet the demands of the user base and upgrade accordingly to allow for new users to make use of our application as well. 
+\newline
+Depending on demand for the application, we can then upgrade the package further to meet the demands of the user base and upgrade accordingly to allow for new users to make use of our application as well. 
 \subsection{Nationwide/Global}
-One of the biggest updates to our Application that we wish to introduce, is the inclusion of more golf course nationwide and even globally as we want to make this app versatile in all locations and not just limited to one area.
+One of the biggest updates to our Application that we wish to introduce, is the inclusion of more golf courses nationwide and even globally, as we want to make this app versatile in all locations and not just limited to one area.
 \subsubsection{Ireland}
-Within Ireland we only have locations for 13 golf courses in Galway selected to demonstrate how the application will function, our future plans is to include not just the rest of the golf courses within galway but to incorporate every golf course within the island of Ireland. This is to allow the user to be able to search up any course in Ireland and be able to plan golf trips with the best conditions to play from any part of the country even if they are far away from the golf course.
+Within Ireland we only have locations for 13 golf courses in Galway selected to demonstrate how the application will function. Our future plan is to include not just the rest of the golf courses within Galway but to incorporate every golf course within the island of Ireland. This is to allow the user to be able to search up any course in Ireland and be able to plan golf trips with the best conditions to play from any part of the country even if they are far away from the golf course.
 \subsubsection{Major Golf Courses}
-After incorporating all of the golf courses in Ireland to our application, the next big update to the golf courses is to include many of the Major golf courses around the world so that if you intend to visit one of these golf courses, you can find out which hours or days are best for you and plan your trip around it.
+After incorporating all of the golf courses in Ireland to our application, the next big update to the golf courses available to the user is to include many of the Major golf courses around the world so that if you intend to visit one of these golf courses, you can find out which hours or days are best for you and plan your trip around it.
 \subsection{New Features}
 As the application evolves, we hope to incorporate new features to assist the user during their game, we hope to add features that will also help the user improve their performance and create better golfers.
 \subsubsection{Wind Direction}
-One of the features we wish to add is similar to a compass where on their phone the arrow will change in the direction of which the wind is blowing and give its speed as well so that the player will be able to rely on it to judge the direction they wish to hit the ball at in order to get the best possible shot.
+One of the features we wish to add is similar to a compass where on their phone the arrow will change in the direction of which the wind is blowing and give its speed as well so that the player will be able to rely on it to adjust their shots direction and club choice.
 \subsubsection{Club Recommendation}
-Another feature we wish to add is that of a recommendation of which club to use on a specific hole, this would done based on previous users records to judge which club to use on that particular hole based on how successful overall that club was and how popular the club being used as well. If a club performs well and used by the vast majority of users, that club would then be recommended to the user.
+Another feature we wish to add is a recommendation of which club to use on a specific hole, this would be done based upon previous users records to judge which club to use on that particular hole. This will be based upon how successful and popular overall that club was on that particular hole. If a club performs well and used by the vast majority of users, that club would then be recommended to the user.
 \subsubsection{Weekly Ratings}
-One of the sections we wish to implement is that of weekly ratings for the next seven rolling days following the search. It was originally part of our design but due to budget limitations we were not able to incorporate this feature. This will allow the user to be able to plan trips a week in advance with an accurate prediction of how the weather will be for their trip
+One of the sections we wish to implement is that of weekly ratings for the next seven rolling days following the search. It was originally part of our design but due to budget limitations we were not able to incorporate this feature. This will allow the user to be able to plan trips a week in advance with an accurate prediction of how the weather will be for their trip.
 
 \chapter{Conclusion}
 \section{Summary}
-At the beginning of the college year our team had set their goals at obtaining new knowledge and skills in relevant and interesting areas of application development. Upon agreeing on an idea for an app, The team researched different technologies which were both relevant in industry and new to them. Kotlin ended up being the preferred choice of the team as it has been the preferred android development language since 2019 \cite{ref3}. 
+At the beginning of the college year our team had set their goals at obtaining new knowledge and skills in relevant and interesting areas of application development. Upon agreeing on an idea for an app, The team researched different technologies which were both relevant in industry and new to them. Kotlin ended up being the preferred choice of the team as it has been the preferred android development language since 2019 \cite{ref3}\cite{ref18}. 
 \newline
 \newline
-Upon researching Kotlin more it led to using Intellij IDE which was the most popular IDE for Kotlin development. Due to Kotlin's multi platform feature not being stable enough for development, The project became solely Android based.\cite{ref2}
+Upon researching Kotlin more it led to us using the IntelliJ IDE which was the most popular IDE for Kotlin development. Due to Kotlin's multi-platform feature not being stable enough for development, The project became solely Android based.\cite{ref2}
 \newline
 \newline
-The team had prior experience with MongoDB which we obtained during our time in G.M.I.T.. We knew that we could use this tool or similar platforms for our applications back-end storage. When we researched MongoDB we found its new feature Realm which creates an application on the MongoDB server that acts as the gateway between an Atlas cluster and an outside application.
+The team had prior experience with MongoDB which we obtained during our time in G.M.I.T.. We knew that we could use this tool or similar\newline platforms for our applications back-end storage.
 \newline
 \newline
-With our app idea being based on golf courses and weather we had to source suitable API's to retrieve store and process appropriate data. We found that we could use the OKHttp request/response API to retrieve weather data from the accuweeather API. We could not source a golf course API within our budget and as such a hard coded work around had to be implemented.
+When we researched  MongoDB we found its new feature Realm which creates an application on the MongoDB server that acts as the gateway between an Atlas cluster and an outside application.
+\newline
+\newline
+With our app idea being based on golf courses and weather we had to source suitable API's to retrieve store and process appropriate data. We found that we could use the OKHttp request/response API\cite{ref1} to retrieve weather data from the AccuWeather API. We could not source a golf course API within our budget and as such a hard coded work around had to be implemented.
 \newline
 
 \section{Outcomes}
 \begin{itemize}
-    \item To Learn a new programming language
+    \item To learn a new programming language
     \item Utilize a new IDE
     \item Use an unfamiliar SDK(Software Development Kit)
     \item To obtain Independent learning skills
     \item To be able to work as a remote team
-    \item Apply Methodology practice in a remote work environment
+    \item Apply methodology practice in a remote work environment
     \item Utilise multiple communication tools
     \item Optimized version control skills
     \item Achieved successful outcomes using software which haven't been fully released for production environments
@@ -875,27 +905,28 @@ With our app idea being based on golf courses and weather we had to source suita
 
 \end{itemize}
 \section{Insights}
-This project gave our team a glimpse into working on a full stack applications development and the many challenges faced on a regular basis. The team learnt to  cooperatively solve problems together and made compromises on their goals due to the unforeseen bugs and limitations encountered which are part of the nature of app development. As a result of creating our Application, we have gained a new found appreciation into the workload it takes to design an application of this nature. We will be able to take this new found knowledge into our future careers and be able to apply this to any future projects.
+This project gave our team a glimpse into working on a full stack applications development process and the many challenges faced on a regular basis. The team learnt to  cooperatively solve problems together and made compromises on their goals due to the unforeseen bugs and limitations encountered which are part of the nature of app development.As a result of creating our Application, we have gained a new found appreciation into the workload it takes to design an application of this nature.
 \newline
 \newline
-The design of the functionality for the application at the beginning of the project  is noticeably different to what the team had originally envisioned, but the core features and use of the application remained the same. The group learnt to adapt and change their approach to match the development tools required throughout the development life-cycle and as such gained skills in solving critical and creative solution based problems.
-\newpage
-With the Covid-19 pandemic the team learned to adapt to a remote working environment. While they were used to interpersonal interaction on a daily basis and having access to college facilities such as laboratories and the library available on campus. With the team's working environment completely altered by the pandemic, it allowed them gain skills in a remote work environment using tools such as Discord, Microsoft Teams and Intellij's "code with me" feature, which allowed multiple users to interact with a single IDE work-space at the same time. The development of these skills will be of great value to the team members as they could find themselves working under similar conditions even after the pandemic is over.
+We can take this knowledge into our future careers and be able to apply this to any future projects. The design of the functionality for the application at the beginning of the project is noticeably different to what the team had originally envisioned, but the core features of the application remain the same. The group learnt to adapt and change their approach to match the development tools required throughout the development life-cycle and as such gained skills in solving critical and creative solution based problems.
+\newline
+\newline
+With the Covid-19 pandemic the team learned to adapt to a remote working environment. While they were used to interpersonal interaction on a daily basis and having access to college facilities such as labs and the library available on campus.\newline \newline With the team's working environment completely altered by the pandemic, it allowed them gain skills in a remote work environment using tools such as Discord, Microsoft Teams and Intellij's "code with me" feature\cite{ref19}, which allows multiple users to interact with a single IDE work-space at the same time. The development of these skills will be of great value to the team members as they could find themselves working under similar conditions even after the pandemic is over.
 \newline
 \newline
 The group can also take away the knowledge that they are capable of learning a programming language and how to use an SDK independently and be able to use those skills to develop a fully functioning application.
 \section{Closing}
-The last nine months has been a difficult year for everyone as the team have had to complete their final year studies under extra ordinary circumstances. With this in mind the group rose to the occasion and stuck with a consistent work regiment of meetings and sprints. The team accomplished their goals and delivered an application with all its intended functionality.
+The last nine months have been a difficult year for everyone as the team have had to complete their final year studies under extraordinary circumstances. With this in mind the group rose to the occasion and stuck with a consistent work regiment of meetings and sprints. The team accomplished their goals and delivered an application with all its intended functionality.
 \newline
 \newline
 We felt we worked really well as a team, everyone supported each other and helped each other out when difficulties arose to make sure the application was to the highest standard that we could produce while staying on schedule.
 \newline
 \newline
-When developing the App, there was great excitement among the team as we were developing an app everyone had a genuine interest.This led to everyone having ideas of where they wanted the app to go, resulting in no shortage of concepts for the app, generating an enjoyable atmosphere while creating an app everyone was excited for.
+When developing the App, there was great excitement among the team as we were developing an app everyone had a genuine interest in .This led to everyone having ideas of where they wanted the app to go, resulting in no shortage of concepts for the app, generating an enjoyable atmosphere while creating an app everyone was excited for.
 \newline
 \newline
-We would like to thank our Supervisor Kevin O'Brien for helping us every week with any issues that may have arose and for his insight into how to structure our Dissertation and Project. His help with our Dissertation was second to none and allowed used to create a Dissertation we can be proud of.
-\chapter{References}
+We would like to thank our Supervisor Kevin O'Brien for helping us every week with any issues that may have arose and for his insight into how to structure our Dissertation and Project. His help with our Dissertation was second to none and allowed us to create a Dissertation we can be proud of.
+
 \begin{thebibliography}{MT1}
 \bibitem{ref1} Square, I., 2021. OkHttp. [online] Square.github.io. Available at: <https://square.github.io/okhttp/>.
 \bibitem{ref2} "Stability of Kotlin components | Kotlin", Kotlin Help, 2021. [Online]. Available: https://kotlinlang.org/docs/components-stability.html.
@@ -906,10 +937,16 @@ We would like to thank our Supervisor Kevin O'Brien for helping us every week wi
 \bibitem{ref7} "MongoDB Realm Sync is GA | MongoDB Blog", MongoDB, 2021. [Online]. Available: https://www.mongodb.com/blog/post/announcing-mongodb-realm.
 \bibitem{ref8}"Announcing MongoDB 4.4: Available Now in Beta | MongoDB Blog", MongoDB, 2021. [Online]. Available: https://www.mongodb.com/blog/post/announcing-4-dot-4-available-now-beta.
 \bibitem{ref9}"Kotlin docs | Kotlin", Kotlin Help, 2021. [Online]. Available: https://kotlinlang.org/docs/home.html.
-\bibitem{ref10}"MongoDB Realm — MongoDB Realm", Docs.mongodb.com, 2021. [Online]. Available: https://docs.mongodb.com/realm/cloud/. [Accessed: 07- May- 2021].
+\bibitem{ref10}"MongoDB Realm — MongoDB Realm", Docs.mongodb.com, 2021. [Online]. Available: https://docs.mongodb.com/realm/cloud/. 
 \bibitem{ref11}D. Scott and B. Jones, "The Impact of Climate Change on Golf Participation in the Greater Toronto Area (GTA): A Case Study", Journal of Leisure Research, vol. 38, no. 3, pp. 363-380, 2006. Available: https://www.nrpa.org/globalassets/journals/jlr/2006/volume-38/jlr-volume-38-number-3-pp-363-380.pdf.
-\bibitem{ref12}"Coolors - The super fast color schemes generator!", Coolors.co, 2021. [Online]. Available: https://coolors.co/. [Accessed: 08- May- 2021].
-\bibitem{ref13}"Flaticon", Flaticon, 2021. [Online]. Available: https://www.flaticon.com/search?word=golf. [Accessed: 08- May- 2021].
-
+\bibitem{ref12}"Coolors - The super fast color schemes generator!", Coolors.co, 2021. [Online]. Available: https://coolors.co/. 
+\bibitem{ref13}"Flaticon", Flaticon, 2021. [Online]. Available: https://www.flaticon.com/search?word=golf.
+\bibitem{ref14}"AccuWeather APIs | API Reference", Developer.accuweather.com, 2021. [Online]. Available: https://developer.accuweather.com/apis..
+\bibitem{ref15}"Met Éireann Weather Forecast API - data.gov.ie", Data.gov.ie, 2021. [Online]. Available: https://data.gov.ie/dataset/met-eireann-weather-forecast-api.
+\bibitem{ref16}"Weather API - OpenWeatherMap", Openweathermap.org, 2021. [Online]. Available: https://openweathermap.org/api.
+\bibitem{ref17}"Documentation - HUAWEI HarmonyOS APP", Developer.harmonyos.com, 2021. [Online]. Available: https://developer.harmonyos.com/en/documentation. 
+\bibitem{ref18}"Stack Overflow Developer Survey 2020", Stack Overflow, 2021. [Online]. Available: https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted.
+\bibitem{ref19}"Getting started with Code With Me | IntelliJ IDEA", IntelliJ IDEA Help, 2021. [Online]. Available: https://www.jetbrains.com/help/idea/code-with-me.html.
+\bibitem{ref20}Kotlin Youtube - How to Quickly Fetch Parse JSON with OkHttp and Gson (Ep 2). 2017. Available: https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
 \end{thebibliography}
-\chapter{Appendices}
+\section{Appendices}
