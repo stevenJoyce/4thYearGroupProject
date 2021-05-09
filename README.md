@@ -81,7 +81,7 @@ Any Android Emulator should be capable of running the app-release.APK file but f
 
 + Download and install the Genymotion Android Emulator and set up the emulator as per [Genymotion Android Emulator Start Up](https://docs.genymotion.com/desktop/latest/01_Get_started.html#using-a-license-server)
 + When Setting up the virtual device make sure the Android version is set to 9.0 - API 28
-+ Once the emulator is loaded drag the Apk file found in [APKRelease](https://github.com/stevenJoyce/4thYearGroupProject) into the emulator.
++ Once the emulator is loaded drag the Apk file found in [APKRelease](https://github.com/stevenJoyce/4thYearGroupProject/tree/main/APKRelease) into the emulator.
 + The App should run
 
 Please note: The App doesn't run as smoothly when deployed to this emulator compared to the being deployed on phones and on the Android Emulator included with the IntelliJ IDEA when the Android ADK is installed.
