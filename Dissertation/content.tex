@@ -177,7 +177,7 @@ We found Kotlin to be less verbose, easier to read as a programming language com
 \newline \newline
 The Kotlin language is a very good interpreter of other languages which helps when trying to write code without having a great grasp of the \newline language. This is very important when you are beginning to learn the language or when you cannot find a way to write a method in Kotlin that you have done previously in a different language such as Java.
 \newline \newline
-Despite both Kotlin and Java being native languages for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java. It can reduce the number of lines of code that need to be written for the application - this comparison can be seen in the code Excerpts below.
+Despite both Kotlin and Java being native languages for writing Android applications, Kotlin is seen by many as a cleaner and concise way to write code for mobile than Java\cite{ref21}\cite{ref22}. It can reduce the number of lines of code that need to be written for the application - this comparison can be seen in the code Excerpts below.
 \newline
 \newline
 Below can be seen two examples of code one written in Kotlin and the other in Java, both pieces of code perform the same function but are equally \newline different. As we can see in the Kotlin Code excerpt, the code tends to be more human-readable and easier to understand for people less acquainted with either of the languages.
@@ -290,7 +290,7 @@ The App will have a unique ID that is called in the Mobile Application back-end 
 \end{figure}
 The above figure is an image of the MongoDB sync configuration. This is where the developer connects to the Atlas cluster by implementing a partition key. This key is how a cluster is made available to the user. The permissions for what a user can do with the database it has connected to are set here as well. We have allowed the user to both read and write to the collection but the data is protected by the userID key created in the collection itself.\newline
 For this project, Realm functioned as the middle man between the application and the MongoDB Server. It allowed the data to be sorted in a manner in which is easy to understand and utilize. Despite the Realm Sync still being in a developmental phase, it is of a high enough standard to work with no connectivity issues on their end. \newline
-We have been contacted by the MongoDB Realm to give feedback to help them see what issues have occurred and if it has worked well for us.
+We have been contacted by the MongoDB Realm team to give feedback to help them see what issues have occurred and if it has worked well for us.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm, height = 6cm]{img/feedback_email.PNG}
@@ -320,12 +320,12 @@ Discord then served as an appropriate alternative to Slack as it offered the sam
 Microsoft Teams is a collaborative workspace that is fully integrated with Microsoft Office 365 Services. Teams allows for scheduled voice and screen sharing meetings to be arranged via a calendar layout so that users can organise multiple meetings throughout a day, as well as schedule meetings to automatically occur on a daily, weekly or monthly basis such as in our case we were able to set up our meeting with our supervisor to automatically schedule itself every Monday at 11:30. 
 \newline \newline 
 We also found Teams to be a lot more user-friendly to users who are not as technologically skilled, rarely does Teams encounter voice chat or microphone connectivity issues. 
-\newpage
+
 It has both a desktop application and a browser application formats for users on computers which allows flexibility for a user who might be borrowing a machine or have low storage they can use the web app version through a browser.
 \newline
 
 Similarly, users can use an Android or iOS app for when the situation is more suitable for example replying to a direct message or meeting invitation whilst away from their desktop or laptop device. Its also worth noting that if a team is using an Office platform such as Excel, PowerPoint, or Word, the members of the team can work on the same document at the same time which is a major advantage for people using Office platform tools. The only downside of teams which is a common criticism of Microsoft software would be its UX can be frustrating, while it has improved in recent updates the UX is nowhere near as smooth as Slack or Discords in terms of navigating teams or groups you are a part of and its message feeds.
-
+\newpage
 \section{Dissertation Proof-Reading Tools}
 When we began writing up this document, we wanted to use a tool to check the grammar used, give a guide to what changes need to be made and overall make this document more easier to read. We realised this when we started to give our supervisor the document to get constructive feedback on what we can improve on.  To combat this we decided to use Grammarly. \newline \newline
 Grammarly is one of the most popular tools used for proof reading files.  It allows the user to upload a file of any size and it is proof-read within a minute of uploading the documents. The only issue we had with this tool is that it would give hints to change the way words are written into the \newline American variations of English words such as colour or realised. It wanted us to change those 2 words into color and realized. The hints it gave helped us convert sentences into words that better convey what we wanted to say.
@@ -337,7 +337,7 @@ Here is a link to the Grammarly website: {\url{https://app.grammarly.com}}
     \centering
     \includegraphics[width=14cm, height=12cm]{img/dfd.png}
     \caption{Data Flow Diagram of the Application}
-    \label{fig:altas config}
+    \label{fig:Data Flow Diagram of the Application}
 \end{figure}
 With our system, we have three main layers that integrate with one another to build our functional application. The front-end part of the application deals with the visuals and functionality that will be delivered to the user. It communicates with the back-end of the application which stores and retrieves data for the user upon interacting with the front-end elements. The Data Retrieval tools are used in collaboration with the front-end to retrieve and present the current weather data for now and the next twelve hours as a set of ratings for the optimal playing conditions for each hour.
 \section{Front End}
@@ -349,7 +349,7 @@ When the app first launches on the Main Activity, in the onCreate method the app
     \centering
     \includegraphics[width=7cm, height = 13cm]{img/drawer_layout.PNG}
     \caption{Drawer Layout displaying menu items in a RecyclerView}
-    \label{fig:altas config}
+    \label{fig:Drawer Layout displaying menu items in a RecyclerView}
 \end{figure}
 NavigationRVAdapter.kt takes an array list of menu items and the current position selected, when the user selects a menu option, the listener will execute the code for each position, this will load in a fragment or a new activity and then the updateAdapter will be called to update all the menu items appearance to reflect this interaction.  
 
@@ -535,24 +535,24 @@ The date format is DD-MM-YYYY while the time format is Hours-Minutes-Seconds. Th
     \centering
     \includegraphics[width=15cm, height = 9cm]{img/getMongoDBdata.PNG}
     \caption{Code snippet of how the data is sent to the server}
-    \label{fig:altas config}
+    \label{fig:Code snippet of how the data is sent to the server}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=6.5cm, height =12cm]{img/userHistoryPage.PNG}
     \caption{How the data is sent to the server}
-    \label{fig:altas config}
+    \label{fig:How the data is sent to the server}
 \end{figure}
 
 The data is received and shown on the User History Page. When the page is opened the MongoDB collection is called and the collection data is saved in a string. This string is then outputted to the app when the Generate User Data Button is pressed. \newline
 The page has an onCreate function that contains the code in Figure 5.9. The code allows the MongoDB database to be filtered by the userID to output only the data that is associated with that id key. The userID is set on the settings page. This is how we protect the user's data and stop unauthorized access to data stored on the database. All userId values are unique. The data is outputted in order of oldest stored data to the latest stored data. The outputted data is the date, time, Course, parScore, handicap, totalScore, and userID with a line separated between each output for better readability.
 
 \section{Data Gathering and Processing}
-For our application, one of the major parts of the project was to retrieve weather data from a weather API using the OKHTTP: HTTP and HTTP2 client. This data is then gathered and then parsed from Strings and Objects to their JSON representations using GSON. This data is then processed and after reading in all the data, a rating between 1 and 5 is then applied to an hour associated with the weather values passed in.
+For our application, one of the major parts of the project was to retrieve weather data from a weather API using the OKHTTP: HTTP and HTTP2 client\cite{ref1}. This data is then gathered and then parsed from Strings and Objects to their JSON representations using GSON\cite{ref23}. This data is then processed and after reading in all the data, a rating between 1 and 5 is then applied to an hour associated with the weather values passed in.
 
 \subsubsection{AccuWeather}
-One of the main aspects is retrieving data from the AccuWeather API, this was fundamental part of the app as without it, hourly ratings based on conditions for playing golf couldnt be shown to the user for their chosen golf course. We decided upon implementing Accuweather as part of our Application as it was able to search for locations based on their own specific location codes, which then allowed us to create specific locations of golf courses in Co. Galway on a list for the user to pick from.
+One of the main aspects is retrieving data from the AccuWeather API\cite{ref14}, this was fundamental part of the app as without it, hourly ratings based on conditions for playing golf couldnt be shown to the user for their chosen golf course. We decided upon implementing Accuweather as part of our Application as it was able to search for locations based on their own specific location codes, which then allowed us to create specific locations of golf courses in Co. Galway on a list for the user to pick from.
 
 \subsubsection{OKHTTP}
 For our data retrieval we used Okhttp to gather the weather data from the Accuweather API,we decided upon this as the technology to retrieving data because of one its main features, its perseverance in poor network conditions or when the network is being troublesome: "it will silently recover from common connection problems. If your service has multiple IP addresses, OkHttp will attempt alternate addresses if the first connect fails."\cite{ref1}
@@ -575,14 +575,14 @@ All of these sections integrate and work together to produce a rating for the ho
     \centering
     \includegraphics[width=12cm,height = 8cm]{img/CourseCodes.PNG}
     \caption{Course Codes used for API Request}
-    \label{fig:altas config}
+    \label{fig:Course Codes used for API Request}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=7cm,height = 14cm]{img/InPhoneList.PNG}
     \caption{List of Courses used for Location}
-    \label{fig:altas config}
+    \label{fig:List of Courses used for Location}
 \end{figure}
 The above images show how based on the location the user has set as their chosen golf course, it will set the course code to that golf course and will then begin the first part in trying to retrieve the weather data for that particular golf course regardless of where the user is located.
 \newline
@@ -592,7 +592,7 @@ Once the course has been selected, the course code is then passed to our callHou
     \centering
     \includegraphics[width=16cm,height = 3cm]{img/APICall.PNG}
     \caption{Course Codes used for API Request}
-    \label{fig:altas config}
+    \label{fig:Course Codes used for API Request}
 \end{figure}
 After the course code has been set, the data is then fetched using okhttp to fetch the JSON data from the API, while being fetched, the data is also stored locally using GSON in order to output the data to the user.
 \newline
@@ -603,14 +603,14 @@ This data is stored in a Kotlin data class files in order for the specific data 
     \centering
     \includegraphics[width=12cm,height = 8cm]{img/DataFetch.PNG}
     \caption{Fetching of JSON Data using OKHTTP}
-    \label{fig:altas config}
+    \label{fig:Fetching of JSON Data using OKHTTP}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm,height = 17cm]{img/DataExample.PNG}
     \caption{Example of the Data set used to store weather values}
-    \label{fig:altas config}
+    \label{fig:Example of the Data set used to store weather values}
 \end{figure}
 
 While saving the data locally this is where the function for calculating the ratings is called and converted to a list along with all the data values being displayed to the user(Rainfall, WindSpeed, Temperature, Feels Like Temperature, Humidity, Hourly Rating).
@@ -619,7 +619,7 @@ While saving the data locally this is where the function for calculating the rat
     \centering
     \includegraphics[width=12cm,height = 8cm]{img/DataStore.PNG}
     \caption{Storing of JSON data to Dataset Files}
-    \label{fig:altas config}
+    \label{fig:Storing of JSON data to Dataset Files}
 \end{figure}
 
 The function takes in all the above values except for Hourly Rating and a value for if it is daytime and then compares them to a set of predetermined values for each of the five values, each one is given a rating between 0 and 1 which then will give a rating between 0.0 and 5.0 unless the hour is passed sunset or before sunrise.
@@ -628,7 +628,7 @@ The function takes in all the above values except for Hourly Rating and a value 
     \centering
     \includegraphics[width=16cm,height = 6cm]{img/DataComparison.PNG}
     \caption{Calculation of the rating}
-    \label{fig:altas config}
+    \label{fig:Calculation of the rating}
 \end{figure}
 
 \begin{figure}[H]
@@ -644,14 +644,14 @@ After all the data is processed it is then outputted to the user so that they ca
     \centering
     \includegraphics[width=7cm,height = 14cm]{img/CurrentDataOutput.PNG}
     \caption{Current Hour Weather Data}
-    \label{fig:altas config}
+    \label{fig:Current Hour Weather Data}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=7cm,height = 14cm]{img/HourlyDataOutput.PNG}
     \caption{ Next 12 Hours Weather Data}
-    \label{fig:altas config}
+    \label{fig:Next 12 Hours Weather Data}
 \end{figure}
 
 
@@ -665,7 +665,7 @@ In this chapter, we focused on the Testing, Evaluation, and Limitations of our P
     \centering
     \includegraphics[width=15cm, height = 18cm]{img/Gantt.PNG}
     \caption{Test Case for successful Login}
-    \label{fig:altas config}
+    \label{fig:Test Case for successful Login}
 \end{figure}
 
 \section{Unit Testing}
@@ -684,14 +684,14 @@ Some test cases are designed to confirm an unsuccessful outcome from a user's pe
     \centering
     \includegraphics[width=15cm, height = 6.5cm]{img/TestCaseFail.PNG}
     \caption{Test Case for unsuccessful Login}
-    \label{fig:altas config}
+    \label{fig:Test Case for unsuccessful Login}
 \end{figure}
 With an understanding of what went wrong in the above test case, we implemented changes to our code that would give the user an informative alert that helps understand what error occurred. The screenshot below is a test case for the modified code with a successful outcome.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm, height = 6.5 cm]{img/testCaseSignInError.PNG}
     \caption{Test Case for unsuccessful Login with Alerts}
-    \label{fig:altas config}
+    \label{fig:Test Case for unsuccessful Login with Alerts}
 \end{figure}
 We did this type of testing for every feature of our application. This allowed us to debug our application regularly and efficiently. To see all of our test cases go to:  \url{https://github.com/stevenJoyce/4thYearGroupProject/tree/main/TestingGuides}
 \section{Objectives Overview}
@@ -744,7 +744,7 @@ To resolve this we had to revert to a previous Kotlin language version of our pr
     \centering
     \includegraphics[width=16cm, height = 7.5cm]{img/Unplannedupdate.png}
     \caption{Unplanned update found in "Project.xml"}
-    \label{fig:altas config}
+    \label{fig:Unplanned update found in "Project.xml"}
 \end{figure}
 
 \subsection{Kotlin}
@@ -941,12 +941,18 @@ We would like to thank our Supervisor Kevin O'Brien for helping us every week wi
 \bibitem{ref11}D. Scott and B. Jones, "The Impact of Climate Change on Golf Participation in the Greater Toronto Area (GTA): A Case Study", Journal of Leisure Research, vol. 38, no. 3, pp. 363-380, 2006. Available: https://www.nrpa.org/globalassets/journals/jlr/2006/volume-38/jlr-volume-38-number-3-pp-363-380.pdf.
 \bibitem{ref12}"Coolors - The super fast color schemes generator!", Coolors.co, 2021. [Online]. Available: https://coolors.co/. 
 \bibitem{ref13}"Flaticon", Flaticon, 2021. [Online]. Available: https://www.flaticon.com/search?word=golf.
-\bibitem{ref14}"AccuWeather APIs | API Reference", Developer.accuweather.com, 2021. [Online]. Available: https://developer.accuweather.com/apis..
+\bibitem{ref14}"AccuWeather APIs | API Reference", Developer.accuweather.com, 2021. [Online]. Available: https://developer.accuweather.com/apis.
 \bibitem{ref15}"Met Éireann Weather Forecast API - data.gov.ie", Data.gov.ie, 2021. [Online]. Available: https://data.gov.ie/dataset/met-eireann-weather-forecast-api.
 \bibitem{ref16}"Weather API - OpenWeatherMap", Openweathermap.org, 2021. [Online]. Available: https://openweathermap.org/api.
 \bibitem{ref17}"Documentation - HUAWEI HarmonyOS APP", Developer.harmonyos.com, 2021. [Online]. Available: https://developer.harmonyos.com/en/documentation. 
-\bibitem{ref18}"Stack Overflow Developer Survey 2020", Stack Overflow, 2021. [Online]. Available: https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted.
+\bibitem{ref18}"Stack Overflow Developer Survey 2020", Stack Overflow, 2021. [Online]. Available: https://insights.stackoverflow.com/survey/2020\#most-loved-dreaded-and-wanted.
 \bibitem{ref19}"Getting started with Code With Me | IntelliJ IDEA", IntelliJ IDEA Help, 2021. [Online]. Available: https://www.jetbrains.com/help/idea/code-with-me.html.
-\bibitem{ref20}Kotlin Youtube - How to Quickly Fetch Parse JSON with OkHttp and Gson (Ep 2). 2017. Available: https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
+\bibitem{ref20}Kotlin Youtube - How to Quickly Fetch Parse JSON with OkHttp and Gson (Ep 2). 2017. Available: https://www.youtube.com/watch?v=53BsyxwSBJk\&t=874s
+\bibitem{ref21}S. Bose, A. Kundu, M. Mukherjee and M. Banerjee, "A COMPARATIVE STUDY: JAVA VS KOTLIN PROGRAMMING IN ANDROID APPLICATION DEVELOPMENT", International Journal of Advanced Research in Computer Science, vol. 9, no. 3, pp. 41-45, 2018. Available: https://pdfs.semanticscholar.org/c0ee/43434064520cdde7222318bf6c4d2db69177.pdf.
+\bibitem{ref22} M. Flauzino, J. Veríssimo, R. Terra, E. Cirilo, V. Durelli and R. Durelli, "Are you still smelling it?", Proceedings of the VII Brazilian Symposium on Software Components, Architectures, and Reuse on - SBCARS '18, 2018. DOI: 10.1145/3267183.3267186
+\bibitem{ref23}"google/gson", GitHub, 2021. [Online]. Available: https://github.com/google/gson/blob/master/UserGuide.md.
 \end{thebibliography}
-\section{Appendices}
+
+
+\chapter{Appendices}
+Link to GitHub Repository and Screencast: {\url{https://github.com/stevenJoyce/4thYearGroupProject}}
