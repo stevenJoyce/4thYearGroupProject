@@ -6,7 +6,8 @@ import java.math.RoundingMode
 object UserResults  {
 
     var result = 0.0;
-
+    // method that takes all the values for the conditions and invokes all their corresponding methods
+    // in order to calcualte the rating for the hour
     open fun checkHourlyResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, humidity:Int, IsDaylight:Boolean): Double {
         val rainResult = checkRainfall(rainfall)
         val windResult = checkWindSpeed(windSpeed)
@@ -24,7 +25,8 @@ object UserResults  {
         return solution
     }
 
-
+    // method that takes all the values for the conditions and invokes all their corresponding methods
+    // in order to calcualte the rating for the hour
     open fun checkWeeklyResults(rainfall:Double, windSpeed:Double, temperature:Double, feelsLikeTemp:Double, hoursOfPrec:Double): Double {
         val rainResult = checkRainfall(rainfall)
         val windResult = checkWindSpeed(windSpeed)
@@ -36,7 +38,8 @@ object UserResults  {
 
         return TotalResultScore
     }
-
+    // function that checks the incoming Precipitation Value and compares it to predetermined values
+    // it will then out put a value between 0.0 and 5.0
     private fun checkHoursOfPrec(hoursOfPrec: Double): Double {
         result = 0.0;
         if (hoursOfPrec in 0.0..2.0)
@@ -67,7 +70,8 @@ object UserResults  {
 
         return result
     }
-
+    // function that checks the incoming Humidity Value and compares it to predetermined values
+    // it will then out put a value between 0.0 and 5.0
     private fun checkHumidity(humidity: Int): Double {
         result = 0.0;
         if (humidity in 30..60)
@@ -92,7 +96,8 @@ object UserResults  {
 
         return result
     }
-
+    // function that checks the incoming Feels Like Temperature Value and compares it to predetermined values
+    // it will then out put a value between 0.0 and 5.0
     private fun checkTempFeel(feelsLikeTemp: Double): Double {
 
         result = 0.0;
@@ -130,7 +135,8 @@ object UserResults  {
         }
         return result
     }
-
+    // function that checks the incoming Temperature Value and compares it to predetermined values
+    // it will then out put a value between 0.0 and 5.0
     private fun checkTemp(temperature: Double): Double {
 
          result = 0.0;
@@ -168,7 +174,8 @@ object UserResults  {
         }
         return result
     }
-
+    // function that checks the incoming Rainfall Value and compares it to predetermined values
+    // it will then out put a value between 0.0 and 5.0
     private fun checkRainfall(rainfall: Double): Double {
 
          result = 0.0;
@@ -205,7 +212,8 @@ object UserResults  {
         return result
     }
 
-
+    // function that checks the incoming WindSpeed Value and compares it to predetermined values
+    // it will then out put a value between 0.0 and 5.0
     private fun checkWindSpeed(windSpeed: Double): Double {
 
          result = 0.0;

@@ -22,8 +22,10 @@ object WeatherDataProcessor : AppCompatActivity() {
     var hourlyListString:String=""
     var currentListString:String=""
 
-    //inspired by https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
+    // adapted from https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
+    // This function fetches the data from the API for the 12 hour data and invokes the savehourlyData if successful
     private fun fetchHourlyJson(url: String): String {
+        //  Fetch Request
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
@@ -41,8 +43,10 @@ object WeatherDataProcessor : AppCompatActivity() {
         })
         return body
     }
-    //inspired by https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
+    // adapted from https://www.youtube.com/watch?v=53BsyxwSBJk&t=874s
+    // This function fetches the data from the API for the current hour data and invokes the saveCurrentData if successful
     private fun fetchCurrentJson(url: String): String {
+        // OKHTTP Fetch Request
         println("Attempting to Fetch JSON")
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
@@ -60,7 +64,8 @@ object WeatherDataProcessor : AppCompatActivity() {
         })
         return body
     }
-
+    // function that when invoked passes data from the fetchHourlyData function and stores the data in Kotlin Data files
+    // to be outputted to the user
     fun saveHourlyData(body: String){
         fullHourlyList.clear()
         hourlyListString = "";
@@ -68,13 +73,13 @@ object WeatherDataProcessor : AppCompatActivity() {
         dataRetreive = body
         //println(dataRetreive)
 
-        //Inspired by https://www.youtube.com/watch?v=c_91kB4Tvg8
-        //gson object
+        //Adapted from https://www.youtube.com/watch?v=c_91kB4Tvg8
+        //gson object that stores all the JSON into Kotlin Data Files
         val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
 
         for (x in commentResponse.indices)
         {
-
+            //data is stored to a string to be formatted
             list = commentResponse[x].dateTime.split("T",":00+01:00")
             hourlyData =   list[1] + "  " +
                     pad(commentResponse[x].rain.value) + "  " +
@@ -88,27 +93,28 @@ object WeatherDataProcessor : AppCompatActivity() {
                         commentResponse[x].realFeelTemperature.value,
                         commentResponse[x].relativeHumidity,
                         commentResponse[x].isDaylight)
-
+            //this is then all stored in a list to be outputted to the user
             fullHourlyList.add(hourlyData)
             //println(fullList[x])
-
+            // the list is then converted back to a list to remove all brackets and punctuation from the list
             hourlyListString += fullHourlyList[x] + "\n"
 
         }
         println(hourlyListString)
     }
-
+    // function that when invoked passes data from the fetchCurrentData function and stores the data in Kotlin Data files
+    // to be outputted to the user
     fun saveCurrentData(body: String){
         currentHourlyList.clear()
         hourlyListString = "";
 
-        //Inspired by https://www.youtube.com/watch?v=c_91kB4Tvg8
-        //gson object
+        //adapted from https://www.youtube.com/watch?v=c_91kB4Tvg8
+        //gson object that stores all the JSON into Kotlin Data Files
         val commentResponse: List<currentConditionsItem> = gson.fromJson(body,Array<currentConditionsItem>::class.java).toList()
         val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
         for (x in commentResponse.indices)
         {
-
+            //data is stored to a string to be formatted
             currentData = currentTime +"  "+
                     pad(commentResponse[x].precip1hr.metric.value) + "  " +
                     pad(commentResponse[x].wind.speed.metric.value) + "   " +
@@ -122,28 +128,29 @@ object WeatherDataProcessor : AppCompatActivity() {
                         commentResponse[x].relativeHumidity,
                         commentResponse[x].isDayTime)
 
-
+            //this is then all stored in a list to be outputted to the user
             currentHourlyList.add(currentData)
             //println(fullList[x])
-
+            // the list is then converted back to a list to remove all brackets and punctuation from the list
             hourlyListString += currentHourlyList[x] + "\n"
 
         }
     println(hourlyListString)
         }
 
-
+    //function that passes through the api call to the fetchHourlyJson using the course code set from the main activity
    open fun callHourlyData(courseCode:String){
         //val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true&metric=true"
         val url = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true&metric=true"
         fetchHourlyJson(url)
     }
+    //function that passes through the api call to the fetchCurrentJson using the course code set from the main activity
     open fun callCurrentData(courseCode:String){
         //val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=Gngag9jfLyY2fDDrLSr27EVYD1TarOiW&language=en-us&details=true"
         val url = "https://dataservice.accuweather.com/currentconditions/v1/"+courseCode+"?apikey=BWe2c4RedTW67NTZhUmpK5A036tFtNks&language=en-us&details=true"
         fetchCurrentJson(url)
     }
-
+    // function that when called concats a 0 to the number if it is between 0 and 10
     fun pad(num:Double):String{
         var catnum = "";
         if (num < 10.0 && num >= 0.0){
