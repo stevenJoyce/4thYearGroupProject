@@ -1,6 +1,6 @@
 # Description
 This is an Android Application, that is used to assist a golfer in picking the best hour to play a round of golf on their chosen golf course. This is done by giving a reccomendation based on which hour has the best weather conditions over a 12 hour period. It also helps the user record their score while playing so that the user can keep track of their previous games and try to improve their score over time.  
-#Authors
+# Authors
 Robert Donnelly <br>
 Steven Joyce<br>
 Evan Greaney
