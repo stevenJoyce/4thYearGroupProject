@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val displayName = sp.getString("displayName", "")
         val course = sp.getString("course", "")
-
+        //listens for user navigating pages, updates view and UI for user when interacted with
         navigation_rv.addOnItemTouchListener(RecyclerTouchListener(this, object : ClickListener {
             override fun onClick(view: View, position: Int) {
                 val bundle = Bundle()
@@ -286,7 +286,7 @@ class MainActivity : AppCompatActivity() {
 
         navigation_layout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
     }
-    // inspired by https://www.youtube.com/watch?v=oOIoRR0AiGo
+    // adapted from https://www.youtube.com/watch?v=oOIoRR0AiGo
     private fun refreshHourlyApp() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val bundle = Bundle()
@@ -307,7 +307,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    // inspired by https://www.youtube.com/watch?v=oOIoRR0AiGo
+    // adapted from https://www.youtube.com/watch?v=oOIoRR0AiGo
     private fun refreshCurrentApp() {
         val sp = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val bundle = Bundle()

@@ -73,8 +73,9 @@ object WeatherDataProcessor : AppCompatActivity() {
         dataRetreive = body
         //println(dataRetreive)
 
-        //Adapted from https://www.youtube.com/watch?v=c_91kB4Tvg8
-        //gson object that stores all the JSON into Kotlin Data Files
+        // Adapted from https://www.youtube.com/watch?v=c_91kB4Tvg8
+        // gson object that stores all the JSON into Kotlin Data Files
+        // created Kotlin Data Class Files using JSON To Kotlin Class(JSONToKotlinClass) Plugin
         val commentResponse = gson.fromJson(body,Array<HourlyProcessedDataItem>::class.java)
 
         for (x in commentResponse.indices)
@@ -110,6 +111,7 @@ object WeatherDataProcessor : AppCompatActivity() {
 
         //adapted from https://www.youtube.com/watch?v=c_91kB4Tvg8
         //gson object that stores all the JSON into Kotlin Data Files
+        // created Kotlin Data Class Files using JSON To Kotlin Class(JSONToKotlinClass) Plugin
         val commentResponse: List<currentConditionsItem> = gson.fromJson(body,Array<currentConditionsItem>::class.java).toList()
         val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
         for (x in commentResponse.indices)
