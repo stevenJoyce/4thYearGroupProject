@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="71538697-5b11-42f0-9521-08de7b2fcc52" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sportsadvisor/model/ScoreActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sportsadvisor/model/ScoreActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_score.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_score.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/login_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\steve\.android\avd\Pixel_3a_API_30_x86.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SportsAdvisor" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Object" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qP8QkG7XLfQTkZfTIq6sm679gT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\steve\OneDrive\Public\Documents\GitHub\4thYearGroupProject\app\src\main\res\layout" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SportsAdvisor.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="SportsAdvisor.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="SportsAdvisor.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="4thYearGroupProject [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.4thYearGroupProject [dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71538697-5b11-42f0-9521-08de7b2fcc52" name="Default Changelist" comment="" />
+      <created>1616969851028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616969851028</updated>
+      <workItem from="1616969852226" duration="260000" />
+      <workItem from="1617013467205" duration="965000" />
+      <workItem from="1617015376079" duration="1092000" />
+      <workItem from="1617037130785" duration="3382000" />
+      <workItem from="1617096155268" duration="91000" />
+      <workItem from="1617096269753" duration="7000" />
+      <workItem from="1617096346199" duration="183000" />
+      <workItem from="1617097692037" duration="822000" />
+      <workItem from="1617098539354" duration="1093000" />
+      <workItem from="1617115580968" duration="1482000" />
+      <workItem from="1617142810168" duration="373000" />
+      <workItem from="1617190911382" duration="994000" />
+      <workItem from="1617208148196" duration="958000" />
+      <workItem from="1617212972987" duration="506000" />
+      <workItem from="1617218199657" duration="2260000" />
+      <workItem from="1617232907439" duration="387000" />
+      <workItem from="1617271461548" duration="723000" />
+      <workItem from="1617272345756" duration="458000" />
+      <workItem from="1617277182300" duration="377000" />
+      <workItem from="1617285693278" duration="1899000" />
+      <workItem from="1617468445824" duration="61000" />
+      <workItem from="1617548842995" duration="202000" />
+      <workItem from="1617618570870" duration="1227000" />
+      <workItem from="1617629473170" duration="1991000" />
+      <workItem from="1617633000451" duration="621000" />
+      <workItem from="1617633832607" duration="97000" />
+      <workItem from="1617644693526" duration="1244000" />
+      <workItem from="1617648086171" duration="992000" />
+      <workItem from="1617649873084" duration="877000" />
+      <workItem from="1617791324508" duration="435000" />
+      <workItem from="1617801590500" duration="607000" />
+      <workItem from="1617892743741" duration="1472000" />
+      <workItem from="1617967478075" duration="2974000" />
+      <workItem from="1617974058108" duration="7000" />
+      <workItem from="1618311578348" duration="1783000" />
+      <workItem from="1618339451185" duration="188000" />
+      <workItem from="1618411965764" duration="1876000" />
+      <workItem from="1618481459557" duration="4735000" />
+      <workItem from="1618489660468" duration="313000" />
+      <workItem from="1618509704130" duration="129000" />
+      <workItem from="1618509870923" duration="4733000" />
+      <workItem from="1618515885349" duration="281000" />
+      <workItem from="1618584298804" duration="2663000" />
+      <workItem from="1618592522056" duration="121000" />
+      <workItem from="1618592661594" duration="1146000" />
+      <workItem from="1618688481249" duration="1139000" />
+      <workItem from="1618747416231" duration="612000" />
+      <workItem from="1618752910962" duration="1130000" />
+      <workItem from="1618839473590" duration="1508000" />
+      <workItem from="1618913010671" duration="1646000" />
+      <workItem from="1618915318623" duration="2729000" />
+      <workItem from="1618921857869" duration="3934000" />
+      <workItem from="1618939432255" duration="273000" />
+      <workItem from="1618939788616" duration="423000" />
+      <workItem from="1619010460106" duration="157000" />
+      <workItem from="1619011975782" duration="739000" />
+      <workItem from="1619014492347" duration="1644000" />
+      <workItem from="1619023840229" duration="896000" />
+      <workItem from="1619087563663" duration="3283000" />
+      <workItem from="1619108595299" duration="40000" />
+      <workItem from="1619108644457" duration="1259000" />
+      <workItem from="1619175958510" duration="448000" />
+      <workItem from="1619176439208" duration="3267000" />
+      <workItem from="1619190612648" duration="41000" />
+      <workItem from="1619190678840" duration="2491000" />
+      <workItem from="1619206161796" duration="988000" />
+      <workItem from="1619207197903" duration="274000" />
+      <workItem from="1619207488328" duration="335000" />
+      <workItem from="1619279260470" duration="892000" />
+      <workItem from="1619304048137" duration="96000" />
+      <workItem from="1619348132971" duration="1524000" />
+      <workItem from="1619355240491" duration="2790000" />
+      <workItem from="1619459106181" duration="1337000" />
+      <workItem from="1619461173577" duration="923000" />
+      <workItem from="1619517418012" duration="4912000" />
+      <workItem from="1619605545573" duration="152000" />
+      <workItem from="1619605713827" duration="15000" />
+      <workItem from="1619605795470" duration="418000" />
+      <workItem from="1619606293411" duration="100000" />
+      <workItem from="1619606448415" duration="398000" />
+      <workItem from="1619606950690" duration="221000" />
+      <workItem from="1619607427469" duration="36000" />
+      <workItem from="1619607542123" duration="137000" />
+      <workItem from="1619607726436" duration="11456000" />
+      <workItem from="1619686995127" duration="407000" />
+      <workItem from="1619688111398" duration="255000" />
+      <workItem from="1619688477091" duration="5450000" />
+      <workItem from="1619697076376" duration="1966000" />
+      <workItem from="1619726888692" duration="65000" />
+      <workItem from="1619727003885" duration="728000" />
+      <workItem from="1619731139075" duration="2471000" />
+      <workItem from="1619775527448" duration="938000" />
+      <workItem from="1619776518535" duration="137000" />
+      <workItem from="1619777017008" duration="199000" />
+      <workItem from="1619784760439" duration="2620000" />
+      <workItem from="1619799449899" duration="150000" />
+      <workItem from="1619801598199" duration="5989000" />
+      <workItem from="1619891067537" duration="3434000" />
+      <workItem from="1619894689415" duration="234000" />
+      <workItem from="1619908623973" duration="1123000" />
+      <workItem from="1619948219318" duration="3105000" />
+      <workItem from="1620054675174" duration="400000" />
+      <workItem from="1620055327225" duration="2917000" />
+      <workItem from="1620076279472" duration="2256000" />
+      <workItem from="1620079531200" duration="583000" />
+      <workItem from="1620125580324" duration="1165000" />
+      <workItem from="1620128070326" duration="2905000" />
+      <workItem from="1620138199136" duration="3132000" />
+      <workItem from="1620165295481" duration="2824000" />
+      <workItem from="1620170588710" duration="218000" />
+      <workItem from="1620201267930" duration="83000" />
+      <workItem from="1620208996097" duration="517000" />
+      <workItem from="1620209525779" duration="4167000" />
+      <workItem from="1620221068917" duration="29000" />
+      <workItem from="1620240153798" duration="200000" />
+      <workItem from="1620240368124" duration="353000" />
+      <workItem from="1620240774400" duration="840000" />
+      <workItem from="1620295322098" duration="15000" />
+      <workItem from="1620313449669" duration="243000" />
+      <workItem from="1620313893560" duration="211000" />
+      <workItem from="1620314129649" duration="289000" />
+      <workItem from="1620314488097" duration="636000" />
+      <workItem from="1620315220844" duration="160000" />
+      <workItem from="1620315471338" duration="153000" />
+      <workItem from="1620315662853" duration="162000" />
+      <workItem from="1620315856319" duration="32000" />
+      <workItem from="1620316008864" duration="64000" />
+      <workItem from="1620316081718" duration="94000" />
+      <workItem from="1620316199860" duration="331000" />
+      <workItem from="1620321027855" duration="1765000" />
+      <workItem from="1620323069260" duration="2000" />
+      <workItem from="1620323103350" duration="50000" />
+      <workItem from="1620323279803" duration="3276000" />
+      <workItem from="1620407284555" duration="603000" />
+      <workItem from="1620407953501" duration="911000" />
+      <workItem from="1620410021662" duration="560000" />
+      <workItem from="1620474752094" duration="627000" />
+      <workItem from="1620475398097" duration="772000" />
+      <workItem from="1620492126158" duration="1983000" />
+      <workItem from="1620572454064" duration="108000" />
+      <workItem from="1620572577903" duration="1404000" />
+      <workItem from="1620574289656" duration="512000" />
+      <workItem from="1620578484074" duration="292000" />
+      <workItem from="1620648982766" duration="595000" />
+      <workItem from="1621451436811" duration="170000" />
+      <workItem from="1621451626358" duration="1121000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

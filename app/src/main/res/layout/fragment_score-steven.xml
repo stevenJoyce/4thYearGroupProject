@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/colorLight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".model.ScoreActivity">
+
+    <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@id/button"
+            android:background="@color/colorLight"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0">
+        <TextView android:background="@color/colorLight"
+                  android:textAlignment="center"
+                  android:textColor="@color/colorPrimaryDarkAccent"
+                  android:text="Course:">
+        </TextView>
+        <EditText
+                android:id="@+id/playedCourse"
+                android:background="@color/colorLight"
+                android:inputType="textAutoComplete"
+                android:text="Enter Course Name Here"
+                android:textAlignment="center">
+
+        </EditText>
+
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Par"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole1Par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole1Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole2par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"></EditText>
+
+            <EditText
+                    android:id="@+id/hole2Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="3"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole3par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole3Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="4"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole4par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole4Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="5"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole5par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole5Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="6"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole6par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole6Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="7"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole7par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole7Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="8"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole8par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole8Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="9"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole9par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole9Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/front9par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Par"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/front9Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole10par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole10Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="11"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole11par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole11Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="12"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole12par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole12Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="13"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole13par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole13Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="14"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole14par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole14Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="15"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole15par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole15Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="16"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole16par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole16Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="17"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole17par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole17Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="18"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+
+            <EditText
+                    android:id="@+id/hole18par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/hole18Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </EditText>
+
+        </TableRow>
+
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Out"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/back9Par"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Par"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/back9Score"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+        </TableRow>
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/totalPar"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Par"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/totalScore"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+        </TableRow>
+        <TableRow android:paddingBottom="2dp">
+            <TextView
+                    android:background="@color/colorPrimaryAccent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nett"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/netPar"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Handicap"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+            <TextView
+                    android:id="@+id/NettScore"
+                    android:background="@color/colorLightAccent"
+                    android:textColor="@color/colorPrimaryDarkAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center">
+            </TextView>
+        </TableRow>
+
+
+    </TableLayout>
+    <Button
+            android:id="@+id/button"
+            android:background="@drawable/login_btn_round"
+            android:text="Save Score" android:layout_height="50dp"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/table"
+    app:layout_constraintBottom_toTopOf="@id/home"></Button>
+
+    <Button
+            android:id="@+id/home"
+            android:onClick="homeClicked"
+            android:background="@drawable/login_btn_round"
+            android:text="Home" android:layout_height="50dp" android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/button"
+    app:layout_constraintBottom_toBottomOf="parent"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
